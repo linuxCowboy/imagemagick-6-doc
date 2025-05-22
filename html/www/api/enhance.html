@@ -78,7 +78,7 @@
 <div class="magick-header">
 <p class="text-center"><a href="enhance.html#AutoGammaImage">AutoGammaImage</a> • <a href="enhance.html#AutoLevelImage">AutoLevelImage</a> • <a href="enhance.html#BrightnessContrastImage">BrightnessContrastImage</a> • <a href="enhance.html#ColorDecisionListImage">ColorDecisionListImage</a> • <a href="enhance.html#ClutImage">ClutImage</a> • <a href="enhance.html#ContrastImage">ContrastImage</a> • <a href="enhance.html#ContrastStretchImage">ContrastStretchImage</a> • <a href="enhance.html#EnhanceImage">EnhanceImage</a> • <a href="enhance.html#EqualizeImage">EqualizeImage</a> • <a href="enhance.html#GammaImage">GammaImage</a> • <a href="enhance.html#GrayscaleImage">GrayscaleImage</a> • <a href="enhance.html#HaldClutImage">HaldClutImage</a> • <a href="enhance.html#LevelImage">LevelImage</a> • <a href="enhance.html#LevelImage">LevelImage</a> • <a href="enhance.html#LevelizeImageChannel">LevelizeImageChannel</a> • <a href="enhance.html#LevelImageColor">LevelImageColor</a> • <a href="enhance.html#LinearStretchImage">LinearStretchImage</a> • <a href="enhance.html#ModulateImage">ModulateImage</a> • <a href="enhance.html#NegateImage">NegateImage</a> • <a href="enhance.html#The NormalizeImage">The NormalizeImage</a> • <a href="enhance.html#SigmoidalContrastImage">SigmoidalContrastImage</a></p>
 
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="AutoGammaImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="AutoGammaImage"></a></h2>
 
 <p>AutoGammaImage() extract the 'mean' from the image and adjust the image to try make set its gamma appropriatally.</p>
 
@@ -106,7 +106,7 @@ MagickBooleanType AutoGammaImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="AutoLevelImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="AutoLevelImage"></a></h2>
 
 <p>AutoLevelImage() adjusts the levels of a particular image channel by scaling the minimum and maximum values to the full quantum range.</p>
 
@@ -134,7 +134,7 @@ MagickBooleanType AutoLevelImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="BrightnessContrastImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="BrightnessContrastImage"></a></h2>
 
 <p>BrightnessContrastImage() changes the brightness and/or contrast of an image.  It converts the brightness and contrast parameters into slope and intercept and calls a polynomical function to apply to the image.</p>
 
@@ -172,7 +172,7 @@ MagickBooleanType BrightnessContrastImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="ColorDecisionListImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="ColorDecisionListImage"></a></h2>
 
 <p>ColorDecisionListImage() accepts a lightweight Color Correction Collection (CCC) file which solely contains one or more color corrections and applies the correction to the image.  Here is a sample CCC file:</p>
 
@@ -216,7 +216,7 @@ MagickBooleanType ColorDecisionListImage(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="ClutImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="ClutImage"></a></h2>
 
 <p>ClutImage() replaces each color value in the given image, by using it as an index to lookup a replacement color value in a Color Look UP Table in the form of an image.  The values are extracted along a diagonal of the CLUT image so either a horizontal or vertial gradient image can be used.</p>
 
@@ -252,7 +252,7 @@ MagickBooleanType ClutImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="ContrastImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="ContrastImage"></a></h2>
 
 <p>ContrastImage() enhances the intensity differences between the lighter and darker elements of the image.  Set sharpen to a MagickTrue to increase the image contrast otherwise the contrast is reduced.</p>
 
@@ -279,7 +279,7 @@ MagickBooleanType ContrastImage(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="ContrastStretchImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="ContrastStretchImage"></a></h2>
 
 <p>ContrastStretchImage() is a simple image enhancement technique that attempts to improve the contrast in an image by `stretching' the range of intensity values it contains to span a desired range of values. It differs from the more sophisticated histogram equalization in that it can only apply a linear scaling function to the image pixel values.  As a result the `enhancement' is less harsh.</p>
 
@@ -321,7 +321,7 @@ MagickBooleanType ContrastStretchImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="EnhanceImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="EnhanceImage"></a></h2>
 
 <p>EnhanceImage() applies a digital filter that improves the quality of a noisy image.</p>
 
@@ -347,7 +347,7 @@ Image *EnhanceImage(const Image *image,ExceptionInfo *exception)
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="EqualizeImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="EqualizeImage"></a></h2>
 
 <p>EqualizeImage() applies a histogram equalization to the image.</p>
 
@@ -375,7 +375,7 @@ MagickBooleanType EqualizeImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="GammaImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="GammaImage"></a></h2>
 
 <p>GammaImage() gamma-corrects a particular image channel.  The same image viewed on different devices will have perceptual differences in the way the image's intensities are represented on the screen.  Specify individual gamma levels for the red, green, and blue channels, or adjust all three with the gamma parameter.  Values typically range from 0.8 to 2.3.</p>
 
@@ -413,7 +413,7 @@ MagickBooleanType GammaImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="GrayscaleImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="GrayscaleImage"></a></h2>
 
 <p>GrayscaleImage() converts the colors in the reference image to gray.</p>
 
@@ -440,7 +440,7 @@ MagickBooleanType GrayscaleImage(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="HaldClutImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="HaldClutImage"></a></h2>
 
 <p>HaldClutImage() applies a Hald color lookup table to the image.  A Hald color lookup table is a 3-dimensional color cube mapped to 2 dimensions. Create it with the HALD coder.  You can apply any color transformation to the Hald image and then use this method to apply the transform to the image.</p>
 
@@ -472,7 +472,7 @@ MagickBooleanType HaldClutImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelImage"></a></h2>
 
 <p>LevelImage() adjusts the levels of a particular image channel by scaling the colors falling between specified white and black points to the full available quantum range.</p>
 
@@ -504,7 +504,7 @@ MagickBooleanType LevelImage(Image *image,const char *levels)
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelImage"></a></h2>
 
 <p>LevelImage() applies the normal level operation to the image, spreading out the values between the black and white points over the entire range of values.  Gamma correction is also applied after the values has been mapped.</p>
 
@@ -548,7 +548,7 @@ MagickBooleanType LevelImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelizeImageChannel"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelizeImageChannel"></a></h2>
 
 <p>LevelizeImageChannel() applies the reversed LevelImage() operation to just the specific channels specified.  It compresses the full range of color values, so that they lie between the given black and white points. Gamma is applied before the values are mapped.</p>
 
@@ -591,7 +591,7 @@ MagickBooleanType LevelizeImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelImageColor"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="LevelImageColor"></a></h2>
 
 <p>LevelImageColor() maps the given color to "black" and "white" values, linearly spreading out the colors, and level values on a channel by channel bases, as per LevelImage().  The given colors allows you to specify different level ranges for each of the color channels separately.</p>
 
@@ -636,7 +636,7 @@ const MagickPixelPacket *white_color,const MagickBooleanType invert)
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="LinearStretchImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="LinearStretchImage"></a></h2>
 
 <p>LinearStretchImage() discards any pixels below the black point and above the white point and levels the remaining pixels.</p>
 
@@ -667,7 +667,7 @@ MagickBooleanType LinearStretchImage(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="ModulateImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="ModulateImage"></a></h2>
 
 <p>ModulateImage() lets you control the brightness, saturation, and hue of an image.  Modulate represents the brightness, saturation, and hue as one parameter (e.g. 90,150,100).  If the image colorspace is HSL, the modulation is lightness, saturation, and hue.  For HWB, use blackness, whiteness, and hue. And for HCL, use chrome, luma, and hue.</p>
 
@@ -693,7 +693,7 @@ MagickBooleanType ModulateImage(Image *image,const char *modulate)
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="NegateImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="NegateImage"></a></h2>
 
 <p>NegateImage() negates the colors in the reference image.  The grayscale option means that only grayscale values within the image are negated.</p>
 
@@ -726,7 +726,7 @@ MagickBooleanType NegateImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="The_NormalizeImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="The_NormalizeImage"></a></h2>
 
 <p>The NormalizeImage() method enhances the contrast of a color image by mapping the darkest 2 percent of all pixel to black and the brightest 1 percent to white.</p>
 
@@ -754,7 +754,7 @@ MagickBooleanType NormalizeImageChannel(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/enhance_8c.html" id="SigmoidalContrastImage"/></h2>
+<h2><a href="../../api/MagickCore/enhance_8c.html" id="SigmoidalContrastImage"></a></h2>
 
 <p>SigmoidalContrastImage() adjusts the contrast of an image with a non-linear sigmoidal contrast algorithm.  Increase the contrast of the image using a sigmoidal transfer function without saturating highlights or shadows. Contrast indicates how much to increase the contrast (0 is none; 3 is typical; 20 is pushing it); mid-point indicates where midtones fall in the resultant image (0 is white; 50 is middle-gray; 100 is black).  Set sharpen to MagickTrue to increase the image contrast otherwise the contrast is reduced.</p>
 
