@@ -1,0 +1,27 @@
+var magick_wand_8c =
+[
+    [ "ClearMagickWand", "magick-wand_8c.html#ae39e4ee6ca757d764e05c2bb5e8090de", null ],
+    [ "CloneMagickWand", "magick-wand_8c.html#abbd24acb309cc192fbd0bdba1b047c94", null ],
+    [ "DestroyMagickWand", "magick-wand_8c.html#a48d974bdd71fb063f44c68b6e27da284", null ],
+    [ "IsMagickWand", "magick-wand_8c.html#ad8531bcf3f18a500b67313185238dd47", null ],
+    [ "IsMagickWandInstantiated", "magick-wand_8c.html#aab593cc884a2ef78926aa357b51894ef", null ],
+    [ "MagickClearException", "magick-wand_8c.html#aec84ca054a0683664712fafdc25bbac5", null ],
+    [ "MagickGetException", "magick-wand_8c.html#a9241fc612a100851eb6789a49f91c8c1", null ],
+    [ "MagickGetExceptionType", "magick-wand_8c.html#a5eb99800d98a5737500290431589ccc9", null ],
+    [ "MagickGetIteratorIndex", "magick-wand_8c.html#af49610d5cdb6f6a93d5986ecc3e66436", null ],
+    [ "MagickQueryConfigureOption", "magick-wand_8c.html#a61aaa62ba5545d762ffe1bebb55392a6", null ],
+    [ "MagickQueryConfigureOptions", "magick-wand_8c.html#a2584d4374f6387a98bada10eb66f4251", null ],
+    [ "MagickQueryFontMetrics", "magick-wand_8c.html#abee6a6d6af00b7f0e1d844a6b04c1589", null ],
+    [ "MagickQueryFonts", "magick-wand_8c.html#a67670dc957e7cae67da436fc45602269", null ],
+    [ "MagickQueryFormats", "magick-wand_8c.html#a2f39e2d69dd8f4719bfcaa8612e85c19", null ],
+    [ "MagickQueryMultilineFontMetrics", "magick-wand_8c.html#a995dd6d68d1958a6522b0179df9f394f", null ],
+    [ "MagickRelinquishMemory", "magick-wand_8c.html#a03349b63ad00bf5a0dfedf151714d266", null ],
+    [ "MagickResetIterator", "magick-wand_8c.html#a89dc1ac6efa34003a53be7ca172c647a", null ],
+    [ "MagickSetFirstIterator", "magick-wand_8c.html#a70d6e4678eefdb8809881155ed9da994", null ],
+    [ "MagickSetIteratorIndex", "magick-wand_8c.html#a188590a06b897ca65e126de80c7bbe8b", null ],
+    [ "MagickSetLastIterator", "magick-wand_8c.html#a10be3ec06f750702ffe3f81311fb46db", null ],
+    [ "MagickWandGenesis", "magick-wand_8c.html#a9a797431bb1d0ab247dffef8f1c91a81", null ],
+    [ "MagickWandTerminus", "magick-wand_8c.html#a80dc6ed8a14c94605516b68229afb4a3", null ],
+    [ "NewMagickWand", "magick-wand_8c.html#a7556788e3dc39f32499a6565aa8eb843", null ],
+    [ "NewMagickWandFromImage", "magick-wand_8c.html#ae10c68fd0c799e1db75daf23c8fa6af6", null ]
+];

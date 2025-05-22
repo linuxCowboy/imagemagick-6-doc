@@ -1,0 +1,1 @@
+../MagickCore/resize.js

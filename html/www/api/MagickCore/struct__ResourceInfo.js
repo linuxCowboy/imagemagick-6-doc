@@ -1,0 +1,25 @@
+var struct__ResourceInfo =
+[
+    [ "area", "struct__ResourceInfo.html#a278415deb5c4e89dedee3077034c4d50", null ],
+    [ "area_limit", "struct__ResourceInfo.html#afda4b92df0b350af286a0f7de80b4a03", null ],
+    [ "disk", "struct__ResourceInfo.html#af38c94348251d86322a56fb72f475d7e", null ],
+    [ "disk_limit", "struct__ResourceInfo.html#a1d6b9a681fa36cc9425059b39fb034e0", null ],
+    [ "file", "struct__ResourceInfo.html#afc84b0ce85682f7dfb2cc5b70889f697", null ],
+    [ "file_limit", "struct__ResourceInfo.html#a5c352f39dc777d951d537efc7b9243ac", null ],
+    [ "height", "struct__ResourceInfo.html#a8bca8793b33d59cf5cef1ec0cc9fe2d4", null ],
+    [ "height_limit", "struct__ResourceInfo.html#af9a872d8663302b6f72c737737863bd1", null ],
+    [ "list_length", "struct__ResourceInfo.html#ac43c618b7fdc8676c40e30f11f19b465", null ],
+    [ "list_length_limit", "struct__ResourceInfo.html#a6a66ffbdf608518a8aef708a1a033897", null ],
+    [ "map", "struct__ResourceInfo.html#af86c659f21e701b43b37dd9bb05276ff", null ],
+    [ "map_limit", "struct__ResourceInfo.html#a6ca0a94cb9e93ff09178ab66e2caaa0e", null ],
+    [ "memory", "struct__ResourceInfo.html#a406b737d52395a8705e3e68977966a34", null ],
+    [ "memory_limit", "struct__ResourceInfo.html#aae5ab0fcb0d6759c00afd0c2e385aee8", null ],
+    [ "thread", "struct__ResourceInfo.html#a3044351c8b914ae862f06881889c508f", null ],
+    [ "thread_limit", "struct__ResourceInfo.html#aa76bb790b37cb78f0dd0376a2bb77254", null ],
+    [ "throttle", "struct__ResourceInfo.html#a3344befb6d39f897616d69a98e2064bf", null ],
+    [ "throttle_limit", "struct__ResourceInfo.html#af2077cf70ab3a6e1203bad3c2c59cad3", null ],
+    [ "time", "struct__ResourceInfo.html#aae8783527fe1d1dc2449b43d761dce63", null ],
+    [ "time_limit", "struct__ResourceInfo.html#acce438cb7506db2b14929a72da7c8e04", null ],
+    [ "width", "struct__ResourceInfo.html#ad8199c9fcc8b8250931e38fbcac6b2c8", null ],
+    [ "width_limit", "struct__ResourceInfo.html#af801c54fe7c2fda39209bf02fa392c5c", null ]
+];

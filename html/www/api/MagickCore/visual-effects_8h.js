@@ -1,0 +1,36 @@
+var visual_effects_8h =
+[
+    [ "NoiseType", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963", [
+      [ "UndefinedNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963a66ceee5ad0d2fc909b9e7c6f1a74329f", null ],
+      [ "UniformNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963a821d42ef0c64e38750ddd2101a55c17e", null ],
+      [ "GaussianNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963a680abf96612feb5d2bd3c53df0ab9960", null ],
+      [ "MultiplicativeGaussianNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963aead05c1812fae9e9704e3fccd3ca1de6", null ],
+      [ "ImpulseNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963a23a714c828a168de8a4faed3e4f8c38f", null ],
+      [ "LaplacianNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963a8f92af17034e744ae2f53a78d2dde306", null ],
+      [ "PoissonNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963ad252239d12596b63ab6c606f05fd3203", null ],
+      [ "RandomNoise", "visual-effects_8h.html#a9253d111035d4a83996ec5bbfd3d8963a7cf65c8e226ca69fa6b60e3861e81d9d", null ]
+    ] ],
+    [ "AddNoiseImage", "visual-effects_8h.html#a96f1eef27c82a9cfbbc65f09ae30b6e0", null ],
+    [ "AddNoiseImageChannel", "visual-effects_8h.html#ab71fbd5ad469f022ca6b239f5de17194", null ],
+    [ "BlueShiftImage", "visual-effects_8h.html#afee5f79a9c018f427b761747926412c6", null ],
+    [ "CharcoalImage", "visual-effects_8h.html#a1124986c4ab96800856e66bed17516dc", null ],
+    [ "ColorizeImage", "visual-effects_8h.html#adabf07ef8cfc37ab27974bdb9bbea0a8", null ],
+    [ "ColorMatrixImage", "visual-effects_8h.html#a6088207bff10b99faf09d33869f5f65c", null ],
+    [ "ImplodeImage", "visual-effects_8h.html#a40ad4a0b8945ccfd5699e41cc9398c7d", null ],
+    [ "MorphImages", "visual-effects_8h.html#a8acd7678a2bd3f430b04bbdbbd773ff5", null ],
+    [ "PlasmaImage", "visual-effects_8h.html#a9870a0dc38cbaf015936bcc54afb5954", null ],
+    [ "PolaroidImage", "visual-effects_8h.html#a90282d935283f582c7825acaf5eef616", null ],
+    [ "SepiaToneImage", "visual-effects_8h.html#ac161cd09b179562ea06a077dbca99719", null ],
+    [ "ShadowImage", "visual-effects_8h.html#a24078c96afe2c5cd2b17b269a9eb5cec", null ],
+    [ "SketchImage", "visual-effects_8h.html#a8aa55cda0bcce9b1c9f4dd4b4ee347a2", null ],
+    [ "SolarizeImage", "visual-effects_8h.html#a88371f2b2ae19bed0a156a2fdce85646", null ],
+    [ "SolarizeImageChannel", "visual-effects_8h.html#a8b6fd4d5e5d2176c8657fbde754cf64b", null ],
+    [ "SteganoImage", "visual-effects_8h.html#ae6474e2b3feec1d4e5cd5e65a2d829b2", null ],
+    [ "StereoAnaglyphImage", "visual-effects_8h.html#a70f1b880657834686f5cc79882e34df0", null ],
+    [ "StereoImage", "visual-effects_8h.html#a7b2e89fd13e4effff02eba220b06898a", null ],
+    [ "SwirlImage", "visual-effects_8h.html#a927240c85060fb25e8440c18a1ede187", null ],
+    [ "TintImage", "visual-effects_8h.html#ae726b7e360882213502af7bd8b0927f6", null ],
+    [ "VignetteImage", "visual-effects_8h.html#a1c7e5d0daa0edf290a73afa9a4e7d86e", null ],
+    [ "WaveImage", "visual-effects_8h.html#aa1d264ec2bd8fd3e7e7e9131877da84f", null ],
+    [ "WaveletDenoiseImage", "visual-effects_8h.html#a1147ed2fac5ca07cedaec163ca1313f1", null ]
+];

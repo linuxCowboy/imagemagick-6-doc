@@ -1,0 +1,25 @@
+var quantum_private_8h =
+[
+    [ "_QuantumState", "struct__QuantumState.html", "struct__QuantumState" ],
+    [ "_QuantumInfo", "struct__QuantumInfo.html", "struct__QuantumInfo" ],
+    [ "ExponentBias", "quantum-private_8h.html#ab0c17a8a02998133a3b461d202a1bcce", null ],
+    [ "ExponentMask", "quantum-private_8h.html#afdd3a4b4ff34ef9b17d36259e0f0ba25", null ],
+    [ "ExponentShift", "quantum-private_8h.html#aa61d903830c736e19d77604c0a4cd111", null ],
+    [ "SignBitShift", "quantum-private_8h.html#aeaf6c0f9d574d339987fea63a7327d7b", null ],
+    [ "SignificandMask", "quantum-private_8h.html#ac4d6a4dd9a81f958ebeb666025820ce3", null ],
+    [ "SignificandShift", "quantum-private_8h.html#a68744fb8d2b97746db23861750d0d92a", null ],
+    [ "QuantumState", "quantum-private_8h.html#a0e0647bbae3f0597001aaecf47ffafc7", null ],
+    [ "GetQuantumRange", "quantum-private_8h.html#a89f51cda6fa1a91a255a2ca912ebdbef", null ],
+    [ "HalfToSinglePrecision", "quantum-private_8h.html#afbe1f71df677ded0567bd298e37f9304", null ],
+    [ "PopCharPixel", "quantum-private_8h.html#a8d115c0922ce4b586bd922771b15c196", null ],
+    [ "PopLongPixel", "quantum-private_8h.html#ac63464349d6ed2d327673f8679c93ac8", null ],
+    [ "PopShortPixel", "quantum-private_8h.html#ae1d795f127717e994cf886a01382d965", null ],
+    [ "PushCharPixel", "quantum-private_8h.html#ad8fa7f79521cf383851b49c5e4e7d5df", null ],
+    [ "PushFloatPixel", "quantum-private_8h.html#a3e1389fd9b70e5b3c010e2d71da66f02", null ],
+    [ "PushLongPixel", "quantum-private_8h.html#ab72345e1e48fd39f83d5302338f19923", null ],
+    [ "PushShortPixel", "quantum-private_8h.html#a2017bc6466fdd7397b977efe4d1ca1be", null ],
+    [ "ResetQuantumState", "quantum-private_8h.html#a2b36bd650cd1f383eaa4963962b26a0e", null ],
+    [ "ScaleAnyToQuantum", "quantum-private_8h.html#a20449dbe7d97317650869703b254bf6b", null ],
+    [ "ScaleQuantumToAny", "quantum-private_8h.html#a2f6733d9a3713b077e409420efe996db", null ],
+    [ "SinglePrecisionToHalf", "quantum-private_8h.html#afbd1927ccd091d87d18eebdadbf9411d", null ]
+];

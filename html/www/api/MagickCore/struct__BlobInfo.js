@@ -1,0 +1,26 @@
+var struct__BlobInfo =
+[
+    [ "data", "struct__BlobInfo.html#a931ece0ac62227bbe7b994804eae395e", null ],
+    [ "debug", "struct__BlobInfo.html#ab6adcf4e1e9db8a173b18c5338991bd7", null ],
+    [ "eof", "struct__BlobInfo.html#af285c9bf1d1d85814d3bead7d61a516b", null ],
+    [ "error", "struct__BlobInfo.html#a01673edc972b6d5bcae0ebc75e6531b6", null ],
+    [ "error_number", "struct__BlobInfo.html#a76259cc2a8a3cc35773db2c5182a1629", null ],
+    [ "exempt", "struct__BlobInfo.html#a82bf796d4b16409204b5485709c02dda", null ],
+    [ "extent", "struct__BlobInfo.html#ab64c2e96537b6cf15fb7a687122baeaa", null ],
+    [ "file_info", "struct__BlobInfo.html#a254a8823b73d6f949c4d7cde9c0039e8", null ],
+    [ "length", "struct__BlobInfo.html#a4c720d8530f65809273a65cb9a1ccde2", null ],
+    [ "mapped", "struct__BlobInfo.html#a061ede5f7d19daad4087aeacbd8424fa", null ],
+    [ "mode", "struct__BlobInfo.html#ae7424d8909f9c21dd34e94c056eeeeee", null ],
+    [ "offset", "struct__BlobInfo.html#ad9d8d0d2909db44986bef696ce92a004", null ],
+    [ "properties", "struct__BlobInfo.html#ae02468b3c4c8023991dbdf0816b6cba1", null ],
+    [ "quantum", "struct__BlobInfo.html#ada0a2e4af8777b912c0c68f54b9ac032", null ],
+    [ "reference_count", "struct__BlobInfo.html#a4160443f866f50cced846fb9f2f1864c", null ],
+    [ "semaphore", "struct__BlobInfo.html#a69eeb2a9b80c0ed5202e3e24d9b1f4bf", null ],
+    [ "signature", "struct__BlobInfo.html#aa34fd067a10d2e009cf6d19c41ae54a6", null ],
+    [ "size", "struct__BlobInfo.html#a994badce87dd61476dbe6d98eb09f5af", null ],
+    [ "status", "struct__BlobInfo.html#ac84f227892b113d4c374bbd2f0aeeaf5", null ],
+    [ "stream", "struct__BlobInfo.html#af98affd251eb45b84d20572128d2b9bd", null ],
+    [ "synchronize", "struct__BlobInfo.html#ab2afc4e639c20e8cfbad86c376ed6abb", null ],
+    [ "temporary", "struct__BlobInfo.html#a2ba702f9ee1f3cb7d84242ca8bd53fe3", null ],
+    [ "type", "struct__BlobInfo.html#a7e8b365b5e3f70c84f0e6529908a9fe4", null ]
+];

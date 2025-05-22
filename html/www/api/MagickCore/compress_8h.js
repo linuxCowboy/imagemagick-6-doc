@@ -1,0 +1,38 @@
+var compress_8h =
+[
+    [ "Ascii85Info", "compress_8h.html#a52dca03567c37d90e5659edece850e53", null ],
+    [ "CompressionType", "compress_8h.html#affec749ed88365143745313ae9168263", [
+      [ "UndefinedCompression", "compress_8h.html#affec749ed88365143745313ae9168263af4902cf86956f4668808c2e57b930530", null ],
+      [ "NoCompression", "compress_8h.html#affec749ed88365143745313ae9168263a07811fc593ce3b2fa03e5744517b0f13", null ],
+      [ "BZipCompression", "compress_8h.html#affec749ed88365143745313ae9168263a8f02f0d9f19febf8e9fa17375ce864fa", null ],
+      [ "DXT1Compression", "compress_8h.html#affec749ed88365143745313ae9168263a7c91993671018c720c678b0e7880c904", null ],
+      [ "DXT3Compression", "compress_8h.html#affec749ed88365143745313ae9168263aa9260c0e98fca18f99625f3c6a602cec", null ],
+      [ "DXT5Compression", "compress_8h.html#affec749ed88365143745313ae9168263ae645d1850edf1f5e664e1708126694dd", null ],
+      [ "FaxCompression", "compress_8h.html#affec749ed88365143745313ae9168263a0e5e355ee6f2b8248797bbe035ac0f5b", null ],
+      [ "Group4Compression", "compress_8h.html#affec749ed88365143745313ae9168263a558bdb5810b74e5d5038bff6183d8d07", null ],
+      [ "JPEGCompression", "compress_8h.html#affec749ed88365143745313ae9168263af12cfcbf02d10ead40da97c1394e0c04", null ],
+      [ "JPEG2000Compression", "compress_8h.html#affec749ed88365143745313ae9168263a2810f2510aea3aec53eba8c6ef491fe3", null ],
+      [ "LosslessJPEGCompression", "compress_8h.html#affec749ed88365143745313ae9168263a18d5c518f5b8eff10e66aeb6b57d364c", null ],
+      [ "LZWCompression", "compress_8h.html#affec749ed88365143745313ae9168263a38573730109108c6d6d8437fef589bbf", null ],
+      [ "RLECompression", "compress_8h.html#affec749ed88365143745313ae9168263a5b7808e3d541a4001bb09fe7ec3aa551", null ],
+      [ "ZipCompression", "compress_8h.html#affec749ed88365143745313ae9168263a496043116d897006c14a1b2e8dbf315e", null ],
+      [ "ZipSCompression", "compress_8h.html#affec749ed88365143745313ae9168263a5a592539bf68b89f55c86b784c9a19e3", null ],
+      [ "PizCompression", "compress_8h.html#affec749ed88365143745313ae9168263ae79fe62289a7977296654c2f2fa67762", null ],
+      [ "Pxr24Compression", "compress_8h.html#affec749ed88365143745313ae9168263aa2372b7129d80172a79cae6f844c7244", null ],
+      [ "B44Compression", "compress_8h.html#affec749ed88365143745313ae9168263a511e6661740718e2e9737760a9c57986", null ],
+      [ "B44ACompression", "compress_8h.html#affec749ed88365143745313ae9168263aff376acb1eccd992c4c3f7e1674d6d7a", null ],
+      [ "LZMACompression", "compress_8h.html#affec749ed88365143745313ae9168263aea58bf18a05413e12e9854372ac95e8a", null ],
+      [ "JBIG1Compression", "compress_8h.html#affec749ed88365143745313ae9168263af6684f32b7a0633ffc8289a78de7efdd", null ],
+      [ "JBIG2Compression", "compress_8h.html#affec749ed88365143745313ae9168263aeaaa9cb1d3e6bf21f94592ce27c35ca5", null ],
+      [ "ZstdCompression", "compress_8h.html#affec749ed88365143745313ae9168263a5588b59a4ac64a1d3f30c1d9fb2db8d0", null ],
+      [ "WebPCompression", "compress_8h.html#affec749ed88365143745313ae9168263aa6235fa8edd2c67b7c0dbb3d8ee2fe07", null ]
+    ] ],
+    [ "Ascii85Encode", "compress_8h.html#a2dcdd050f95710154f227a5f8fc843be", null ],
+    [ "Ascii85Flush", "compress_8h.html#a699c5d341497e974aeb668944335a5a2", null ],
+    [ "Ascii85Initialize", "compress_8h.html#a08041c615bd2c1e3691e570253ba3c0d", null ],
+    [ "HuffmanDecodeImage", "compress_8h.html#a644da06a7843f54bb87e1ec5c2d4c09c", null ],
+    [ "HuffmanEncodeImage", "compress_8h.html#a11d7e80318ce09c9a7575de316447edc", null ],
+    [ "LZWEncodeImage", "compress_8h.html#ab23772f2e498011bec6eed9e1d7aa02d", null ],
+    [ "PackbitsEncodeImage", "compress_8h.html#a16bf2ed82c66c6dca49657d141383fce", null ],
+    [ "ZLIBEncodeImage", "compress_8h.html#aff96c32d900df4c2af65507bbae38af3", null ]
+];

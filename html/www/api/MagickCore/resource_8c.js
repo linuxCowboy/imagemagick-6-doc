@@ -1,0 +1,27 @@
+var resource_8c =
+[
+    [ "_ResourceInfo", "struct__ResourceInfo.html", "struct__ResourceInfo" ],
+    [ "MagickPathTemplate", "resource_8c.html#a5d85b511796c2eb7b55aefbdc7fd6b46", null ],
+    [ "NumberOfResourceTypes", "resource_8c.html#ae3a926252516adda08bec129fadf9507", null ],
+    [ "O_NOFOLLOW", "resource_8c.html#a82d4d551b214905742c9e045185d352a", null ],
+    [ "TMP_MAX", "resource_8c.html#ada7e63a6fb078a062192145950369d09", null ],
+    [ "ResourceInfo", "resource_8c.html#afe7629d5ccaeaf9661874bf923186ee5", null ],
+    [ "AcquireMagickResource", "resource_8c.html#a93bfc6e1e131e7f75362236578f1e450", null ],
+    [ "AcquireUniqueFileResource", "resource_8c.html#aa78b2dc9a872968d766cf2cb4ca13164", null ],
+    [ "AsynchronousResourceComponentTerminus", "resource_8c.html#a5f78c70c21320181bca9a5318b75e234", null ],
+    [ "DestroyTemporaryResources", "resource_8c.html#a30897a0e1640cafb514b7cc9b7696523", null ],
+    [ "FormatPixelSize", "resource_8c.html#a48103eeb2e0f4985eec04ee2090ca02e", null ],
+    [ "GetMagickResource", "resource_8c.html#abd2aa26f580fb62a9d5ae62ce0232eb1", null ],
+    [ "GetMagickResourceLimit", "resource_8c.html#a80ca88e483f5b33cac2ee2fa3fb7b4a9", null ],
+    [ "GetPathTemplate", "resource_8c.html#af1c6e2d080b70cb1dc7913bcf4239f9f", null ],
+    [ "ListMagickResourceInfo", "resource_8c.html#a2011d3db543bcf1f3a43a18d90351ec3", null ],
+    [ "RelinquishMagickResource", "resource_8c.html#abaeab994ba4613a4d7fb299ff2fe72eb", null ],
+    [ "RelinquishUniqueFileResource", "resource_8c.html#a8b9a65f0da3f78edfe7a957083a1d94e", null ],
+    [ "ResourceComponentGenesis", "resource_8c.html#a46797b3d0db661756d5f1961a77d853f", null ],
+    [ "ResourceComponentTerminus", "resource_8c.html#a42c63ba359d3712b9ebab8387ccbd353", null ],
+    [ "SetMagickResourceLimit", "resource_8c.html#aaa8817975eea76f7d30cdc3571d7235d", null ],
+    [ "random_info", "resource_8c.html#a7d651297d43a82c2d89ff145da60d3e8", null ],
+    [ "resource_info", "resource_8c.html#a5440bbde8604f4a9278bcaaa17bdc82a", null ],
+    [ "resource_semaphore", "resource_8c.html#a93777978ab6ccab2d0ad3f1134a18f8b", null ],
+    [ "temporary_resources", "resource_8c.html#ae1d283ca91fb40bb4749dd4e20a2f898", null ]
+];

@@ -1,0 +1,25 @@
+var quantum_8c =
+[
+    [ "QuantumSignature", "quantum_8c.html#a9c6aa24da1f7d0be4f96aea3dca1877a", null ],
+    [ "AcquireQuantumInfo", "quantum_8c.html#ae1952e481ac88b9032ad2d115f8c3250", null ],
+    [ "AcquireQuantumPixels", "quantum_8c.html#a6a7101edd23f66454119716573c40f2d", null ],
+    [ "DestroyQuantumInfo", "quantum_8c.html#a0632d4d8d409152a53195859180f2db4", null ],
+    [ "DestroyQuantumPixels", "quantum_8c.html#acf3592ad9cce912b1d46a74c6751675c", null ],
+    [ "GetQuantumEndian", "quantum_8c.html#abcd21e69fad813b67e200b10459b78eb", null ],
+    [ "GetQuantumExtent", "quantum_8c.html#ad7b97298e4406e86afab4de4e11a4236", null ],
+    [ "GetQuantumFormat", "quantum_8c.html#a6747faa4c9dcac24bb9706649ef71001", null ],
+    [ "GetQuantumInfo", "quantum_8c.html#a4d6a63eb930cb112a764bc734024d6ce", null ],
+    [ "GetQuantumPixels", "quantum_8c.html#aad506709f061bc581d7bdd6395007c7d", null ],
+    [ "GetQuantumType", "quantum_8c.html#a09444aeae9352293917708b3081ee1a7", null ],
+    [ "ResetQuantumState", "quantum_8c.html#a309c0bc5eb82bdd0b57797ff96dfa196", null ],
+    [ "SetQuantumAlphaType", "quantum_8c.html#ab39dc966911fd8cd4734992c91c28434", null ],
+    [ "SetQuantumDepth", "quantum_8c.html#a09d0a444935e075266bbf2c262b4af8f", null ],
+    [ "SetQuantumEndian", "quantum_8c.html#ad8f6b46d6894ec9e08fbcfa66c877879", null ],
+    [ "SetQuantumFormat", "quantum_8c.html#a0dd21a2f4ce9ecca064e7a3ac0d78f57", null ],
+    [ "SetQuantumImageType", "quantum_8c.html#a8e474df72376619e09c806b325747d80", null ],
+    [ "SetQuantumMinIsWhite", "quantum_8c.html#af9cd6294564cf72c932e399657971865", null ],
+    [ "SetQuantumPack", "quantum_8c.html#aad5b1bea9a3e355b2a5f088d46359ccf", null ],
+    [ "SetQuantumPad", "quantum_8c.html#a581d8e54012fd8b5c950cda5d4dd19b0", null ],
+    [ "SetQuantumQuantum", "quantum_8c.html#a480883bdf5de00c9122791240169af2f", null ],
+    [ "SetQuantumScale", "quantum_8c.html#a0b162fce9e222f8506ec48d36514d6b1", null ]
+];

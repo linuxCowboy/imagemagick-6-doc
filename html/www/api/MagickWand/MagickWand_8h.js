@@ -1,0 +1,26 @@
+var MagickWand_8h =
+[
+    [ "magick_restrict", "MagickWand_8h.html#a3633e3ebaf6c00952a9c95a09e66a519", null ],
+    [ "MAGICKWAND_CHECK_VERSION", "MagickWand_8h.html#a61aed201ac5494c430c8d345391e4d09", null ],
+    [ "MAGICKWAND_CONFIG_H", "MagickWand_8h.html#afc2a3b1c78d159c307c664dd99ee5fd1", null ],
+    [ "MAGICKWAND_POSIX_SUPPORT", "MagickWand_8h.html#ab69b5d47b864b65f974660b9c0fefeb4", null ],
+    [ "MagickWand", "MagickWand_8h.html#acd5e6ce5a27943cf26d7a89f5046a194", null ],
+    [ "ClearMagickWand", "MagickWand_8h.html#aa1655540c3de5be2fa48ed629ca942b1", null ],
+    [ "CloneMagickWand", "MagickWand_8h.html#aac59f10cd71f29cd25bec5db25ace95f", null ],
+    [ "DestroyMagickWand", "MagickWand_8h.html#af6c01633d9fce0a330e342486b3ecb32", null ],
+    [ "IsMagickWand", "MagickWand_8h.html#a5fdf000828740fd0f693499cb9c81454", null ],
+    [ "IsMagickWandInstantiated", "MagickWand_8h.html#af48f36c45fea075c46759619e285616a", null ],
+    [ "MagickClearException", "MagickWand_8h.html#af1fb3f1821aba603b137560cb4d728e6", null ],
+    [ "MagickGetException", "MagickWand_8h.html#adce7505c9162b55a02ee85c4a73c3f7e", null ],
+    [ "MagickGetExceptionType", "MagickWand_8h.html#af50c2dca70f528f2977967b7deb4db80", null ],
+    [ "MagickGetIteratorIndex", "MagickWand_8h.html#abae6d747100d7db9061869289a871c7a", null ],
+    [ "MagickRelinquishMemory", "MagickWand_8h.html#a0dbf3bd824ad5942d6af434f598ffe67", null ],
+    [ "MagickResetIterator", "MagickWand_8h.html#a102782ef2a527097340861fdf5c0e815", null ],
+    [ "MagickSetFirstIterator", "MagickWand_8h.html#a3421ee3a0bcf7385f91f20836caf2f9c", null ],
+    [ "MagickSetIteratorIndex", "MagickWand_8h.html#af9bdef1bae20a157b8a4ac87d0272784", null ],
+    [ "MagickSetLastIterator", "MagickWand_8h.html#a1871d9f7750da1daf6144928b2ea8b37", null ],
+    [ "MagickWandGenesis", "MagickWand_8h.html#a9a797431bb1d0ab247dffef8f1c91a81", null ],
+    [ "MagickWandTerminus", "MagickWand_8h.html#a80dc6ed8a14c94605516b68229afb4a3", null ],
+    [ "NewMagickWand", "MagickWand_8h.html#a7556788e3dc39f32499a6565aa8eb843", null ],
+    [ "NewMagickWandFromImage", "MagickWand_8h.html#a209f3fae12c872208e8f05a87801fe2b", null ]
+];

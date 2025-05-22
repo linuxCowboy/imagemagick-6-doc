@@ -1,0 +1,26 @@
+var struct__MagickInfo =
+[
+    [ "adjoin", "struct__MagickInfo.html#a8dc3b78f62dc5dad9480b6465e491c42", null ],
+    [ "blob_support", "struct__MagickInfo.html#ac4602576634e07283e18181aad50e97f", null ],
+    [ "client_data", "struct__MagickInfo.html#a79272d185dd7696e4712d235952c9938", null ],
+    [ "decoder", "struct__MagickInfo.html#a8281548febad697036bbc1cc4e962f96", null ],
+    [ "description", "struct__MagickInfo.html#a954fc1eb14fa8666367e84a3ce25dacd", null ],
+    [ "encoder", "struct__MagickInfo.html#a0350aca832c018bdcc1a9d5ea08e1daa", null ],
+    [ "endian_support", "struct__MagickInfo.html#a0dde7c1b076293534bdf681487e7940f", null ],
+    [ "format_type", "struct__MagickInfo.html#aa184f82bdd3c486b5d10bb569f7a8981", null ],
+    [ "image_info", "struct__MagickInfo.html#a61d019e65328843bdb42838d1d28c15f", null ],
+    [ "magick", "struct__MagickInfo.html#a824301ee73b3bf64178698afcc0da1d1", null ],
+    [ "magick_module", "struct__MagickInfo.html#afbf27c90b16e9ab9742e4ca914630c71", null ],
+    [ "mime_type", "struct__MagickInfo.html#ac9a4d1ecda830d48f9285c134a224a20", null ],
+    [ "name", "struct__MagickInfo.html#a18f3cc26ef01ea7e58e98438afb57e8b", null ],
+    [ "next", "struct__MagickInfo.html#acc08421b9e9eec63656121468abd01ef", null ],
+    [ "note", "struct__MagickInfo.html#a75eea1a22fa500587b82793c7ec97e73", null ],
+    [ "previous", "struct__MagickInfo.html#a16baa08871e66a51b0e8e0818703b244", null ],
+    [ "raw", "struct__MagickInfo.html#a5a9e519645881f6cf6ba502dd8e9c7ef", null ],
+    [ "seekable_stream", "struct__MagickInfo.html#a49800a820d188690ff257fb81875524c", null ],
+    [ "semaphore", "struct__MagickInfo.html#aca4bb60257a752849cc9591d302eac95", null ],
+    [ "signature", "struct__MagickInfo.html#ae4e2d99f3fdd2ef493e3ac441bfa4c46", null ],
+    [ "stealth", "struct__MagickInfo.html#a4fbd0d8ca34751749b47da5b43f4de75", null ],
+    [ "thread_support", "struct__MagickInfo.html#ade81f0aa9de9dd715a36b9272169084f", null ],
+    [ "version", "struct__MagickInfo.html#ae9ea8c97777d6cdca9c44854fab0adea", null ]
+];

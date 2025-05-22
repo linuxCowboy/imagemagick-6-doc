@@ -1,0 +1,35 @@
+var color_8h =
+[
+    [ "_ColorInfo", "struct__ColorInfo.html", "struct__ColorInfo" ],
+    [ "_ErrorInfo", "struct__ErrorInfo.html", "struct__ErrorInfo" ],
+    [ "ColorInfo", "color_8h.html#a9caa4935f9a1571123af9ac10456c60a", null ],
+    [ "ErrorInfo", "color_8h.html#a3840147ad86e1d0e5708221f8e7cf483", null ],
+    [ "ComplianceType", "color_8h.html#aa8673515c910773807778b398818f7f4", [
+      [ "UndefinedCompliance", "color_8h.html#aa8673515c910773807778b398818f7f4ab0c6aafcfd7889ecb712ceb1b36ccdd6", null ],
+      [ "NoCompliance", "color_8h.html#aa8673515c910773807778b398818f7f4a88c17ff55571b430ea2a9e901a958b41", null ],
+      [ "CSSCompliance", "color_8h.html#aa8673515c910773807778b398818f7f4a1ba730870dc61a7529885b00a9b4a624", null ],
+      [ "SVGCompliance", "color_8h.html#aa8673515c910773807778b398818f7f4a31a8b9a873a35968c4edb82f3b06d800", null ],
+      [ "X11Compliance", "color_8h.html#aa8673515c910773807778b398818f7f4adadb34c7fb589d73ee40017cce11e4e7", null ],
+      [ "XPMCompliance", "color_8h.html#aa8673515c910773807778b398818f7f4a9afb62f636cc00454b586bf5be83053b", null ],
+      [ "MVGCompliance", "color_8h.html#aa8673515c910773807778b398818f7f4a73c0f63f69298bf38d76354b6222e65b", null ],
+      [ "AllCompliance", "color_8h.html#aa8673515c910773807778b398818f7f4ad8fec3ee4cab7979ae558906540a7036", null ]
+    ] ],
+    [ "ColorComponentGenesis", "color_8h.html#a261a5a710c417ec216c92b182324cddf", null ],
+    [ "ColorComponentTerminus", "color_8h.html#a9dc8e8f70e24394662838b8dff1253e0", null ],
+    [ "ConcatenateColorComponent", "color_8h.html#a5611872a2ec3e3b38dde9f76891c10c8", null ],
+    [ "GetColorInfo", "color_8h.html#aed93ae8fd657d8d85768820c29728ea4", null ],
+    [ "GetColorInfoList", "color_8h.html#ab88b0917ddb6912b85abbd04cb6dd0e9", null ],
+    [ "GetColorList", "color_8h.html#a25de922244ed14bc43f87329d78a2429", null ],
+    [ "GetColorTuple", "color_8h.html#af8091d5736a34db893f42fd90d31a611", null ],
+    [ "IsColorSimilar", "color_8h.html#a581d5783eb825a79b4e3453d0e9b5488", null ],
+    [ "IsImageSimilar", "color_8h.html#aa1e4ff187f6a56fd14611ad43b5a522b", null ],
+    [ "IsMagickColorSimilar", "color_8h.html#a49011e1b3824f2a57e3540a4805970ed", null ],
+    [ "IsOpacitySimilar", "color_8h.html#a19fe61f5bbd29d74b78b194046f5b787", null ],
+    [ "ListColorInfo", "color_8h.html#a0c4313ce43c2185783b7f595292e2ed1", null ],
+    [ "QueryColorCompliance", "color_8h.html#a08373d3f58b5e9aeb07dafefd8844d17", null ],
+    [ "QueryColorDatabase", "color_8h.html#ad2643fad9facf8f1dbfc968350cc6e0b", null ],
+    [ "QueryColorname", "color_8h.html#a293ef81f654c4805a9bd525910774d41", null ],
+    [ "QueryMagickColor", "color_8h.html#af1e5170549001c4d56a6701b62bd0213", null ],
+    [ "QueryMagickColorCompliance", "color_8h.html#a73c71764c9130c2d66e16cd41a25a63c", null ],
+    [ "QueryMagickColorname", "color_8h.html#a3e23c1c4f7c0cd2ea6e0ce42e1f0ce6f", null ]
+];

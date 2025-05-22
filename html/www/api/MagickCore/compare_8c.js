@@ -1,0 +1,28 @@
+var compare_8c =
+[
+    [ "Log10Epsilon", "compare_8c.html#a81c75e6d16b2c6546d6be502b5a3636c", null ],
+    [ "SimilarityImageTag", "compare_8c.html#a3e1aed3750af600d38fe0d6b65ee9e1a", null ],
+    [ "SimilarityImageTag", "compare_8c.html#a3e1aed3750af600d38fe0d6b65ee9e1a", null ],
+    [ "CompareImageChannels", "compare_8c.html#a2c6c1c3a6d2ed2dab7c5bd69f5a22143", null ],
+    [ "CompareImages", "compare_8c.html#acc26701225f92072f221e79743724861", null ],
+    [ "GetAbsoluteDistortion", "compare_8c.html#aa83f1112cc64de346903e14f7d423533", null ],
+    [ "GetFuzzDistortion", "compare_8c.html#aa6f02166d17fac7238719e7f9b30ef63", null ],
+    [ "GetImageChannelDistortion", "compare_8c.html#acc9e2ed0e80ff728932a152c8104592f", null ],
+    [ "GetImageChannelDistortions", "compare_8c.html#aeae8978e7b4abb09c02a2f87cf88cad9", null ],
+    [ "GetImageDistortion", "compare_8c.html#a2bb1c245e8bc3e3719492599dc6011be", null ],
+    [ "GetMeanAbsoluteDistortion", "compare_8c.html#a69b1a2f9374f13fd18419b786d75b119", null ],
+    [ "GetMeanErrorPerPixel", "compare_8c.html#a2b40f2a4535f01537da2e83aa192b4b6", null ],
+    [ "GetMeanSquaredDistortion", "compare_8c.html#aa2e393d740c46f70c92f70857b532143", null ],
+    [ "GetNormalizedCrossCorrelationDistortion", "compare_8c.html#afa18048ce73e9eaba062da9b422efb50", null ],
+    [ "GetNumberChannels", "compare_8c.html#af5993130946b6c7eb4ecbd229c49d25d", null ],
+    [ "GetPeakAbsoluteDistortion", "compare_8c.html#ac7e3c2cccd4d89df713d46490749ed53", null ],
+    [ "GetPeakSignalToNoiseRatio", "compare_8c.html#a6c1d3535b56f2e9267771f05d22190bd", null ],
+    [ "GetPerceptualHashDistortion", "compare_8c.html#a992623bc0639851a2ca307ae68c5b9aa", null ],
+    [ "GetRootMeanSquaredDistortion", "compare_8c.html#a62931326364d7a4f5c233854d49a92c7", null ],
+    [ "GetSimilarityMetric", "compare_8c.html#aa75820c4e157bede6254b898bb9fe462", null ],
+    [ "IsImagesEqual", "compare_8c.html#aed3a19e8b03a5c675b4b5965a0940209", null ],
+    [ "MagickLog10", "compare_8c.html#a0718f0e9aaefe40554ade510b776f88c", null ],
+    [ "SimilarityImage", "compare_8c.html#aca8ea0e4bb6d919d9839c5ad75db4e97", null ],
+    [ "SimilarityMetricImage", "compare_8c.html#accef7e00836bf896c6159bd7c0a39d9f", null ],
+    [ "ValidateImageMorphology", "compare_8c.html#a65343f2327ff0d23925d1edc828dbac7", null ]
+];

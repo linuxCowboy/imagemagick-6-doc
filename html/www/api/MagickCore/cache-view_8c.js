@@ -1,0 +1,27 @@
+var cache_view_8c =
+[
+    [ "_CacheView", "struct__CacheView.html", "struct__CacheView" ],
+    [ "AcquireAuthenticCacheView", "cache-view_8c.html#abf16ea2b5d396f1d3c2d4a6392d34fd6", null ],
+    [ "AcquireCacheView", "cache-view_8c.html#aa7cec7dd585fed850be4b2534363e850", null ],
+    [ "AcquireVirtualCacheView", "cache-view_8c.html#a6c1ba3f42deb55d2a02224c69ee7bd68", null ],
+    [ "CloneCacheView", "cache-view_8c.html#a24da6db3d88540f603a32c5621d7ce28", null ],
+    [ "DestroyCacheView", "cache-view_8c.html#afec8da1d0f7efc2b90ce90f4a15a821b", null ],
+    [ "GetCacheViewAuthenticIndexQueue", "cache-view_8c.html#a944b9ada81ca9fd6990b30fee81db3be", null ],
+    [ "GetCacheViewAuthenticPixelQueue", "cache-view_8c.html#ad61ddf360439c0660a603e19a8a41a8c", null ],
+    [ "GetCacheViewAuthenticPixels", "cache-view_8c.html#a3012abbd7bf702e3ba1d4cc42ceb2942", null ],
+    [ "GetCacheViewChannels", "cache-view_8c.html#a47f155f04e1af471cf780ad88b4c9582", null ],
+    [ "GetCacheViewColorspace", "cache-view_8c.html#a59f5b27596f13f860fd3adc9d2baa99c", null ],
+    [ "GetCacheViewException", "cache-view_8c.html#a358b943016d57d1accb38db98f6f28c9", null ],
+    [ "GetCacheViewExtent", "cache-view_8c.html#a80e064aee957d2896d8b7444b6861f2e", null ],
+    [ "GetCacheViewStorageClass", "cache-view_8c.html#ac3f26e4fb8b9100f76a0a9a409fb2962", null ],
+    [ "GetCacheViewVirtualIndexQueue", "cache-view_8c.html#aa9d0ec85b415d25e4a1e69376148b80a", null ],
+    [ "GetCacheViewVirtualPixelQueue", "cache-view_8c.html#a2ef95750984428af20f9253d4d10da1c", null ],
+    [ "GetCacheViewVirtualPixels", "cache-view_8c.html#a0b4948aa3014ee1d37e4d2d526046595", null ],
+    [ "GetOneCacheViewAuthenticPixel", "cache-view_8c.html#a3cee9e83cd431f67ce72be107248ba3d", null ],
+    [ "GetOneCacheViewVirtualMethodPixel", "cache-view_8c.html#a2c79e3c48d4d16a1b2380de4bd4553a9", null ],
+    [ "GetOneCacheViewVirtualPixel", "cache-view_8c.html#ac137903448313a9123597e839a70edac", null ],
+    [ "QueueCacheViewAuthenticPixels", "cache-view_8c.html#a47af875692f3a377abbdbaa1f2fee490", null ],
+    [ "SetCacheViewStorageClass", "cache-view_8c.html#ad8dd220437d6a5a5b7c691abce11bf37", null ],
+    [ "SetCacheViewVirtualPixelMethod", "cache-view_8c.html#ad77fe676e592a0d96fb4e8105a92af26", null ],
+    [ "SyncCacheViewAuthenticPixels", "cache-view_8c.html#adcc1831018eccb3750621b296b4679d5", null ]
+];

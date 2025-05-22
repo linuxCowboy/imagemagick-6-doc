@@ -1,0 +1,26 @@
+var gem_8h =
+[
+    [ "ConvertHCLpToRGB", "gem_8h.html#a0e8be8b87c5bd205b9edf6b82e4f4537", null ],
+    [ "ConvertHCLToRGB", "gem_8h.html#a00d02b47a6c564f929935e7d033e2e78", null ],
+    [ "ConvertHSBToRGB", "gem_8h.html#af957850a4974b50877347d70b2d781f7", null ],
+    [ "ConvertHSIToRGB", "gem_8h.html#a39de0cfed9e6fd61abdde8d43ebc9d94", null ],
+    [ "ConvertHSLToRGB", "gem_8h.html#a8e4dce3d602e9f31dcd447fbf698c411", null ],
+    [ "ConvertHSVToRGB", "gem_8h.html#a9fca9695271ac4b2cd2fcbfe6c34878f", null ],
+    [ "ConvertHWBToRGB", "gem_8h.html#aa2974406c23a0b67b72929d2a8933784", null ],
+    [ "ConvertLCHabToRGB", "gem_8h.html#adbdbbc49079712099a9c364fd0221c00", null ],
+    [ "ConvertLCHuvToRGB", "gem_8h.html#a3c412a5e862996eaa947288ef27f7d00", null ],
+    [ "ConvertRGBToHCL", "gem_8h.html#a04fe6b953dd46381549fc80988004574", null ],
+    [ "ConvertRGBToHCLp", "gem_8h.html#a47cfb7f206bd83bd2300d62c7d43d5c3", null ],
+    [ "ConvertRGBToHSB", "gem_8h.html#ac5d3e40fb862cf97e6eb1efdfbb1e346", null ],
+    [ "ConvertRGBToHSI", "gem_8h.html#af80f79a17b3e7029f94b0bb1067c9cdf", null ],
+    [ "ConvertRGBToHSL", "gem_8h.html#a15fcc36b23de42f79289ca6d7afd4e3f", null ],
+    [ "ConvertRGBToHSV", "gem_8h.html#a1dacc0c798978efd34c60940b8882502", null ],
+    [ "ConvertRGBToHWB", "gem_8h.html#a1a83c74fd0f0d68ec8678006ddf9d0ab", null ],
+    [ "ConvertRGBToLCHab", "gem_8h.html#a23ac04ba5a07e00126c638b9c97ad553", null ],
+    [ "ConvertRGBToLCHuv", "gem_8h.html#aa5e6510a76d77254cbe59bb14f32124a", null ],
+    [ "ExpandAffine", "gem_8h.html#a7558d86a6626aebef4df891cf6d7fc2d", null ],
+    [ "GenerateDifferentialNoise", "gem_8h.html#adcb3ce098374af19c790024b2d79cce5", null ],
+    [ "GetOptimalKernelWidth", "gem_8h.html#aa7470c3441087b9b8d8a5b3f68f349b1", null ],
+    [ "GetOptimalKernelWidth1D", "gem_8h.html#aa7888ca7cd705bdd458b33ea2f5df2a2", null ],
+    [ "GetOptimalKernelWidth2D", "gem_8h.html#a81c520577102a432b361ed66f8f0edc6", null ]
+];

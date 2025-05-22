@@ -1,0 +1,26 @@
+var xml_tree_8h =
+[
+    [ "XMLTreeInfo", "xml-tree_8h.html#aee0e11ea3b6f2130b37c4d0b6d00e89c", null ],
+    [ "AddChildToXMLTree", "xml-tree_8h.html#aadba73ae0f49a747118e6571965748e5", null ],
+    [ "AddPathToXMLTree", "xml-tree_8h.html#a75ca57af9934c1701be960789a81fbd6", null ],
+    [ "CanonicalXMLContent", "xml-tree_8h.html#adbacd719035a84ec32420d55167fdb0b", null ],
+    [ "DestroyXMLTree", "xml-tree_8h.html#a761b517edf9df5e7a8232cd1a87e7562", null ],
+    [ "GetNextXMLTreeTag", "xml-tree_8h.html#a25ad85a7cac638d035877b9bcdad162d", null ],
+    [ "GetXMLTreeAttribute", "xml-tree_8h.html#a7c190e7b6ee22568ffbf1794d05ea2b6", null ],
+    [ "GetXMLTreeAttributes", "xml-tree_8h.html#a7436752de5360549ea44697abb3d325d", null ],
+    [ "GetXMLTreeChild", "xml-tree_8h.html#a86d86ea1e11867912dea126bbab3d0a0", null ],
+    [ "GetXMLTreeContent", "xml-tree_8h.html#a9594a33e44494e2fa283d1e7d489bb77", null ],
+    [ "GetXMLTreeOrdered", "xml-tree_8h.html#a02b0c6c165af425feb0ed8add3df313b", null ],
+    [ "GetXMLTreePath", "xml-tree_8h.html#ac1fa447b0419df6bf0af3defb92bb004", null ],
+    [ "GetXMLTreeProcessingInstructions", "xml-tree_8h.html#aaf184287be572bd8da084f47fb2672c7", null ],
+    [ "GetXMLTreeSibling", "xml-tree_8h.html#a354538428140e6b320c13b1c7c98b5b7", null ],
+    [ "GetXMLTreeTag", "xml-tree_8h.html#abf7da8ae95e329ffb4bac7ccae684fdc", null ],
+    [ "InsertTagIntoXMLTree", "xml-tree_8h.html#a71b12ed30cb1e76059b5858cbadca91a", null ],
+    [ "NewXMLTree", "xml-tree_8h.html#affc87018fd256740c4dda44f6688a057", null ],
+    [ "NewXMLTreeTag", "xml-tree_8h.html#af83c3cd37e967a6af309a5a6f1fea4c7", null ],
+    [ "ParseTagFromXMLTree", "xml-tree_8h.html#abc142a4b8912e861c92b70549c2a72f0", null ],
+    [ "PruneTagFromXMLTree", "xml-tree_8h.html#a832421d4a7e25f8960285f278ced818b", null ],
+    [ "SetXMLTreeAttribute", "xml-tree_8h.html#a84991ad2a4c877e7f2a466e24678cf57", null ],
+    [ "SetXMLTreeContent", "xml-tree_8h.html#a1d1ad9320cb285c8f7479e079e4f2373", null ],
+    [ "XMLTreeInfoToXML", "xml-tree_8h.html#af451ad1cc9f239b4803a0449757c3225", null ]
+];

@@ -1,0 +1,25 @@
+var distort_8c =
+[
+    [ "DistortImageTag", "distort_8c.html#abc493fa23ad0bc761d9983677918c5ec", null ],
+    [ "DistortResizeImageTag", "distort_8c.html#ac5973308563a02a96525c9507b371421", null ],
+    [ "ExpandBounds", "distort_8c.html#a9f0c5eef9298a31a824525cec19f4be9", null ],
+    [ "InitalBounds", "distort_8c.html#a76101b4cbd31f09f8b4a573799e2c45a", null ],
+    [ "ScaleFilter", "distort_8c.html#a49e66a8a2b3ff473fc5b34fe9e5d43fc", null ],
+    [ "SparseColorTag", "distort_8c.html#a12f38aed659115fdd916538a492d1438", null ],
+    [ "AffineArgsToCoefficients", "distort_8c.html#adc66b35fb5873a37529db8da6e2ad37a", null ],
+    [ "AffineTransformImage", "distort_8c.html#ad47d633eeac4def27f4afffb46b17c75", null ],
+    [ "CoefficientsToAffineArgs", "distort_8c.html#a42992de12a8f89a80d7ff7ad1e551593", null ],
+    [ "DistortImage", "distort_8c.html#af7ba29a36dd2955b3bd84a74adb337fb", null ],
+    [ "DistortResizeImage", "distort_8c.html#a14ff36427f3abd266c331f353e8c8d55", null ],
+    [ "GenerateCoefficients", "distort_8c.html#ae371e0cde156d0da74b89892eb23ef37", null ],
+    [ "InvertAffineCoefficients", "distort_8c.html#a4a87fb508ca0e93ead438bbd526773fe", null ],
+    [ "InvertPerspectiveCoefficients", "distort_8c.html#a395acb6914821ab588fa82895d2f75ee", null ],
+    [ "MagickRound", "distort_8c.html#a3d1261ac8858c8fa8c407d1cda46b44c", null ],
+    [ "poly_basis_dx", "distort_8c.html#a20f5e6c6b5cdc75e11620e8e94831227", null ],
+    [ "poly_basis_dy", "distort_8c.html#a687f55a69455d21c6134dd75ba43fdd4", null ],
+    [ "poly_basis_fn", "distort_8c.html#abeb18b1c3056f6d18dd92a5b5257ed84", null ],
+    [ "poly_basis_str", "distort_8c.html#a69e70ca95451ec1e4d924284ee19ca5c", null ],
+    [ "poly_number_terms", "distort_8c.html#a8f3910349380bcd7cc6118843c0f48ce", null ],
+    [ "RotateImage", "distort_8c.html#af1f744b700950e61121b03bdae51aef0", null ],
+    [ "SparseColorImage", "distort_8c.html#a0e97cee7a83669393916e93d938d1920", null ]
+];

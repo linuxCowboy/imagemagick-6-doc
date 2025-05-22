@@ -1,0 +1,28 @@
+var studio_8h =
+[
+    [ "DirectoryListSeparator", "studio_8h.html#ac8adb63ee8a6f8adcf42c41c24b7393f", null ],
+    [ "DirectorySeparator", "studio_8h.html#a3c4bb3cdf8454eb5323de19ae57e296b", null ],
+    [ "DisableMSCWarning", "studio_8h.html#a8f7a923a23476d100a43a763b515ce93", null ],
+    [ "EditorOptions", "studio_8h.html#a859b939e2a80f94bfa12163135323184", null ],
+    [ "Exit", "studio_8h.html#a7fb54afd6da143e9292dea54ddf6d6d3", null ],
+    [ "IsBasenameSeparator", "studio_8h.html#a3a4d3ed9a524b8f8d31f5d652578d7f4", null ],
+    [ "magick_restrict", "studio_8h.html#a3633e3ebaf6c00952a9c95a09e66a519", null ],
+    [ "MAGICK_SSIZE_MAX", "studio_8h.html#a6ed4820a1b34162ff72d92ec040dbe3d", null ],
+    [ "MAGICK_SSIZE_MIN", "studio_8h.html#ad866455bad2febd3baf57927db9db1b5", null ],
+    [ "MAGICKWAND_CONFIG_H", "studio_8h.html#afc2a3b1c78d159c307c664dd99ee5fd1", null ],
+    [ "MAGICKWAND_IMPLEMENTATION", "studio_8h.html#a9a477b787ec438089f37ef2d3cff15b7", null ],
+    [ "MAGICKWAND_POSIX_SUPPORT", "studio_8h.html#ab69b5d47b864b65f974660b9c0fefeb4", null ],
+    [ "NAMLEN", "studio_8h.html#abb80c1eb90e546dbdc94f79e74ffd787", null ],
+    [ "O_BINARY", "studio_8h.html#a36fa9b2e726512bc17a7a6d3e39002be", null ],
+    [ "PATH_MAX", "studio_8h.html#ae688d728e1acdfe5988c7db45d6f0166", null ],
+    [ "ProcessPendingEvents", "studio_8h.html#a966daf1aedd3b59a5a0a10bb56e2f827", null ],
+    [ "ReadCommandlLine", "studio_8h.html#ab89a8ea736f843e85f0a2e64e892f68e", null ],
+    [ "RestoreMSCWarning", "studio_8h.html#a469286edde2905b8a58110aa67883abe", null ],
+    [ "S_ISDIR", "studio_8h.html#a3746cdc5aac871e6f6504fbcbd29ef1d", null ],
+    [ "S_ISREG", "studio_8h.html#aad0f32c2c182238f2ff71c83e6ab65a0", null ],
+    [ "S_MODE", "studio_8h.html#af90af1bc68960811e82d0ca3782b8c46", null ],
+    [ "SetNotifyHandlers", "studio_8h.html#a8eb7e45a2f3be52debafe4570da65bfb", null ],
+    [ "STDC", "studio_8h.html#aba370ddb25a3dad61003a0f44aa42133", null ],
+    [ "STDIN_FILENO", "studio_8h.html#afcf80a6d91178952d107ad00b165752b", null ],
+    [ "X11_PREFERENCES_PATH", "studio_8h.html#a609041f5c2480254308bc39f0a5bc0ff", null ]
+];
