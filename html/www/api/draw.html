@@ -26,7 +26,7 @@
   <meta property="og:site_name" content="ImageMagick"/>
   <meta property="og:description" content="Create, Edit, Compose, or Convert Bitmap Images"/>
   
-  <link href="../../api/draw.html" rel="canonical"/>
+  <link href="../api/draw.html" rel="canonical"/>
   <link href="../../../../images/wand.png" rel="icon"/>
   <link href="../../../../images/wand.ico" rel="shortcut icon"/>
   <link href="../../www/css/magick.css" rel="stylesheet"/>
@@ -78,7 +78,7 @@
 <div class="magick-header">
 <p class="text-center"><a href="draw.html#AcquireDrawInfo">AcquireDrawInfo</a> • <a href="draw.html#CloneDrawInfo">CloneDrawInfo</a> • <a href="draw.html#DestroyDrawInfo">DestroyDrawInfo</a> • <a href="draw.html#DrawAffineImage">DrawAffineImage</a> • <a href="draw.html#DrawClipPath">DrawClipPath</a> • <a href="draw.html#DrawClippingMask">DrawClippingMask</a> • <a href="draw.html#DrawCompositeMask">DrawCompositeMask</a> • <a href="draw.html#DrawGradientImage">DrawGradientImage</a> • <a href="draw.html#DrawImage">DrawImage</a> • <a href="draw.html#DrawPatternPath">DrawPatternPath</a> • <a href="draw.html#DrawPrimitive">DrawPrimitive</a> • <a href="draw.html#GetAffineMatrix">GetAffineMatrix</a></p>
 
-<h2><a href="../../api/MagickCore/draw_8c.html" id="AcquireDrawInfo"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="AcquireDrawInfo"></a></h2>
 
 <p>AcquireDrawInfo() returns a DrawInfo structure properly initialized.</p>
 
@@ -88,7 +88,7 @@
 DrawInfo *AcquireDrawInfo(void)
 </pre>
 
-<h2><a href="../../api/MagickCore/draw_8c.html" id="CloneDrawInfo"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="CloneDrawInfo"></a></h2>
 
 <p>CloneDrawInfo() makes a copy of the given draw_info structure.  If NULL is specified, a new DrawInfo structure is created initialized to default values.</p>
 
@@ -115,7 +115,7 @@ DrawInfo *CloneDrawInfo(const ImageInfo *image_info,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DestroyDrawInfo"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DestroyDrawInfo"></a></h2>
 
 <p>DestroyDrawInfo() deallocates memory associated with an DrawInfo structure.</p>
 
@@ -137,7 +137,7 @@ DrawInfo *DestroyDrawInfo(DrawInfo *draw_info)
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawAffineImage"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawAffineImage"></a></h2>
 
 <p>DrawAffineImage() composites the source over the destination image as dictated by the affine transform.</p>
 
@@ -168,7 +168,7 @@ MagickBooleanType DrawAffineImage(Image *image,const Image *source,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawClipPath"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawClipPath"></a></h2>
 
 <p>DrawClipPath() draws the clip path on the image mask.</p>
 
@@ -199,7 +199,7 @@ MagickBooleanType DrawClipPath(Image *image,const DrawInfo *draw_info,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawClippingMask"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawClippingMask"></a></h2>
 
 <p>DrawClippingMask() draws the clip path and returns it as an image clipping mask.</p>
 
@@ -238,7 +238,7 @@ Image *DrawClippingMask(Image *image,const DrawInfo *draw_info,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawCompositeMask"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawCompositeMask"></a></h2>
 
 <p>DrawCompositeMask() draws the mask path and returns it as an image mask.</p>
 
@@ -277,7 +277,7 @@ Image *DrawCompositeMask(Image *image,const DrawInfo *draw_info,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawGradientImage"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawGradientImage"></a></h2>
 
 <p>DrawGradientImage() draws a linear gradient on the image.</p>
 
@@ -304,7 +304,7 @@ MagickBooleanType DrawGradientImage(Image *image,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawImage"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawImage"></a></h2>
 
 <p>DrawImage() draws a graphic primitive on your image.  The primitive may be represented as a string or filename.  Precede the filename with an "at" sign (@) and the contents of the file are drawn on the image.  You can affect how text is drawn by setting one or more members of the draw info structure.</p>
 
@@ -330,7 +330,7 @@ MagickBooleanType DrawImage(Image *image,const DrawInfo *draw_info)
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawPatternPath"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawPatternPath"></a></h2>
 
 <p>DrawPatternPath() draws a pattern.</p>
 
@@ -365,7 +365,7 @@ MagickBooleanType DrawPatternPath(Image *image,const DrawInfo *draw_info,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="DrawPrimitive"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="DrawPrimitive"></a></h2>
 
 <p>DrawPrimitive() draws a primitive (line, rectangle, ellipse) on the image.</p>
 
@@ -396,7 +396,7 @@ MagickBooleanType DrawPrimitive(Image *image,const DrawInfo *draw_info,
 
 <dd>  </dd>
 </dl>
-<h2><a href="../../api/MagickCore/draw_8c.html" id="GetAffineMatrix"></a></h2>
+<h2><a href="../api/MagickCore/draw_8c.html" id="GetAffineMatrix"></a></h2>
 
 <p>GetAffineMatrix() returns an AffineMatrix initialized to the identity matrix.</p>
 
