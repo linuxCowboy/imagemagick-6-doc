@@ -1,0 +1,2792 @@
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../images/crop/usage.css">
+<title>Cutting and Bordering -- IM v6 Examples</title>
+<link rel="icon" href="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
+<link rel="shortcut" href="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
+<link rel="canonical" href="https://legacy.imagemagick.org/Usage/crop/">
+</head><body bgcolor="#B0C4DE">
+
+<h1>ImageMagick v6 Examples -- <br>
+    <img src="../images/crop/space.gif" width="50" height="1">
+    Cutting and Bordering</h1>
+
+<div align="justify">
+
+<dl>
+<dt><b>Index</b>
+</dt><dt><a href="https://legacy.imagemagick.org/Usage/"><img src="../images/crop/granitesm_left.gif" border="0" width="15" height="15"> ImageMagick Examples Preface and Index</a>
+</dt><dd><a href="#crop"><img src="../images/crop/granitesm_right.gif" border="0" width="15" height="15"> Crop (cutting up images in a free form way)</a>
+    <ul>
+    <li><a href="#crop">The basic crop operator</a>
+    </li><li><a href="#crop_missed">The Missed Image (from a bad crop)</a>
+    </li><li><a href="#crop_page">Crop an Image with Existing Virtual Canvas</a>
+    </li><li><a href="#crop_repage">Removing Virtual Canvas from Results</a> using +repage <b>***</b>
+    </li><li><a href="#crop_viewport">Viewport Crop with Virtual Canvas Adjustments</a>
+    </li><li><a href="#crop_gravity">Crop Relative to Gravity</a>
+    </li><li><a href="#crop_percent">Crop a Percentage of an Image</a>
+    </li><li><a href="#crop_tile">Tile Cropping, sub-dividing one image into multiple images</a>
+    </li><li><a href="#crop_tile_centered">Centered Tile Cropping, leaving remainders around the edge</a>
+    </li><li><a href="#crop_strip">Strip Cropping, cropping out rows and columns</a>
+    </li><li><a href="#crop_quad">Quadrants, cutting around a single point</a>
+    </li><li><a href="#crop_neg_offset">Using Negative Offsets, remove bottom or left edge</a>
+    </li><li><a href="#crop_equal">Cropping into roughly Equally Sized Divisions</a>
+    </li><li><a href="#crop_spaced">Separating Spaced-out Tiling Images</a>
+    </li></ul>
+</dd><dd><a href="#border"><img src="../images/crop/granitesm_right.gif" border="0" width="15" height="15"> Adding/Removing Image Edges</a>
+    <ul>
+    <li><a href="#border">Border, adding space around the edge of an image</a>
+    </li><li><a href="#frame">Frame,  adding 3D-like borders to images</a>
+    </li><li><a href="#shave">Shave,  removing the edges from images</a>
+    </li><li><a href="#extent">Extent, direct image size adjustment</a>
+    </li></ul>
+</dd><dd><a href="#splice"><img src="../images/crop/granitesm_right.gif" border="0" width="15" height="15"> Adding/Removing Rows, Columns and Edges</a>
+    <ul>
+    <li><a href="#splice">Splice, adding a row, column or edge</a>
+    </li><li><a href="#chop">Chop, removing a row, column or edge</a>
+    </li></ul>
+</dd><dd><a href="#advanced"><img src="../images/crop/granitesm_right.gif" border="0" width="15" height="15"> Advanced Cropping Techniques</a>
+    <ul>
+    <li><a href="#crop_aspect">Crop to a Given Aspect Ratio</a>
+    </li></ul>
+</dd><dd><a href="#trim"><img src="../images/crop/granitesm_right.gif" border="0" width="15" height="15"> Trim, the 'Auto-Crop' Operator</a>
+    <ul>
+    <li><a href="#trim">Using Trim</a>
+    </li><li><a href="#trim_color">Trimming with a Specific Color</a>
+    </li><li><a href="#trim_oneside">Trimming just One Side of an Image</a>
+    </li><li><a href="#trim_fuzz">Trimming 'Fuzzy' Images</a> -- Low Quality JPEG Images
+    </li><li><a href="#trim_noisy">Trimming 'Noisy' Images</a> -- Scanned or Video Images
+    </li></ul>
+</dd></dl><p></p>
+
+Here we explore the ImageMagick operations which allow you to put your images
+under the knife, and add frames and borders around the image.  That is we look
+at operations which Changes an image's size, without scaling the image
+content. <p></p>
+
+You may think this is a simple operation and it is.  So simple, that IM
+provides a huge number of ways and methods of actually doing this task.  So
+many that I needed to give it its own page of examples just to demonstrate
+them all.  <p></p>
+
+<hr><!-- ---------------------------------------------------------------- -->
+
+<a name="crop"></a>
+<h2>Crop <font size="3">(cutting images down to size)</font></h2>
+
+<h3>Crop and Canvas Page</h3>
+
+The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" image operator
+will simply cut out the part of all the images in the current sequence at the
+size and position you specify by its geometry argument.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:                    rose.gif
+  convert rose: -crop 40x30+10+10  crop.gif
+  convert rose: -crop 40x30+40+30  crop_br.gif
+  convert rose: -crop 40x30-10-10  crop_tl.gif
+  convert rose: -crop 90x60-10-10  crop_all.gif
+</code><code execute="" err="crop_error.txt">  convert rose: -crop 40x30+90+60  crop_miss.gif
+</code></pre></td></tr></tbody></table><nobr>
+ <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" width="70" height="46" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+ <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+ <a href="https://legacy.imagemagick.org/Usage/crop/crop.gif"><img src="../images/crop/crop.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+ <a href="https://legacy.imagemagick.org/Usage/crop/crop_br.gif"><img src="../images/crop/crop_br.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+ <a href="https://legacy.imagemagick.org/Usage/crop/crop_tl.gif"><img src="../images/crop/crop_tl.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+ <a href="https://legacy.imagemagick.org/Usage/crop/crop_all.gif"><img src="../images/crop/crop_all.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+ <a href="https://legacy.imagemagick.org/Usage/crop/crop_miss.gif"><img src="../images/crop/crop_miss.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+Just so you can check on exactly what happened here is output from
+"<code>identify</code>" on the results of the crop above.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="" nowarn="" out="crop_indent.txt">
+  identify rose: crop.gif crop_br.gif crop_tl.gif \
+                 crop_all.gif crop_miss.gif
+</code></pre></td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_indent.txt"><img src="../images/crop/crop_indent.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Notice that the size of the displayed image (its <a href="https://legacy.imagemagick.org/Usage/basics/#virtual_canvas">Virtual Canvas</a>) has not been effected by
+the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operation.
+The actual image itself has been cropped, and may be smaller, but the canvas
+on which the GIF image is displayed is still the same size as the original
+canvas. <p></p>
+
+You will also notice that the size of the actual image produces may not be the
+actual size you requested from the crop.   It could be very much smaller that
+what you expected, as the crop itself was either partially or fully outside
+the actual image area being cropped. <p></p>
+
+You will also notice that the 'offset' of the image on the <a href="https://legacy.imagemagick.org/Usage/basics/#virtual_canvas">Virtual Canvas</a> was in many cases also
+changed so that the pixels of cropped image is still in exactly the same
+position as they were in the original image. That is the image contents itself
+does not move, even though the actual image itself is smaller. <p></p>
+
+This means if you now modify the smaller image, then overlay the image (using
+<a href="https://legacy.imagemagick.org/Usage/layers/#flatten">image layering operators</a> back over the
+original, it will fit back exactly where the sub-image originally came from.
+<p></p>
+
+That is IM retains the 'virtual canvas', 'page', or 'layering' information of
+the image so as to preserve it for later use.  This is especially important
+for the correct working for GIF animation handling. For more information on
+this see.  <a href="https://legacy.imagemagick.org/Usage/anim_basics/#deconstruct">Deconstruct GIF
+Animations</a>. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  GIF images make active use of the 'page' or 'virtual canvas', size and
+  offset information in images cropped by IM.  If you don't want this
+  information remove it with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" immediately after the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>". <p></p>
+
+  Note that many image formats don't save this virtual page/canvas
+  information information, so saving to such formats automatically removes
+  it.  JPEG is a typical example of a format that removes this info. <p></p>
+
+  The PNG format doesn't make much use of page/canvas info (except in the
+  multi-png (MNG) format) but it does saves the page offset information
+  (even negative offsets).   IM will also add a small amount of meta-data to
+  preserve the virtual canvas size for later use by other IM commands. <p></p>
+
+  Because of this preservation, I strongly recommend you still apply a
+  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" even when
+  saving to JPEG or other page-less image format when you will not need that
+  information, as a pre-caution, and to make it obvious you don't what it.
+  <p></p>
+
+</i></font></td></tr></tbody></table><p></p>
+
+
+<a name="missed"></a>
+<a name="crop_missed"></a>
+<h3>The Missed Image (from a bad crop)</h3>
+
+The last image in the above example (EG: "<code>crop_miss.gif</code>") also
+produced special empty image.  Such images can be produced by operations such
+as <a href="#crop">Crop</a>, <a href="#trim">Trim</a>, <a href="https://legacy.imagemagick.org/Usage/anim_basics/#compare">Layer Comparison</a>, and even <a href="https://legacy.imagemagick.org/Usage/anim_opt/#optframe">GIF Animation Optimizations</a>, that generate
+empty or non-sensible results. <p></p>
+
+For example in the previous example above, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operation missed the actual
+image it was cropping, so it produced this special 'missed' image, as well as
+some informational warning messages...  <p></p>
+
+<div align="center">
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_error.txt"><img src="../images/crop/crop_error.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+The output image, or 'missed' image, is a minimal image, one pixel in size at
+a 0 offset, but with original images page or canvas size, as well as any other
+meta-data the image may have associated. Here it represents the 'empty' or
+'zero sized' image that should have been returned by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>", but as no image format can
+output an image of 'zero' dimensions, a single transparent pixel image is used
+instead. <p></p>
+
+Just so you can see more clearly, here is the "<code><a href="https://legacy.imagemagick.org/Usage/basics/#identify">identify</a></code>" output of the missed image,
+as well as a 'IM pixel enumeration' of that single pixel image, showing that
+it only contains one single transparent pixel.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="" nowarn="" out="crop_miss_ident.txt">
+  identify crop_miss.gif
+</code></pre></td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_miss_ident.txt"><img src="../images/crop/crop_miss_ident.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  crop_miss.gif  crop_miss_data.txt
+</code></pre></td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_miss_data.txt"><img src="../images/crop/crop_miss_data.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+This 'missed' image is basically same as creating a "<code><a href="https://legacy.imagemagick.org/Usage/files/#null">null:</a></code>" image but with the original source
+images page or virtual canvas size set (but not its offset), and all other
+image meta-data, such as GIF animation timing delays. The GIF disposal method
+however may be modified to ensure animations remain correct, after cropping.
+<p></p>
+
+Basically you need to keep in mind that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" and other similarly related
+operators can produce a special 'missed' image.  As such you should plan to
+look for the warning message, or this special 'Missed Image' when writing a
+script using IM, if such a minimal image is possible and can cause you
+problems. <p></p>
+
+If you don't want the warning message (for example you expect and handle, the
+occasionally 'missed' image), you can add a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?quiet">-quiet</a></code>" <a href="https://legacy.imagemagick.org/Usage/basics/#controls">Operational Control Setting</a> to the command
+line.  This tells IM to not output informational warning messages, only real
+errors. <p></p>
+
+At this time there is no method to remove any 'missed', or "<code><a href="https://legacy.imagemagick.org/Usage/files/#null">null:</a></code>" images from the current image
+sequence. However such a method has been proposed for a future release of IM.
+Mail me if you find you need such a method. <p></p>
+
+
+<a name="crop_page"></a>
+<h3>Crop an image with existing Virtual Canvas</h3>
+
+If an image already has an existing <a href="https://legacy.imagemagick.org/Usage/basics/#virtual_canvas">Virtual Canvas</a>, (for example a frame of a GIF animation), then the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operation will be
+applied relative to the virtual canvas, and NOT to the actual image. <p></p>
+
+That is it will try to preserve the offset of the actual pixel data of the
+cropped image on the canvas.  That is a specific pixel before the crop should
+still be located at the same offset relative to the virtual canvas afterward.
+In this way cropping of layered images, or GIF animations will continue to
+work right, even though the 'canvas' itself was not cropped. <p></p>
+
+Here we create an image centered on a page canvas, and we crop it in various
+ways.  As before the canvas size itself is not modified by the operation.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="" out="crop_page_ident.txt">
+  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+  convert paged.gif -crop 32x32+16+16  crop_page.gif
+  convert paged.gif -crop 32x32+0+0    crop_page_tl.gif
+  convert paged.gif -crop 32x32+32+32  crop_page_br.gif
+  convert paged.gif -crop 60x60+2+2    crop_page_all.gif
+  convert paged.gif -quiet -crop 32x32+56+56  crop_page_miss.gif
+<n>  identify paged.gif crop_page.gif crop_page_tl.gif crop_page_br.gif \
+           crop_page_all.gif crop_page_miss.gif
+</n></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" width="64" height="64" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_page.gif"><img src="../images/crop/crop_page.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_page_tl.gif"><img src="../images/crop/crop_page_tl.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_page_br.gif"><img src="../images/crop/crop_page_br.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_page_all.gif"><img src="../images/crop/crop_page_all.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_page_miss.gif"><img src="../images/crop/crop_page_miss.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_page_ident.txt"><img src="../images/crop/crop_page_ident.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+That last example in the above was of course, the special <a href="#crop_missed">Missed Image</a>.  Note that I suppressed the normal
+warning message from IM using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?quiet">-quiet</a></code>" setting. <p></p>
+
+Just so you can see just what is going on, lets have a closer look at the
+paged crop of the lower right corner of the image.  Here I have drawn a
+semi-transparent square over the area that was cropped.
+
+<a name="crop_area"></a>
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert paged.gif -page 64x64+32+32 -size 32x32 xc:'#fff8' \
+          -matte  -background none  -mosaic    crop_area_br.png
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" width="64" height="64" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_area_br.png"><img src="../images/crop/crop_area_br.png" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_page_br.gif"><img src="../images/crop/crop_page_br.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+From this you can see just what is happening.   Even though the crop is
+contained completely in the page canvas, the crop did not cover the actual
+image completely. The result is that the actual image is smaller than the user
+may have intended, but still positioned on a larger canvas or page. <p></p>
+
+
+<a name="crop_repage"></a>
+<h3>Removing Virtual Canvas from Results</h3>
+
+If this <a href="https://legacy.imagemagick.org/Usage/basics/#virtual_canvas">Virtual Canvas</a> information is
+not wanted, then you can use the special "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" operator to reset the
+page canvas and position to match the actual cropped image.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 40x30+10+10  +repage  repage.gif
+  convert rose: -crop 40x30+40+30  +repage  repage_br.gif
+  convert rose: -crop 40x30-10-10  +repage  repage_tl.gif
+  convert rose: -crop 90x60-10-10  +repage  repage_all.gif
+  convert rose: -quiet  -crop 40x30+90+60  +repage  repage_miss.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" width="70" height="46" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/repage.gif"><img src="../images/crop/repage.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/repage_br.gif"><img src="../images/crop/repage_br.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/repage_tl.gif"><img src="../images/crop/repage_tl.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/repage_all.gif"><img src="../images/crop/repage_all.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/repage_miss.gif"><img src="../images/crop/repage_miss.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+This is of course the result new users of IM would normally have expected from
+the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator.  It
+is actually such a common thing to do that you could call it a rule of thumb.
+<p></p>
+
+<div align="center"><b>
+       Always use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" after any 'crop' like operation.
+<br>        Unless you actually need to preserve that info.
+</b></div><p></p>
+
+The last image in the above is of course the special <a href="#crop_missed">crop missed image</a>, but I supressed the warning message using the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?quiet">-quiet</a></code>" operational
+setting.  <p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/warning.gif" width="28" height="28"><img src="../images/crop/space.gif" width="12" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  For IM version 5 and earlier the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" operation was handled
+  by a "<code>-page +0+0</code>" argument sequence, usually just before saving
+  to format that uses virtual canvas and offset information, such as GIF.  But
+  that was only usable when either reading or writing the image to a file,
+  preventing its use between multiple image processing operations.  <p></p>
+
+  With IM version 6, <a href="https://legacy.imagemagick.org/Usage/basics/#cmdline">command line
+  restructure</a>, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?page">-page</a></code>" option became purely an image read/create setting for
+  use in creating <a href="https://legacy.imagemagick.org/Usage/anim_basics/#gif_anim">GIF animations</a> and
+  <a href="https://legacy.imagemagick.org/Usage/layers/#flatten">Layers of Images</a>. As such separate
+  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">-repage</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?set">-set</a> page</code>" operators were added to allow users to set or change
+  the virtual canvas information.
+
+</i></font></td></tr></tbody></table></p>
+
+
+<a name="crop_viewport"></a> <h3>Viewport Cropping with Virtual Canvas
+Adjustments</h3>
+
+From ImageMagick version 6.2.4-5, you can add a new special flag to the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" argument. This
+flag '<code>!</code>' will tell crop to adjust the  <a href="https://legacy.imagemagick.org/Usage/basics/#virtual_canvas">Virtual Canvas</a> information of the
+returned image so that it is relative to the area cropped.  <p></p>
+
+In other words, regardless of the resulting size of the actual image cropped,
+the canvas and offset of the image returned will be adjusted to match the area
+you requested cropped.  You can think of this flag as cropping an image to
+match a 'window' or 'viewport' of the crop area.  Even if half the image is
+not visible in that 'window', the virtual canvas and offset of the part
+returned will match that 'viewport'. <p></p>
+
+For example...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 40x30+10+10\!  crop_vp.gif
+  convert rose: -crop 40x30+40+30\!  crop_vp_br.gif
+  convert rose: -crop 40x30-10-10\!  crop_vp_tl.gif
+  convert rose: -crop 90x60-10-10\!  crop_vp_all.gif
+  convert rose: -quiet -crop 40x30+90+60\!  crop_vp_miss.gif
+</code><code execute="" nowarn="" out="crop_vp_ident.txt">
+  identify rose.gif  crop_vp.gif crop_vp_br.gif crop_vp_tl.gif \
+              crop_vp_all.gif  crop_vp_miss.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" width="70" height="46" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_vp.gif"><img src="../images/crop/crop_vp.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_vp_br.gif"><img src="../images/crop/crop_vp_br.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_vp_tl.gif"><img src="../images/crop/crop_vp_tl.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_vp_all.gif"><img src="../images/crop/crop_vp_all.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_vp_miss.gif"><img src="../images/crop/crop_vp_miss.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_vp_ident.txt"><img src="../images/crop/crop_vp_ident.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The '<code>!</code>' character has special significance to some UNIX
+  shells, like "<code>csh</code>", and must be escaped with a backslash,
+  even when placed inside quotes.
+</i></font></td></tr></tbody></table><p></p>
+
+Notice how the canvas size of the image returned now matches the area in which
+the image was cropped. <p></p>
+
+For crops of images that are completely within the actual image, the result
+will be equivalent to following the crop with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>". However any partial or
+missed cropping of the image, the result will a larger canvas and a possible
+offset to the resulting image.  As such this is no substitute for doing a
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" after cropping
+to reset page/canvas information. <p></p>
+
+However you can follow a 'viewport crop' with a <a href="https://legacy.imagemagick.org/Usage/layers/#flatten">Flatten</a> to 'fill out' the images new virtual canvas with real pixels.
+That is you will be left with an image that is guaranteed to be the size of the
+requested crop, with any 'missed' areas filled out with the current "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color 'viewport'.
+<p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+
+For example when <a href="https://legacy.imagemagick.org/Usage/thumbnails/#pad">Padding out an Image</a>.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 100x100-15-25\! -background skyblue -flatten \
+          crop_viewport.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_viewport.gif"><img src="../images/crop/crop_viewport.gif" align="middle" vspace="2" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Flattening an image after a viewport crop is actually equivalent to using the
+<a href="#extent">Extent Operator</a> (see below), to provide a 'padded
+crop'. <p></p>
+
+A 'viewport crop' flag is also very important when cropping GIF animations, as
+it not only adjusts the canvas size, but also insures all the image frames are
+still correctly positioned within the cropped area.  Without this option
+cropping a GIF animation is very difficult requiring external correction of
+the image canvas size and offsets.  For and example of this, see <a href="https://legacy.imagemagick.org/Usage/anim_mods/#crop_viewport">Animation Crop, with the canvas too</a>.
+<p></p>
+
+In many ways a 'viewport crop' is closely related to the special <a href="https://legacy.imagemagick.org/Usage/distorts/#distort_viewport">Viewport Distort Setting</a> in that
+both act is if they are a 'window' into the resulting image.  Both can be used
+as a 'cropping' method. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The '<code>!</code>' flag can NOT be used when generating multi-image
+  <a href="#crop_tile">Tiled crops</a>, or with equal-area tile cropping,
+  where it has a different meaning. See the appropriate sections below.
+</i></font></td></tr></tbody></table><p></p>
+
+
+<a name="crop_gravity"></a>
+<h3>Crop relative to Gravity</h3>
+
+The offset position of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" by default is relative to the top-left corner of the image.
+However by setting the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" setting, you can tell "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" to cut the image relative to
+either the center, corner, or an edge of the image. <p></p>
+
+The most common use of a gravitated crop, is to crop the '<code>center</code>'
+of an image.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:  -gravity Center  -crop 32x32+0+0 +repage  crop_center.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_center.gif"><img src="../images/crop/crop_center.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" setting
+does not just effect the initial 'zero' position of the crop but it also
+effects the direction of the crop offset. <p></p>
+
+For example if you use a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" of '<code>South</code>', and offset of
+'<code>+0+5</code>' will offset the crop area upward, instead of downward as
+it normally would.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:  -gravity South  -crop 20x20+0+5   crop_south.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_south.gif"><img src="../images/crop/crop_south.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Note the position of the crop example above.  I purposely left off the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" operation so you
+can see how the crop area was displaced from the bottom edge of the image.
+<p></p>
+
+Also notice that the crop area is not only relative to bottom (southern) edge,
+but that the area is center 'justified' to be middle of the bottom edge.  This
+is done with all gravity effected operations. <p></p>
+
+
+<a name="crop_percent"></a>
+<h3>Crop a Percentage of an Image</h3>
+
+The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator also
+understands how to crop an image to just a percentage of its original size.
+
+For example this will half the size of the image.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:   -crop 50%x+0+0      crop_half.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_half.gif"><img src="../images/crop/crop_half.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  If only one size number is given, then that value is used for both the width
+  and height percentages and the final size of the area that is being cropped
+  will be rounded to nearest integer.   The offset is not optional.
+</i></font></td></tr></tbody></table><p></p>
+
+Note that while the size can be a percentage the offset will always be in
+pixels.  You can not provide an offset as a percentage of the image size. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:   -crop 50%x+30+20      crop_percent.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_percent.gif"><img src="../images/crop/crop_percent.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  When a crop is given with an offset you <b>must</b> supply an
+  '<code>x</code>' symbol in the argument so that the argument can be
+  interpreted correctly. This is especially important when only a single
+  number is provided for both width and height of the crop area. <p></p>
+
+  As such you can not use an argument like '<code>50%+30+20</code> which
+  is an error, and will result in crop silently doing nothing.
+
+</i></font></td></tr></tbody></table><p></p>
+
+More commonly a percentage crop is done from the center of an image.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:  -gravity Center -crop 50x80%+0+0  crop_percent_center.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_percent_center.gif"><img src="../images/crop/crop_percent_center.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The percentage symbol '<code>%</code>' can appear anywhere in an argument,
+  and if given will refer to both width and height numbers.  It is a flag
+  that just declares that the 'image size' parts are a percentage fraction
+  of the images virtual canvas or page size.  Offsets are always given in
+  pixels.
+</i></font></td></tr></tbody></table><p></p>
+
+You can also use a 'viewport crop' flag with percentage crops, to
+automatically set the canvas size and offset of the crop, to the area being
+cropped.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:  -gravity Center -crop 50%\!  crop_percent_vp.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_percent_vp.gif"><img src="../images/crop/crop_percent_vp.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  You can not use percent sizes for tile cropping (see next).  As such if the
+  offset is not provided, and a percent size is given (as above) an offset of
+  +0+0 is assumed. <p></p>
+
+</i></font></td></tr></tbody></table><p></p>
+
+The '<code>!</code>' flag means a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" is not needed. Caution however is still recommended, for
+input images that may also have virtual canvas size and offsets.  <p></p>
+
+<a name="crop_tile"></a>
+<h3>Tile Cropping, sub-dividing one image into multiple images</h3>
+
+One of the more useful aspects of crop is when you don't give a specific
+position to the crop command.  That is you give a size, and not a position
+within the image to crop.  In this case instead of generating just one image,
+crop generates a whole series of images..
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="" out="tiles_ident.txt">
+<c>  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+<z>  convert paged.gif  +gravity -crop 32x32  tiles_%d.gif
+<n>  identify paged.gif tiles_?.gif
+</n></z></c></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" width="64" height="64" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_0.gif"><img src="../images/crop/tiles_0.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_1.gif"><img src="../images/crop/tiles_1.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_2.gif"><img src="../images/crop/tiles_2.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_3.gif"><img src="../images/crop/tiles_3.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_ident.txt"><img src="../images/crop/tiles_ident.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+If you just want to extract a specific number of tiles from an image have a look
+at <a href="#crop_equal">Cropping into roughly Equally Sized Divisions</a>
+below. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  It is a good idea to make sure gravity is turned off using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">+gravity</a></code>".  This is because in
+  one special case (centered percentage crop) the gravity setting can turn
+  off tile cropping.  Other effects of gravity on tiled cropping is also
+  undefined.
+</i></font></td></tr></tbody></table><p></p>
+
+By using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mosaic">-mosaic</a></code>" or
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?flatten">-flatten</a></code>" image
+layering operators, (see <a href="https://legacy.imagemagick.org/Usage/layers/#flatten">Layer Flatten</a>)  you
+can layer these images all on top of each other, restoring the original image.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert tiles_[0-3].gif -background white -mosaic  tiles_mosaic.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_mosaic.gif"><img src="../images/crop/tiles_mosaic.gif" width="64" height="64" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+However as you can see the virtual canvas of the image has been filled with
+the background color by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mosaic">-mosaic</a></code>". <p></p>
+
+An alternative is to use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a> merge</code>" (see <a href="https://legacy.imagemagick.org/Usage/layers/#merge">Layer Merge</a>),
+which merges the multiple layer images into a new layer image just large
+enough to hold all the given images.  That is the virtual canvas is not filled
+in, as  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mosaic">-mosaic</a></code>" or
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?flatten">-flatten</a></code>" layering
+methods would.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert tiles_[0-3].gif -background none -layers merge  tiles_layered.gif
+</code><code execute="" nowarn="" out="tiles_layered_ident.txt">  identify tiles_layered.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_layered.gif"><img src="../images/crop/tiles_layered.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr><tr><td>
+<table border="0" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre>  <a href="https://legacy.imagemagick.org/Usage/crop/tiles_layered_ident.txt"><img src="../images/crop/tiles_layered_ident.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</pre></td></tr></tbody></table>
+</td><td></td></tr></tbody></table><p></p>
+
+If you had reset the the canvas and offset information using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" then the images no
+longer contain the offset from where they were cropped, nor the original size
+of the source image. In that case you can re-join all the images together
+again using the special '<code>concatenation</code>' mode of
+"<code>montage</code>". You will need to tell montage how many rows or columns
+of images were extracted from the original image.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 20x20  +repage  +adjoin  rose_tiles_%02d.gif
+  montage -mode concatenate -tile 4x  rose_tiles_*.gif   rose_rejoined.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_00.gif"><img src="../images/crop/rose_tiles_00.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_01.gif"><img src="../images/crop/rose_tiles_01.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_02.gif"><img src="../images/crop/rose_tiles_02.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_03.gif"><img src="../images/crop/rose_tiles_03.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_04.gif"><img src="../images/crop/rose_tiles_04.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_05.gif"><img src="../images/crop/rose_tiles_05.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_06.gif"><img src="../images/crop/rose_tiles_06.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_07.gif"><img src="../images/crop/rose_tiles_07.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_08.gif"><img src="../images/crop/rose_tiles_08.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_09.gif"><img src="../images/crop/rose_tiles_09.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_10.gif"><img src="../images/crop/rose_tiles_10.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tiles_11.gif"><img src="../images/crop/rose_tiles_11.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td><td>
+    <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_rejoined.gif"><img src="../images/crop/rose_rejoined.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Note that the names of the individual images is from
+"<code>rose_tiles_00.gif</code>" to "<code>rose_tiles_11.gif</code>", which
+simply the sequence number of the tiles in memory.  This  is not very nice as
+the filenames give no easy indication of the actual position each tile belongs
+to, or the total number of tiles per row and column. <p></p>
+
+As of IM v6.4.8-4 you can also use special <a href="https://legacy.imagemagick.org/Usage/files/#save_escapes">Filename Percent Escapes</a> to generate and include special labels into the
+output filename. Using this with <a href="https://legacy.imagemagick.org/Usage/transform/#fx_escapes">FX
+Percent Escapes</a> you can calculate a different 'tile position' for each
+image.  For example...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 20x20 \
+          -set filename:tile "%[fx:page.x/20+1]_%[fx:page.y/20+1]" \
+          +repage +adjoin "rose_tile_%[filename:tile].gif"
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+  <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+  <img src="../images/crop/space.gif" width="10" height="1" align="middle" alt="==&gt;">
+</td><td>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_1_1.gif"><img src="../images/crop/rose_tile_1_1.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_2_1.gif"><img src="../images/crop/rose_tile_2_1.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_3_1.gif"><img src="../images/crop/rose_tile_3_1.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_4_1.gif"><img src="../images/crop/rose_tile_4_1.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_1_2.gif"><img src="../images/crop/rose_tile_1_2.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+     <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_2_2.gif"><img src="../images/crop/rose_tile_2_2.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+     <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_3_2.gif"><img src="../images/crop/rose_tile_3_2.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+     <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_4_2.gif"><img src="../images/crop/rose_tile_4_2.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_1_3.gif"><img src="../images/crop/rose_tile_1_3.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+     <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_2_3.gif"><img src="../images/crop/rose_tile_2_3.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+     <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_3_3.gif"><img src="../images/crop/rose_tile_3_3.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+     <a href="https://legacy.imagemagick.org/Usage/crop/rose_tile_4_3.gif"><img src="../images/crop/rose_tile_4_3.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Will generate the tile image filenames "<code>rose_tile_1_1.gif</code>" to
+"<code>rose_tile_4_3.gif</code>", which is a much better file naming scheme.
+Tricky but it does work. <p></p>
+
+Unfortunately you can not format the number generated by a <a href="https://legacy.imagemagick.org/Usage/basics/#arg_percent">Percent Escapes</a>, to include padding
+with zeros or specify an exact number of floating point digits.  At least not
+at this time.  <p></p>
+
+<a name="crop_tile_centered"></a>
+<h3>Centered Tile Cropping</h3>
+
+In a <a href="https://legacy.imagemagick.org/Usage/forum_link.cgi?t=16276">IM Forum Discussion</a> a request
+was made to center the tile cropping so as to distributed he 'remainder
+images' evenly around the edges.  By doing this we maximize the effect of the
+complete tiles by placing them in the center of the image.  Of course you also
+end up with more incomplete edge tiles. <p></p>
+
+The solution was to center the input image on a virtual canvas, that was some
+multiple of the tile size wanted. <p></p>
+
+For example to tile crop the "<code>rose:</code>" image (<code>70x46</code>
+pixels in size) into the maximum number of full <code>30x20</code> tiles, in
+the center of the image (and surrounded by reminder tiles) you would do the
+following.
+
+<ol>
+<li>First calculate the number of full tiles you can get from the image
+    by dividing the image sizes...
+    <div align="center"><pre>70x46 / 30x20 =&gt; 2x2 full tiles + remainder</pre></div><p></p>
+
+</li><li>Now add 2 more rows and columns to hold the remainder images (if needed)
+    <div align="center"><pre>2x2 + 2x2 =&gt; 4x4 tile images</pre></div><p></p>
+
+</li><li>Multiply the tile size by this to get the virtual canvas size.
+    <div align="center"><pre>30x20 * 4x4 =&gt; 120x80 canvas size</pre></div><p></p>
+
+</li><li>Subtract the original image size and divide into two for the centering
+    offset.
+    <div align="center"><pre>( 120x80 - 70x46 ) / 2 =&gt; +25+17</pre></div><p></p>
+</li></ol>
+
+So the virtual canvas and centering offset is <code>120x80+25+17</code>. <p></p>
+
+And here we use the above calculations perform a Centered Tile Crop...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -repage 120x80+25+17 -crop 30x20 +repage rose_30x20_%02d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <img src="../images/crop/space.gif" width="10" height="1" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_00.gif"><img src="../images/crop/rose_30x20_00.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_01.gif"><img src="../images/crop/rose_30x20_01.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_02.gif"><img src="../images/crop/rose_30x20_02.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_03.gif"><img src="../images/crop/rose_30x20_03.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_04.gif"><img src="../images/crop/rose_30x20_04.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_05.gif"><img src="../images/crop/rose_30x20_05.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_06.gif"><img src="../images/crop/rose_30x20_06.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_07.gif"><img src="../images/crop/rose_30x20_07.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_08.gif"><img src="../images/crop/rose_30x20_08.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_09.gif"><img src="../images/crop/rose_30x20_09.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_10.gif"><img src="../images/crop/rose_30x20_10.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_11.gif"><img src="../images/crop/rose_30x20_11.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_12.gif"><img src="../images/crop/rose_30x20_12.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_13.gif"><img src="../images/crop/rose_30x20_13.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_14.gif"><img src="../images/crop/rose_30x20_14.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_30x20_15.gif"><img src="../images/crop/rose_30x20_15.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+If you want to preserve the original offset location of the tiles, but remove
+the centering offset, you can do a relative offset adjustment using
+<nobr>"<code>-repage -25-17\!</code>"</nobr> (replacing the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" in the above).  <p></p>
+
+If you did not add two columns and rows to the number of tiles and thus
+generate a negative offset you can effectively ignore the remainder edge
+tiles, and only output full and complete tiles that exist in the image.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -repage 60x40-5-3 -crop 30x20 +repage rose_ctiles_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <img src="../images/crop/space.gif" width="10" height="1" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles_0.gif"><img src="../images/crop/rose_ctiles_0.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles_1.gif"><img src="../images/crop/rose_ctiles_1.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles_2.gif"><img src="../images/crop/rose_ctiles_2.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles_2.gif"><img src="../images/crop/rose_ctiles_3.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Basically as the remainders are now 'outside' the calculated virtual canvas
+the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator does
+not know they were there and ignores them. <p></p>
+
+Again replacing the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" in the above, with a relative offset adjustment using the
+negated offset values <nobr>"<code>-repage +5+3\!</code>"</nobr> will restore
+the original offset locations from which the tiles were cropped. <p></p>
+
+
+An alternative for a centered tile crop and ignoring reminders is to simply
+replace the virtual canvas setting with an appropriate crop.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -gravity center -crop 60x40+0+0 +gravity +repage \
+          -crop 30x20 +repage rose_ctiles2_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <img src="../images/crop/space.gif" width="10" height="1" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles2_0.gif"><img src="../images/crop/rose_ctiles2_0.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles2_1.gif"><img src="../images/crop/rose_ctiles2_1.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles2_2.gif"><img src="../images/crop/rose_ctiles2_2.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_ctiles2_2.gif"><img src="../images/crop/rose_ctiles2_3.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+The above is easier to understand, but is also a little slower, as you are now
+performing two crops. However less calculations are needed. <p></p>
+
+But if you want to recover the original tile offsets, you will still need to
+calculate the relative offset you needed, in which case you may as well do the
+task by the former faster method using the images virtual canvas. <p></p>
+
+<br>
+
+<a name="crop_strip"></a>
+<h3>Strip Cropping, cropping out rows and columns</h3>
+
+With IM version 6.1.1, a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" was enhanced so that if one of the size arguments missing,
+or set to zero, then the missing size argument is set to the size of the image
+canvas/page.  In most cases this is large enough to cover the image located on
+the canvas, <i>if the related offset is also set to zero</i>. <p></p>
+
+This small change allows you to easily cut out a single row or column from
+the image, without needing a huge number like '<code>999999</code>' to cover
+the size of image. <p></p>
+
+For example, here we extract a simple row and column from our 'paged' rose
+image.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="" out="strip_ident.txt">
+<c>  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+<z>  convert paged.gif  -crop 20x0+30+0  strip_column.gif
+<z>  convert paged.gif  -crop 0x20+0+30  strip_row.gif
+<n>  identify paged.gif strip_column.gif strip_row.gif
+</n></z></z></c></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/strip_column.gif"><img src="../images/crop/strip_column.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/strip_row.gif"><img src="../images/crop/strip_row.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre>  <a href="https://legacy.imagemagick.org/Usage/crop/strip_ident.txt"><img src="../images/crop/strip_ident.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</pre></td></tr></tbody></table>
+</div><p></p>
+
+If you remove both offsets as well as one size argument, you can divide the
+image into a series of strips or columns, instead of tiles.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+<c>  convert rose: -crop 40x30+10+10  crop.gif
+<z>  convert crop.gif -quiet -crop  20x  strips_%d.gif
+</z></c></code><code execute="" noimage="" out="strips_ident.txt">  identify crop.gif strips_?.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop.gif"><img src="../images/crop/crop.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/strips_0.gif"><img src="../images/crop/strips_0.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/strips_1.gif"><img src="../images/crop/strips_1.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/strips_2.gif"><img src="../images/crop/strips_2.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/strips_3.gif"><img src="../images/crop/strips_3.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre>  <a href="https://legacy.imagemagick.org/Usage/crop/strips_ident.txt"><img src="../images/crop/strips_ident.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</pre></td></tr></tbody></table>
+</div><p></p>
+
+Notice that tile cropping, strip or otherwise, is across the whole page canvas
+of the image, and as such is aligned to that canvas, and NOT just the actual
+image.  This is why the first and last actual image generated in the above
+example is only 10 pixels wide. <p></p>
+
+Of course if a specific tile, or in this case 'column' misses the actual image
+on the virtual canvas (such as the last image in the above), then a <a href="#crop_missed">crop missed image</a> is generated. <p></p>
+
+The warning that IM would have normally produced was suppressed using
+a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?quiet">-quiet</a></code>" setting. This
+is not recommended unless you are expecting such an event, and are prepared
+for it, such as in a script. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/expert.gif" width="23" height="26"><img src="../images/crop/space.gif" width="12" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  It is possible for an image to be positioned such that it does not even
+  appear on its own page or virtual canvas, or be so large that the page
+  canvas can only contain a small window or part of the image. <p></p>
+
+  In such rare cases, strip cropping without any size arguments will get the
+  image sub-division wrong, and produce respectively, <a href="#crop_missed">missed images</a>, or smaller tiles of only the parts within the virtual
+  canvas bounds.  <p></p>
+
+  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator
+  however will not be fixed to handle these rare special cases, as doing so
+  will prevent its use in other cases, such as those exampled below. <p></p>
+
+  If this is a problem for you, sanitize the page offsets of the image before
+  cropping by using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" to remove the virtual canvas before attempting to
+  generate the tile images.
+
+</i></font></td></tr></tbody></table><p></p>
+
+As an alternative way of dividing images into separate rows, look at the
+special script "<code><a href="https://legacy.imagemagick.org/Usage/scripts/divide_vert">divide_vert</a></code>".  This program will let you divide up an image
+according to horizontal 'gaps' of solid single color.  For example, if given
+an image of simple text, it will divide it into alternating images of 'lines'
+and 'gaps'.  A simple option lets you remove those gaps. <p></p>
+
+
+<a name="crop_quad"></a>
+<h3>Quadrants, cutting around a single point</h3>
+
+As any of the crop size numbers are missing then they are replaced with the
+size of the image canvas of the image you are cropping.  This should in most
+cases result in the whole of the image in that dimension becoming part of the
+crop result. <p></p>
+
+This allows, with cautious use of the arguments, is the ability to crop and
+image into quarters around a specific point (with that specific pixel placed
+as the top-right pixel of the bottom-left quadrant image).  You do not need to
+know how big the image is to do this. <p></p>
+
+For example here I crop the image into quadrants around the point 30,40
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+<c>  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+<z>  convert paged.gif  -crop 30x40+0+0  quadrant_tl.gif
+<z>  convert paged.gif  -crop 0x40+30+0  quadrant_tr.gif
+<z>  convert paged.gif  -crop 30x0+0+40  quadrant_bl.gif
+<z>  convert paged.gif  -crop    +30+40  quadrant_br.gif
+</z></z></z></z></c></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/quadrant_tl.gif"><img src="../images/crop/quadrant_tl.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/quadrant_tr.gif"><img src="../images/crop/quadrant_tr.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/quadrant_bl.gif"><img src="../images/crop/quadrant_bl.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/quadrant_br.gif"><img src="../images/crop/quadrant_br.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+Of course if the point you were cropping around missed the actual image, then
+two or even three of the resulting quadrant images will be the special <a href="#crop_missed">crop missed error</a> images. <p></p>
+
+
+<a name="crop_neg_offset"></a>
+<h3>Using Negative Offsets, remove bottom or left edge</h3>
+
+Their is no reason that you can not use a negative offset with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>".  In fact at times it can
+have very definite benefits. <p></p>
+
+For example lets take our paged rose image and progressively crop it
+with larger negative offsets.  We will not supply an image size to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" argument, so it will default
+to the images canvas size.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+<c>  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+<z>  convert paged.gif  -crop -10-10  neg_offset_1.gif
+<z>  convert paged.gif  -crop -20-20  neg_offset_2.gif
+<z>  convert paged.gif  -crop -30-30  neg_offset_3.gif
+<z>  convert paged.gif  -crop -40-40  neg_offset_4.gif
+<z>  convert paged.gif  -crop -50-50  neg_offset_5.gif
+</z></z></z></z></z></c></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/neg_offset_1.gif"><img src="../images/crop/neg_offset_1.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/neg_offset_2.gif"><img src="../images/crop/neg_offset_2.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/neg_offset_3.gif"><img src="../images/crop/neg_offset_3.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/neg_offset_4.gif"><img src="../images/crop/neg_offset_4.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/neg_offset_5.gif"><img src="../images/crop/neg_offset_5.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+As you can see steadily decreasing the offset to a larger negative value
+slowly results in the bottom and right edges being 'chopped' off, the last
+example almost missing the actual image. If we took this one step further a <a href="#crop_missed">Missed Image</a> will be generated.  It's a bit like
+using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?chop">-chop</a></code>" operator but
+without a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>"
+setting.  See <a href="#chop">Chop, Removing Edges</a>.  <p></p>
+
+Of course by using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>"
+you may need to use a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" operator to adjust the canvas/page information, where a
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?chop">-chop</a></code>" automatically
+performs such an adjustment.  That's life. <p></p>
+
+<a name="crop_equal"></a>
+<h3>Cropping into roughly Equally Sized Divisions</h3>
+
+The biggest problem with <a href="#crop_tile">Tile Cropping</a> is that you
+can only define the final size of each tile.  This works great when the image
+size is an exact multiple of the desired tile size, but as you have seen if
+this is not the case you can end up with 'short' tiles on the right and bottom
+edges. <p></p>
+
+For example lets again divide the built in rose image, but try to divide it
+into 3x3 tiles.  The original image is 70x46 pixels so divided by 3 make each
+tile 23x15 pixels...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 23x15  +repage  +adjoin  rose_23x15_%02d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_00.gif"><img src="../images/crop/rose_23x15_00.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_01.gif"><img src="../images/crop/rose_23x15_01.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_02.gif"><img src="../images/crop/rose_23x15_02.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_03.gif"><img src="../images/crop/rose_23x15_03.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_04.gif"><img src="../images/crop/rose_23x15_04.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_05.gif"><img src="../images/crop/rose_23x15_05.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_06.gif"><img src="../images/crop/rose_23x15_06.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_07.gif"><img src="../images/crop/rose_23x15_07.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_08.gif"><img src="../images/crop/rose_23x15_08.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_09.gif"><img src="../images/crop/rose_23x15_09.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_10.gif"><img src="../images/crop/rose_23x15_10.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_11.gif"><img src="../images/crop/rose_23x15_11.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_12.gif"><img src="../images/crop/rose_23x15_12.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_13.gif"><img src="../images/crop/rose_23x15_13.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_14.gif"><img src="../images/crop/rose_23x15_14.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_23x15_15.gif"><img src="../images/crop/rose_23x15_15.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Well as you can see this did not work, because the rose image can not be
+exactly divided into 3 equally sized tiles. In this case you end up with
+a 1 pixel 'short' tile.  Even if you expand the size of the tile to 24x16
+pixels, you will still end up with a tile that is 2 pixels 'shorter' than the
+other tiles. <p></p>
+
+This situation gets worse as the number of tiles wanted gets larger.
+For example try sub-dividing a length of 100 into 30 tiles.  It is
+impossible. You either use a length of 3 and get 34 tiles, or 4 and get
+25 tiles.  Getting exactly 30 equal sized tiles is impossible! <p></p>
+
+As of IM v6.5.8-9 you can now add the special '<code>@</code>' flag to the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" argument.  This
+flag tells the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>"
+operator to try its best to equally divide the image into the <i>number of
+tiles</i> given.  For example...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 3x3@  +repage  +adjoin  rose_3x3@_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_0.gif"><img src="../images/crop/rose_3x3@_0.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_1.gif"><img src="../images/crop/rose_3x3@_1.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_2.gif"><img src="../images/crop/rose_3x3@_2.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_3.gif"><img src="../images/crop/rose_3x3@_3.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_4.gif"><img src="../images/crop/rose_3x3@_4.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_5.gif"><img src="../images/crop/rose_3x3@_5.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_6.gif"><img src="../images/crop/rose_3x3@_6.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_7.gif"><img src="../images/crop/rose_3x3@_7.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+    <a href="https://legacy.imagemagick.org/Usage/crop/rose_3x3@_8.gif"><img src="../images/crop/rose_3x3@_8.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+The result is that the image was divided into tiles which have slightly
+different sizes. However the tile size will differ by 1 pixel at the most!
+Check it out! <p></p>
+
+As a bonus, you can also sub-divide the image so that each tile will
+'overlap' its neighbours. You do this by not only using a '<code>@</code>'
+flag but also specifying the number of pixels of overlap you want. <p></p>
+
+For example lets divide the rose into quarters but with a 20 pixel overlap.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -crop 2x2+20+20@  +repage  +adjoin  rose_2x2+20+20@_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_2x2+20+20@_0.gif"><img src="../images/crop/rose_2x2+20+20@_0.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_2x2+20+20@_1.gif"><img src="../images/crop/rose_2x2+20+20@_1.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+<br><a href="https://legacy.imagemagick.org/Usage/crop/rose_2x2+20+20@_2.gif"><img src="../images/crop/rose_2x2+20+20@_2.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/rose_2x2+20+20@_3.gif"><img src="../images/crop/rose_2x2+20+20@_3.gif" align="middle" vspace="4" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Again all the pieces will only differ in size by one pixel at the most! Though
+in this case the resulting images are the same size, as the rose can divide by
+2, equally. That however would not be the case if the overlap or the image was
+an odd number in size. In that case the bigger element will be along the top
+and left edge.  With three tiles however the bigger (or smaller) element will
+be placed in the middle! <p></p>
+
+You can even use a negative overlap to 'skip' exactly that many pixels between
+tiles!  Exactly how you should apply the operator depends on exactly what
+pixels you want to 'overlap', or 'skip'.  And that depends on the 'edge'
+characteristics of the image (see <a href="#crop_spaced">Separating
+Spaced-out Tiling Images</a> below). <p></p>
+
+As with any use of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator, it is recommended you use a  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code> to remove the 'page'
+offset if it is not wanted.  But the cropped image offset information can be
+very useful, which is why it is preserved.  You can for example use it to name
+the output files, or find out the size and locations of the tiles that IM
+calculated. <p></p>
+
+Note that equal sized tile cropping, is the only situation in which the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator ignores
+the actual virtual canvas of the image when figuring out what part of the
+image is cropped.  That is the calculations for tile cropping is based on
+real image size rather than virtual canvas size.  Even so the final tile
+offsets will still be relative to the original virtual canvas. <p></p>
+
+This crop option can also be used as an alternative to the <a href="#shave">Shave Operator</a> for 'paged' images. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/warning.gif" width="28" height="28"><img src="../images/crop/space.gif" width="12" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  Before IM version v6.6.1-0, equal-sized tile cropping for images with
+  a virtual canvas offset was broken.
+</i></font></td></tr></tbody></table><p></p>
+
+
+<a name="crop_spaced"></a>
+<h3>Separating Spaced-out Tiling Images</h3>
+
+Often you have an image that has fixed sized tiles which are separated by
+a fixed amount of space.  The new '<code>@</code>' flag crop operator will let
+you more easily crop out those tiles, either including or skipping the
+surrounding space. <p></p>
+
+The main problem however is that while the 'tile' images have a fixed amount
+of space around them the amount of space around the edge is usually not so
+fixed.  This produces three basic styles of edge characteristics to a set of
+'spaced' images.  and each type need to be handled slightly differently. <p></p>
+
+<!--<CODE EXECUTE>
+  convert font_[1-5].gif -bordercolor white -border 0 miff:- |\
+    montage - -tile x1  -geometry +3+3 -background Lime  montage.gif
+  convert montage.gif -trim +repage spaced.gif
+  convert montage.gif -bordercolor Lime -border 3x3 edged.gif
+</CODE>-->
+
+<b>Montaged Tiles</b><p></p>
+
+Here the original images were simply given a fixed sized border before being
+appended together. The result is that you will always have an even number of
+pixel spacing between tiles.  More importantly the 'edge spacing' is exactly
+half the spacing that was placed between the tiles.  <p></p>
+
+This is in fact how the "<code><a href="https://legacy.imagemagick.org/Usage/montage/">montage</a></code>"
+spaces the tiling 'cells', and it was using this command the example shown
+image below was generated. <p></p>
+
+As the images were just simply tiled together you can use either a normal <a href="#crop_tile">Tile Cropping</a> (if you know the tile size), or use <a href="#crop_equal">Equal Sized Cropping</a> (if you know the number of
+tiles), to separate the sub-images and the surrounding border. <p></p>
+
+There is basically no overlap between the tiles, and a simple <a href="#shave">Shave Operator</a>, can then be used to remove that border from the resulting
+tiles.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert montage.gif -crop 5x1@ +repage +adjoin montage_%d.gif
+  convert montage_?.gif -shave 3x3 montage-3_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage.gif"><img src="../images/crop/montage.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td><td>
+  <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage_0.gif"><img src="../images/crop/montage_0.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage_1.gif"><img src="../images/crop/montage_1.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage_2.gif"><img src="../images/crop/montage_2.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage_3.gif"><img src="../images/crop/montage_3.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage_4.gif"><img src="../images/crop/montage_4.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr><tr><td>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage-3_0.gif"><img src="../images/crop/montage-3_0.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage-3_1.gif"><img src="../images/crop/montage-3_1.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage-3_2.gif"><img src="../images/crop/montage-3_2.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage-3_3.gif"><img src="../images/crop/montage-3_3.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/montage-3_4.gif"><img src="../images/crop/montage-3_4.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+<b>Same Spacing around Edge</b><p></p>
+
+Here the sub-images were not only 'spaced-out' by 6 pixels but also has
+a 6 pixel spacing around the edge, making it look rather neat and tidy.  <p></p>
+
+This is handled by using the default <a href="#crop_equal">Equal Sized
+Cropping</a> with the appropriate amount of pixel 'overlap'. For example...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert edged.gif -crop 5x1+6+6@ +repage +adjoin edged+6_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged.gif"><img src="../images/crop/edged.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged+6_0.gif"><img src="../images/crop/edged+6_0.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged+6_1.gif"><img src="../images/crop/edged+6_1.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged+6_2.gif"><img src="../images/crop/edged+6_2.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged+6_3.gif"><img src="../images/crop/edged+6_3.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged+6_4.gif"><img src="../images/crop/edged+6_4.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Note how the operator separated the images so that they remain the same
+size, but with a 6 pixel overlap.  This is specifically what it was designed
+to do. <p></p>
+
+By using a negative offset, you tell IM that the overlapping area (spacing
+parts) should not be included in the final results.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert edged.gif -crop 5x1-6-6@ +repage +adjoin edged-6_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged.gif"><img src="../images/crop/edged.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged-6_0.gif"><img src="../images/crop/edged-6_0.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged-6_1.gif"><img src="../images/crop/edged-6_1.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged-6_2.gif"><img src="../images/crop/edged-6_2.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged-6_3.gif"><img src="../images/crop/edged-6_3.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/edged-6_4.gif"><img src="../images/crop/edged-6_4.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+If I was to go further and subtract more pixels I can even trim some of the
+white border from the above numbers.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert edged.gif -crop 5x1-8-8@ +repage +adjoin edged-8_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged.gif"><img src="../images/crop/edged.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td><td>
+  <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged-8_0.gif"><img src="../images/crop/edged-8_0.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged-8_1.gif"><img src="../images/crop/edged-8_1.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged-8_2.gif"><img src="../images/crop/edged-8_2.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged-8_3.gif"><img src="../images/crop/edged-8_3.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged-8_4.gif"><img src="../images/crop/edged-8_4.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+You can even use this as an alternative method for the <a href="#shave">Shave
+Operator</a>, by simply specifying a 1 tile crop...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert edged+6_0.gif -crop 1x1-6-6@ +repage tile-shave.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/edged+6_0.gif"><img src="../images/crop/edged+6_0.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/tile-shave.gif"><img src="../images/crop/tile-shave.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+
+<b>Simply Spaced Tiles</b><p></p>
+
+The simplest spaced-out tiled images has no edge spacing, or has had that edge
+spacing <a href="#trim">Trimmed</a> from the image.  However for this to be
+handled you need to tell IM of this special situation, by including BOTH
+'<code>@</code>' and '<code>!</code>' flags.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert spaced.gif -crop 5x1+6+6@\! +repage +adjoin spaced+6_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/spaced.gif"><img src="../images/crop/spaced.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced+6_0.gif"><img src="../images/crop/spaced+6_0.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced+6_1.gif"><img src="../images/crop/spaced+6_1.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced+6_2.gif"><img src="../images/crop/spaced+6_2.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced+6_3.gif"><img src="../images/crop/spaced+6_3.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced+6_4.gif"><img src="../images/crop/spaced+6_4.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+Note that the images on the edges of this sub-division are slightly shorter
+than the images in the middle.  This is why this special 'mode' of operation
+is NOT the default, even though it is actually simpler than the previous
+spaced-out tile category.  <p></p>
+
+Also note that when using both '<code>@</code>' and '<code>!</code>' flags,
+a single tile crop (vertically in this case) does not have any effect, as both
+the top and the bottom of the tile are 'edges', and thus has no 'edge space'
+to be removed.  <p></p>
+
+Again by using a negative value for the overlap, you can tell IM not to
+include the overlapping (spacing) area in the tile crop results.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert spaced.gif -crop 5x1-6-6@\! +repage +adjoin spaced-6_%d.gif
+</code></pre></td></tr></tbody></table>
+<table cellspacing="0" cellpadding="0">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/spaced.gif"><img src="../images/crop/spaced.gif" align="middle" vspace="4" hspace="5" border="1" alt="[IM Output]"></a>
+</td><td>
+   <img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+</td><td>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced-6_0.gif"><img src="../images/crop/spaced-6_0.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced-6_1.gif"><img src="../images/crop/spaced-6_1.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced-6_2.gif"><img src="../images/crop/spaced-6_2.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced-6_3.gif"><img src="../images/crop/spaced-6_3.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+   <a href="https://legacy.imagemagick.org/Usage/crop/spaced-6_4.gif"><img src="../images/crop/spaced-6_4.gif" align="middle" vspace="4" hspace="8" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The '<code>!</code>' character has special significance to some UNIX
+  shells, like "<code>csh</code>", and must be escaped with a backslash,
+  even when placed inside quotes.
+</i></font></td></tr></tbody></table><p></p>
+
+With these formulas you should should now be able to tile crop images that form
+a grid, even when the images are overlapping, or spaced out. <p></p>
+
+Even if the specific problem you have does not fall exactly into on of the
+above cases, you should be able to either add or remove edge pixels
+appropriately so that the image does fall into one of the above categories of
+spaced-out images.  <p></p>
+
+<br>
+
+<hr><!-- ---------------------------------------------------------------- -->
+
+<a name="border"></a>
+<h2>Adding/Removing Image Edges</h2>
+
+<h3>Border, adding space around the image</h3>
+
+Often you simply want to add a little working space around the edge of an
+image, but you don't want to need or depend on knowing the size of an image to
+do so. <p></p>
+
+Now there are many ways to add extra space to an image, outside of direct
+space additions, including <a href="https://legacy.imagemagick.org/Usage/layers/#append">appending blank
+images or labels</a>, <a href="https://legacy.imagemagick.org/Usage/compose/#src">composing '<code>Src</code>'
+overlays</a>, or even just <a href="https://legacy.imagemagick.org/Usage/layers/#flatten">positioning the
+image on a larger canvas</a>.  But these methods usually need at least some
+idea of how big the image you are working with actually is. <p></p>
+
+One of the simplest form of image space additions is "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" operation.  The color of
+the space added is "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" setting.  Here is some straight forward examples..
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:  -bordercolor SkyBlue    -border 10x10 border.gif
+  convert rose:                          -border 15x6  border_default.gif
+  convert rose:  -bordercolor LimeGreen  -border 10x0  border_sides.gif
+  convert rose:  -bordercolor Tomato     -border  0x10 border_topbot.gif
+  convert rose: -matte -bordercolor none -border 10    border_none.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border.gif"><img src="../images/crop/border.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border_default.gif"><img src="../images/crop/border_default.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border_sides.gif"><img src="../images/crop/border_sides.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border_topbot.gif"><img src="../images/crop/border_topbot.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border_none.gif"><img src="../images/crop/border_none.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+Note last example image above.  The border color was set to be the transparent
+color "<code>none</code>", but for this to work as expected we needed to
+ensure the image actually contained a 'matte' or 'alpha' channel.  <p></p>
+
+Also note that is the vertical and horizontal border sizes are the same
+you can omit the second number in the border, using just a single number.
+<p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  As shown above the default color used by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" operator  is a light
+  gray as it matches nicely the default grey page color of web pages on the
+  WWW.
+</i></font></td></tr></tbody></table><p></p>
+
+You can specify borders as a percentage of the image size...
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -border 10%x10%  border_percent.jpg
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border_percent.jpg"><img src="../images/crop/border_percent.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Internally what is really happening is that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" creates a new image of
+the right size, then overlays the original source image over this new
+background. <p></p>
+
+This is itself a very useful operation in ImageMagick, for setting the
+background of transparent and semi-transparent images.  That is the seemingly
+useless "<code>-border 0</code>" operation is, in IM version 6, a very useful
+one.  For example...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert star.gif -bordercolor LimeGreen -border 0  star_background.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/images/star.gif"><img src="../images/crop/star.gif" align="middle" vspace="2" hspace="25" border="0" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/star_background.gif"><img src="../images/crop/star_background.gif" align="middle" vspace="2" hspace="25" border="0" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+Of course there are lots of other ways to <a href="https://legacy.imagemagick.org/Usage/masking/#remove">Remove
+Alpha Transparency</a>. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The fact that adding a border to images with transparency, also by default
+  fills the transparent background of the image, has been the cause of some
+  debate amongst IM users and the development team.  A summary of this debate
+  is given on <a href="https://legacy.imagemagick.org/Usage/misc/#border">Border, Frame and use of
+  BorderColor</a>.
+</i></font></td></tr></tbody></table><p></p>
+
+
+<a name="border_compose"></a>
+<h4>Border and Alpha Composition</h4>
+
+The overlay of the image onto the bordercolor canvas is controlled
+by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>"
+setting, which by default is set to '<code><a href="https://legacy.imagemagick.org/Usage/compose/#over">Over</a></code>' alpha compositing.  If it is set to come other
+setting, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>"
+operation may produce unexpected results. <p></p>
+
+For example here are some of the more interesting uses of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>" with the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" image operator, when
+applied to an image containing some transparent areas.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code do_not_execute="">
+  convert star.gif -bordercolor LimeGreen \
+                   -compose {<i>operation</i>} -border 5  {<i>result</i>}
+</code></pre></td></tr></tbody></table>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border_compose.jpg"><img src="../images/crop/border_compose.jpg" align="middle" vspace="2" hspace="5" border="0" alt="[IM Output]"></a>
+</div><p></p>
+
+The choice between using '<code>Over</code>' and '<code>Copy</code>'
+essentially decides if you want to preserve the transparency in the image or
+not. <p></p>
+
+For example here is the same 'star' image with transparency, but this time the
+border was added without destroying the images transparency.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  star.gif  -bordercolor LimeGreen   -compose Copy \
+                     -border 5     star_border_copy.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/star_border_copy.gif"><img src="../images/crop/star_border_copy.gif" align="middle" vspace="2" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+
+The '<code><a href="https://legacy.imagemagick.org/Usage/compose/#src">Src</a></code>' compose will add a
+transparent border to an image (if it has an alpha channel), regardless of the
+current  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" setting.  Basically the background canvas "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" generated is ignored.
+<p></p>
+
+The '<code><a href="https://legacy.imagemagick.org/Usage/compose/#dst">Dst</a></code>' may not seem to be very
+useful, but can be used to generate a canvas the same size (or a little
+bigger) than the original image.  The original image is only used to determine
+the final size of the canvas.  For more examples see <a href="https://legacy.imagemagick.org/Usage/canvas/#sized">Canvases Sized to an Existing Image</a>.  <p></p>
+
+For more information on the various "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>" methods see the <a href="https://legacy.imagemagick.org/Usage/compose/">Alpha Compositing Examples</a>. <p></p>
+
+<a name="border_canvas"></a>
+<h4>Border and Virtual Canvas</h4>
+
+When "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" is
+applied to an image containing a virtual canvas, it will still add the border
+around the actual image on that virtual canvas, and NOT around the whole
+canvas. <p></p>
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+<c>  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+<z>  convert paged.gif         -border 5x5        paged_border.gif
+</z></c></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged_border.gif"><img src="../images/crop/paged_border.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+Note that the size of the virtual canvas was also increased by twice the
+border thickness to accommodate the added border. <p></p>
+
+This of course means you can not simply add a <a href="#border">Border</a> to
+a typical GIF animation directly, unless you want to actually identify the
+individual sub-frames of the animation (for example see the script <a href="https://legacy.imagemagick.org/Usage/anim_basics/#montage">Animation Frame Montage</a> which uses this as
+an option to 'frame' the overlay images).  If you want to add a border, you
+should <a href="https://legacy.imagemagick.org/Usage/anim_basics/#coalesce">Coalesce</a> the animation first to
+remove any <a href="https://legacy.imagemagick.org/Usage/anim_opt/#frame_opt">Frame Optimizations</a> it may
+have first. <p></p>
+
+
+<a name="frame"></a>
+<h3>Frame, adding a 3D-like border</h3>
+
+The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" operator is
+very similar to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>", and if you look at the first example image generated
+below, you will find that it will produce exactly the same result, except it
+used the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mattecolor">-mattecolor</a></code>"
+rather than "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>".  Note "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" is still used
+in the generation framed images, see below.  <p></p>
+
+To use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" properly
+you need to supply four arguments to the command, instead of just 2. The extra
+arguments specify the width of the 'outside' and 'inside' bevels of the frame
+being produced. <p></p>
+
+Here are some examples of using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" operator with various settings.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:                     -frame 10x10      frame.gif
+  convert rose:                     -frame 15x6+2+2   frame_wierd.gif
+  convert rose: -mattecolor SkyBlue -frame 6x6+2+2    frame_blue.gif
+  convert rose: -mattecolor Tomato  -frame 10x10+5+5  frame_red.gif
+
+  convert rose:    -frame 10x10+10+0    frame_rasied.gif
+  convert rose:    -frame 10x10+6+0     frame_rasied_part.gif
+  convert rose:    -frame 10x10+0+6     frame_sunken_part.gif
+  convert rose:    -frame 10x10+0+10    frame_sunken.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame.gif"><img src="../images/crop/frame.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_wierd.gif"><img src="../images/crop/frame_wierd.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_blue.gif"><img src="../images/crop/frame_blue.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_red.gif"><img src="../images/crop/frame_red.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<br>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_rasied.gif"><img src="../images/crop/frame_rasied.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_rasied_part.gif"><img src="../images/crop/frame_rasied_part.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_sunken_part.gif"><img src="../images/crop/frame_sunken_part.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_sunken.gif"><img src="../images/crop/frame_sunken.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+Using multiple frame operations can also produce weirder framing styles.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:       -frame 10x10+3+3                    frame_normal.gif
+  convert rose:       -frame 3x3+3+0      -frame 7x7+3+0  frame_popped.gif
+  convert rose:       -frame 7x7+0+3      -frame 3x3+0+3  frame_pressed.gif
+  convert rose: -frame 3x3+3+0 -frame 4x4 -frame 3x3+0+3  frame_inverted.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_normal.gif"><img src="../images/crop/frame_normal.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_popped.gif"><img src="../images/crop/frame_popped.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_pressed.gif"><img src="../images/crop/frame_pressed.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_inverted.gif"><img src="../images/crop/frame_inverted.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The default "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mattecolor">-mattecolor</a></code>" is a slightly darker gray than that of the default
+  setting of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>".  This also allows it to match the default gray
+  color of web pages on the WWW (used by early browsers such as
+  "<code>mosaic</code>" and "<code>netscape</code>".  (See below)
+</i></font></td></tr></tbody></table><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/expert.gif" width="23" height="26"><img src="../images/crop/space.gif" width="17" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  While "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" may
+  actually use the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mattecolor">-mattecolor</a></code>"  color, it also generates four more extra colors
+  from this base for use in drawing the frame.  That is five related colors
+  will likely be added to an image, not just one.
+</i></font></td></tr></tbody></table><p></p>
+
+
+<a name="frame_montage"></a>
+
+With some effort you can even reproduce a "<code>montage</code>"-like
+framed image complete with text label.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:   -mattecolor grey  -background grey  -frame 3x3+0+3 \
+          -gravity South -splice 0x15 -annotate 0x0 'A Red Rose' \
+          -frame 6x6+3+0    frame_montage.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_montage.gif"><img src="../images/crop/frame_montage.gif" align="middle" vspace="2" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<a name="frame_plasma"></a>
+
+You can even use a semi-transparent "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mattecolor">-mattecolor</a></code>" for the frame
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" and then
+'underlay' an interesting pattern (such as a <a href="https://legacy.imagemagick.org/Usage/canvas/#plasma_fractal">Fractal Plasma Canvas</a>), to produce a
+more colorful frame.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+<r>  convert rose:  -matte -mattecolor '#CCC6' -frame 10x10+3+4 \
+          \( -size 100x100 plasma:fractal -normalize -blur 0x1 \) \
+          -compose DstOver -composite   frame_plasma.gif
+</r></code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_plasma.gif"><img src="../images/crop/frame_plasma.gif" align="middle" vspace="2" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Alternatively you can color the frame separately, (generated using a special
+'<a href="https://legacy.imagemagick.org/Usage/compose/#dst">Dst</a>' composition setting), then overlay the
+picture into the frame once you have it colored.  But that is getting very
+tricky indeed. <p></p>
+
+For more advanced techniques of using frames see <a href="https://legacy.imagemagick.org/Usage/thumbnails/#frame">Framing Techniques</a>. <p></p>
+
+
+<a name="frame_border"></a>
+<h4>Frame and Alpha Composition</h4>
+
+Frame is closely related to the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" operator.  Not only is a frame drawn using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mattecolor">-mattecolor</a></code>", but this
+operator will also make use of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" setting to
+define the background on which the frame is initially drawn. <p></p>
+
+Now for images which have no transparency, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" will not be
+visible, as it is overlaid by the image itself.  But for images that do
+contain some transparent areas, the background color does become visible.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert star.gif  -frame 6x6+2+2 star_framed.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/star_framed.gif"><img src="../images/crop/star_framed.gif" width="64" height="64" align="middle" vspace="5" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+In other words "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>"
+acts as if you take your image and overlay it on a picture frame with a solid
+color background.  As such any part of your image that is transparent will be
+replaced by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" which by default is a light grey color. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The fact that adding a frame to images with transparency, also by default
+  fills the transparent background of the image with the bordercolor has
+  caused some debate amongst IM users and the Development team.  A summary
+  of this debate is given on <a href="https://legacy.imagemagick.org/Usage/misc/#border">Border, Frame and use
+  of BorderColor</a>.
+</i></font></td></tr></tbody></table><p></p>
+
+If you want to preserve the transparency of the image, while framing it,
+you have two solutions. <p></p>
+
+The first is to used transparent "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" such as
+'<code>none</code>'.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert star.gif -bordercolor none  -frame 6x6+2+2  star_framed_none.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/star_framed_none.gif"><img src="../images/crop/star_framed_none.gif" width="64" height="64" align="middle" vspace="2" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+The other solution and the preferred method is ensure the transparent pixels
+are preserved when the image is added to the frame.  This is done by using a
+special "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>"
+method called '<code><a href="https://legacy.imagemagick.org/Usage/compose/#copy">Copy</a></code>'.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert star.gif -compose Copy  -frame 6x6+2+2  star_framed_copy.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/star_framed_copy.gif"><img src="../images/crop/star_framed_copy.gif" width="64" height="64" align="middle" vspace="2" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/warning.gif" width="28" height="28"><img src="../images/crop/space.gif" width="12" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The use of "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a>" as the background image for both "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" was added to IM with
+  version 6.1.4.  Before this the background canvas generated consisted of a
+  black canvas onto which the border, or frame was drawn.  <p></p>
+
+  This use of black was especially bad for the "<code>montage</code>"
+  command which makes heavy usage of the internal "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" function in its internal
+  processing. (See <a href="https://legacy.imagemagick.org/Usage/montage/#bg">Montage Background and
+  Transparency Handling</a>)
+
+</i></font></td></tr></tbody></table><p></p>
+
+
+<a name="frame_compose"></a>
+
+As you can see the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" operator, like "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>", also uses the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>" setting to define how
+the source image is overlaid onto the background frame.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code do_not_execute="">
+  convert star.gif -bordercolor LimeGreen \
+          -compose {<i>operation</i>} -frame 6x6+2+2  {<i>result</i>}
+</code></pre></td></tr></tbody></table>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_compose.jpg"><img src="../images/crop/frame_compose.jpg" align="middle" vspace="2" hspace="2" border="0" alt="[IM Output]"></a>
+</div><p></p>
+
+The use of a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>"
+setting of '<code><a href="https://legacy.imagemagick.org/Usage/compose/#copy">Copy</a></code>' becomes very
+important if you also want to use the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" setting in
+"<code>montage</code>" frames.  See <a href="https://legacy.imagemagick.org/Usage/montage/#bg">Montage
+Background and Transparency Handling</a> for more details. <p></p>
+
+<a name="frame_canvas"></a>
+<h4>Frame and Virtual Canvas</h4>
+
+As with <a href="#border_canvas">Border and Virtual Canvas</a> frame is
+also applied around the actual image on that virtual canvas, and NOT around
+the whole canvas.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+<c>  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+<z>  convert paged.gif         -frame 5x5+2+2     paged_framed.gif
+</z></c></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged_framed.gif"><img src="../images/crop/paged_framed.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+Note that the size of the virtual canvas was also increased by twice the border
+thickness to accommodate the added frame. <p></p>
+
+This of course means you can not simply add a <a href="#frame">Frame</a> to
+a typical GIF animation directly, unless you want to actually identify the
+individual sub-frames of the animation (for example see <a href="https://legacy.imagemagick.org/Usage/anim_basics/#montage">Animation Frame Montage</a>).  If you want to
+add a border, you should <a href="https://legacy.imagemagick.org/Usage/anim_basics/#coalesce">Coalesce</a> the
+animation first to remove any <a href="https://legacy.imagemagick.org/Usage/anim_opt/#frame_opt">Frame
+Optimizations</a> it may have first. <p></p>
+
+
+<a name="shave"></a>
+<h3>Shave, removing edges from an image</h3>
+
+The reverse of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" or "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>" operators, is "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shave">-shave</a></code>", which if given the same arguments, will remove the space
+added by these commands. <p></p>
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert border.gif -shave 10x10 shave.gif
+  convert border.gif -shave 10x0  shave_sides.gif
+  convert border.gif -shave  0x20 shave_topbot.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border.gif"><img src="../images/crop/border.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/shave.gif"><img src="../images/crop/shave.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/shave_sides.gif"><img src="../images/crop/shave_sides.gif" align="middle" vspace="5" hspace="20" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/shave_topbot.gif"><img src="../images/crop/shave_topbot.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+The main thing to keep in mind about these three operators is that they add
+and remove space on <i>opposite</i> sides of the images, not just one side, or
+adjacent sides. <p></p>
+
+If you want to only remove one edge of an image, then you will need to use the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?chop">-chop</a></code>" operator instead.  (See the <a href="#chop">Chop
+Examples</a> below). <p></p>
+
+As before all the operators "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>", "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?frame">-frame</a></code>", and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shave">-shave</a></code>", only effect the real image on the virtual canvas
+and not the virtual canvas itself. <p></p>
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+<c>  convert rose: -shave 12x0 -repage 64x64+9+9  paged.gif
+<c>  convert paged.gif         -border 5x5        paged_border.gif
+<z>  convert paged_border.gif  -frame  5x5+2+2    paged_frame.gif
+<z>  convert paged_frame.gif   -shave  10x10      paged_shave.gif
+</z></z></c></c></code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged.gif"><img src="../images/crop/paged.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged_border.gif"><img src="../images/crop/paged_border.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged_frame.gif"><img src="../images/crop/paged_frame.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged_shave.gif"><img src="../images/crop/paged_shave.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+An alternative to using shave is to use the new <a href="#crop_equal">Equal
+Sized Tile Cropping</a> operator.  The advantage of this operator is that
+unlike  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shave">-shave</a></code> it will
+not modify the canvas size of the resulting image.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert paged_frame.gif   -crop  1x1-10-10@     paged_tile_shave.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged_frame.gif"><img src="../images/crop/paged_frame.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/paged_tile_shave.gif"><img src="../images/crop/paged_tile_shave.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/warning.gif" width="28" height="28"><img src="../images/crop/space.gif" width="12" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  Before IM version v6.6.1-0, equal-sized tile cropping for images
+  with a canvas offset (such as the above) was broken.
+</i></font></td></tr></tbody></table><p></p>
+
+
+<a name="extent"></a>
+<h3>Extent, Direct Image Size Adjustment</h3>
+
+After some discussions,
+an operator to directly adjust the final size of an image size was
+added to IM version 6.2.4.  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>" operator. <p></p>
+
+If the image size increases, space will be added to right or bottom edges of
+the image.  If it decreases the image data is just junked or cropped to fit
+the new image size.  In both cases the top left area of the image will likely
+remain unaffected.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -background skyblue -extent 100x60     extent_enlarge.gif
+  convert rose: -background skyblue -extent  40x40     extent_shrink.gif
+  convert rose: -background skyblue -extent 100x40     extent_wider.gif
+  convert rose: -background skyblue -extent  40x60     extent_taller.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_enlarge.gif"><img src="../images/crop/extent_enlarge.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_shrink.gif"><img src="../images/crop/extent_shrink.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_wider.gif"><img src="../images/crop/extent_wider.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_taller.gif"><img src="../images/crop/extent_taller.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+As you can see it will fill any new areas with the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color of any new
+areas added to the image. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/warning.gif" width="28" height="28"><img src="../images/crop/space.gif" width="12" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  Before IM version v6.3.2, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>" just cleared the memory of any new areas to zero, or
+  straight black.  It did not fill the areas with  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color.
+</i></font></td></tr></tbody></table><p></p>
+
+Also after IM v6.3.2, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>" will use the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" to define where the areas added/removed are positioned
+relative to the original image. <p></p>
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose:  -gravity north  -extent 100x80 extent_north.gif
+  convert rose:  -gravity south  -extent 100x80 extent_south.gif
+  convert rose:  -gravity east   -extent 100x80 extent_east.gif
+  convert rose:  -gravity west   -extent 100x80 extent_west.gif
+  convert rose:  -gravity center -extent 100x80 extent_center.gif
+  convert rose:  -gravity center -extent  40x80  extent_center2.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_north.gif"><img src="../images/crop/extent_north.gif" width="100" height="80" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_south.gif"><img src="../images/crop/extent_south.gif" width="100" height="80" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_east.gif"><img src="../images/crop/extent_east.gif" width="100" height="80" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_west.gif"><img src="../images/crop/extent_west.gif" width="100" height="80" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_center.gif"><img src="../images/crop/extent_center.gif" width="100" height="80" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent_center2.gif"><img src="../images/crop/extent_center2.gif" width="40" height="80" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+The last example in the above show that extent can also do centered crops, but
+without the need for a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">-repage</a></code>", though it does 'flatten' the image with the current
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color.
+<p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+
+You can even use offsets, which basically means the <a href="#extent">Extent
+Operator</a> is simply a straight forward <a href="#crop">Crop</a> with
+background padded fill, regardless of position.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert rose: -background skyblue -extent 100x100-15-25 extent.png
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/extent.png"><img src="../images/crop/extent.png" align="middle" vspace="2" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+
+This ability to both crop and extend an image according to gravity makes the
+operator perfect for padding or cropping an image so that it fits into to a
+specific sized area, for example see <a href="https://legacy.imagemagick.org/Usage/thumbnails/#pad">Pad/Fill a
+Thumbnail to Fit</a>.  <p></p>
+
+
+<a name="extent_compose"></a>
+
+Note that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>"
+works by using the same 'overlay' technique that both the <a href="#border">Border</a> and <a href="#frame">Frame</a> operators uses.  As such by
+default using it with an image containing transparency will replace the
+transparency with the current "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert star.gif  -background LimeGreen  -extent 80x80-10-10  star_extent.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/star_extent.gif"><img src="../images/crop/star_extent.gif" width="80" height="80" align="middle" vspace="5" hspace="2" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Again the solution to this is to either set an appropriate "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>" method, or set the
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color
+to '<code>None</code>'. <p></p>
+
+<hr><!-- ---------------------------------------------------------------- -->
+
+<a name="splice"></a>
+<h2>Adding/Removing Rows, Columns and Edges</h2>
+
+<a name="splice"></a>
+<h3>Splice, adding rows, columns and edges</h3>
+
+The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?splice">-splice</a></code>" operator is
+new to IM version 6, see <a href="https://legacy.imagemagick.org/Usage/misc/#splice">Splice, example of
+the creation of a new image operator</a>. <p></p>
+
+It basically provides the much needed ability to add a row, column of space
+into the middle or one edge of an image. The color for the space inserted
+comes from the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color setting.  <p></p>
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  rose:  -background blue  -splice 20x10+40+30  splice.gif
+  convert  rose:  -background blue  -splice 20x0+40+0    splice_column.gif
+  convert  rose:  -background blue  -splice 0x10+0+30    splice_row.gif
+  convert  rose:  -background blue  -splice 20x10        splice_topleft.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/rose.gif"><img src="../images/crop/rose.gif" width="70" height="46" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice.gif"><img src="../images/crop/splice.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_column.gif"><img src="../images/crop/splice_column.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_row.gif"><img src="../images/crop/splice_row.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_topleft.gif"><img src="../images/crop/splice_topleft.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/expert.gif" width="23" height="26"><img src="../images/crop/space.gif" width="17" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  If the background color is not set, IM will attempt to determine this
+  value from the image itself.  This means that for some images it may be
+  white (the normal default), on others it may black, or for the GIF format
+  it could be whatever background color was set to when that image
+  was saved. <p>
+
+  What this basically means is that if you don't set "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color, its
+  default value depends on the image, and you could get just about anything.
+  </p></i></font><p><font size="-1"><i>
+
+  </i></font></p><center><b>   Always set "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>",
+  before using an operator that uses it.  </b></center>
+
+</td></tr></tbody></table><p></p>
+
+Now while adding a row and column to an image is good, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?splice">-splice</a></code>" operator is ideal for
+adding space to just one edge of an image.  Which edge is determined by using
+the  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" option
+and the splice geometry setting.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  rose: -background blue  -splice 0x10  splice_top.gif
+  convert  rose: -gravity south \
+                 -background blue  -splice 0x10  splice_bottom.gif
+  convert  rose: -background blue  -splice 20x0  splice_left.gif
+  convert  rose: -gravity east \
+                 -background blue  -splice 20x0  splice_right.gif
+  convert  rose: -gravity southeast \
+                 -background blue  -splice 20x10  splice_botright.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_top.gif"><img src="../images/crop/splice_top.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_bottom.gif"><img src="../images/crop/splice_bottom.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_left.gif"><img src="../images/crop/splice_left.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_right.gif"><img src="../images/crop/splice_right.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_botright.gif"><img src="../images/crop/splice_botright.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+One of the most common uses of splice is to add space in which to draw
+a label.  (See <a href="https://legacy.imagemagick.org/Usage/annotating/#labeling">Labeling Images</a>)
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  rose: -gravity South  -background LimeGreen  -splice 0x15 \
+           -annotate 0x0 'Rose'    splice_label.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_label.gif"><img src="../images/crop/splice_label.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+
+<a name="chop"></a>
+<h3>Chop, removing rows, columns and edges</h3>
+
+The natural inverse of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?splice">-splice</a></code>" is the much older  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?chop">-chop</a></code>" operator.  Given the same
+argument as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?splice">-splice</a></code>"
+and the same "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>"
+setting, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?chop">-chop</a></code>" will
+restore the image to its original form.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  splice.gif       -chop  20x10+40+30   splice_chop.gif
+  convert  splice_chop.gif  -chop  20x10+30+20   chop.gif
+  convert  chop.gif -background grey \
+                           -splice 20x10+30+20   chop_splice.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice.gif"><img src="../images/crop/splice.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/splice_chop.gif"><img src="../images/crop/splice_chop.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/chop.gif"><img src="../images/crop/chop.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+ <a href="https://legacy.imagemagick.org/Usage/crop/chop_splice.gif"><img src="../images/crop/chop_splice.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+I continued processing the last example to show how you can reverse the order of
+the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?splice">-splice</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?chop">-chop</a></code>" so as to 'clear' a row or
+column (or both) from the middle of an image without using draws or overlays.
+<p></p>
+
+Chop is more commonly used to cut of a single edge from an image, using
+gravity to select that edge.   For example...
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  frame_red.gif                 -chop  0x10  chop_top.gif
+  convert  frame_red.gif                 -chop 10x0   chop_left.gif
+  convert  frame_red.gif -gravity East   -chop 10x0   chop_right.gif
+  convert  frame_red.gif -gravity South  -chop  0x10  chop_bottom.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_red.gif"><img src="../images/crop/frame_red.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/chop_top.gif"><img src="../images/crop/chop_top.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/chop_left.gif"><img src="../images/crop/chop_left.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/chop_right.gif"><img src="../images/crop/chop_right.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/chop_bottom.gif"><img src="../images/crop/chop_bottom.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+As an alternative to using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?chop">-chop</a></code>" for removing a single edge, you can in fact use the more
+universal "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator
+instead.  This does not require the use of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" to get the bottom or
+right edges, however does require you to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" the canvas of the image
+afterward.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  frame_red.gif  -crop +0+10 +repage  crop_edge_top.gif
+  convert  frame_red.gif  -crop +10+0 +repage  crop_edge_left.gif
+  convert  frame_red.gif  -crop -10+0 +repage  crop_edge_right.gif
+  convert  frame_red.gif  -crop +0-10 +repage  crop_edge_bottom.gif
+</code></pre></td></tr></tbody></table><nobr>
+  <a href="https://legacy.imagemagick.org/Usage/crop/frame_red.gif"><img src="../images/crop/frame_red.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_edge_top.gif"><img src="../images/crop/crop_edge_top.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_edge_left.gif"><img src="../images/crop/crop_edge_left.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_edge_right.gif"><img src="../images/crop/crop_edge_right.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+  <a href="https://legacy.imagemagick.org/Usage/crop/crop_edge_bottom.gif"><img src="../images/crop/crop_edge_bottom.gif" align="middle" vspace="5" hspace="15" border="1" alt="[IM Output]"></a>
+</nobr></div><p></p>
+
+This relies on the fact that if "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" is not given an image area to remove, it will default to the
+size of the image canvas (not the actual image but the images virtual canvas).
+This means you can (for simple images) remove image edges by just offsetting
+the crop area being cut. <p></p>
+
+The method of using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" to 'chop' image edges, was discovered and published by Don
+Sheythe, and after some discussion was deemed to be a 'feature'
+of IM, and thus included here. <p></p>
+
+<hr><!-- ---------------------------------------------------------------- -->
+
+<a name="advanced"></a>
+<h2>Advanced Cropping Techniques</h2>
+
+<a name="crop_aspect"></a>
+<h3>Crop to a Given Aspect Ratio</h3>
+
+You can crop images to fit a specific aspect ratio, but it is tricky
+and uses some DIY mathematical techniques. For example you can write a script
+to do the calculations and then do the <a href="#crop">Crop</a>. <p></p>
+
+Or in IM v6 you can so calaculations with the <a href="https://legacy.imagemagick.org/Usage/distorts/#distort_viewport">Distort Viewport</a>, to extract the
+desired part of the image during a <a href="https://legacy.imagemagick.org/Usage/distorts/#distort_noop">No-Op
+Distortion</a>, as described in <a href="https://legacy.imagemagick.org/Usage/distorts/#centered_square">Centered Square Crop</a>. <p></p>
+
+However in ImageMagick version 7, you can now do mathematical calculations
+directly in commands like "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>", thus by-passing the need miss-use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?distort">-distort</a></code>". <p></p>
+
+This is discussed in detail in the IM Developers Forum <a href="https://legacy.imagemagick.org/Usage/forum_link.cgi?t=33448">Crop to Aspect Ratio</a>. <p></p>
+
+<hr><!-- ---------------------------------------------------------------- -->
+
+<a name="trim"></a>
+<h2>Trim, the 'Auto-Crop' Operator</h2>
+
+The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" operator
+is a very close relation to the highly versatile "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator discussed <a href="#crop">above</a>.  However instead of supplying an argument, this
+operator attempts to remove any borders or edges of an image which did does
+not change in color or transparency. In other words it removes the 'boring'
+bits surrounding an image. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/warning.gif" width="28" height="28"><img src="../images/crop/space.gif" width="12" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  Note that in ImageMagick version 5 and before, an auto-crop operation was
+  achieved by using a '<code>0x0</code>' argument to the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" operator.  This is no
+  longer the case, as 'zero' size arguments in crop now denote 'infinite' or
+  'to the limit of the image size'. </i></font><p><font size="-1"><i>
+
+  As such a '<code>0x0</code>' argument to crop now effectively means to
+  crop the image into tiles, the size of the original image canvas.  In
+  other words, with IM v6, the result will be the same as the original
+  image, or a 'no-op'.
+
+</i></font></p></td></tr></tbody></table><p></p>
+
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr valign="top"><td width="100%" align="justify">
+
+For example here we take the IM logo, which we resize, and 'trim' or
+'auto-crop' all the surrounding extra space in the logo.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+    convert  logo: -resize 30%    -trim     trim.gif
+</code></pre></td></tr></tbody></table><p></p>
+
+Two things should be noted from the above.  First is like "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>",  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" will retain the
+canvas size of the image.  This means that the numerical arguments of the trim
+can be extracted, to allow for further processing, or adjustment of the
+of the image processing (see <a href="#trim_blur">Trimming "Noisy" Images</a>
+for an example of doing this). <p></p>
+
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim.gif"><img src="../images/crop/trim.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Here we trim the image, but only to list the result on what part of the image
+was trimmed, not the actual trimmed image.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="" noimage="" out="trim_info.txt">
+  convert  logo: -resize 30%   -trim  info:-
+</code></pre></td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim_info.txt"><img src="../images/crop/trim_info.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr valign="top"><td width="100%" align="justify">
+
+However if you don't care about this information, just junk it by resetting the
+page information of the image either using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" operator, or saving to a
+format that does not save canvas information (such as the JPEG format).  Here
+we do both, to make it clear, that we are junking the canvas information.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  logo: -resize 30%    -trim +repage    trim_repage.jpg
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim_repage.jpg"><img src="../images/crop/trim_repage.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+The second thing to note, is that trim did not actually trim right up to the
+very edge of the final image.  This is especially noticeable in the lower right
+corner of the logo image, where we can see a distinct gap between the foot and
+its shadow and the trimmed edge. <p></p>
+
+In this corner, the colors here became numerically different to the background
+color of the image. So even though we can't see any real change in the image,
+the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" operator sees
+a minor color change, so it did not trim as close to the image as we would
+have expected.  <p></p>
+
+If the image is all one color, then "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" will trim the image down to a minimal single pixel
+transparent <a href="#crop_missed">Missed Image</a>.  This is logical and
+prevents more serious problems if the image was left as is. <p></p>
+
+
+<a name="trim_color"></a>
+<h3>Trimming with a Specific Color</h3>
+
+One of the most worrisome problems with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>", especially in automated image processing scripts, is that
+trim can be a little unpredictable.  It does not for example limit itself to
+just a specific color, or even one color.  As such you should easily trim much
+more than you expect. <p></p>
+
+For example lets do a simple trim of a simple image of striped colors.
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert -size 32x32 xc:red xc:green xc:blue +append stripes.gif
+  convert stripes.gif  -trim +repage   stripes_trimmed.gif
+</code></pre></td></tr></tbody></table>
+  <a href="https://legacy.imagemagick.org/Usage/crop/stripes.gif"><img src="../images/crop/stripes.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/stripes_trimmed.gif"><img src="../images/crop/stripes_trimmed.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</div><p></p>
+
+As you can see,  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>"
+trimmed not just one color but two colors!  In an automatic script, this can be
+very bad and produce unexpected results. <p></p>
+
+If you know what color you want to trim from an image, then the better way is
+to add a small one pixel wide "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" of that color to the image.  Lets take
+'<code>red</code>' in this case.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert stripes.gif -bordercolor red -border 1x1 \
+          -trim +repage   stripes_trim_red.gif
+</code></pre></td></tr></tbody></table>
+  <a href="https://legacy.imagemagick.org/Usage/crop/stripes.gif"><img src="../images/crop/stripes.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/stripes_trim_red.gif"><img src="../images/crop/stripes_trim_red.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</div><p></p>
+
+Of course using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" like this also will change the canvas offset that
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" took great pains
+to preserve.  <p></p>
+
+As such if you look at the result without removing the virtual canvas
+information you can see that image was shifted.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  stripes.gif -bordercolor red -border 1x1  -trim  \
+           stripes_trim_red_shifted.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/stripes_trim_red_shifted.gif"><img src="../images/crop/stripes_trim_red_shifted.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+
+So lets try correcting the virtual canvas size (subtract
+<code><i>border_width</i>x2</code> ) and offset (subtract
+<code><i>border_width</i></code>)when trimming a specific color.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  stripes.gif -bordercolor red -border 1x1  -trim  \
+           -set page '%[fx:page.width-2]x%[fx:page.height-2]+%[fx:page.x-1]+%[fx:page.y-1]' \
+           stripes_trim_red_fix.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/stripes_trim_red_fix.gif"><img src="../images/crop/stripes_trim_red_fix.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Note that I am restoring canvas size and offset of the original image, that <a href="#border">Border Operator</a> enlarged and shifted in the above. The
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" operation itself
+preverved the image location correctly. It is as you can see a rather
+un-wieldly adjustment.  <p></p>
+
+Alternatively if you do not care about the canvas size (typical in a layered
+image) you can use a far simplier <a href="https://legacy.imagemagick.org/Usage/basics/#page">Relative
+Repage</a> to only adjusted the image's position on the enlarged canvas.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert  stripes.gif -bordercolor red -border 1x1  -trim  \
+           -repage -1-1\! stripes_trim_red_fix2.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/stripes_trim_red_fix2.gif"><img src="../images/crop/stripes_trim_red_fix2.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+
+
+<a name="trim_oneside"></a>
+<h3>Trimming Just One Side of an Image</h3>
+
+As you saw above "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>"
+will trim as many sides as it can. Even going so far as removing two different
+colors from different sides (or if very carefully arranged, four colours could
+have been removed). This makes it a little more difficult when you want to
+restrict the trimming to just one side. <p></p>
+
+To guarantee that we only trim one side we need to add some color stripes to
+the other side to protect the other three sides. <p></p>
+
+Here is the process step-by-step for trimming just the 'left' or 'west' side
+of the 'border' image we created previously. I used much thicker stripes than
+is necessary so you can see them better in this example. Normally a single
+pixel width is all that is needed.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert border.gif  -gravity East \
+                      -background white -splice 5x0 \
+                      -background black -splice 5x0  trim_protect.gif
+  convert trim_protect.gif     -trim +repage         trim_oneside.gif
+  convert trim_oneside.gif  -gravity East -chop 5x0  trim_west.gif
+</code></pre></td></tr></tbody></table>
+  <a href="https://legacy.imagemagick.org/Usage/crop/border.gif"><img src="../images/crop/border.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim_protect.gif"><img src="../images/crop/trim_protect.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim_oneside.gif"><img src="../images/crop/trim_oneside.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+<img src="../images/crop/right.gif" width="20" height="20" align="middle" alt="==&gt;">
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim_west.gif"><img src="../images/crop/trim_west.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+</div><p></p>
+
+Note that I add stripes two different colors!  That way if one of the colors
+matches the existing border color surrounding the image the other will
+continue to work to protect those three edges. Also only one of the colors
+will also be trimmed, leaving just one color stripe to be cleaned up. <p></p>
+
+Here is the whole one side trim as a single command, but for trimming the
+top edge (stripes are added to the bottom or 'South' edge).
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert border.gif -gravity South \
+          -background white -splice 0x1  -background black -splice 0x1 \
+          -trim  +repage -chop 0x1   trim_north.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim_north.gif"><img src="../images/crop/trim_north.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+And here is a bottom edge only trim.  Of course the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" settings used in the
+previous example is not needed and the setting defaults to a
+'<code>North-West</code>' setting for images.
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr><td width="100%" align="justify">
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert border.gif \
+          -background white -splice 0x1  -background black -splice 0x1 \
+          -trim  +repage -chop 0x1   trim_south.gif
+</code></pre></td></tr></tbody></table></td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/trim_south.gif"><img src="../images/crop/trim_south.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+
+Of course as before with border, splicing extra colors onto an image will
+again change the virtual image canvas size and the layer images offset.  Again
+this can be fixed using the same methods we showed in the previous section,
+but it depends on which side you added the extra colors onto to preserve those
+edges. <p></p>
+
+
+<a name="trim_fuzz"></a>
+<h3>Trimming with fuzzy color selection
+<font size="-1"> -- Low Quality JPEG Images</font></h3>
+
+Because JPEG is 'lossy' the colors in the image is generally not a single
+color but slightly varying band of different colors. because of this "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" will often fail for JPEG or
+real world images. <p></p>
+
+<i>FUTURE: Example of failure here</i><p></p>
+
+As such you need to tell ImageMagick that colors that are not-exactly the
+same, but are reasonally close should be treated as being the same.  Adding
+a very small "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fuzz">-fuzz</a></code>"
+setting will do this.
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code do_not_execute="">
+  convert image.jpg  -fuzz 1% -trim +repage  image_fuzzy_trim.jpg
+</code></pre></td></tr></tbody></table>
+</div><p></p>
+
+It is also a very good idea to specify the specific color you want that fuzz
+to be relative to.  This can be added by specifically added a border of that
+color using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>" operator.  The border will of course always match the
+color to be trimmed, so will always be removed by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>". <p></p>
+
+<i>FUTURE: Example of fuzzy border trim here</i><p></p>
+
+
+<a name="trim_noisy"></a>
+<a name="trim_blur"></a>
+<h3>Trimming 'Noisy' Images
+<font size="-1"> -- Scanned Images</font></h3>
+
+A similar problem is faced with scanned images, where scanners often produce
+small single pixel errors, caused by dust, dirt, slight variations in the
+scanner, or just electronic noise picked up by the reader.  The pixels errors
+however this case is usually too big for a small <a href="https://legacy.imagemagick.org/Usage/color_basics/#fuzz">fuzz factor</a> to overcome, so different
+technique is needed to trim such images. <p></p>
+
+The simplest solution, though often least practical is to take multiple scans
+of the same image, or multiple frames in a still sequence of video), then
+averaging the results to reduce the interference.  However this will not
+remove dust specks on the scanner or help when only a single image or frame is
+available, making this method impractical in most cases. <p></p>
+
+A practical solution is a two step one.  With a copy of the image, process it
+in some way to de-emphasize single pixel errors, or scanner dust, while
+enhancing the effect of large blocks of highly contrasting colors. By then
+using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" on this
+copy, and examining exactly what it did, you can then "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" the original unmodified
+image by the same amount. <p></p>
+
+Their number of methods of de-emphasizing single pixel errors.  These include
+"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>", "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?median">-median</a></code>", or even using <a href="https://legacy.imagemagick.org/Usage/#morphology/#basic">Basic Morphology Operators</a> to remove
+specific details, such a text and thin lines. <p></p>
+
+This the 'blur' method gives two main controls:<dl><dd>
+<li>The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" sigma
+    radius, or the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mediam">-median</a></code>" convolution radius, which determines the size of dust
+    specks you want to ignore. Note that both these values can be a floating
+    point number so you have a fine control over the amount of the blur
+    applied. <p></p>
+
+    For more information on blurring see <a href="https://legacy.imagemagick.org/Usage/blur/#blur">Blurring Images</a>. <p></p>
+
+</li><li>The second control is the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fuzz">-fuzz</a></code>" color factor that controls the amount of color change
+    matched by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>"
+    operator. That is how close to the desired image you want the trim to get.
+    <p></p>
+</li></dd></dl>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr valign="top"><td width="100%" align="justify">
+
+For example lets use a smaller "<code>logo:</code>" image.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert logo:   -resize 30%   noisy.jpg
+</code></pre></td></tr></tbody></table>
+
+In this small image we could regard the stars and title in the image as noise
+which we want trim to ignore.  The stars in the above is about 5 pixels
+across, so we want to use a value of about double that to get trim to
+basically ignore them. <p></p>
+
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/noisy.jpg"><img src="../images/crop/noisy.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+Here is the result.  Note in this case we do not want an image,
+just the canvas information from the image. <p></p>
+
+<div align="center">
+<table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="" out="blur_trim_info.txt">
+  convert noisy.jpg  -virtual-pixel edge -blur 0x15 -fuzz 15% -trim  info:
+</code></pre></td></tr></tbody></table>
+<table border="0" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
+<tbody><tr><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/blur_trim_info.txt"><img src="../images/crop/blur_trim_info.txt.gif" align="middle" vspace="0" hspace="0" border="0" alt="[IM Text]"></a>
+</td></tr></tbody></table>
+</div><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  You may need to check the  <a href="https://legacy.imagemagick.org/Usage/misc/#virtual">Virtual Pixel</a>
+  setting to enure that you get the right 'edge effects' with the blur. <p></p>
+
+  Alternatively you can add a wide border of the same background color to
+  image before blurring and adjusting the offset results appropriately.
+  This may be better for more accurate results from both "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" operators.
+</i></font></td></tr></tbody></table><p></p>
+
+From the above result we can determine that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?trim">-trim</a></code>" had internally used
+a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" argument of
+'<code>89x121+78+23</code>'.  This is the actual size of the trimmed image,
+and its offset on the virtual canvas, and presumably the location of the major
+(single) object we are looking for within the image. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr valign="top"><td width="100%" align="justify">
+
+This can then be used on the original image, which has not been blurred.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert noisy.jpg   -crop 89x121+78+23 +repage   noisy_trimmed.jpg
+</code></pre></td></tr></tbody></table><p></p>
+And here we have trimmed our image to just the wizard!
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/noisy_trimmed.jpg"><img src="../images/crop/noisy_trimmed.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr valign="top"><td width="100%" align="justify">
+
+This can be done in a single line, using a little bit of extra 'UNIX shell
+scripting', and some formating of the results of that first command.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert noisy.jpg -crop \
+    `convert noisy.jpg -virtual-pixel edge -blur 0x15 -fuzz 15% \
+             -trim -format '%wx%h%O' info:`   +repage   noisy_trimmed_2.jpg
+</code></pre></td></tr></tbody></table><p></p>
+
+See <a href="https://legacy.imagemagick.org/script/escape.php">Image Property
+Escapes</a> for more information on the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?format">-format</a></code>" setting used to control
+the output of "<code><a href="https://legacy.imagemagick.org/Usage/files/#info">info:</a></code>". <p></p>
+
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/noisy_trimmed_2.jpg"><img src="../images/crop/noisy_trimmed_2.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+<!--<CODE EXECUTE ASSERT>
+  [ `identify -format '%wx%h' noisy_trimmed.jpg` != \
+    `identify -format '%wx%h' noisy_trimmed_2.jpg` ] && echo >&2 \
+  "ASSERTION FAILURE: Fuzzy trim sizes do not match\!"
+</CODE>-->
+
+<table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
+<tbody><tr valign="top">
+<td><img src="../images/crop/reminder.gif" width="20" height="16"><img src="../images/crop/space.gif" width="20" height="16"></td>
+<td align="justify" width="100%"><font size="-1"><i>
+  The above uses an UNIX command line shell feature for 'command-substitution'
+  method using back-quotes '<code>`...`</code>'  to insert the generated
+  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" argument into
+  the outer "<code>convert</code>" command.  <p></p>
+
+  You can do this in a <a href="https://legacy.imagemagick.org/Usage/api/#windows">Windows Batch Script</a>,
+  using a special <code>FOR..DO</code> construct. Follow the above link for
+  details.
+
+</i></font></td></tr></tbody></table><p></p>
+
+Note that while the hand is of the wizard is fully visible, the point of the
+hat isn't.  This is the drawback of this method, it will ignore sharp points
+and fine details. But then that is what we were asking it to ignore in the
+first place. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr valign="top"><td width="100%" align="justify">
+
+The method could be improved by expanding the area trimmed by a small amount
+(10 pixels in 4 four directions), using some <a href="https://legacy.imagemagick.org/Usage/transform/#fx_escapes">FX Escape</a> to do the mathematics...
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  convert noisy.jpg -crop \
+      `convert noisy.jpg -virtual-pixel edge -blur 0x15 -fuzz 15% -trim \
+               -format '%[fx:w+20]x%[fx:h+20]+%[fx:page.x-10]+%[fx:page.y-10]' \
+      info:` +repage   noisy_trimmed_3.jpg
+</code></pre></td></tr></tbody></table>
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/noisy_trimmed_3.jpg"><img src="../images/crop/noisy_trimmed_3.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+
+If the calculated bounds expands beyond the original image, the <a href="#crop">crop operator</a> will automatically limit it to the image
+bounds. <p></p>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+<tbody><tr valign="top"><td width="100%" align="justify">
+
+In IMv7 (using the "<code>magick</code>" command) you can do it all in one
+command, saving the calculated trim size in a setting for later use.
+
+<table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
+<tbody><tr><td><pre><code execute="">
+  magick noisy.jpg \
+         \( +clone -virtual-pixel edge -blur 0x15 -fuzz 15% -trim \
+            -set option:fuzzy_trim \
+                     '%[fx:w+20]x%[fx:h+20]+%[fx:page.x-10]+%[fx:page.y-10]'\
+            +delete \) \
+         -crop %[fuzzy_trim] noisy_trimmed_4.jpg
+</code></pre></td></tr></tbody></table>
+</td><td>
+  <a href="https://legacy.imagemagick.org/Usage/crop/noisy_trimmed_4.jpg"><img src="../images/crop/noisy_trimmed_4.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
+</td></tr></tbody></table><p></p>
+<p></p>
+
+Other methods of fuzzy trimming is using various <a href="https://legacy.imagemagick.org/Usage/morphology/#basic">Morphological Methods</a> to remove the unwanted
+parts of the image, before triming to find the bounds of the area wanted in
+the original image. <p></p>
+
+An user <a href="https://legacy.imagemagick.org/Usage/forum_link.cgi?u=14154">HugoRune</a> needed to trim an
+image down to a highly different contrast regaion for scanning purposes.   See
+<a href="https://legacy.imagemagick.org/Usage/forum_link.cgi?t=14247">Discussion on IM Forums</a>, for details.
+<p></p>
+
+<hr><!-- ------------------------------------------------------------------ -->
+<address>
+Created: 15 March 2004 <br>
+Updated: 9 December 2016 <br>
+Author: <a href="https://antofthy.gitlab.io/anthony.html">Anthony Thyssen</a>, &lt;Anthony.Thyssen@gmail.com&gt;<br>
+Examples Generated with:
+        <img src="../images/crop/version.gif" align="absmiddle" alt="[version image]"><br>
+URL: <code>https://legacy.imagemagick.org/Usage/crop/</code>
+</address>
+</div></body></html>

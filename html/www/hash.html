@@ -1,0 +1,921 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+	<title>Tests Of Perceptual Hash (PHASH) Compare Metric</title>
+	<meta name="author" content="Fred Weinhaus">
+	<meta name="description" content="Fred's ImageMagick Tests Of Perceptual Hash (PHASH) Compare Metric">
+	<meta name="keywords" content="ImageMagick, image processing, perceptual, hash, compare, metric">
+</head>
+
+<body bgcolor="white">
+
+<h2 align="center">Tests Of Perceptual Hash (PHASH) Compare Metric</h2>
+
+<p align="center">(Author: Fred Weinhaus)</p>
+
+
+<table border="0" cellspacing="0" cellpadding="5" align="center" width="800">
+	<tbody><tr>
+		<td align="left" valign="middle">
+		<p>As of version 6.8.8.3, Imagemagick has a new compare metric: PHASH. 
+			The syntax is as follow:</p>
+
+		<p><b>compare -metric phash image1 image2 diffimage</b></p>
+		
+		<p>or</p>
+
+		<p><b>compare -metric phash -subimage-search image1 image2 diffimage</b></p>
+		
+		<p>(Note: in version 6.8.8.2, the phash metric was incorrect)</p>
+
+		<p>The phash metric was revised in IM 6.8.8.5, but the values are only slightly different.</p>
+				
+		<p>This metric is different from all the rest. The two images do not have to be the same size
+			when not using the -subimage-search setting. If the sizes differ, then the order is not important.</p>
+
+		<p>When doing subimage searches, the order is important and the larger image must be listed first. 
+			However, using this metric in a subimage search is exceedingly slow and works in limited circumstances. 
+			An example will be presented below.</p>
+		
+		<p>For color images, this metric seems to be insensitive to a variety of mild 
+			to moderate attacks (variations in processing). 
+			These attacks include: resize, rotation (with black background), 
+			translation (with black background), brightness, contrast, gamma, 
+			blur, jpeg compression, noise, mirror/transpose, watermarking, 
+			arc distortion, barrel distortion, pincushion distortion and shear distortion.</p>
+			
+		<p>The phash metric for color images is a modified version of one presented in 
+			<a href="http://www.naturalspublishing.com/files/published/54515x71g3omq1.pdf" target="_blank">http://www.naturalspublishing.com/files/published/54515x71g3omq1.pdf</a> 
+			and is based upon the concept of <a href="http://en.wikipedia.org/wiki/Image_moments" target="_blank">Image Moments</a>.</p> The main difference is the ImageMagick 
+			version uses the RGB and HCLp channels rather than the HSI and YCbCr channels
+			described in the reference. For grayscale images, only the one channel is used.
+			Only the first seven Hu moments listed in the Wikipedia reference were used.<p></p>
+
+		<p>The basis of this approach is that the Hu moments are scale, rotation and 
+			translation invariant for each of the RGB channels. However, they do not seem 
+			to be as robust to some of the other image attacks. The addition of the HCLp channels slightly  
+			decreases the insensitivity to scale, rotation, translation and compression, but increases 
+			the insensitivity to other attack, such as, brightness, contrast and gamma.</p>
+			
+		<p>The hash is created by taking the log of the absolute value of each of the first 
+			7 floating point Hu image moments from each channel using graylevels normalized to the 
+			range 0 to 1 (as of IM 6.8.8.5). The log is used to mitigate 
+			the large variation in exponents of the moments. The absolute value is used to make the 
+			moments insensitive to mirror-like attacks. For color images, 
+			there are 42 floating point values. For grayscale images, there are  
+			only 7 floating point moments. Therefore, the hash lengths are different for 
+			color images and grayscale images. Consequently, color and grayscale images cannot be compared directly. 
+			The phash metric computes the sum of the squared differences of all 42 or 7 log(abs(moments)) 
+			between the two images. One can review the Hu moments by the following commmand:</p>
+			
+		<p><b>identify -verbose -moments yourimage</b></p>
+
+		<p>CAUTION: A constant color image channel will have zero values for Hu image moments I2-I7. For a black
+			image, all moments will be zero. Since the log(0) is negative infinity, we clamp the moments 
+			to 1e-11 minimum (as of IM 6.8.8.5).	
+		
+		</p><p>Tests were done using 510x510 center cropped versions of 8 (512x512) 
+			origninal images from the USC SIPI open source image library.  The  
+			cropping was done to remove 1px border artifacts in the 512x512 images.</p>
+			
+		<p>Color results and graphs and the subimage search example were done using IM 6.8.8.5. 
+			The grayscale results and graphs were generated using IM 6.8.8.3 </p>
+		
+
+		<p><a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/phash_color_graphs/test_variations.txt" target="_blank">This is the list of all image 
+		attack variations shown in the graphs</a></p>
+
+		<p>NOTE: False positives (attack scores larger than the lowest image vs image score) may happen for 
+		other images or for attacks beyond the range presented. Also false negatives may occur for other 
+		images in relation to the threshold range of this limited test set.</p>
+		
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<h3 align="center">Color Results</h3>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle" colspan="4">
+			Original Color Images<br>
+			(click image for 510x510 test size)
+		</td>
+	</tr>
+	
+		<tr><td align="center" valign="middle">
+			airplane.png
+		</td>
+		<td align="center" valign="middle">
+			barbara.png
+		</td>
+		<td align="center" valign="middle">
+			boats.png
+		</td>
+		<td align="center" valign="middle">
+			lena.png
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/airplane.png" target="_blank"><img src="../images/hash/airplane.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/barbara.png" target="_blank"><img src="../images/hash/barbara.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/boats.png" target="_blank"><img src="../images/hash/boats.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/lena.png" target="_blank"><img src="../images/hash/lena.png" width="128" height="128"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			mandril.png
+		</td>
+		<td align="center" valign="middle">
+			peppers.png
+		</td>
+		<td align="center" valign="middle">
+			tiffany.png
+		</td>
+		<td align="center" valign="middle">
+			zelda.png
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/mandril.png" target="_blank"><img src="../images/hash/mandril.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/peppers.png" target="_blank"><img src="../images/hash/peppers.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/tiffany.png" target="_blank"><img src="../images/hash/tiffany.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/zelda.png" target="_blank"><img src="../images/hash/zelda.png" width="128" height="128"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			watermark image -- sphinx2.gif
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4" background="../images/hash/checkerboard.gif">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/sphinx2.gif" target="_blank"><img src="../images/hash/sphinx2.gif" width="66" height="56"></a>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<th align="center"><big>Test Results</big></th>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<p><b>Threshold At 21</b></p>
+			<p><b>Five False Positives Out Of 704 Tests</b></p>	
+			<p></p>	
+			<p align="left"><b>No false positives, if 
+			</b></p><ul align="left"><b>
+				<li>barrel limited to &#8804;2 </li>
+				<li>color noise limited to &#8804;1.5</li>
+				<li>compression limited to &#8805;25</li>
+				<li>shear limited to &#8804;3</li>
+			</b></ul><b>
+			</b><p></p>	
+			<p></p>	
+			<p><b><a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/phash_color_graphs/phash_e-11norm_cmp_color_510_test_results_final" target="_blank">Results Table</a></b></p>	
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Image vs Image <br>
+			(minimum non-self match at 21.9)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_images_graph_002.png" width="600" height="600">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Brightness Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_brightness_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Contrast Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_contrast_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Gamma Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_gamma_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Blur Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_blur_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			JPEG Compression Variations <br>
+			(two false positives for airplane.png at 5,78.6 and 10,58.6)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_compress_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Color Noise Variations <br>
+			(one false positive for peppers.png at 2,29.5)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_color_noise_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Grayscale Noise Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_gray_noise_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Scaling (Resize) Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_resize_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Rotation (Black Background) Variations<br>
+			(does not work as well with white background)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_rotate_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Mirror -- Flip, Flop, Transpose, Transverse
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_mirror_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Translate (Black Background) Variations<br>
+			Image Placed in North, West and Northwest Corners of 1024x1024 Black Background<br>
+			(does not work as well with white background)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_translate_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Watermark
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_watermark_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Arc
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_arc_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Barrel <br>
+			(one false positives for zelda.png at 3,36.4)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_barrel_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Pincushion
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_pincushion_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Shear <br>
+			(one false positives for lena.png at 4,22.9)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_shear_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<h3 align="center">Grayscale Results</h3>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle" colspan="4">
+			Original Grayscale Images<br>
+			(click image for 510x510 test size)
+		</td>
+	</tr>
+	
+		<tr><td align="center" valign="middle">
+			airplane_gray.png
+		</td>
+		<td align="center" valign="middle">
+			barbara_gray.png
+		</td>
+		<td align="center" valign="middle">
+			boats_gray.png
+		</td>
+		<td align="center" valign="middle">
+			lena_gray.png
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/airplane_gray.png" target="_blank"><img src="../images/hash/airplane_gray.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/barbara_gray.png" target="_blank"><img src="../images/hash/barbara_gray.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/boats_gray.png" target="_blank"><img src="../images/hash/boats_gray.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/lena_gray.png" target="_blank"><img src="../images/hash/lena_gray.png" width="128" height="128"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			mandril_gray.png
+		</td>
+		<td align="center" valign="middle">
+			peppers_gray.png
+		</td>
+		<td align="center" valign="middle">
+			tiffany_gray.png
+		</td>
+		<td align="center" valign="middle">
+			zelda_gray.png
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/mandril_gray.png" target="_blank"><img src="../images/hash/mandril_gray.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/peppers_gray.png" target="_blank"><img src="../images/hash/peppers_gray.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/tiffany_gray.png" target="_blank"><img src="../images/hash/tiffany_gray.png" width="128" height="128"></a>
+		</td>
+		<td align="center" valign="middle">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/zelda_gray.png" target="_blank"><img src="../images/hash/zelda_gray.png" width="128" height="128"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			watermark image -- sphinx2.gif
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4" background="../images/hash/checkerboard.gif">
+			<a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/sphinx2.gif" target="_blank"><img src="../images/hash/sphinx2.gif" width="66" height="56"></a>
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	<tbody><tr>
+		<th align="center"><big>Test Results</big></th>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<p><b>Threshold At 3.7</b></p>
+			<p><b>Many More False Positives Than In Color Tests For The Same Ranges</b></p>	
+			<p></p>
+			<p><b>Only resize, rotate, translate, mirror, blur and compress<br> 
+				are as good or better than in the color tests. <br>
+				The rest are considerably worse.</b></p>	
+			<p><b><a href="http://www.fmwconcepts.com/misc_tests/perceptual_hash_test_results_510/phash_gray_graphs/phash_cmp3_gray_510_test_results.htm" target="_blank">Results Table</a></b></p>	
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Image vs Image <br>
+			(minimum non-self match at 3.74)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_images_graph.png" width="600" height="600">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Brightness Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_brightness_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Contrast Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_contrast_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Gamma Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_gamma_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Blur Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_blur_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			JPEG Compression Variations <br>
+			(two false positives for airplane.png at 5,78.6 and 10,58.6)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_compress_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Grayscale Noise Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_gray_noise_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Scaling (Resize) Variations
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_resize_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Rotation (Black Background) Variations<br>
+			(does not work as well with white background)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_rotate_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Mirror -- Flip, Flop, Transpose, Transverse
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_mirror_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Translate (Black Background) Variations<br>
+			Image Placed in North, West and Northwest Corners of 1024x1024 Black Background<br>
+			(does not work as well with white background)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_translate_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Watermark
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_watermark_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Arc <br>
+			(one false positive for lena.png at 3,22.5)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_arc_graph_002.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Barrel
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_barrel_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Pincushion
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_pincushion_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Shear
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" colspan="4">
+			<img src="../images/hash/phash_shear_graph.png" width="500" height="500">
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+<h3 align="center">Subimage Search For Rotated Copies</h3>
+
+<table border="1" cellspacing="0" cellpadding="5" align="center">
+	
+		<tbody><tr><td align="center" valign="middle">
+			Large Image<br>
+			original apple located at 150,150<br>
+			180 deg rotated apple located at 30,30
+		</td>
+		<td align="center" valign="middle">
+			Small Image<br>
+			original unrotated apple
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle">
+			<img src="../images/hash/apples_30_30r180_150_150.png" width="300" height="300">
+		</td>
+		<td align="center" valign="middle">
+			<img src="../images/hash/apple_clean.png" width="117" height="114">
+		</td>
+	</tr>
+		<tr><td align="center" valign="middle">
+			Match Score Image<br>
+			(negated so that best match is white)
+		</td>
+		<td align="center" valign="middle">
+			Match Score Image<br>
+			(-linear-stretch 95x0% applied)
+		</td>
+	</tr>
+	<tr>
+		<td align="center" valign="middle" "="">
+			<img src="../images/hash/apples_phash_results-1.png" width="184" height="187">
+		</td>
+		<td align="center" valign="middle">
+			<img src="../images/hash/apples_phash_results-1_ls_95x0.png" width="184" height="187">
+		</td>
+	</tr>
+	
+		<tr><td align="center" valign="middle" colspan="2">
+			Resulting metric value is 150,150 0 (perfect match)<br>
+			but closer inspection shows another perfect match at 30,30 0 
+		</td>
+	</tr>
+	
+		<tr><td align="center" valign="middle" colspan="2">
+			The time to run this search was about 15 minutes on an <br>
+			INTEL Mac Mini 2.66 GHz Dual Core, but using only one thread. 
+		</td>
+	</tr>
+</tbody></table>
+
+<br>
+<br>
+
+
+
+
+</body>
+</html>

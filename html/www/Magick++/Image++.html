@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Magick++ API: Working with Images</title>
-<link rel="stylesheet" href="../../www/css/magick.css" type="text/css"/>
+<link rel="stylesheet" href="magick.css" type="text/css"/>
 </head>
 <body>
 <div class="doc-section">
@@ -152,7 +152,7 @@ image.quantize( );
 </pre>
 <p>prior to writing the image. </p>
 <center>
-<h3> <a name="BLOBs"/> BLOBs</h3>
+<h3> <a name="BLOBs"></a> BLOBs</h3>
 </center>
 While encoded images (e.g. JPEG) are most often written-to and
 read-from a disk file, encoded images may also reside in memory.
@@ -212,7 +212,7 @@ image.magick( "RGBA" );
 image.read( blob);
 </pre>
 <center>
-<h3> <a name="Constructors"/> Constructors</h3>
+<h3> <a name="Constructors"></a> Constructors</h3>
 </center>
 Image may be constructed in a number of ways. It may be constructed
 from a file, a URL, or an encoded image (e.g. JPEG) contained in an
@@ -242,7 +242,7 @@ to select a specific scene from a multi-frame image.</font></td>
 size and color</font></td>
     </tr>
     <tr>
-      <td><a name="constructor_blob"/> <font size="-1">const <a href="Blob.html">Blob</a> &amp;blob_</font></td>
+      <td><a name="constructor_blob"></a> <font size="-1">const <a href="Blob.html">Blob</a> &amp;blob_</font></td>
       <td rowspan="5"><font size="-1">Construct Image by reading from
 encoded image data contained in an in-memory <a href="Blob.html">BLOB</a>
 . Depending on the constructor arguments, the Blob <a href="Image++.html#size">size</a>
@@ -329,7 +329,7 @@ values and type_ parameters.</font></td>
   </tbody>
 </table>
 <center>
-<h3> <a name="Image Manipulation Methods"/> Image Manipulation
+<h3> <a name="Image Manipulation Methods"></a> Image Manipulation
 Methods</h3>
 </center>
 <i>Image</i> supports access to all the single-image (versus
@@ -356,7 +356,7 @@ adds gaussian noise to the image file "myImage.tiff".
     </tr>
     <tr>
       <td style="text-align: center;" valign="middle">
-      <div style="text-align:center"><a name="adaptiveThreshold"/> <font size="-1">adaptiveThreshold<br/>
+      <div style="text-align:center"><a name="adaptiveThreshold"></a> <font size="-1">adaptiveThreshold<br/>
       </font></div>
       </td>
       <td valign="middle"><font size="-1">size_t width, size_t
@@ -376,14 +376,14 @@ compute the threshold.</font><br/>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="addNoise"/> <font size="-1">addNoise</font></center>
+      <center><a name="addNoise"></a> <font size="-1">addNoise</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#NoiseType">NoiseType</a>
 noiseType_</font></td>
       <td><font size="-1">Add noise to image with specified noise type.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="addNoiseChannel"/>addNoiseChannel<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="addNoiseChannel"></a>addNoiseChannel<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const ChannelType
 channel_, const NoiseType noiseType_<br/>
@@ -395,7 +395,7 @@ specifies the type of noise.<br/>
       </small></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="affineTransform"/>affineTransform<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="affineTransform"></a>affineTransform<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const DrawableAffine
 &amp;affine<br/>
@@ -406,7 +406,7 @@ specified affine (or free transform) matrix.<br/>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="4">
-      <center><a name="annotate"/> <font size="-1">annotate</font></center>
+      <center><a name="annotate"></a> <font size="-1">annotate</font></center>
       </td>
       <td><font size="-1">const std::string &amp;text_, const <a href="Geometry.html"> Geometry</a> &amp;location_</font></td>
       <td><font size="-1">Annotate using specified text, and placement
@@ -434,7 +434,7 @@ image) and placement gravity.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="blur"/> <font size="-1">blur</font></center>
+      <center><a name="blur"></a> <font size="-1">blur</font></center>
       </td>
       <td><font size="-1">const double radius_ = 1, const double sigma_
 = 0.5</font></td>
@@ -445,7 +445,7 @@ pixel.  The <i>sigma_</i> parameter specifies the standard
 deviation of the Laplacian, in pixels.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="blurChannel"/>blurChannel<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="blurChannel"></a>blurChannel<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const ChannelType
 channel_, const double radius_ = 0.0, const double sigma_ = 1.0<br/>
@@ -460,7 +460,7 @@ deviation of the Laplacian, in pixels.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="border"/> <font size="-1">border</font></center>
+      <center><a name="border"></a> <font size="-1">border</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_ = "6x6+0+0"</font></td>
@@ -469,14 +469,14 @@ color of the border is specified by the <i>borderColor</i> attribute.</font></td
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="cdl"/> <font size="-1">cdl</font></center>
+      <center><a name="cdl"></a> <font size="-1">cdl</font></center>
       </td>
       <td><font size="-1">const std::string &amp;cdl_</font></td>
       <td><font size="-1">color correct with a color decision list. See <a href="http://en.wikipedia.org/wiki/ASC_CDL">http://en.wikipedia.org/wiki/ASC_CDL</a> for details.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="channel"/> <font size="-1">channel</font></center>
+      <center><a name="channel"></a> <font size="-1">channel</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#ChannelType">ChannelType</a>
 layer_</font></td>
@@ -487,7 +487,7 @@ from an image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="charcoal"/> <font size="-1">charcoal</font></center>
+      <center><a name="charcoal"></a> <font size="-1">charcoal</font></center>
       </td>
       <td><font size="-1">const double radius_ = 1, const double sigma_
 = 0.5</font></td>
@@ -498,7 +498,7 @@ parameter specifies the standard deviation of the Laplacian, in pixels.</font></
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="chop"/> <font size="-1">chop</font></center>
+      <center><a name="chop"></a> <font size="-1">chop</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_</font></td>
@@ -507,7 +507,7 @@ subregion of image)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="colorize"/> <font size="-1">colorize</font></center>
+      <center><a name="colorize"></a> <font size="-1">colorize</font></center>
       </td>
       <td><font size="-1">const unsigned int opacityRed_, const
 unsigned int opacityGreen_, const unsigned int opacityBlue_, const
@@ -517,14 +517,14 @@ specified percent opacity for red, green, and blue quantums.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="colorMatrix"/> <font size="-1">colorMatrix</font></center>
+      <center><a name="colorMatrix"></a> <font size="-1">colorMatrix</font></center>
       </td>
       <td><font size="-1">const size_t order_, const double *color_matrix_</font></td>
       <td><font size="-1">apply color correction to the image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="comment"/> <font size="-1">comment</font></center>
+      <center><a name="comment"></a> <font size="-1">comment</font></center>
       </td>
       <td><font size="-1">const std::string &amp;comment_</font></td>
       <td><font size="-1">Comment image (add comment string to
@@ -534,7 +534,7 @@ image.  Optionally you can include the image filename, type,
 width, height, or other  image  attributes by embedding <a href="FormatCharacters.html">special format characters.</a> </font></td>
     </tr>
     <tr>
-      <td style="text-align: center;" valign="middle"><font size="-1"><a name="compare"/> compare<br/>
+      <td style="text-align: center;" valign="middle"><font size="-1"><a name="compare"></a> compare<br/>
       </font></td>
       <td valign="middle"><font size="-1">const Image &amp;reference_<br/>
       </font></td>
@@ -549,7 +549,7 @@ matte differ from the current image.</font><br/>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="3">
-      <center><a name="composite"/> <font size="-1">composite</font></center>
+      <center><a name="composite"></a> <font size="-1">composite</font></center>
       </td>
       <td><font size="-1">const <a href="Image++.html">Image</a>
 &amp;compositeImage_, ssize_t xOffset_, ssize_t yOffset_, <a href="Enumerations.html#CompositeOperator"> CompositeOperator</a>
@@ -579,7 +579,7 @@ specified by <i>compose_</i>. </font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="contrast"/> <font size="-1">contrast</font></center>
+      <center><a name="contrast"></a> <font size="-1">contrast</font></center>
       </td>
       <td><font size="-1">size_t sharpen_</font></td>
       <td><font size="-1">Contrast image (enhance intensity differences
@@ -587,7 +587,7 @@ in image)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="convolve"/> <font size="-1">convolve</font></center>
+      <center><a name="convolve"></a> <font size="-1">convolve</font></center>
       </td>
       <td><font size="-1">size_t order_, const double *kernel_</font></td>
       <td><font size="-1">Convolve image.  Applies a user-specfied
@@ -598,7 +598,7 @@ kernel to apply.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="crop"/> <font size="-1">crop</font></center>
+      <center><a name="crop"></a> <font size="-1">crop</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_</font></td>
@@ -606,21 +606,21 @@ kernel to apply.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="cycleColormap"/> <font size="-1">cycleColormap</font></center>
+      <center><a name="cycleColormap"></a> <font size="-1">cycleColormap</font></center>
       </td>
       <td><font size="-1">int amount_</font></td>
       <td><font size="-1">Cycle image colormap</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="despeckle"/> <font size="-1">despeckle</font></center>
+      <center><a name="despeckle"></a> <font size="-1">despeckle</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Despeckle image (reduce speckle noise)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="display"/> <font size="-1">display</font></center>
+      <center><a name="display"></a> <font size="-1">display</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Display image on screen.</font> <br/>
@@ -631,7 +631,7 @@ altered. Use a copy of the original if this is a problem.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="distort"/> <font size="-1">distort</font></center>
+      <center><a name="distort"></a> <font size="-1">distort</font></center>
       </td>
       <td><font size="-1">const DistortImageMethod method, const size_t number_arguments, const double *arguments, const bool bestfit = false </font></td>
       <td><font size="-1">Distort image.  Applies a user-specfied
@@ -639,7 +639,7 @@ distortion to the image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="2">
-      <center><a name="draw"/> <font size="-1">draw</font></center>
+      <center><a name="draw"></a> <font size="-1">draw</font></center>
       </td>
       <td><font size="-1">const <a href="Drawable.html">Drawable</a>
 &amp;drawable_</font></td>
@@ -655,7 +655,7 @@ list for repeated use.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="edge"/> <font size="-1">edge</font></center>
+      <center><a name="edge"></a> <font size="-1">edge</font></center>
       </td>
       <td><font size="-1">size_t radius_ = 0.0</font></td>
       <td><font size="-1">Edge image (hilight edges in image). 
@@ -664,7 +664,7 @@ of zero for automatic radius selection.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="emboss"/> <font size="-1">emboss</font></center>
+      <center><a name="emboss"></a> <font size="-1">emboss</font></center>
       </td>
       <td><font size="-1">const double radius_ = 1, const double sigma_
 = 0.5</font></td>
@@ -675,21 +675,21 @@ parameter specifies the standard deviation of the Laplacian, in pixels.</font></
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="enhance"/> <font size="-1">enhance</font></center>
+      <center><a name="enhance"></a> <font size="-1">enhance</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Enhance image (minimize noise)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="equalize"/> <font size="-1">equalize</font></center>
+      <center><a name="equalize"></a> <font size="-1">equalize</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Equalize image (histogram equalization)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="erase"/> <font size="-1">erase</font></center>
+      <center><a name="erase"></a> <font size="-1">erase</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Set all image pixels to the current
@@ -697,7 +697,7 @@ background color.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="4">
-      <center><a name="extent"/> <font size="-1">extent</font></center></td>
+      <center><a name="extent"></a> <font size="-1">extent</font></center></td>
       <td><font size="-1">const <a href="Geometry.html"> Geometry</a> &amp;geometry_</font></td>
       <td rowspan="2"><font size="-1">extends the image as defined by the geometry, gravity, and image background color.</font></td>
     </tr>
@@ -717,7 +717,7 @@ const <a href="Enumerations.html#GravityType">GravityType</a> &amp;gravity_</fon
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="flip"/> <font size="-1">flip</font></center>
+      <center><a name="flip"></a> <font size="-1">flip</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Flip image (reflect each scanline in the
@@ -725,7 +725,7 @@ vertical direction)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="4">
-      <center><a name="floodFillColor"/> <font size="-1">floodFill-</font>
+      <center><a name="floodFillColor"></a> <font size="-1">floodFill-</font>
       <br/>
       <font size="-1">Color</font></center>
       </td>
@@ -751,7 +751,7 @@ border color. Uses current fuzz setting when determining color match.</font></td
 const <a href="Color.html">Color</a> &amp;borderColor_</font></td>
     </tr>
     <tr>
-      <td style="text-align: center;"><a name="floodFillOpacity"/> <font size="-1">floodFillOpacity</font></td>
+      <td style="text-align: center;"><a name="floodFillOpacity"></a> <font size="-1">floodFillOpacity</font></td>
       <td><font size="-1">const long x_, const long y_, const unsigned int
 opacity_, const PaintMethod method_</font></td>
       <td><font size="-1">Floodfill pixels matching color (within fuzz
@@ -760,7 +760,7 @@ method.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="4">
-      <center><a name="floodFillTexture"/> <font size="-1">floodFill-</font>
+      <center><a name="floodFillTexture"></a> <font size="-1">floodFill-</font>
       <br/>
       <font size="-1">Texture</font></center>
       </td>
@@ -789,7 +789,7 @@ Color</a>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="flop"/> <font size="-1">flop</font></center>
+      <center><a name="flop"></a> <font size="-1">flop</font></center>
       </td>
       <td><font size="-1">void </font></td>
       <td><font size="-1">Flop image (reflect each scanline in the
@@ -797,7 +797,7 @@ horizontal direction)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="2">
-      <center><a name="frame"/> <font size="-1">frame</font></center>
+      <center><a name="frame"></a> <font size="-1">frame</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_ = "25x25+6+6"</font></td>
@@ -809,7 +809,7 @@ ssize_t x_, ssize_t y_, ssize_t innerBevel_ = 0, ssize_t outerBevel_ = 0</font><
     </tr>
     <tr>
       <td>
-      <center><a name="fx"/> <font size="-1">fx</font></center>
+      <center><a name="fx"></a> <font size="-1">fx</font></center>
       </td>
       <td><font size="-1">const std::string expression, const Magick::ChannelType channel</font></td>
       <td><font size="-1">Fx image.  Applies a mathematical
@@ -817,7 +817,7 @@ expression to the image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="2">
-      <center><a name="gamma"/> <font size="-1">gamma</font></center>
+      <center><a name="gamma"></a> <font size="-1">gamma</font></center>
       </td>
       <td><font size="-1">double gamma_</font></td>
       <td><font size="-1">Gamma correct image (uniform red, green, and
@@ -831,7 +831,7 @@ of image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="gaussianBlur"/> <font size="-1">gaussianBlur</font></center>
+      <center><a name="gaussianBlur"></a> <font size="-1">gaussianBlur</font></center>
       </td>
       <td><font size="-1">const double width_, const double sigma_</font></td>
       <td><font size="-1">Gaussian blur image. The number of neighbor
@@ -841,7 +841,7 @@ convolution mask. The standard deviation of the gaussian bell curve is
 specified by 'sigma_'.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="gaussianBlurChannel"/>gaussianBlurChannel<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="gaussianBlurChannel"></a>gaussianBlurChannel<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const ChannelType
 channel_, const double radius_ = 0.0, const double sigma_ = 1.0<br/>
@@ -855,7 +855,7 @@ convolution mask. The standard deviation of the gaussian bell curve is
 specified by 'sigma_'.</font></td>
     </tr>
     <tr>
-      <td style="text-align: center;" valign="middle"><font size="-1"><a name="haldClut"/> haldClut<br/>
+      <td style="text-align: center;" valign="middle"><font size="-1"><a name="haldClut"></a> haldClut<br/>
       </font></td>
       <td valign="middle"><font size="-1">const Image &amp;reference_<br/>
       </font></td>
@@ -864,21 +864,21 @@ specified by 'sigma_'.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="implode"/> <font size="-1">implode</font></center>
+      <center><a name="implode"></a> <font size="-1">implode</font></center>
       </td>
       <td><font size="-1">const double factor_</font></td>
       <td><font size="-1">Implode image (special effect)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="inverseFourierTransform"/> <font size="-1">inverseFourierTransform</font></center>
+      <center><a name="inverseFourierTransform"></a> <font size="-1">inverseFourierTransform</font></center>
       </td>
       <td><font size="-1">const Image &amp;phaseImage_, const bool magnitude_</font></td>
       <td><font size="-1">implements the inverse discrete Fourier transform (DFT) of the image either as a magnitude / phase or real / imaginary image pair.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="label"/> <font size="-1">label</font></center>
+      <center><a name="label"></a> <font size="-1">label</font></center>
       </td>
       <td><font size="-1">const string &amp;label_</font></td>
       <td><font size="-1">Assign a label to an image. Use this option
@@ -892,7 +892,7 @@ the string. When converting to Postscript, use this  option to
 specify a header string to print above the image.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: top; text-align: center;"><small><a name="level"/>level<br/>
+      <td style="vertical-align: top; text-align: center;"><small><a name="level"></a>level<br/>
       </small></td>
       <td style="vertical-align: top;"><small>const double black_point,
 const double white_point, const double mid_point=1.0<br/>
@@ -911,7 +911,7 @@ useful range of 0 to ten.<br/>
       </small></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="levelChannel"/>levelChannel<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="levelChannel"></a>levelChannel<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const ChannelType
 channel, const double black_point, const double white_point, const
@@ -932,14 +932,14 @@ range of 0 to ten.<br/>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="magnify"/> <font size="-1">magnify</font></center>
+      <center><a name="magnify"></a> <font size="-1">magnify</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Magnify image by integral size</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="map"/> <font size="-1">map</font></center>
+      <center><a name="map"></a> <font size="-1">map</font></center>
       </td>
       <td><font size="-1">const Image &amp;mapImage_ , bool dither_ =
 false</font></td>
@@ -954,7 +954,7 @@ with this option.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="matteFloodfill"/> <font size="-1">matteFloodfill</font></center>
+      <center><a name="matteFloodfill"></a> <font size="-1">matteFloodfill</font></center>
       </td>
       <td><font size="-1">const <a href="Color.html">Color</a>
 &amp;target_, const unsigned int  opacity_, const ssize_t x_, const
@@ -964,14 +964,14 @@ y_, <a href="Enumerations.html#PaintMethod">PaintMethod</a> method_</font></td>
 opacity value.</font></td>
     </tr>
     <tr>
-      <td style="text-align: center;"><a name="medianFilter"/> <font size="-1">medianFilter</font></td>
+      <td style="text-align: center;"><a name="medianFilter"></a> <font size="-1">medianFilter</font></td>
       <td><font size="-1">const double radius_ = 0.0</font></td>
       <td><font size="-1">Filter image by replacing each pixel
 component with the median color in a circular neighborhood</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="mergeLayers"/> <font size="-1">mergeLayers</font></center>
+      <center><a name="mergeLayers"></a> <font size="-1">mergeLayers</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#LayerMethod">LayerMethod</a>
 noiseType_</font></td>
@@ -979,13 +979,13 @@ noiseType_</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="minify"/> <font size="-1">minify</font></center>
+      <center><a name="minify"></a> <font size="-1">minify</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Reduce image by integral size</font></td>
     </tr>
     <tr>
-      <td style="text-align: center;"><a name="modifyImage"/> <font size="-1">modifyImage</font></td>
+      <td style="text-align: center;"><a name="modifyImage"></a> <font size="-1">modifyImage</font></td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Prepare to update image. Ensures that there
 is only one reference to the underlying image so that the underlying
@@ -994,7 +994,7 @@ the image. Copies the underlying image to a new image if necessary.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="modulate"/> <font size="-1">modulate</font></center>
+      <center><a name="modulate"></a> <font size="-1">modulate</font></center>
       </td>
       <td><font size="-1">double brightness_, double saturation_,
 double hue_</font></td>
@@ -1006,7 +1006,7 @@ position corresponding to an argument range of 0 to 200.0 (100.0 for no
 change).</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="motionBlur"/>motionBlur<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="motionBlur"></a>motionBlur<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const double radius_,
 const double sigma_, const double angle_<br/>
@@ -1021,7 +1021,7 @@ be comming from (zero degrees is from the right).<br/>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="negate"/> <font size="-1">negate</font></center>
+      <center><a name="negate"></a> <font size="-1">negate</font></center>
       </td>
       <td><font size="-1">bool grayscale_ = false</font></td>
       <td><font size="-1">Negate colors in image.  Replace every
@@ -1031,7 +1031,7 @@ image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="normalize"/> <font size="-1">normalize</font></center>
+      <center><a name="normalize"></a> <font size="-1">normalize</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Normalize image (increase contrast by
@@ -1039,14 +1039,14 @@ normalizing the pixel values to span the full range of color values).</font></td
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="oilPaint"/> <font size="-1">oilPaint</font></center>
+      <center><a name="oilPaint"></a> <font size="-1">oilPaint</font></center>
       </td>
       <td><font size="-1">size_t radius_ = 3</font></td>
       <td><font size="-1">Oilpaint image (image looks like oil painting)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="opacity"/> <font size="-1">opacity</font></center>
+      <center><a name="opacity"></a> <font size="-1">opacity</font></center>
       </td>
       <td><font size="-1">unsigned int opacity_</font></td>
       <td><font size="-1">Set or attenuate the opacity channel in the
@@ -1061,7 +1061,7 @@ respectively.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="opaque"/> <font size="-1">opaque</font></center>
+      <center><a name="opaque"></a> <font size="-1">opaque</font></center>
       </td>
       <td><font size="-1">const <a href="Color.html">Color</a>
 &amp;opaqueColor_, const <a href="Color.html">Color</a> &amp;penColor_</font></td>
@@ -1070,7 +1070,7 @@ to specified penColor_.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="2">
-      <center><a name="ping"/> <font size="-1">ping</font></center>
+      <center><a name="ping"></a> <font size="-1">ping</font></center>
       </td>
       <td><font size="-1">const std::string &amp;imageSpec_</font></td>
       <td rowspan="2"><font size="-1">Ping is similar to read
@@ -1084,7 +1084,7 @@ valid after calling ping.</font></td>
       <td><font size="-1">const Blob &amp;blob_</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="process"/>process<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="process"></a>process<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>std::string name_,
 const ssize_t argc_, char **argv_<br/>
@@ -1100,7 +1100,7 @@ does not exist, fails to load, or fails during execution.</small><br/>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="quantize"/> <font size="-1">quantize</font></center>
+      <center><a name="quantize"></a> <font size="-1">quantize</font></center>
       </td>
       <td><font size="-1">bool measureError_ = false</font></td>
       <td><font size="-1">Quantize image (reduce number of colors). Set
@@ -1108,7 +1108,7 @@ measureError_ to true in order to calculate error attributes.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="raise"/> <font size="-1">raise</font></center>
+      <center><a name="raise"></a> <font size="-1">raise</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_ = "6x6+0+0",  bool raisedFlag_ =  false</font></td>
@@ -1117,7 +1117,7 @@ an image to give a 3-D raised or lowered effect)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="8">
-      <center><a name="read"/> <font size="-1">read</font></center>
+      <center><a name="read"></a> <font size="-1">read</font></center>
       </td>
       <td><font size="-1">const string &amp;imageSpec_</font></td>
       <td><font size="-1">Read image into current object</font></td>
@@ -1213,13 +1213,13 @@ values and type_ parameters.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="reduceNoise"/> <font size="-1">reduceNoise</font></center>
+      <center><a name="reduceNoise"></a> <font size="-1">reduceNoise</font></center>
       </td>
       <td><font size="-1">const double order_</font></td>
       <td><font size="-1">reduce noise in image using a noise peak elimination filter.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="randomThreshold"/>randomThreshold<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="randomThreshold"></a>randomThreshold<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const Geometry
 &amp;thresholds_<br/>
@@ -1235,7 +1235,7 @@ dithering.<br/>
       </small></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="randomThresholdChannel"/>randomThresholdChannel<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="randomThresholdChannel"></a>randomThresholdChannel<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const Geometry
 &amp;thresholds_, const ChannelType channel_<br/>
@@ -1247,7 +1247,7 @@ but restricted to the specified channel.<br/>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="roll"/> <font size="-1">roll</font></center>
+      <center><a name="roll"></a> <font size="-1">roll</font></center>
       </td>
       <td><font size="-1">int columns_, ssize_t rows_</font></td>
       <td><font size="-1">Roll image (rolls image vertically and
@@ -1255,7 +1255,7 @@ horizontally) by specified number of columnms and rows)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="rotate"/> <font size="-1">rotate</font></center>
+      <center><a name="rotate"></a> <font size="-1">rotate</font></center>
       </td>
       <td><font size="-1">double degrees_</font></td>
       <td><font size="-1">Rotate image counter-clockwise by specified
@@ -1263,7 +1263,7 @@ number of degrees.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="sample"/> <font size="-1">sample</font></center>
+      <center><a name="sample"></a> <font size="-1">sample</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_ </font></td>
@@ -1271,7 +1271,7 @@ number of degrees.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="scale"/> <font size="-1">scale</font></center>
+      <center><a name="scale"></a> <font size="-1">scale</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_</font></td>
@@ -1279,7 +1279,7 @@ number of degrees.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="segment"/> <font size="-1">segment</font></center>
+      <center><a name="segment"></a> <font size="-1">segment</font></center>
       </td>
       <td><font size="-1">double clusterThreshold_ = 1.0,</font> <br/>
       <font size="-1">double smoothingThreshold_ = 1.5</font></td>
@@ -1298,7 +1298,7 @@ second derivative.  The default is 1.5.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="shade"/> <font size="-1">shade</font></center>
+      <center><a name="shade"></a> <font size="-1">shade</font></center>
       </td>
       <td><font size="-1">double azimuth_ = 30, double elevation_ = 30,</font>
       <br/>
@@ -1312,7 +1312,7 @@ shade the red, green, and blue components of the image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="shadow"/> <font size="-1">shadow</font></center>
+      <center><a name="shadow"></a> <font size="-1">shadow</font></center>
       </td>
       <td><font size="-1">const double percent_opacity = 80, const double sigma_
 = 0.5, const ssize_t x_ = 0, const ssize_t y_ = 0</font></td>
@@ -1320,7 +1320,7 @@ shade the red, green, and blue components of the image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="sharpen"/> <font size="-1">sharpen</font></center>
+      <center><a name="sharpen"></a> <font size="-1">sharpen</font></center>
       </td>
       <td><font size="-1">const double radius_ = 1, const double sigma_
 = 0.5</font></td>
@@ -1330,7 +1330,7 @@ the center pixel.  The <i>sigma_</i> parameter specifies the
 standard deviation of the Laplacian, in pixels.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="sharpenChannel"/>sharpenChannel<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="sharpenChannel"></a>sharpenChannel<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const ChannelType
 channel_, const double radius_ = 0.0, const double sigma_ = 1.0<br/>
@@ -1344,14 +1344,14 @@ standard deviation of the Laplacian, in pixels.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="shave"/> <font size="-1">shave</font></center>
+      <center><a name="shave"></a> <font size="-1">shave</font></center>
       </td>
       <td><font size="-1">const Geometry &amp;geometry_</font></td>
       <td><font size="-1">Shave pixels from image edges.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="shear"/> <font size="-1">shear</font></center>
+      <center><a name="shear"></a> <font size="-1">shear</font></center>
       </td>
       <td><font size="-1">double xShearAngle_, double yShearAngle_</font></td>
       <td><font size="-1">Shear image (create parallelogram by sliding
@@ -1368,7 +1368,7 @@ filled  with  the  color  defined as <i>borderColor</i>. </font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="solarize"/> <font size="-1">solarize</font></center>
+      <center><a name="solarize"></a> <font size="-1">solarize</font></center>
       </td>
       <td><font size="-1">double factor_ = 50.0</font></td>
       <td><font size="-1">Solarize image (similar to effect seen when
@@ -1376,7 +1376,7 @@ exposing a photographic film to light during the development process)</font></td
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="splice"/> <font size="-1">splice</font></center>
+      <center><a name="splice"></a> <font size="-1">splice</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_</font></td>
@@ -1384,7 +1384,7 @@ exposing a photographic film to light during the development process)</font></td
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="spread"/> <font size="-1">spread</font></center>
+      <center><a name="spread"></a> <font size="-1">spread</font></center>
       </td>
       <td><font size="-1">size_t amount_ = 3</font></td>
       <td><font size="-1">Spread pixels randomly within image by
@@ -1392,7 +1392,7 @@ specified amount</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="stegano"/> <font size="-1">stegano</font></center>
+      <center><a name="stegano"></a> <font size="-1">stegano</font></center>
       </td>
       <td><font size="-1">const Image &amp;watermark_</font></td>
       <td><font size="-1">Add a digital watermark to the image (based
@@ -1400,21 +1400,21 @@ on second image)</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="sparseColor"/> <font size="-1">sparseColor</font></center>
+      <center><a name="sparseColor"></a> <font size="-1">sparseColor</font></center>
       </td>
       <td><font size="-1">const ChannelType channel, const SparseColorMethod method, const size_t number_arguments, const double *arguments </font></td>
       <td><font size="-1">Sparse color image, given a set of coordinates, interpolates the colors found at those coordinates, across the whole image, using various methods.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="statistics"/> <font size="-1">statistics</font></center>
+      <center><a name="statistics"></a> <font size="-1">statistics</font></center>
       </td>
       <td><font size="-1">ImageStatistics *statistics</font></td>
       <td><font size="-1">Obtain image statistics. Statistics are normalized to the range of 0.0 to 1.0 and are output to the specified ImageStatistics structure.  The structure includes members maximum, minimum, mean, standard_deviation, and variance for each of these channels: red, green, blue, and opacity (e.g. statistics-&gt;red.maximum).</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="stereo"/> <font size="-1">stereo</font></center>
+      <center><a name="stereo"></a> <font size="-1">stereo</font></center>
       </td>
       <td><font size="-1">const Image &amp;rightImage_</font></td>
       <td><font size="-1">Create an image which appears in stereo when
@@ -1422,7 +1422,7 @@ viewed with red-blue glasses (Red image on left, blue on right)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="swirl"/> <font size="-1">swirl</font></center>
+      <center><a name="swirl"></a> <font size="-1">swirl</font></center>
       </td>
       <td><font size="-1">double degrees_</font></td>
       <td><font size="-1">Swirl image (image pixels are rotated by
@@ -1430,7 +1430,7 @@ degrees)</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="texture"/> <font size="-1">texture</font></center>
+      <center><a name="texture"></a> <font size="-1">texture</font></center>
       </td>
       <td><font size="-1">const Image &amp;texture_</font></td>
       <td><font size="-1">Layer a texture on pixels matching image
@@ -1438,14 +1438,14 @@ background color.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="threshold"/> <font size="-1">threshold</font></center>
+      <center><a name="threshold"></a> <font size="-1">threshold</font></center>
       </td>
       <td><font size="-1">double threshold_</font></td>
       <td><font size="-1">Threshold image</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="2">
-      <center><a name="transform"/> <font size="-1">transform</font></center>
+      <center><a name="transform"></a> <font size="-1">transform</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;imageGeometry_</font></td>
@@ -1459,7 +1459,7 @@ and crop geometries. Crop geometry is optional.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="transparent"/> <font size="-1">transparent</font></center>
+      <center><a name="transparent"></a> <font size="-1">transparent</font></center>
       </td>
       <td><font size="-1">const <a href="Color.html">Color</a>
 &amp;color_</font></td>
@@ -1468,7 +1468,7 @@ matching color to transparent.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="trim"/> <font size="-1">trim</font></center>
+      <center><a name="trim"></a> <font size="-1">trim</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">Trim edges that are the background color from
@@ -1476,7 +1476,7 @@ the image.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="unsharpmask"/> <font size="-1">unsharpmask</font></center>
+      <center><a name="unsharpmask"></a> <font size="-1">unsharpmask</font></center>
       </td>
       <td><font size="-1">double radius_, double sigma_, double
 amount_, double threshold_</font></td>
@@ -1491,7 +1491,7 @@ parameter specifies the threshold in pixels needed to apply the
 diffence amount.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="unsharpmaskChannel"/>unsharpmaskChannel<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="unsharpmaskChannel"></a>unsharpmaskChannel<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>const ChannelType
 channel_, const double radius_, const double sigma_, const double
@@ -1510,7 +1510,7 @@ diffence amount.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="wave"/> <font size="-1">wave</font></center>
+      <center><a name="wave"></a> <font size="-1">wave</font></center>
       </td>
       <td><font size="-1">double amplitude_ = 25.0, double wavelength_
 = 150.0</font></td>
@@ -1518,7 +1518,7 @@ diffence amount.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;" rowspan="5">
-      <center><a name="write"/> <font size="-1">write</font></center>
+      <center><a name="write"></a> <font size="-1">write</font></center>
       </td>
       <td><font size="-1">const string &amp;imageSpec_</font></td>
       <td><font size="-1">Write image to a file using filename i<i>mageSpec_</i>
@@ -1608,7 +1608,7 @@ values and type_ parameters.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="resize"/> <font size="-1">resize</font></center>
+      <center><a name="resize"></a> <font size="-1">resize</font></center>
       </td>
       <td><font size="-1">const <a href="Geometry.html">Geometry</a>
 &amp;geometry_</font></td>
@@ -1617,7 +1617,7 @@ values and type_ parameters.</font></td>
   </tbody>
 </table>
 <center>
-<h3> <a name="Image Attributes"/> Image Attributes</h3>
+<h3> <a name="Image Attributes"></a> Image Attributes</h3>
 </center>
 Image attributes are set and obtained via methods in Image. Except for
 methods which accept pointer arguments (e.g. c<tt>hromaBluePrimary)</tt>
@@ -1658,7 +1658,7 @@ obtain them are shown in the following table: <br/>
     </tr>
     <tr>
       <td>
-      <center><a name="adjoin"/> <font size="-1">adjoin</font></center>
+      <center><a name="adjoin"></a> <font size="-1">adjoin</font></center>
       </td>
       <td><font size="-1">bool</font></td>
       <td><font size="-1">void</font></td>
@@ -1667,7 +1667,7 @@ obtain them are shown in the following table: <br/>
     </tr>
     <tr>
       <td>
-      <center><a name="antiAlias"/> <font size="-1">antiAlias</font></center>
+      <center><a name="antiAlias"></a> <font size="-1">antiAlias</font></center>
       </td>
       <td><font size="-1">bool</font></td>
       <td><font size="-1">void</font></td>
@@ -1677,7 +1677,7 @@ and Postscript or TrueType fonts. Enabled by default.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="animationDelay"/> <font size="-1">animation-</font>
+      <center><a name="animationDelay"></a> <font size="-1">animation-</font>
       <br/>
       <font size="-1">Delay</font></center>
       </td>
@@ -1691,7 +1691,7 @@ sequence  of GIF images within Netscape.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="animationIterations"/> <font size="-1">animation-</font>
+      <center><a name="animationIterations"></a> <font size="-1">animation-</font>
       <br/>
       <font size="-1">Iterations</font></center>
       </td>
@@ -1702,7 +1702,7 @@ sequence  of GIF images within Netscape.</font></td>
 (e.g. Netscape loop extension) for.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle; text-align: center;"><small><a name="attribute"/>attribute<br/>
+      <td style="vertical-align: middle; text-align: center;"><small><a name="attribute"></a>attribute<br/>
       </small></td>
       <td style="vertical-align: middle;"><small>string<br/>
       </small></td>
@@ -1721,7 +1721,7 @@ similar to "EXIF:DateTime".</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="backgroundColor"/> <font size="-1">background-</font>
+      <center><a name="backgroundColor"></a> <font size="-1">background-</font>
       <br/>
       <font size="-1">Color</font></center>
       </td>
@@ -1733,7 +1733,7 @@ similar to "EXIF:DateTime".</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="backgroundTexture"/> <font size="-1">background-</font>
+      <center><a name="backgroundTexture"></a> <font size="-1">background-</font>
       <br/>
       <font size="-1">Texture</font></center>
       </td>
@@ -1745,7 +1745,7 @@ texture. Does not modify image pixels.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="baseColumns"/> <font size="-1">baseColumns</font></center>
+      <center><a name="baseColumns"></a> <font size="-1">baseColumns</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -1754,7 +1754,7 @@ texture. Does not modify image pixels.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="baseFilename"/> <font size="-1">baseFilename</font></center>
+      <center><a name="baseFilename"></a> <font size="-1">baseFilename</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -1763,7 +1763,7 @@ texture. Does not modify image pixels.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="baseRows"/> <font size="-1">baseRows</font></center>
+      <center><a name="baseRows"></a> <font size="-1">baseRows</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -1772,7 +1772,7 @@ texture. Does not modify image pixels.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="borderColor"/> <font size="-1">borderColor</font></center>
+      <center><a name="borderColor"></a> <font size="-1">borderColor</font></center>
       </td>
       <td><font size="-1"><a href="Color.html">Color</a> </font></td>
       <td><font size="-1">void</font></td>
@@ -1781,7 +1781,7 @@ texture. Does not modify image pixels.</font></td>
       <td><font size="-1">Image border color</font></td>
     </tr>
     <tr>
-      <td><a name="boundingBox"/> <font size="-1">boundingBox</font></td>
+      <td><a name="boundingBox"></a> <font size="-1">boundingBox</font></td>
       <td><font size="-1">Geometry</font></td>
       <td><font size="-1">void</font></td>
       <td bgcolor="#666666"><font size="-1"> </font></td>
@@ -1792,7 +1792,7 @@ crop(Geometry(0,0)).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="boxColor"/> <font size="-1">boxColor</font></center>
+      <center><a name="boxColor"></a> <font size="-1">boxColor</font></center>
       </td>
       <td><font size="-1"><a href="Color.html">Color</a> </font></td>
       <td><font size="-1">void</font></td>
@@ -1802,7 +1802,7 @@ crop(Geometry(0,0)).</font></td>
 on.</font></td>
     </tr>
     <tr>
-      <td><a name="cacheThreshold"/> <font size="-1">cacheThreshold</font></td>
+      <td><a name="cacheThreshold"></a> <font size="-1">cacheThreshold</font></td>
       <td><font size="-1">size_t</font></td>
       <td bgcolor="#666666"><font size="-1"> </font></td>
       <td><font size="-1">const size_t</font></td>
@@ -1812,7 +1812,7 @@ to/from disk. This is a static method and the attribute it sets is
 shared by all Image objects.</font></td>
     </tr>
     <tr>
-      <td style="vertical-align: middle;" valign="middle"><small><a name="channelDepth"/>channelDepth<br/>
+      <td style="vertical-align: middle;" valign="middle"><small><a name="channelDepth"></a>channelDepth<br/>
       </small></td>
       <td style="vertical-align: middle;" valign="middle"><small>size_t
 <br/>
@@ -1840,7 +1840,7 @@ channel depth.<br/>
     </tr>
     <tr>
       <td>
-      <center><a name="chromaBluePrimary"/> <font size="-1">chroma-</font>
+      <center><a name="chromaBluePrimary"></a> <font size="-1">chroma-</font>
       <br/>
       <font size="-1">BluePrimary</font></center>
       </td>
@@ -1852,7 +1852,7 @@ y=0.06)</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="chromaGreenPrimary"/> <font size="-1">chroma-</font>
+      <center><a name="chromaGreenPrimary"></a> <font size="-1">chroma-</font>
       <br/>
       <font size="-1">GreenPrimary</font></center>
       </td>
@@ -1864,7 +1864,7 @@ y=0.6)</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="chromaRedPrimary"/> <font size="-1">chroma-</font>
+      <center><a name="chromaRedPrimary"></a> <font size="-1">chroma-</font>
       <br/>
       <font size="-1">RedPrimary</font></center>
       </td>
@@ -1876,7 +1876,7 @@ y=0.33)</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="chromaWhitePoint"/> <font size="-1">chroma-</font>
+      <center><a name="chromaWhitePoint"></a> <font size="-1">chroma-</font>
       <br/>
       <font size="-1">WhitePoint</font></center>
       </td>
@@ -1888,7 +1888,7 @@ y=0.329)</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="classType"/> <font size="-1">classType</font></center>
+      <center><a name="classType"></a> <font size="-1">classType</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#ClassType">ClassType</a>
       </font></td>
@@ -1902,7 +1902,7 @@ in a loss of color due to the limited size of the palette (256 or
     </tr>
     <tr>
       <td>
-      <center><a name="clipMask"/> <font size="-1">clipMask</font></center>
+      <center><a name="clipMask"></a> <font size="-1">clipMask</font></center>
       </td>
       <td><font size="-1">Image</font></td>
       <td><font size="-1">void</font></td>
@@ -1915,7 +1915,7 @@ unset an existing clip mask.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="colorFuzz"/> <font size="-1">colorFuzz</font></center>
+      <center><a name="colorFuzz"></a> <font size="-1">colorFuzz</font></center>
       </td>
       <td><font size="-1">double</font></td>
       <td><font size="-1">void</font></td>
@@ -1927,7 +1927,7 @@ are close to the target color in RGB space.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="colorMap"/> <font size="-1">colorMap</font></center>
+      <center><a name="colorMap"></a> <font size="-1">colorMap</font></center>
       </td>
       <td><font size="-1"><a href="Color.html">Color</a> </font></td>
       <td><font size="-1">size_t index_</font></td>
@@ -1936,7 +1936,7 @@ are close to the target color in RGB space.</font></td>
     </tr>
     <tr>
       <td valign="middle">
-      <div style="text-align:center"><a name="colorMapSize"/> <font size="-1">colorMapSize<br/>
+      <div style="text-align:center"><a name="colorMapSize"></a> <font size="-1">colorMapSize<br/>
       </font></div>
       </td>
       <td valign="middle"><font size="-1">size_t<br/>
@@ -1957,7 +1957,7 @@ ensure that the image colormap indexes reference valid colormap entries.</font><
     </tr>
     <tr>
       <td>
-      <center><a name="colorSpace"/> <font size="-1">colorSpace</font></center>
+      <center><a name="colorSpace"></a> <font size="-1">colorSpace</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#ColorspaceType">ColorspaceType</a>
 colorSpace_</font></td>
@@ -1970,7 +1970,7 @@ for the case of CMY(K).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="columns"/> <font size="-1">columns</font></center>
+      <center><a name="columns"></a> <font size="-1">columns</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -1979,7 +1979,7 @@ for the case of CMY(K).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="comment"/> <font size="-1">comment</font></center>
+      <center><a name="comment"></a> <font size="-1">comment</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -1988,7 +1988,7 @@ for the case of CMY(K).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="compose"/> <font size="-1">compose</font></center>
+      <center><a name="compose"></a> <font size="-1">compose</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#CompositeOperator">CompositeOperator</a>
       </font></td>
@@ -2000,7 +2000,7 @@ composition is implicitly used (such as for image flattening).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="compressType"/> <font size="-1">compress-</font>
+      <center><a name="compressType"></a> <font size="-1">compress-</font>
       <br/>
       <font size="-1">Type</font></center>
       </td>
@@ -2014,7 +2014,7 @@ compression type of the specified image file.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="debug"/> <font size="-1">debug</font></center>
+      <center><a name="debug"></a> <font size="-1">debug</font></center>
       </td>
       <td><font size="-1">bool</font></td>
       <td><small><font size="-1"><small>void</small></font></small></td>
@@ -2023,7 +2023,7 @@ compression type of the specified image file.</font></td>
 from ImageMagick as it executes.</font></td>
     </tr>
     <tr>
-      <td style="text-align: center; vertical-align: middle;"><small><a name="defineValue"/>defineValue<br/>
+      <td style="text-align: center; vertical-align: middle;"><small><a name="defineValue"></a>defineValue<br/>
       </small></td>
       <td style="vertical-align: middle; text-align: left;"><small>string<br/>
       </small></td>
@@ -2044,7 +2044,7 @@ defineSet() method if the key must be removed entirely.</small><br/>
       </td>
     </tr>
     <tr>
-      <td style="text-align: center; vertical-align: middle;"><small><a name="defineSet"/>defineSet<br/>
+      <td style="text-align: center; vertical-align: middle;"><small><a name="defineSet"></a>defineSet<br/>
       </small></td>
       <td style="vertical-align: middle; text-align: left;"><small>bool<br/>
       </small></td>
@@ -2067,7 +2067,7 @@ exists.<br/>
     </tr>
     <tr>
       <td>
-      <center><a name="density"/> <font size="-1">density</font></center>
+      <center><a name="density"></a> <font size="-1">density</font></center>
       </td>
       <td><font size="-1"><a href="Geometry.html">Geometry</a>  
 (default 72x72)</font></td>
@@ -2080,7 +2080,7 @@ Postscript or Portable Document page. Often used with <i>psPageSize</i>.</font><
     </tr>
     <tr>
       <td>
-      <center><a name="depth"/> <font size="-1">depth</font></center>
+      <center><a name="depth"></a> <font size="-1">depth</font></center>
       </td>
       <td><font size="-1"> size_t (8-32)</font></td>
       <td><font size="-1">void</font></td>
@@ -2092,7 +2092,7 @@ ImageMagick is compiled with.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="endian"/> <font size="-1">endian</font></center>
+      <center><a name="endian"></a> <font size="-1">endian</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#EndianType">EndianType</a>
       </font></td>
@@ -2104,7 +2104,7 @@ which support it.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="directory"/> <font size="-1">directory</font></center>
+      <center><a name="directory"></a> <font size="-1">directory</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2113,7 +2113,7 @@ which support it.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="file"/> <font size="-1">file</font></center>
+      <center><a name="file"></a> <font size="-1">file</font></center>
       </td>
       <td><font size="-1">FILE *</font></td>
       <td><font size="-1">FILE *</font></td>
@@ -2122,7 +2122,7 @@ which support it.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="fileName"/> <font size="-1">fileName</font></center>
+      <center><a name="fileName"></a> <font size="-1">fileName</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2131,7 +2131,7 @@ which support it.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="fileSize"/> <font size="-1">fileSize</font></center>
+      <center><a name="fileSize"></a> <font size="-1">fileSize</font></center>
       </td>
       <td><font size="-1">off_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2140,7 +2140,7 @@ which support it.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="fillColor"/> <font size="-1">fillColor</font></center>
+      <center><a name="fillColor"></a> <font size="-1">fillColor</font></center>
       </td>
       <td><font size="-1">Color</font></td>
       <td><font size="-1">void</font></td>
@@ -2149,7 +2149,7 @@ which support it.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="fillPattern"/> <font size="-1">fillPattern</font></center>
+      <center><a name="fillPattern"></a> <font size="-1">fillPattern</font></center>
       </td>
       <td><font size="-1">Image</font></td>
       <td><font size="-1">void</font></td>
@@ -2159,7 +2159,7 @@ objects.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="fillRule"/> <font size="-1">fillRule</font></center>
+      <center><a name="fillRule"></a> <font size="-1">fillRule</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#FillRule">FillRule</a>
       </font></td>
@@ -2169,7 +2169,7 @@ objects.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="filterType"/> <font size="-1">filterType</font></center>
+      <center><a name="filterType"></a> <font size="-1">filterType</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#FilterTypes">FilterTypes</a>
       </font></td>
@@ -2184,7 +2184,7 @@ images.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="font"/> <font size="-1">font</font></center>
+      <center><a name="font"></a> <font size="-1">font</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2197,7 +2197,7 @@ server. To use a TrueType font, precede the TrueType filename with an
     </tr>
     <tr>
       <td>
-      <center><a name="fontPointsize"/> <font size="-1">fontPointsize</font></center>
+      <center><a name="fontPointsize"></a> <font size="-1">fontPointsize</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2206,7 +2206,7 @@ server. To use a TrueType font, precede the TrueType filename with an
     </tr>
     <tr>
       <td>
-      <center><a name="fontTypeMetrics"/> <font size="-1">fontTypeMetrics</font></center>
+      <center><a name="fontTypeMetrics"></a> <font size="-1">fontTypeMetrics</font></center>
       </td>
       <td><font size="-1"><a href="TypeMetric.html">TypeMetric</a> </font></td>
       <td><font size="-1">const std::string &amp;text_, <a href="TypeMetric.html"> TypeMetric</a> *metrics</font></td>
@@ -2216,7 +2216,7 @@ specified <i>text</i>, and current <a href="Image++.html#font">font</a> and <a h
     </tr>
     <tr>
       <td>
-      <center><a name="format"/> <font size="-1">format</font></center>
+      <center><a name="format"></a> <font size="-1">format</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2225,7 +2225,7 @@ specified <i>text</i>, and current <a href="Image++.html#font">font</a> and <a h
     </tr>
     <tr>
       <td>
-      <center><a name="gamma"/> <font size="-1">gamma</font></center>
+      <center><a name="gamma"></a> <font size="-1">gamma</font></center>
       </td>
       <td><font size="-1">double (typical range 0.8 to 2.3)</font></td>
       <td><font size="-1">void</font></td>
@@ -2238,7 +2238,7 @@ color  difference.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="geometry"/> <font size="-1">geometry</font></center>
+      <center><a name="geometry"></a> <font size="-1">geometry</font></center>
       </td>
       <td><font size="-1"><a href="Geometry.html">Geometry</a> </font></td>
       <td><font size="-1">void</font></td>
@@ -2247,7 +2247,7 @@ color  difference.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="gifDisposeMethod"/> <font size="-1">gifDispose-</font>
+      <center><a name="gifDisposeMethod"></a> <font size="-1">gifDispose-</font>
       <br/>
       <font size="-1">Method</font></center>
       </td>
@@ -2265,7 +2265,7 @@ disposed of) when creating a GIF animation.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="iccColorProfile"/> <font size="-1">iccColorProfile</font></center>
+      <center><a name="iccColorProfile"></a> <font size="-1">iccColorProfile</font></center>
       </td>
       <td><font size="-1"><a href="Blob.html">Blob</a> </font></td>
       <td><font size="-1">void</font></td>
@@ -2278,7 +2278,7 @@ International Color Consortium</a> for the format of ICC color profiles.</font><
     </tr>
     <tr>
       <td>
-      <center><a name="interlaceType"/> <font size="-1">interlace-</font>
+      <center><a name="interlaceType"></a> <font size="-1">interlace-</font>
       <br/>
       <font size="-1">Type</font></center>
       </td>
@@ -2300,7 +2300,7 @@ image.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="iptcProfile"/> <font size="-1">iptcProfile</font></center>
+      <center><a name="iptcProfile"></a> <font size="-1">iptcProfile</font></center>
       </td>
       <td><font size="-1"><a href="Blob.html">Blob</a> </font></td>
       <td><font size="-1">void</font></td>
@@ -2313,7 +2313,7 @@ International Press Telecommunications Council</a> for IPTC profiles.</font></td
     </tr>
     <tr>
       <td>
-      <center><a name="label"/> <font size="-1">label</font></center>
+      <center><a name="label"></a> <font size="-1">label</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2322,7 +2322,7 @@ International Press Telecommunications Council</a> for IPTC profiles.</font></td
     </tr>
     <tr>
       <td>
-      <center><a name="magick"/> <font size="-1">magick</font></center>
+      <center><a name="magick"></a> <font size="-1">magick</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2331,7 +2331,7 @@ International Press Telecommunications Council</a> for IPTC profiles.</font></td
     </tr>
     <tr>
       <td>
-      <center><a name="matte"/> <font size="-1">matte</font></center>
+      <center><a name="matte"></a> <font size="-1">matte</font></center>
       </td>
       <td><font size="-1">bool</font></td>
       <td><font size="-1">void</font></td>
@@ -2342,7 +2342,7 @@ an opaque one.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="matteColor"/> <font size="-1">matteColor</font></center>
+      <center><a name="matteColor"></a> <font size="-1">matteColor</font></center>
       </td>
       <td><font size="-1"><a href="Color.html">Color</a> </font></td>
       <td><font size="-1">void</font></td>
@@ -2352,7 +2352,7 @@ an opaque one.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="meanErrorPerPixel"/> <font size="-1">meanError-</font>
+      <center><a name="meanErrorPerPixel"></a> <font size="-1">meanError-</font>
       <br/>
       <font size="-1">PerPixel</font></center>
       </td>
@@ -2364,7 +2364,7 @@ image is color reduced. This parameter is only valid if verbose is set
 to true and the image has just been quantized.</font></td>
     </tr>
     <tr>
-      <td style="text-align: center; vertical-align: middle;"><font size="-1"><a name="modulusDepth"/>modulusDepth<br/>
+      <td style="text-align: center; vertical-align: middle;"><font size="-1"><a name="modulusDepth"></a>modulusDepth<br/>
       </font></td>
       <td style="text-align: left; vertical-align: middle;"><small>size_t
 <br/>
@@ -2386,7 +2386,7 @@ using this method.<br/>
     </tr>
     <tr>
       <td>
-      <center><a name="monochrome"/> <font size="-1">monochrome</font></center>
+      <center><a name="monochrome"></a> <font size="-1">monochrome</font></center>
       </td>
       <td><font size="-1">bool</font></td>
       <td><font size="-1">void</font></td>
@@ -2395,7 +2395,7 @@ using this method.<br/>
     </tr>
     <tr>
       <td>
-      <center><a name="montageGeometry"/> <font size="-1">montage-</font>
+      <center><a name="montageGeometry"></a> <font size="-1">montage-</font>
       <br/>
       <font size="-1">Geometry</font></center>
       </td>
@@ -2407,7 +2407,7 @@ Only valid for montage images.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="normalizedMaxError"/> <font size="-1">normalized-</font>
+      <center><a name="normalizedMaxError"></a> <font size="-1">normalized-</font>
       <br/>
       <font size="-1">MaxError</font></center>
       </td>
@@ -2420,7 +2420,7 @@ is set to true and the image has just been quantized.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="normalizedMeanError"/> <font size="-1">normalized-</font>
+      <center><a name="normalizedMeanError"></a> <font size="-1">normalized-</font>
       <br/>
       <font size="-1">MeanError</font></center>
       </td>
@@ -2432,7 +2432,7 @@ when an image is color reduced. This parameter is only valid if verbose
 is set to true and the image has just been quantized.</font></td>
     </tr>
     <tr>
-      <td style="text-align: center; vertical-align: middle;"><small><a name="orientation"/>orientation<br/>
+      <td style="text-align: center; vertical-align: middle;"><small><a name="orientation"></a>orientation<br/>
       </small></td>
       <td style="vertical-align: middle;"><small><a href="Enumerations.html#OrientationType">OrientationType</a></small></td>
       <td style="vertical-align: top;"><small>void</small><br/>
@@ -2446,7 +2446,7 @@ turning the right way up.<br/>
     </tr>
     <tr>
       <td>
-      <center><a name="packets"/> <font size="-1">packets</font></center>
+      <center><a name="packets"></a> <font size="-1">packets</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2457,7 +2457,7 @@ turning the right way up.<br/>
     </tr>
     <tr>
       <td>
-      <center><a name="packetSize"/> <font size="-1">packetSize</font></center>
+      <center><a name="packetSize"></a> <font size="-1">packetSize</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2466,7 +2466,7 @@ turning the right way up.<br/>
     </tr>
     <tr>
       <td>
-      <center><a name="page"/> <font size="-1">page</font></center>
+      <center><a name="page"></a> <font size="-1">page</font></center>
       </td>
       <td><font size="-1"><a href="Geometry.html#PostscriptPageSize">Geometry</a>
       </font></td>
@@ -2483,7 +2483,7 @@ image (such as for a scene in an animation)</font></p>
     </tr>
     <tr>
       <td>
-      <center><a name="pixelColor"/> <font size="-1">pixelColor</font></center>
+      <center><a name="pixelColor"></a> <font size="-1">pixelColor</font></center>
       </td>
       <td><font size="-1"><a href="Color.html">Color</a> </font></td>
       <td><font size="-1">ssize_t x_, ssize_t y_</font></td>
@@ -2492,7 +2492,7 @@ image (such as for a scene in an animation)</font></p>
     </tr>
     <tr>
       <td valign="top">
-      <div style="text-align:center"><a name="profile"/> <small>profile</small><br/>
+      <div style="text-align:center"><a name="profile"></a> <small>profile</small><br/>
       </div>
       </td>
       <td valign="top"><a href="Blob.html"><small> Blob</small><small><br/>
@@ -2509,7 +2509,7 @@ profile</small><small>. Valid names include </small><small>"*",
     </tr>
     <tr>
       <td>
-      <center><a name="quality"/> <font size="-1">quality</font></center>
+      <center><a name="quality"></a> <font size="-1">quality</font></center>
       </td>
       <td><font size="-1">size_t (0 to 100)</font></td>
       <td><font size="-1">void</font></td>
@@ -2518,7 +2518,7 @@ profile</small><small>. Valid names include </small><small>"*",
     </tr>
     <tr>
       <td>
-      <center><a name="quantizeColors"/> <font size="-1">quantize-</font>
+      <center><a name="quantizeColors"></a> <font size="-1">quantize-</font>
       <br/>
       <font size="-1">Colors</font></center>
       </td>
@@ -2532,7 +2532,7 @@ option will have any duplicate or unused colors removed.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="quantizeColorSpace"/> <font size="-1">quantize-</font>
+      <center><a name="quantizeColorSpace"></a> <font size="-1">quantize-</font>
       <br/>
       <font size="-1">ColorSpace</font></center>
       </td>
@@ -2549,7 +2549,7 @@ results when color reducing an image.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="quantizeDither"/> <font size="-1">quantize-</font>
+      <center><a name="quantizeDither"></a> <font size="-1">quantize-</font>
       <br/>
       <font size="-1">Dither</font></center>
       </td>
@@ -2568,7 +2568,7 @@ be set for this option to take effect.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="quantizeTreeDepth"/> <font size="-1">quantize-</font>
+      <center><a name="quantizeTreeDepth"></a> <font size="-1">quantize-</font>
       <br/>
       <font size="-1">TreeDepth</font></center>
       </td>
@@ -2582,7 +2582,7 @@ may be used to manually adjust the tree depth.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="renderingIntent"/> <font size="-1">rendering-</font>
+      <center><a name="renderingIntent"></a> <font size="-1">rendering-</font>
       <br/>
       <font size="-1">Intent</font></center>
       </td>
@@ -2595,7 +2595,7 @@ render_</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="resolutionUnits"/> <font size="-1">resolution-</font>
+      <center><a name="resolutionUnits"></a> <font size="-1">resolution-</font>
       <br/>
       <font size="-1">Units</font></center>
       </td>
@@ -2608,7 +2608,7 @@ units_</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="rows"/> <font size="-1">rows</font></center>
+      <center><a name="rows"></a> <font size="-1">rows</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2617,7 +2617,7 @@ units_</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="scene"/> <font size="-1">scene</font></center>
+      <center><a name="scene"></a> <font size="-1">scene</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2626,7 +2626,7 @@ units_</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="signature"/> <font size="-1">signature</font></center>
+      <center><a name="signature"></a> <font size="-1">signature</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">bool force_ = false</font></td>
@@ -2636,7 +2636,7 @@ force re-computation of signature.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="size"/> <font size="-1">size</font></center>
+      <center><a name="size"></a> <font size="-1">size</font></center>
       </td>
       <td><font size="-1"><a href="Geometry.html">Geometry</a> </font></td>
       <td><font size="-1">void</font></td>
@@ -2649,14 +2649,14 @@ format (e.g. Photo CD, JBIG, or JPEG.</font></td>
     </tr>
     <tr>
       <td style="text-align: center;">
-      <center><a name="strip"/> <font size="-1">strip</font></center>
+      <center><a name="strip"></a> <font size="-1">strip</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">strips an image of all profiles and comments.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeAntiAlias"/> <font size="-1">strokeAntiAlias</font></center>
+      <center><a name="strokeAntiAlias"></a> <font size="-1">strokeAntiAlias</font></center>
       </td>
       <td><font size="-1">bool</font></td>
       <td><font size="-1">void</font></td>
@@ -2666,7 +2666,7 @@ object outlines.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeColor"/> <font size="-1">strokeColor</font></center>
+      <center><a name="strokeColor"></a> <font size="-1">strokeColor</font></center>
       </td>
       <td><font size="-1">Color</font></td>
       <td><font size="-1">void</font></td>
@@ -2675,7 +2675,7 @@ object outlines.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeDashOffset"/> <font size="-1">strokeDashOffset</font></center>
+      <center><a name="strokeDashOffset"></a> <font size="-1">strokeDashOffset</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2685,7 +2685,7 @@ distance into the dash pattern to start the dash (default 0).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeDashArray"/> <font size="-1">strokeDashArray</font></center>
+      <center><a name="strokeDashArray"></a> <font size="-1">strokeDashArray</font></center>
       </td>
       <td><font size="-1">const double*</font></td>
       <td><font size="-1">void</font></td>
@@ -2701,7 +2701,7 @@ array.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeLineCap"/> <font size="-1">strokeLineCap</font></center>
+      <center><a name="strokeLineCap"></a> <font size="-1">strokeLineCap</font></center>
       </td>
       <td><font size="-1">LineCap</font></td>
       <td><font size="-1">void</font></td>
@@ -2712,7 +2712,7 @@ LineJoin are UndefinedJoin, MiterJoin, RoundJoin, and BevelJoin.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeLineJoin"/> <font size="-1">strokeLineJoin</font></center>
+      <center><a name="strokeLineJoin"></a> <font size="-1">strokeLineJoin</font></center>
       </td>
       <td><font size="-1">LineJoin</font></td>
       <td><font size="-1">void</font></td>
@@ -2723,7 +2723,7 @@ LineJoin are UndefinedJoin, MiterJoin, RoundJoin, and BevelJoin.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeMiterLimit"/> <font size="-1">strokeMiterLimit</font></center>
+      <center><a name="strokeMiterLimit"></a> <font size="-1">strokeMiterLimit</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2737,7 +2737,7 @@ value of this parameter is 4.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokeWidth"/> <font size="-1">strokeWidth</font></center>
+      <center><a name="strokeWidth"></a> <font size="-1">strokeWidth</font></center>
       </td>
       <td><font size="-1">double</font></td>
       <td><font size="-1">void</font></td>
@@ -2747,7 +2747,7 @@ objects (default one)</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="strokePattern"/> <font size="-1">strokePattern</font></center>
+      <center><a name="strokePattern"></a> <font size="-1">strokePattern</font></center>
       </td>
       <td><font size="-1">Image</font></td>
       <td><font size="-1">void</font></td>
@@ -2757,7 +2757,7 @@ stroke (outlines).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="subImage"/> <font size="-1">subImage</font></center>
+      <center><a name="subImage"></a> <font size="-1">subImage</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2766,7 +2766,7 @@ stroke (outlines).</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="subRange"/> <font size="-1">subRange</font></center>
+      <center><a name="subRange"></a> <font size="-1">subRange</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2775,7 +2775,7 @@ stroke (outlines).</font></td>
     </tr>
     <tr>
       <td valign="middle">
-      <div style="text-align:center"><a name="textEncoding"/> <small>textEncoding</small><br/>
+      <div style="text-align:center"><a name="textEncoding"></a> <small>textEncoding</small><br/>
       </div>
       </td>
       <td valign="middle"><small>string</small><small><br/>
@@ -2794,7 +2794,7 @@ designed to support Unicode.</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="tileName"/> <font size="-1">tileName</font></center>
+      <center><a name="tileName"></a> <font size="-1">tileName</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2803,7 +2803,7 @@ designed to support Unicode.</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="totalColors"/> <font size="-1">totalColors</font></center>
+      <center><a name="totalColors"></a> <font size="-1">totalColors</font></center>
       </td>
       <td><font size="-1">size_t</font></td>
       <td><font size="-1">void</font></td>
@@ -2812,7 +2812,7 @@ designed to support Unicode.</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="type"/> <font size="-1">type</font></center>
+      <center><a name="type"></a> <font size="-1">type</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#ImageType">ImageType</a>
       </font></td>
@@ -2822,7 +2822,7 @@ designed to support Unicode.</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="verbose"/> <font size="-1">verbose</font></center>
+      <center><a name="verbose"></a> <font size="-1">verbose</font></center>
       </td>
       <td><font size="-1">bool</font></td>
       <td><font size="-1">void</font></td>
@@ -2831,7 +2831,7 @@ designed to support Unicode.</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="view"/> <font size="-1">view</font></center>
+      <center><a name="view"></a> <font size="-1">view</font></center>
       </td>
       <td><font size="-1">string</font></td>
       <td><font size="-1">void</font></td>
@@ -2840,7 +2840,7 @@ designed to support Unicode.</small><br/>
     </tr>
     <tr>
       <td>
-      <center><a name="virtualPixelMethod"/> <font size="-1">virtualPixelMethod</font></center>
+      <center><a name="virtualPixelMethod"></a> <font size="-1">virtualPixelMethod</font></center>
       </td>
       <td><font size="-1"><a href="Enumerations.html#VirtualPixelMethod">VirtualPixelMethod</a>
       </font></td>
@@ -2851,7 +2851,7 @@ virtualPixelMethod_</small></font></small></td>
     </tr>
     <tr>
       <td>
-      <center><a name="x11Display"/> <font size="-1">x11Display</font></center>
+      <center><a name="x11Display"></a> <font size="-1">x11Display</font></center>
       </td>
       <td><font size="-1">string (e.g. "hostname:0.0")</font></td>
       <td><font size="-1">void</font></td>
@@ -2861,7 +2861,7 @@ or to capture image from</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="xResolution"/> <font size="-1">xResolution</font></center>
+      <center><a name="xResolution"></a> <font size="-1">xResolution</font></center>
       </td>
       <td><font size="-1">double</font></td>
       <td><font size="-1">void</font></td>
@@ -2870,7 +2870,7 @@ or to capture image from</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="yResolution"/> <font size="-1">yResolution</font></center>
+      <center><a name="yResolution"></a> <font size="-1">yResolution</font></center>
       </td>
       <td><font size="-1">double</font></td>
       <td><font size="-1">void</font></td>
@@ -2880,7 +2880,7 @@ or to capture image from</font></td>
   </tbody>
 </table>
 <center>
-<h3> <a name="Raw Image Pixel Access"/> Low-Level Image Pixel Access</h3>
+<h3> <a name="Raw Image Pixel Access"></a> Low-Level Image Pixel Access</h3>
 </center>
 Image pixels (of type <i><a href="PixelPacket.html">PixelPacket</a> </i>)
 may be accessed directly via the <i>Image Pixel Cache</i> .  The
@@ -2959,7 +2959,7 @@ image.write("horse.png");
     </tr>
     <tr>
       <td>
-      <center><a name="getConstPixels"/> <font size="-1">getConstPixels</font></center>
+      <center><a name="getConstPixels"></a> <font size="-1">getConstPixels</font></center>
       </td>
       <td><font size="-1">const <a href="PixelPacket.html">PixelPacket</a>
 *</font></td>
@@ -2973,7 +2973,7 @@ user.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="getConstIndexes"/> <font size="-1">getConstIndexes</font></center>
+      <center><a name="getConstIndexes"></a> <font size="-1">getConstIndexes</font></center>
       </td>
       <td><font size="-1">const IndexPacket*</font></td>
       <td><font size="-1">void</font></td>
@@ -2990,7 +2990,7 @@ alpha channel.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="getIndexes"/> <font size="-1">getIndexes</font></center>
+      <center><a name="getIndexes"></a> <font size="-1">getIndexes</font></center>
       </td>
       <td><font size="-1">IndexPacket*</font></td>
       <td><font size="-1">void</font></td>
@@ -3009,7 +3009,7 @@ images, the indexes are used to contain the alpha channel.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="getPixels"/> <font size="-1">getPixels</font></center>
+      <center><a name="getPixels"></a> <font size="-1">getPixels</font></center>
       </td>
       <td><font size="-1"><a href="PixelPacket.html">PixelPacket</a> *</font></td>
       <td><font size="-1">const ssize_t x_, const ssize_t y_, const size_t
@@ -3023,7 +3023,7 @@ user.</font><font size="-1"/></td>
     </tr>
     <tr>
       <td>
-      <center><a name="setPixels"/> <font size="-1">setPixels</font></center>
+      <center><a name="setPixels"></a> <font size="-1">setPixels</font></center>
       </td>
       <td><font size="-1"><a href="PixelPacket.html">PixelPacket</a> *</font></td>
       <td><font size="-1">const ssize_t x_, const ssize_t y_, const size_t
@@ -3037,7 +3037,7 @@ should never be deallocated by the user.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="syncPixels"/> <font size="-1">syncPixels</font></center>
+      <center><a name="syncPixels"></a> <font size="-1">syncPixels</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1">void</font></td>
@@ -3045,7 +3045,7 @@ should never be deallocated by the user.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="readPixels"/> <font size="-1">readPixels</font></center>
+      <center><a name="readPixels"></a> <font size="-1">readPixels</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1"><a href="Enumerations.html#QuantumTypes">QuantumTypes</a>
@@ -3057,7 +3057,7 @@ corresponds to the region set by a preceding setPixels call.</font></td>
     </tr>
     <tr>
       <td>
-      <center><a name="writePixels"/> <font size="-1">writePixels</font></center>
+      <center><a name="writePixels"></a> <font size="-1">writePixels</font></center>
       </td>
       <td><font size="-1">void</font></td>
       <td><font size="-1"><a href="Enumerations.html#QuantumTypes">QuantumTypes</a>

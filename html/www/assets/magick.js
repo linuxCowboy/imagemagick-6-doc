@@ -1,1 +1,0 @@
-../../../../../javascript/bootstrap/js/bootstrap.min.js

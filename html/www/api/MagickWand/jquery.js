@@ -1,1 +1,0 @@
-../MagickCore/jquery.js

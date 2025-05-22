@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <title>Magick++ API: Working with Color</title>
-<link rel="stylesheet" href="../../www/css/magick.css" type="text/css"/>
+<link rel="stylesheet" href="magick.css" type="text/css"/>
 </head>
 <body>
 <div class="doc-section">
@@ -52,7 +52,7 @@ PixelPacket is the internal representation of a pixel in ImageMagick. ImageMagic
 <td width="111">
 <p align="center">128 bits</p></td></tr>
 </table></center>
-<h3><a name="Color"/>Color Class</h3>
+<h3><a name="Color"></a>Color Class</h3>
 <p>The Color base class is not intended to be used directly. Normally a user will construct a derived class or inherit from this class. Color arguments are must be scaled to fit the Quantum size. The Color class contains a pointer to a PixelPacket, which may be allocated by the Color class, or may refer to an existing pixel in an image.</p>
 <p>An alternate way to construct the class is via an SVG-compatible color specification string (e.g. Color("red") or Color ("#FF0000")). Since the class may be constructed from a string, convenient strings may be passed in place of an explicit Color object in methods which accept a reference to Color. Color may also be converted to a std::string for convenience in user interfaces, and for saving settings to a text file.</p>
 <div class="viewport">
@@ -141,7 +141,7 @@ class Color
 <p><a href="Color.html#ColorYUV">ColorYUV</a></p></td>
 <td width="88%">
 <p>Representation of a color in the YUV <span lang="en-US">colorspace</span></p></td></tr></table>
-<h3><a name="ColorRGB"/>ColorRGB</h3>
+<h3><a name="ColorRGB"></a>ColorRGB</h3>
 <p>Representation of an sRGB color. All color arguments have a valid range of 0.0 - 1.0.</p>
 <pre class="code">
 class ColorRGB : public Color 
@@ -165,7 +165,7 @@ class ColorRGB : public Color
     ColorRGB&amp; operator= ( const Color&amp; color_ ); 
 }; 
 </pre>
-<h3><a name="ColorGray"/>ColorGray</h3>
+<h3><a name="ColorGray"></a>ColorGray</h3>
 <p>Representation of a grayscale color (in linear colorspace). <span lang="en-US">Grayscale</span> is simply RGB with equal parts of red, green, and blue. All double arguments have a valid range of 0.0 - 1.0.</p>
 <pre class="code">
 class ColorGray : public Color 
@@ -183,7 +183,7 @@ class ColorGray : public Color
     ColorGray&amp; operator= ( const Color&amp; color_ ); 
 }; 
 </pre>
-<h3><a name="ColorMono"/>ColorMono</h3>
+<h3><a name="ColorMono"></a>ColorMono</h3>
 <p>Representation of a black/white pixel (in RGB colorspace). Color arguments are constrained to 'false' (black pixel) and 'true' (white pixel).</p>
 <pre class="code">
 class ColorMono : public Color 
@@ -201,7 +201,7 @@ class ColorMono : public Color
     ColorMono&amp; operator= ( const Color&amp; color_ ); 
 }; 
 </pre>
-<h3><a name="ColorHSL"/>ColorHSL</h3>
+<h3><a name="ColorHSL"></a>ColorHSL</h3>
 <p>Representation of a color in Hue/Saturation/Luminosity (HSL) colorspace.</p>
 <pre class="code">
 class ColorHSL : public Color 
@@ -225,7 +225,7 @@ class ColorHSL : public Color
     ColorHSL&amp; operator= ( const Color&amp; color_ ); 
 }; 
 </pre>
-<h3><a name="ColorYUV"/>ColorYUV</h3>
+<h3><a name="ColorYUV"></a>ColorYUV</h3>
 <p>Representation of a color in YUV colorspace (used to encode color for television transmission).</p>
 <p>Argument ranges:</p>
 <dl>
