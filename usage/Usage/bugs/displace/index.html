@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../html/www/css/magick.css">
+  <title>Displacement Bugs -- IM v6 Examples</title>
+  <link rel="icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="shortcut" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="canonical" href=
+  "https://legacy.imagemagick.org/Usage/bugs/displace/">
+  <!--[if gte IE 5.5000]><![if lt IE 7.0000]>
+<script type="text/javascript" src="../../img_www/pngfix.js"></script>
+<![endif]><![endif]-->
+</head>
+<body bgcolor="#B0C4DE">
+  <h1>ImageMagick v6 Examples --<br>
+  <img src="../../img_www/space.gif" width="50" height="1">
+  Displacement Bugs -- Partially Fixed</h1>
+  <div align="justify">
+    <dl>
+      <dt><b>Index</b></dt>
+      <dt>
+        <a href="../../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> ImageMagick Examples Preface and Index</a>
+      </dt>
+      <dt>
+        <a href="../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> Known and Fixed Bugs Index</a>
+      </dt>
+    </dl>This is a demonstration of numerous bugs that I found in
+    the "<code>composite</code>" commands "<code><a href=
+    "../../../../html/www/command-line-options.html#displace">-displace</a></code>"
+    method, in IM versions 6.2.8 and before. Strictly speaking this
+    method is not a composition method, but a multi-image
+    transformation mapped, image warping operation. It could easily
+    be simulated using the new DIY "<code><a href=
+    "../../../../html/www/command-line-options.html#fx">-fx</a></code>"
+    operator. This page is for reference for older IM users who may
+    still have to deal with this bug. The examples on this page
+    have not been re-created when/if the bug was fixed.
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    <h1>Displacement Map Bugs</h1>Before looking at these bugs you
+    should look at the full description of the "<code><a href=
+    "../../../../html/www/command-line-options.html#displace">-displace</a></code>"
+    composition method, in <a href=
+    "http://legacy.imagemagick.org/Usage/displace/#displacement_maps">
+    Displacement Maps</a>. This is important to the understanding
+    of the problems, as the method is actually more of "a mapped
+    offset color lookup", than a "mapped image displacement".
+    <h2>Composite 'Masking' Interference -- Broken</h2>Have a look
+    at this displacement result.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+  convert -size 100x100 xc:grey50 -draw 'circle 50,50 25,50' dismap.png
+
+  composite dismap.png dismap.png dismap.png  -displace 20x20 displaced.jpg
+</code> </pre>
+          </td>
+        </tr>
+      </table><a href="dismap.png"><img src="dismap.png" width=
+      "100" height="100" align="middle" vspace="0" hspace="5"
+      border="1" alt="[IM Output]"></a> <img src=
+      "http://legacy.imagemagick.org/Usage/bugs/img_www/right.gif"
+      width="20" height="20" align="middle" alt="==&gt;"> <a href=
+      "displaced.jpg"><img src="displaced.jpg" width="100" height=
+      "100" align="middle" vspace="5" hspace="5" border="1" alt=
+      "[IM Output]"></a>
+    </div>This is really caused by the way the
+    "<code>composite</code>" command actually handles mask images.
+    This is detailed on the page for <a href=
+    "../composite_mask/index.html">Composite Mask Bug</a>. What is
+    going on is that internally the Y displacement map (mask image)
+    is merged with the X displacement map (overlay image) to
+    replace that images matte (or alpha) channel. However in the
+    above the Y displacement map has a fully-opaque, transparency
+    channel already, as such the color components of the image was
+    ignored and the images existing matte channel was used instead.
+    The result is thus equivelent to...
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+   composite dismap.png dismap.png xc:white'[100x100]' \
+              -displace 20x20   displace_masked.jpg
+</code> </pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="displace_masked.jpg"><img src=
+          "displace_masked.jpg" width="100" height="100" align=
+          "middle" vspace="5" hspace="5" border="1" alt=
+          "[IM Output]"></a>
+        </td>
+      </tr>
+    </table>In other words, the <i>Y displacement</i> color was
+    completely ignored and treated as if it was just a purely white
+    mask. IE displace everything downward by the Y amplitude, then
+    only the parts of the original image within the circle to the
+    left as well. Not good. To fix this, make sure neither of the
+    single displacement map images contain a matte or alpha
+    channel. The background, or input image on the other hand can
+    contain transparency information without problems.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+  composite dismap.png  dismap.png  dismap.png \
+                             +matte  -displace 20x20 displaced_matte.jpg
+</code> </pre>
+          </td>
+        </tr>
+      </table><a href="dismap.png"><img src="dismap.png" width=
+      "100" height="100" align="middle" vspace="0" hspace="5"
+      border="1" alt="[IM Output]"></a> <img src=
+      "http://legacy.imagemagick.org/Usage/bugs/img_www/right.gif"
+      width="20" height="20" align="middle" alt="==&gt;"> <a href=
+      "displaced_matte.jpg"><img src="displaced_matte.jpg" width=
+      "100" height="100" align="middle" vspace="5" hspace="5"
+      border="1" alt="[IM Output]"></a>
+    </div>As you can see this time the image was displaced
+    correctly. The extra cresent of pixels in the above is caused
+    by the anti-aliased edge of the drawn circle, and is correct.
+    Another side effect of this internal handling is that if a
+    single source image is used, which has a transparency channel
+    in it, and no mask image is provided, then the X offset will
+    come from the color intensity, while the Y offset will be
+    provided by the images transparency channel! To fix this
+    'masking' bugs properly, "<code><a href=
+    "../../../../html/www/command-line-options.html#displace">-displace</a></code>"
+    should be separated from alpha composition, as it really is a
+    image transformation, rather that alpha composition.
+    <h2>Inconsistent Displacement Direction -- Fixed
+    6.2.8-1</h2>Also if you look at the above, you will see that
+    while black X displacement displaces color to the right
+    (positive displacement, or negative offset), while Y
+    displacement for black is upward (negative displacement, or
+    positive offset). One of these directions is obviously wrong,
+    and according to the manual it is the X displacement that is
+    incorrect, as black is suposed to be a negative displacement.
+    The bug was fixed in IM v6.2.8-1 by inverting the Y
+    displacement direction (making black a negative offset to the
+    color lookup, rather than a negative displacement). This was
+    done as it would have the more minimal impact on previous usage
+    of this command.
+    <h2>Single Displacement Map Arguments -- Fixed 6.2.8-1</h2>When
+    only one map is give, it is used for BOTH X and Y placements,
+    regardless of the amplitude arguments given! This appears to be
+    a bug, and for for now should be avoided. As such none of the
+    examples above use a single map style. Results seen for
+    -displacement arguments with one displacement map. (EG: no
+    'mask' image provided)
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+  composite dismap.png +matte dismap.png -displace 15    displaced_1.jpg
+  composite dismap.png +matte dismap.png -displace 15x0  displaced_x.jpg
+  composite dismap.png +matte dismap.png -displace 0x30  displaced_y.jpg
+  composite dismap.png +matte dismap.png -displace 15x30 displaced_xy.jpg
+</code> </pre>
+          </td>
+        </tr>
+      </table><a href="dismap.png"><img src="dismap.png" width=
+      "100" height="100" align="middle" vspace="0" hspace="5"
+      border="1" alt="[IM Output]"></a> <img src=
+      "http://legacy.imagemagick.org/Usage/bugs/img_www/right.gif"
+      width="20" height="20" align="middle" alt="==&gt;"> <a href=
+      "displaced_1.jpg"><img src="displaced_1.jpg" width="100"
+      height="100" align="middle" vspace="5" hspace="5" border="1"
+      alt="[IM Output]"></a> <a href="displaced_x.jpg"><img src=
+      "displaced_x.jpg" width="100" height="100" align="middle"
+      vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
+      <a href="displaced_y.jpg"><img src="displaced_y.jpg" width=
+      "100" height="100" align="middle" vspace="5" hspace="5"
+      border="1" alt="[IM Output]"></a> <a href=
+      "displaced_xy.jpg"><img src="displaced_xy.jpg" width="100"
+      height="100" align="middle" vspace="5" hspace="5" border="1"
+      alt="[IM Output]"></a>
+    </div>From the above you can see that a single value argument
+    to "<code><a href=
+    "../../../../html/www/command-line-options.html#displace">-displace</a></code>"
+    will displace the image within the black region in both the X
+    and Y directions. However the last three images show that only
+    the first <i>X amplitude</i> value is used for both X and Y
+    displacement amplitudes, regardless of if two values are
+    provided or what those values are. In other words only the
+    first image in generating in the above is correct, as
+    documented by the IM manual. And other three images are wrong!.
+  </div>
+  <hr>
+  <!-- ---------------------------------------------------------------- -->
+  <address>
+    Created: 9 June 2006<br>
+    Updated: 10 June 2006<br>
+    Author: <a href=
+    "https://antofthy.gitlab.io/anthony.html">Anthony Thyssen</a>,
+    &lt;Anthony.Thyssen@gmail.com&gt;<br>
+    Examples Generated with: <img src="version.gif" align=
+    "absmiddle" alt="[version image]"><br>
+    URL:
+    <code>https://legacy.imagemagick.org/Usage/bugs/displace/</code>
+  </address>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../html/www/css/magick.css">
+  <title>Semi-Transparency Bug -- IM v6 Examples</title>
+  <link rel="icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="shortcut" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="canonical" href=
+  "https://legacy.imagemagick.org/Usage/bugs/trans_bug/">
+  <!--[if gte IE 5.5000]><![if lt IE 7.0000]>
+<script type="text/javascript" src="../../img_www/pngfix.js"></script>
+<![endif]><![endif]-->
+</head>
+<body bgcolor="white" background="bg.gif">
+  <h1>ImageMagick 5.5.7 --<br>
+  <img src="../../img_www/space.gif" width="50" height="1">
+  Semi-Transparent Draw and Overlay Bug -- FIXED</h1>
+  <div align="justify">
+    <dl>
+      <dt><b>Index</b></dt>
+      <dt>
+        <a href="../../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> ImageMagick Examples Preface and Index</a>
+      </dt>
+      <dt>
+        <a href="../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> Known and Fixed Bugs Index</a>
+      </dt>
+    </dl>Demonstrantion of a Semi-transparent white on transparent
+    black bug, found in ImageMagick 5.5.7 and earlier. They were
+    fixed during the ImageMagick version 6 development. The
+    background pattern on this page was choosen so that any
+    transparency would be visible in a web browser, that
+    understands PNG transparency (like Mozilla basied browsers).
+    This page is for reference for older IM users who may still
+    have to deal with this bug. The examples on this page have not
+    been re-created when/if the bug was fixed.
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    Generate an opaque rectangle
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code>
+    convert -size 200x200 xc:none -fill "#808080" \
+            -draw "rectangle 0,0 150,100" rectangle.png
+</code><br></pre>
+          </td>
+        </tr>
+      </table><a href="rectangle.png"><img src="rectangle.png"
+      align="middle" vspace="5" hspace="5" border="1" alt=
+      "[IM Output]"></a>
+    </div>and a white circle (Semi-Transparent Bug in -draw command
+    happens here)
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code>
+    convert -size 200x200 xc:none -fill "#FFFFFF" \
+            -draw "circle 125,125 73,73" circle_white.png
+</code><br></pre>
+          </td>
+        </tr>
+      </table><a href="circle_white.png"><img src=
+      "circle_white.png" align="middle" vspace="5" hspace="5"
+      border="1" alt="[IM Output]"></a>
+    </div>If the bug happened the you will see dark, near black,
+    edges to the pure white circle. Make it semi-transparent
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code>
+    convert circle_white.png  -fill "#FFFFFF80" -opaque "#FFFFFF" circle.png
+</code><br></pre>
+          </td>
+        </tr>
+      </table><a href="circle.png"><img src="circle.png" align=
+      "middle" vspace="5" hspace="5" border="1" alt=
+      "[IM Output]"></a>
+    </div><font size="-1"><i><b>WARNING:</b> This is not a
+    practical example of generating a semi-transparent white
+    circle, and should not be taken as a the best method to do
+    so.</i></font> Overlay circle on rectangle (Semi-Transparency
+    Bug in overlays happens here)
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code>
+    composite circle.png rectangle.png alpha.png
+</code><br></pre>
+          </td>
+        </tr>
+      </table><a href="alpha.png"><img src="alpha.png" align=
+      "middle" vspace="5" hspace="5" border="1" alt=
+      "[IM Output]"></a>
+    </div>If the bug happens here, the result should be that while
+    the overlays grey rectangle becomes a lighter color, the rest
+    of the semi-transparent white circle becomes grey in color,
+    instead of remaining unchanged. Overlay the above result onto a
+    white background, so we can see the result on browsers like IE.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code>
+    composite alpha.png  -size 200x200 xc:white  result.png
+</code><br></pre>
+          </td>
+        </tr>
+      </table><a href="result.png"><img src="result.png" align=
+      "middle" vspace="5" hspace="5" border="1" alt=
+      "[IM Output]"></a>
+    </div>The final result above should be a only a slight
+    whitening of the grey rectangle, where the circle overlaps.
+    Anywhere else and the white circle should disappear
+    (semi-transparent white on white gives white!).
+    <p>If the bug is present you will see a grey circle instead,
+    and due to the presence of the bug in the "<code>-draw</code>"
+    command, the edges of the circle will appear even darker,
+    instead of shading into the white background.</p>
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    <h3>Correct results with IM version 6</h3>This is what the
+    above image should look like (generated with IM version 6)
+    <div align="center">
+      <a href="result_correct.png"><img src="result_correct.png"
+      align="middle" vspace="5" hspace="5" border="1" alt=
+      "[IM Output]"></a>
+    </div>NOTE: Due to the inaccurate way the white circle is made
+    semi-transparent (using "<code>-fill</code>" and
+    "<code>-opaque</code>") there is a thin almost white' border
+    between the dark rectangle and the overlayed circle. This is
+    not a bug, just incorrect image handling. If I had generated
+    the semi-transparent circle using this (more correct) command
+    instead (only valid in IMv6)...
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code>
+    convert circle_white.png  -channel A -fx A/2  circle.png
+</code><br></pre>
+          </td>
+        </tr>
+      </table>
+    </div>Then we will not see the thin white border in the final
+    result.
+    <div align="center">
+      <a href="result_correct2.png"><img src="result_correct2.png"
+      align="middle" vspace="5" hspace="5" border="1" alt=
+      "[IM Output]"></a>
+    </div>
+  </div>
+  <hr>
+  <!-- ---------------------------------------------------------------- -->
+  <address>
+    Created: 15 December 2003<br>
+    Updated: 28 April 2005<br>
+    Author: <a href=
+    "https://antofthy.gitlab.io/anthony.html">Anthony Thyssen</a>,
+    &lt;Anthony.Thyssen@gmail.com&gt;<br>
+    Examples Generated with: <img src="version.gif" align=
+    "absmiddle" alt="[version image]"><br>
+    URL:
+    <code>https://legacy.imagemagick.org/Usage/bugs/trans_bug/</code>
+  </address>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../html/www/css/magick.css">
+  <title>Testing Minor Bugs -- IM v6 Examples</title>
+  <link rel="icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="shortcut" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="canonical" href=
+  "https://legacy.imagemagick.org/Usage/bugs/testing/">
+  <!--[if gte IE 5.5000]><![if lt IE 7.0000]>
+<script type="text/javascript" src="../../img_www/pngfix.js"></script>
+<![endif]><![endif]-->
+</head>
+<body bgcolor="#B0C4DE">
+  <h1>ImageMagick v6 Examples --<br>
+  <img src="../../img_www/space.gif" width="50" height="1"> Testing
+  for Minor Bugs</h1>
+  <div align="justify">
+    <dl>
+      <dt><b>Index</b></dt>
+      <dt>
+        <a href="../../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> ImageMagick Examples Preface and Index</a>
+      </dt>
+      <dt>
+        <a href="../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> Known and Fixed Bugs Index</a>
+      </dt>
+    </dl>These examples are quick tests, with little or no
+    explanation, to check on whether a specific known, but simple,
+    bug has been fixed or not in the last version of IM. As such
+    whenever a new release of IM is downloaded, this page is
+    automatically re-generated to test the current status of the
+    bug in question. 
+    <!-- Example with side image and text underneath.
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=100%>
+<TR VALIGN=top><TD WIDTH=10% ALIGN=justify ROWSPAN=2></TD>
+               <TD WIDTH=80% ALIGN=justify>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
+<TR><TD><PRE><CODE _EXECUTE ERR=error.txt>
+  convert rose: -verbose rose.gif
+</CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
+  <A HREF="../../images/rose.gif"
+     ><IMG SRC="../../images/rose.gif"
+           ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
+</TD><TD><IMG SRC="../../img_www/good.gif" HSPACE=10>
+</TD><TD><IMG SRC="../../img_www/bad.gif" HSPACE=10>
+</TD></TR><TR><TD>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
+<TR><TD>
+  <A HREF="error.txt"
+     ><IMG SRC="error.txt.gif"
+           ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
+</TD></TR></TABLE></TD></TR></TABLE></P>
+-->
+    <!--  Example with just a an output text box below
+<DIV ALIGN=center>
+<TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
+<TR><TD><PRE><CODE _EXECUTE NOIMAGE OUT=output.txt>
+  convert anim_canvas.gif  -format '%s/%n %D %wx%h\n' info:
+</CODE></PRE></TD></TR></TABLE>
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
+<TR><TD>
+  <A HREF="output.txt"
+     ><IMG SRC="output.txt.gif"
+           ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
+</TD></TR></TABLE>
+</DIV></P>
+-->
+    <hr>
+    <!-- ------------------------------------------------------------------ -->
+    <h2>Minor Bugs and Problems</h2>These are known bugs, that will
+    probably take some time to figure out and fix.
+    <hr width="50%" align="left">
+    <!-- ---------------- -->
+    <h3>Copy Black for CMYK composition</h3>Separate a rose image
+    into its CMYK channels.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+  convert rose: -colorspace CMYK -separate separate_CMYK_%d.gif
+</code></pre>
+          </td>
+        </tr>
+      </table><a href="../../images/rose.gif"><img src=
+      "../../images/rose.gif" align="middle" vspace="1" hspace="15"
+      border="1" alt="[IM Output]"></a> <img src=
+      "../../img_www/right.gif" align="middle" width="20" height=
+      "20" alt="==&gt;"> <a href="separate_CMYK_0.gif"><img src=
+      "separate_CMYK_0.gif" align="middle" vspace="5" hspace="15"
+      border="1" alt="[IM Output]"></a> <a href=
+      "separate_CMYK_1.gif"><img src="separate_CMYK_1.gif" align=
+      "middle" vspace="5" hspace="15" border="1" alt=
+      "[IM Output]"></a> <a href="separate_CMYK_2.gif"><img src=
+      "separate_CMYK_2.gif" align="middle" vspace="5" hspace="15"
+      border="1" alt="[IM Output]"></a> <a href=
+      "separate_CMYK_3.gif"><img src="separate_CMYK_3.gif" align=
+      "middle" vspace="5" hspace="15" border="1" alt=
+      "[IM Output]"></a>
+    </div>Using combine to re-create the original image works.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert separate_CMYK_?.gif  -set colorspace CMYK  -combine  \
+          -colorspace RGB  rose_CMYK_combined.gif
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td align="center">
+          <a href="rose_CMYK_combined.gif"><img src=
+          "rose_CMYK_combined.gif" align="middle" vspace="0"
+          hspace="5" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>Now lets try to use the channel coping compose methods
+    to re-combine them.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert separate_CMYK_0.gif -colorspace CMYK \
+          separate_CMYK_0.gif -compose CopyRed   -composite \
+          separate_CMYK_1.gif -compose CopyGreen -composite \
+          separate_CMYK_2.gif -compose CopyBlue  -composite \
+          separate_CMYK_3.gif -compose CopyBlack -composite \
+          -colorspace RGB   rose_CMYK_combined_alt.gif
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td align="center">
+          <a href="rose_CMYK_combined_alt.gif"><img src=
+          "rose_CMYK_combined_alt.gif" align="middle" vspace="0"
+          hspace="5" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>Which is obviously not the original rose image. Check
+    the channel contents after copies shows a complete break down
+    of the black channel copy.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+  convert separate_CMYK_0.gif -colorspace CMYK \
+          separate_CMYK_0.gif -compose CopyRed   -composite \
+          separate_CMYK_1.gif -compose CopyGreen -composite \
+          separate_CMYK_2.gif -compose CopyBlue  -composite \
+          separate_CMYK_3.gif -compose CopyBlack -composite \
+          -separate separate_again_%d.gif
+</code></pre>
+          </td>
+        </tr>
+      </table><a href="../../images/rose.gif"><img src=
+      "../../images/rose.gif" align="middle" vspace="1" hspace="15"
+      border="1" alt="[IM Output]"></a> <img src=
+      "../../img_www/right.gif" align="middle" width="20" height=
+      "20" alt="==&gt;"> <a href="separate_again_0.gif"><img src=
+      "separate_again_0.gif" align="middle" vspace="5" hspace="15"
+      border="1" alt="[IM Output]"></a> <a href=
+      "separate_again_1.gif"><img src="separate_again_1.gif" align=
+      "middle" vspace="5" hspace="15" border="1" alt=
+      "[IM Output]"></a> <a href="separate_again_2.gif"><img src=
+      "separate_again_2.gif" align="middle" vspace="5" hspace="15"
+      border="1" alt="[IM Output]"></a> <a href=
+      "separate_again_3.gif"><img src="separate_again_3.gif" align=
+      "middle" vspace="5" hspace="15" border="1" alt=
+      "[IM Output]"></a>
+    </div>
+    <hr width="50%" align="left">
+    <!-- ---------------- -->
+    <h3>Semi-transparent, round end caps</h3>Semi-transparent
+    strokes with end caps produce a extra overlay when it
+    shouldn't.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+    convert -size 100x60 xc:skyblue \
+            -fill white -stroke '#0004' -strokewidth 16 \
+            -draw "stroke-linecap round       path 'M 60,30 L -10,30'" \
+            draw_endcap.gif
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_endcap.gif"><img src="draw_endcap.gif"
+          width="100" height="60" align="middle" vspace="5" hspace=
+          "5" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>The line in the middle is the white fill for this
+    single line. I could not find any other problems for other end
+    caps, or for round linejoins.
+    <hr width="50%" align="left">
+    <!-- ---------------- -->
+    <h3>Arcs and Line Join</h3>There appears to be a bug in 'arc'
+    or 'ellipse' in that it is drawing the 'straight chord' if you
+    enable "<code>stroke-linejoin round</code>".
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert -size 100x60 xc:skyblue -fill none -stroke white -strokewidth 5 \
+          -draw "stroke-linejoin round ellipse 50,0 45,45 60,160" \
+          draw_linejoin.png
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_linejoin.png"><img src="draw_linejoin.png"
+          width="100" height="60" align="middle" vspace="5" hspace=
+          "0" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>If stroke-linejoin is not given the the enclosing chord
+    (correctly). Note this happened my mistake when I ment to be
+    using '<code>stroke-linecap</code>', but this should not happen
+    in any case. This may be related to the next bug...
+    <hr width="50%" align="left">
+    <!-- ---------------- -->
+    <a name="polyline" id="polyline"></a>
+    <h3>Polyline with stroke 3 or more goes wrong</h3>With a stroke
+    of 2 this is fine.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert -size 80x60 xc:white -fill white -colorspace RGB \
+          -draw "stroke black stroke-width 2 stroke-linejoin round \
+                 polyline 14,53 30,5 71,14 51,41" \
+          -colorspace sRGB draw_line2.png
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_line2.png"><img src="draw_line2.png" width=
+          "80" height="60" align="middle" vspace="5" hspace="0"
+          border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>But with a stroke of 3 it goes wrong.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert -size 80x60 xc:white -fill white -colorspace RGB \
+          -draw "stroke black stroke-width 3 stroke-linejoin round \
+                 polyline 14,53 30,5 71,14 51,41" \
+          -colorspace sRGB draw_line3.png
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_line3.png"><img src="draw_line3.png" width=
+          "80" height="60" align="middle" vspace="5" hspace="0"
+          border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>But without the stroke-linejoin round it works
+    correctly again.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert -size 80x60 xc:white -fill white -colorspace RGB \
+          -draw "stroke black stroke-width 3 \
+                 polyline 14,53 30,5 71,14 51,41" \
+          -colorspace sRGB draw_line3_2.png
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_line3_2.png"><img src="draw_line3_2.png"
+          width="80" height="60" align="middle" vspace="5" hspace=
+          "0" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>UPDATE: Supposedally fixed in IM v6.9.6-9
+    <hr width="50%" align="left">
+    <!-- ---------------- -->
+    <a name="draw" id="draw"></a>
+    <h3>MVG: diagonal lines are too thick!</h3>A slanted diagonal
+    line appears to be a reasonable thickness<br>
+    Especially if you use a linear colorspace for drawing...
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert -size 100x60 xc:skyblue -colorspace RGB -fill white -stroke black \
+          -draw "path 'M 10,10 L 90,10 L 90,50 Z'" \
+          -colorspace sRGB draw_path_line_closed.gif
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_path_line_closed.gif"><img src=
+          "draw_path_line_closed.gif" width="100" height="60"
+          align="middle" vspace="5" hspace="0" border="1" alt=
+          "[IM Output]"></a>
+        </td>
+      </tr>
+    </table>But the line appears to be much thicker when drawn as a
+    dashed line.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+  convert -size 100x60 xc:skyblue -colorspace RGB -fill white -stroke black \
+          -draw "stroke-dasharray 3 3 33 3 3 3 \
+                 path 'M 10,10 L 90,10 L 90,50 Z'" \
+          -colorspace sRGB draw_path_dash_closed.gif
+</code></pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_path_dash_closed.gif"><img src=
+          "draw_path_dash_closed.gif" width="100" height="60"
+          align="middle" vspace="5" hspace="0" border="1" alt=
+          "[IM Output]"></a>
+        </td>
+      </tr>
+    </table>
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    <address>
+      Created: 18 August 2005<br>
+      Updated: 16 December 2016<br>
+      Author: <a href=
+      "https://antofthy.gitlab.io/anthony.html">Anthony
+      Thyssen</a>, &lt;Anthony.Thyssen@gmail.com&gt;<br>
+      Examples Generated with: <img src="version.gif" align=
+      "absmiddle" alt="[version image]"><br>
+      URL:
+      <code>https://legacy.imagemagick.org/Usage/bugs/testing/</code>
+    </address>
+  </div>
+</body>
+</html>

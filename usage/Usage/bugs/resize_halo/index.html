@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../html/www/css/magick.css">
+  <title>Resize Halo Bug -- IM v6 Examples</title>
+  <link rel="icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="shortcut" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="canonical" href=
+  "https://legacy.imagemagick.org/Usage/bugs/resize_halo/">
+  <!--[if gte IE 5.5000]><![if lt IE 7.0000]>
+<script type="text/javascript" src="../../img_www/pngfix.js"></script>
+<![endif]><![endif]-->
+</head>
+<body bgcolor="#B0C4DE">
+  <h1>ImageMagick v6 Examples --<br>
+  <img src="../../img_www/space.gif" width="50" height="1"> Resize
+  Halo Bug -- FIXED</h1>
+  <div align="justify">
+    <dl>
+      <dt><b>Index</b></dt>
+      <dt>
+        <a href="../../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> ImageMagick Examples Preface and Index</a>
+      </dt>
+      <dt>
+        <a href="../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> Known and Fixed Bugs Index</a>
+      </dt>
+    </dl>This is a demonstration of a 'resize halo bug' generated
+    by the resize filter when doing small resizes of very light
+    colored images on a transparent background. This bug was
+    completely fixed, by user demand with the release of
+    ImageMagick version 6.2.4. This page is for reference for older
+    IM users who may still have to deal with this bug. The examples
+    on this page have not been re-created when/if the bug was
+    fixed.
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    <h2>Resize Halo Bug</h2>We have a white text on a transparent
+    background. Everything works fine.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -background none -fill white -pointsize 72 -font Candice \
+            label:Hello   label.png
+</code> </pre>
+          </td>
+        </tr>
+      </table><nobr><a href="label.png"><img src="label.png" align=
+      "middle" vspace="1" hspace="5" border="1" alt=
+      "[IM Output]"></a></nobr>
+    </div>But resizing it slightly produces a slightly darker edge,
+    though this is not easily seen on the darker background of this
+    page.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -background none -fill white -pointsize 72 -font Candice \
+            label:Hello  -resize 95%  resized.png
+</code> </pre>
+          </td>
+        </tr>
+      </table><nobr><a href="resized.png"><img src="resized.png"
+      align="middle" vspace="1" hspace="5" border="1" alt=
+      "[IM Output]"></a></nobr>
+    </div>To see the halo clearly lets overlay the white text image
+    on a white background, then normalize to show the darker
+    pixels.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -background none -fill white -pointsize 72 -font Candice \
+            label:Hello  -resize 95% \
+            -background white -flatten -normalize     resize_halo.jpg
+</code> </pre>
+          </td>
+        </tr>
+      </table><nobr><a href="resize_halo.jpg"><img src=
+      "resize_halo.jpg" align="middle" vspace="1" hspace="5"
+      border="1" alt="[IM Output]"></a></nobr>
+    </div>We can see that this really is a resize bug by removing
+    the resize command and overlaying, producing the expected pure
+    white image. A pure white image should have been the result of
+    the previous command.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -background none -fill white -pointsize 72 -font Candice \
+            label:Hello  \
+            -background white -flatten -normalize      no_resize.jpg
+</code> </pre>
+          </td>
+        </tr>
+      </table><nobr><a href="no_resize.jpg"><img src=
+      "no_resize.jpg" align="middle" vspace="1" hspace="5" border=
+      "1" alt="[IM Output]"></a></nobr>
+    </div>
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    <h3>Non-Graphical Test for the Bug</h3>Lets look at this in a
+    different way.... Running the command...
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code no_execute="">
+    convert -background none -fill white -pointsize 72 -font Candice \
+             label:Hello    txt:-  |\
+      egrep -v '\) (white|none|#FFFFFFFFFFFF)'
+</code> </pre>
+          </td>
+        </tr>
+      </table>
+    </div>The '<code>egrep</code>' will filter out any pixels in
+    the "<code>txt:</code>" output that are fully-transparent black
+    or white, semi-transparent white or fully-opaque white pixels.
+    This basically leave the "<code>txt:</code>" comment header and
+    any semi-transparent grey or black pixels, which form the halo.
+    In the above case their are no semi-transparent grey or black
+    pixels, so only the single line command header is generated.
+    However if we now resize the image slightly before outputing
+    the "<code>txt:</code>" image file...
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code no_execute="">
+    convert -background none -fill white -pointsize 72 -font Candice \
+            label:Hello   -resize 95%    txt:-  |\
+      egrep -v '\) (white|none|#FFFFFFFFFFFF)'
+</code> </pre>
+          </td>
+        </tr>
+      </table>
+    </div>You will now see lots, and lots, and lots, of
+    semi-transparent grey pixels, which should NOT have been
+    generated!!!! These pixels represent the 'black halo' around
+    the resized image.
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    <h3>A Work Around</h3>The problem in the above is caused by the
+    <a href="../../resize/index.html#filters">resize filters</a>
+    not understanding that full-transparent colors should not be
+    used in the final color of a pixel, only the transparency. This
+    problem is the same problem involving blurs with transparency,
+    and discussed in <a href="../blur_trans/index.html">Blur
+    Transparency Bug</a>, and similar solutions to this problem
+    also works here. One workaround that works on both problems, is
+    to set the color of the transparency to the same as the edge
+    color of the image being resized. That is use a
+    fully-transparent white (EG: '<code>#FFFF</code>' as the
+    background instead of fully transparent black (EG:
+    '<code>none</code>').
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -background '#FFFF' -fill white -pointsize 72 -font Candice \
+            label:Hello   -resize 95%  resized_white.png
+</code> </pre>
+          </td>
+        </tr>
+      </table><nobr><a href="resized_white.png"><img src=
+      "resized_white.png" align="middle" vspace="1" hspace="5"
+      border="1" alt="[IM Output]"></a></nobr>
+    </div>For resize you can also try turn off the resize filters
+    by using a '<code>point</code>' resize filter.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -background none -fill white -pointsize 72 -font Candice \
+            label:Hello   -filter point  -resize 95%  resized_point.png
+</code> </pre>
+          </td>
+        </tr>
+      </table><nobr><a href="resized_point.png"><img src=
+      "resized_point.png" align="middle" vspace="1" hspace="5"
+      border="1" alt="[IM Output]"></a></nobr>
+    </div>And this works reasonably well for resizing small
+    amounts, but falls down when heavily resizing images.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -background none -fill white -pointsize 1200 -font Candice \
+            label:Hello   -filter point -resize 5%  resized_point_big.png
+</code> </pre>
+          </td>
+        </tr>
+      </table><nobr><a href="resized_point_big.png"><img src=
+      "resized_point_big.png" align="middle" vspace="1" hspace="5"
+      border="1" alt="[IM Output]"></a></nobr>
+    </div>If you look closely at the result you can see that the
+    image while not having a resize halo effect, also effectively
+    has no anti-aliasing along the edges, (that is, it has the
+    'jaggies'). Also on more detailed images the internal details
+    of the resized image can be very bad indeed. Even as small
+    resizes can produce a moire pattern across an image. Overlaying
+    any of these examples on a white background (using -flatten for
+    example) and -normalizing will show no 'halo' effect.
+  </div>
+  <hr>
+  <!-- ---------------------------------------------------------------- -->
+  <address>
+    Created: 3 May 2005<br>
+    Updated: 10 August 2005<br>
+    Author: <a href=
+    "https://antofthy.gitlab.io/anthony.html">Anthony Thyssen</a>,
+    &lt;Anthony.Thyssen@gmail.com&gt;<br>
+    Examples Generated with: <img src="version.gif" align=
+    "absmiddle" alt="[version image]"><br>
+    URL:
+    <code>https://legacy.imagemagick.org/Usage/bugs/resize_halo/</code>
+  </address>
+</body>
+</html>

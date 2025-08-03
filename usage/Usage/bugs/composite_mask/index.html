@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../html/www/css/magick.css">
+  <title>Composite Mask Bug -- IM v6 Examples</title>
+  <link rel="icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="shortcut" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="canonical" href=
+  "https://legacy.imagemagick.org/Usage/bugs/composite_mask/">
+  <!--[if gte IE 5.5000]><![if lt IE 7.0000]>
+<script type="text/javascript" src="../../img_www/pngfix.js"></script>
+<![endif]><![endif]-->
+</head>
+<body bgcolor="#B0C4DE">
+  <h1>ImageMagick v6 Examples --<br>
+  <img src="../../img_www/space.gif" width="50" height="1">
+  Composite Mask Bug - Fixed</h1>
+  <div align="justify">
+    <dl>
+      <dt><b>Index</b></dt>
+      <dt>
+        <a href="../../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> ImageMagick Examples Preface and Index</a>
+      </dt>
+      <dt>
+        <a href="../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> Known and Fixed Bugs Index</a>
+      </dt>
+    </dl>The following is a demonstration of a known bug, in the
+    handling of composite mask for ALL alpha composition modes.
+    Some versions of IM trialed a different way of fixing that
+    worked for black an white shape mask, but not a greyscale blend
+    of the results. This is an on going issue. The following is a
+    demonstration of a known fixed bug in the handling of composite
+    mask for ALL alpha composition modes. Before it was fixed
+    composition masking only worked correctly for the default
+    'Over' composition of images which did not have any existing
+    alpha channel transparency. This page is for reference for
+    older IM users who may still have to deal with this bug. The
+    examples on this page have not been re-created since the bug
+    was fixed.
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    The "<code>composite</code>" command and "<code><a href=
+    "../../../../html/www/command-line-options.html#composite">-composite</a></code>"
+    operator will also take a third masking image which is suposed
+    to limit the area effected by the "<code><a href=
+    "../../../../html/www/command-line-options.html#compose">-compose</a></code>"
+    method. For example given two images, and a <i>mask</i> image
+    you can overlay part of the <i>source</i> image onto the
+    <i>background</i> image, as defined by that mask. Please note
+    however that the <i>background</i> image still defines the
+    final size of resulting image.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    convert -size 70x70 xc:black \
+            -fill white   -draw 'circle 35,35 35,5' \
+            -fill black   -draw 'circle 28,30 35,5'   moon_mask.gif
+    composite tile_water.jpg tile_aqua.jpg \
+              moon_mask.gif  +matte     mask_over.png
+</code> </pre>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <a href="../../images/tile_water.jpg"><img src=
+            "../../images/tile_water.jpg" align="middle" vspace="5"
+            hspace="10" border="1" alt="[IM Output]"></a> <a href=
+            "../../images/tile_aqua.jpg"><img src=
+            "../../images/tile_aqua.jpg" align="middle" vspace="5"
+            hspace="10" border="1" alt="[IM Output]"></a> <a href=
+            "moon_mask.gif"><img src="moon_mask.gif" align="middle"
+            vspace="5" hspace="10" border="1" alt=
+            "[IM Output]"></a> <img src="../../img_www/right.gif"
+            width="20" height="20" hspace="10" alt="==&gt;">
+            <a href="mask_over.png"><img src="mask_over.png" align=
+            "middle" vspace="5" hspace="10" border="1" alt=
+            "[IM Output]"></a>
+          </td>
+        </tr>
+      </table>
+    </div>That is the normal working an use of a composite mask
+    operation, and works very well. But it ONLY works when using a
+    mask to select from two fully-opaque images!
+    <hr width="30%">
+    <!-- -------------------- -->
+    The problems arise when we want to use this mask with images
+    that already have a alpha channel. That is we want to use the
+    mask to limit the area in which the compose operation is
+    applied (as defined by the SVG standard.) Lets use some colored
+    circles for the source, background, and masking images...
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+  convert -size 60x60 xc:none -fill red    -draw 'circle 30,21 30,3'  src.png
+  convert -size 60x60 xc:none -fill '#0F0' -draw 'circle 21,39 24,57' bgnd.png
+  convert -size 60x60 xc:black -fill white -draw 'circle 39,39 36,57' mask.png
+</code> </pre>
+          </td>
+        </tr>
+      </table><a href="src.png"><img src="src.png" width="60"
+      height="60" align="middle" vspace="2" hspace="10" border="1"
+      alt="[IM Output]"></a> <a href="bgnd.png"><img src="bgnd.png"
+      width="60" height="60" align="middle" vspace="2" hspace="10"
+      border="1" alt="[IM Output]"></a> <a href=
+      "mask.png"><img src="mask.png" width="60" height="60" align=
+      "middle" vspace="2" hspace="10" border="1" alt=
+      "[IM Output]"></a>
+    </div>And apply them, again using an 'Over' compose method...
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+    composite src.png  bgnd.png   mask.png   mask_masked.png
+</code> </pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="mask_masked.png"><img src="mask_masked.png"
+          width="60" height="60" align="middle" vspace="5" hspace=
+          "10" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>Notice how the red circle source image is overlaid as
+    if its alpha channel was replaced by the alpha channel of the
+    blue masking image. That the pixels which are supposed to be
+    fully-transparent black have suddenly became visible! What is
+    happening is that at this time the above is equivalent to...
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+    composite mask.png  src.png +matte -compose CopyOpacity  miff:- |\
+      composite  -  bgnd.png    mask_masked_equiv.png
+</code> </pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="mask_masked_equiv.png"><img src=
+          "mask_masked_equiv.png" width="60" height="60" align=
+          "middle" vspace="5" hspace="10" border="1" alt=
+          "[IM Output]"></a>
+        </td>
+      </tr>
+    </table>However what it should have generated was something
+    like...
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+    composite mask.png  src.png  -compose DstIn  miff:- |\
+      composite  -  bgnd.png    mask_masked_true.png
+</code> </pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="mask_masked_true.png"><img src=
+          "mask_masked_true.png" width="60" height="60" align=
+          "middle" vspace="5" hspace="10" border="1" alt=
+          "[IM Output]"></a>
+        </td>
+      </tr>
+    </table>WARNING: The above is NOT a generic solution, and while
+    close to the correct result, is not actually a perfectly
+    correct result. Because currently a composite masked operation
+    is not performing a proper area limited operation, it use is
+    limited to only combining two matte images (generally textures)
+    using a mask to select what image is visible. Also using
+    anything other than an '<code>Over</code>' compose method
+    probably result in other unexpected results.
+    <hr>
+    <!-- ------------------------------------------------------------------ -->
+    <a name="correct" id="correct"></a>
+    <h3>Correct Operation Masking</h3>The correct fix for users
+    with older versions of IM is NOT simple.... This is provided
+    purely for reference, and as the bug was fixed in IM v6.3.5 and
+    the addition of other image operation masking techniques such
+    as "<code><a href=
+    "../../../../html/www/command-line-options.html#clip-mask">-clip-mask</a></code>".
+    It basically shows, the true complexity image mask overlaying.
+    <hr width="30%">
+    <!-- ---------------------------- -->
+    There are a number of methods can be used to generated a 'mask
+    limited composite operation'. But the method which is most
+    generic and should work with ALL alpha composition methods
+    is...
+    <blockquote>
+      <i>To do the alpha composition (with whatever "<code><a href=
+      "../../../../html/www/command-line-options.html#compose">-compose</a></code>"
+      method the user requested) as normal, but then then use the
+      mask to 'blend' the original image with the result, to
+      produce the masked limited result.</i>
+    </blockquote>This is what I would have expected a 'masked'
+    solution to really be. Currently however using a mask to blend
+    two images together is a tricky matter, but is can be done as
+    shown below.
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code execute="">
+    composite src.png bgnd.png                                 composed.png
+    composite mask.png mask.png  +matte -compose CopyOpacity   alpha_mask.png
+
+    composite alpha_mask.png bgnd.png      -compose DstOut  bgnd_masked.png
+    composite alpha_mask.png composed.png  -compose DstIn   composed_masked.png
+
+    composite bgnd_masked.png composed_masked.png -compose Plus  result.png
+</code> </pre>
+          </td>
+        </tr>
+      </table>
+      <table width="80%" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <a href="src.png"><img src="src.png" width="60" height=
+            "60" align="middle" vspace="5" hspace="5" border="1"
+            alt="[IM Output]"></a>
+          </td>
+          <td><img src="../../img_www/plus.gif" width="20" height=
+          "20" alt=" + "></td>
+          <td>
+            <a href="bgnd.png"><img src="bgnd.png" width="60"
+            height="60" align="middle" vspace="5" hspace="5"
+            border="1" alt="[IM Output]"></a>
+          </td>
+          <td><img src="../../img_www/right.gif" width="20" height=
+          "20" hspace="10" alt="==&gt;"></td>
+          <td>
+            <a href="composed.png"><img src="composed.png" width=
+            "60" height="60" align="middle" vspace="5" hspace="5"
+            border="1" alt="[IM Output]"></a>
+          </td>
+          <td></td>
+          <td></td>
+          <td>&nbsp;&nbsp;</td>
+          <td align="justify">Do the Normal Alpha Composition of
+          the two images</td>
+        </tr><!-- -------------- -->
+        <tr>
+          <td>
+            <a href="alpha_mask.png"><img src="alpha_mask.png"
+            width="60" height="60" align="middle" vspace="5"
+            hspace="5" border="1" alt="[IM Output]"></a>
+          </td>
+          <td><img src="../../img_www/plus.gif" width="20" height=
+          "20" alt=" + "></td>
+          <td>
+            <a href="composed.png"><img src="composed.png" width=
+            "60" height="60" align="middle" vspace="5" hspace="5"
+            border="1" alt="[IM Output]"></a>
+          </td>
+          <td><img src="../../img_www/right.gif" width="20" height=
+          "20" hspace="10" alt="==&gt;"></td>
+          <td>
+            <a href="bgnd_masked.png"><img src="bgnd_masked.png"
+            width="60" height="60" align="middle" vspace="5"
+            hspace="5" border="1" alt="[IM Output]"></a>
+          </td>
+          <td><img src="../../img_www/plus.gif" width="20" height=
+          "20" alt=" + "></td>
+          <td>
+            <a href="composed_masked.png"><img src=
+            "composed_masked.png" width="60" height="60" align=
+            "middle" vspace="5" hspace="5" border="1" alt=
+            "[IM Output]"></a>
+          </td>
+          <td>&nbsp;&nbsp;</td>
+          <td align="justify">Use the mask to divide the results in
+          unchanged and changed parts</td>
+        </tr><!-- -------------- -->
+        <tr>
+          <td>
+            <a href="bgnd_masked.png"><img src="bgnd_masked.png"
+            width="60" height="60" align="middle" vspace="5"
+            hspace="2" border="1" alt="[IM Output]"></a>
+          </td>
+          <td><img src="../../img_www/plus.gif" width="20" height=
+          "20" alt=" + "></td>
+          <td>
+            <a href="composed_masked.png"><img src=
+            "composed_masked.png" width="60" height="60" align=
+            "middle" vspace="5" hspace="5" border="1" alt=
+            "[IM Output]"></a>
+          </td>
+          <td><img src="../../img_www/right.gif" width="20" height=
+          "20" hspace="10" alt="==&gt;"></td>
+          <td>
+            <a href="result.png"><img src="result.png" width="60"
+            height="60" align="middle" vspace="5" hspace="5"
+            border="1" alt="[IM Output]"></a>
+          </td>
+          <td></td>
+          <td></td>
+          <td>&nbsp;&nbsp;</td>
+          <td align="justify">Add these parts together to blend the
+          result (EG: masked blend of result)</td>
+        </tr>
+      </table>
+    </div>ASIDE: The extra step using '<code>CopyOpacity</code>' is
+    to convert any pure greyscale mask into a image with an alpha
+    mask. While this is not needed for this example, it will allow
+    you to use a greyscale mask with the alpha composition methods,
+    '<code>DstIn</code>' and '<code>DstOut</code>', as well as
+    '<code>Plus</code>' to blend the images together properly. Note
+    that the above 'blended' the images together. You can NOT just
+    'overlay' the masked result onto the final image, as that will
+    produce incorrect results. Specifically it would result in the
+    colors being overlaid multiple times, which for
+    semi-transparent pixels will produce a more opaque result than
+    is correct. I recommend the creation of an internal 'Mask
+    blend' type operation as a faster and simpler method of doing
+    the whole thing. This would be the only 'three image' operation
+    that should be needed for alpha composition, other that
+    <a href="../../compose/index.html#displace_2d">2-Dimensional
+    Displacement Mapping</a>.
+  </div>
+  <hr>
+  <!-- ---------------------------------------------------------------- -->
+  <address>
+    Created: 26 September 2005<br>
+    Updated: 18 June 2007<br>
+    Author: <a href=
+    "https://antofthy.gitlab.io/anthony.html">Anthony Thyssen</a>,
+    &lt;Anthony.Thyssen@gmail.com&gt;<br>
+    Examples Generated with: <img src="version.gif" align=
+    "absmiddle" alt="[version image]"><br>
+    URL:
+    <code>https://legacy.imagemagick.org/Usage/bugs/composite_mask/</code>
+  </address>
+</body>
+</html>

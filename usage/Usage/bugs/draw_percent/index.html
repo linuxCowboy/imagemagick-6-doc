@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../html/www/css/magick.css">
+  <title>Draw Percent Bug -- IM v6 Examples</title>
+  <link rel="icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="shortcut" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="canonical" href=
+  "https://legacy.imagemagick.org/Usage/bugs/draw_percent/">
+  <!--[if gte IE 5.5000]><![if lt IE 7.0000]>
+<script type="text/javascript" src="../../img_www/pngfix.js"></script>
+<![endif]><![endif]-->
+</head>
+<body bgcolor="#B0C4DE">
+  <h1>ImageMagick v6 Examples --<br>
+  <img src="../../img_www/space.gif" width="50" height="1"> Drawing
+  a Percent Bug - FIXED</h1>
+  <div align="justify">
+    <dl>
+      <dt><b>Index</b></dt>
+      <dt>
+        <a href="../../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> ImageMagick Examples Preface and Index</a>
+      </dt>
+      <dt>
+        <a href="../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> Known and Fixed Bugs Index</a>
+      </dt>
+    </dl><b>Note:</b> Drawing Percent Characters is no longer a
+    issue in IM, as percent '<code>%</code>' escapes were
+    completely removed from all operators except "<code><a href=
+    "../../../../html/www/command-line-options.html#annotate">-annotate</a></code>"
+    for drawing text, and "<code><a href=
+    "../../../../html/www/command-line-options.html#label">-label</a></code>"
+    for "<code>monatge</code>" labels. This page is for reference
+    for older IM users who may still have to deal with this bug.
+    The examples on this page have not been re-created when/if the
+    bug was fixed.
+    <hr>
+    <!-- ---------------------------------------------------------------- -->
+    <a name="percent" id="percent"></a>
+    <h3>A Percent Problem</h3>The percent character
+    '<code>%</code>' presents a different problem. If you just use
+    it, most likely it will draw onto the image just as you would
+    expect.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+    convert -size 250x50 xc:none  -box white  -pointsize 20 -gravity center \
+             -draw 'text 0,0 "  97%  "' \
+            -trim +repage -bordercolor white -border 5x0  draw_percent_ok.gif
+</code> </pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_percent_ok.gif"><img src=
+          "draw_percent_ok.gif" align="right" vspace="5" hspace="5"
+          border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>But if you follow the percent character by certain
+    special characters like '<code>d</code>' the percent and that
+    character disappears.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+    convert -size 250x50 xc:none  -box white  -pointsize 20 -gravity center \
+             -draw 'text 0,0 "  abc%def  "' \
+            -trim +repage -bordercolor white -border 5x0  draw_percent_bad.gif
+</code> </pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_percent_bad.gif"><img src=
+          "draw_percent_bad.gif" align="right" vspace="5" hspace=
+          "5" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>The problem is that in the 'C' programming language
+    "<code>%d</code>" is used for special purposes. so replaces the
+    character sequence with something else, in this case nothing.
+    This could probably be regarded as a <b>bug</b>. The
+    work-a-round was to replace all drawn text percent symbols with
+    two such symbols, EG "<code>%%</code>'.
+    <table border="0" cellspacing="0" cellpadding="0" width="100%"
+    align="center">
+      <tr>
+        <td width="100%" align="justify">
+          <table border="1" cellspacing="0" cellpadding="5" width=
+          "100%" bgcolor="#CCCCCC">
+            <tr>
+              <td>
+                <pre><code execute="">
+    convert -size 250x50 xc:none  -box white  -pointsize 20 -gravity center \
+             -draw 'text 0,0 "  abc%%def  "' \
+            -trim +repage -bordercolor white -border 5x0  draw_percent_fixed.gif
+</code> </pre>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <a href="draw_percent_fixed.gif"><img src=
+          "draw_percent_fixed.gif" align="right" vspace="5" hspace=
+          "5" border="1" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+  <!-- ---------------------------------------------------------------- -->
+  <address>
+    Created: 1 August 2005<br>
+    Updated: 9 August 2005<br>
+    Author: <a href=
+    "https://antofthy.gitlab.io/anthony.html">Anthony Thyssen</a>,
+    &lt;Anthony.Thyssen@gmail.com&gt;<br>
+    Examples Generated with: <img src="version.gif" align=
+    "absmiddle" alt="[version image]"><br>
+    URL:
+    <code>https://legacy.imagemagick.org/Usage/bugs/draw_percent/</code>
+  </address>
+</body>
+</html>

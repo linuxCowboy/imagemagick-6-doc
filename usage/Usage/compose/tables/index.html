@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.6.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content=
+  "width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../../../html/www/css/magick.css">
+  <title>Compose Tables -- IM v6 Examples</title>
+  <link rel="icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="shortcut icon" href="../../img_www/favicon.ico" type=
+  "image/x-icon">
+  <link rel="canonical" href=
+  "https://legacy.imagemagick.org/Usage/compose/tables/">
+  <!--[if gte IE 5.5000]><![if lt IE 7.0000]>
+<script type="text/javascript" src="../../img_www/pngfix.js"></script>
+<![endif]><![endif]-->
+</head>
+<body bgcolor="#B0C4DE">
+  <h1>ImageMagick v6 Examples --<br>
+  <img src="../../img_www/space.gif" width="50" height="1"> Compose
+  Tables</h1>
+  <div align="justify">
+    <dl>
+      <dt><b>Index</b></dt>
+      <dt>
+        <a href="../../index.html"><img src=
+        "../../img_www/granitesm_left.gif" border="0" width="15"
+        height="15"> ImageMagick Examples Preface and Index</a>
+      </dt>
+    </dl>
+    <h2>Compose Tables</h2>The following tables of most of the IM
+    compose methods with various shapes and gradients. They form a
+    summary of these important alpha compositing methods, and was
+    vital in helping me figure out exactly what each composition
+    method did and for what purpose they can be used. The command
+    that is being run is generally...
+    <div align="center">
+      <table border="1" cellspacing="0" cellpadding="5" width="80%"
+      bgcolor="#CCCCCC">
+        <tr>
+          <td>
+            <pre><code>
+  convert {<i>Dst</i>} {<i>Src</i>} \
+          -gravity center -compose {<i>method</i>} -composite \
+          {<i>result</i>}
+</code></pre>
+          </td>
+        </tr>
+      </table>
+    </div>A shell script "<code><a href=
+    "../../scripts/compose_table">compose_table</a></code>" also
+    generates and displays various tables (with various options) of
+    compose methods, and was developed later. For these first set
+    of tables with I am using two images which are simular to the
+    test images used in the documentation for <a href=
+    "http://www.w3.org/TR/SVG12/rendering.html">SVG Alpha
+    Compositing</a>. They are perfect for demonstrating the 12
+    'Duff-Porter' compose operators. They are trianglular images
+    containng no semi-transparent pixels (only transparent and
+    opaque colors). However I have found that using overlapping
+    circles, such as typically used in 'Ven Disgrams' for set
+    theory to be more useful. As some of compositing operators will
+    modify the whole background (destination) image, including
+    outside the overlaid area, or even if the source is completely
+    transparent. Because of this I have increased the size of the
+    background (destination) image slightly, and added a
+    "<code>-gravity center</code>" setting. Operators that clear
+    the area outside the overlayed region are: <code>Clear</code>,
+    <code>Src</code>, <code>In</code>, <code>Dst_In</code>,
+    <code>Out</code>, and <code>Dst_Atop</code>. However if you do
+    not want this you can use the operational setting
+    "<code>-define compose:outside-overlay=false</code>" to turn
+    off this aspect of Duff-Porter Composition.
+    <table border="1" cellspacing="3" cellpadding="0" bgcolor=
+    "skyblue" align="center">
+      <tr>
+        <td>
+          <a href="montage_triangles.jpg"><img src=
+          "montage_triangles.jpg" align="middle" vspace="2" hspace=
+          "2" border="0" alt="[IM Output]"></a>
+        </td>
+        <td>
+          <a href="montage_circles.jpg"><img src=
+          "montage_circles.jpg" align="middle" vspace="2" hspace=
+          "2" border="0" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>
+    <hr>
+    However while the Duff-Porter methods are usful for basic image
+    overlays, Their are a set of math methods that are much more
+    useful with image masks. To demostrate I created some black and
+    white images of circles which overlap, so you can see the
+    results.
+    <table border="1" cellspacing="3" cellpadding="0" bgcolor=
+    "skyblue" align="center">
+      <tr>
+        <td>
+          <a href="montage_circles_1.jpg"><img src=
+          "montage_circles_1.jpg" align="middle" vspace="2" hspace=
+          "2" border="0" alt="[IM Output]"></a>
+        </td>
+        <td>
+          <a href="montage_circles_2.jpg"><img src=
+          "montage_circles_2.jpg" align="middle" vspace="2" hspace=
+          "2" border="0" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>Note the 'edge' effects that result in some of the
+    above images. These are caused by the edges of the circles
+    being some shade of gray (anti-aliasing), rather than purely
+    black or white. They appear in '<code>ModulusAdd</code>' and
+    '<code>ModulusSubtract</code>' as these are 'modulus wrapped'.
+    (See the specific section on <a href=
+    "../index.html#add">Add</a> and <a href=
+    "../index.html#subtract">Subtract</a>, mathematical composition
+    for more details.
+    <hr>
+    Gradients make the best demonstration of the mathematical
+    methods as well as "Channel Coping" and "Color Manupliation"
+    alpha blending methods.
+    <table border="1" cellspacing="3" cellpadding="0" bgcolor=
+    "skyblue" align="center">
+      <tr>
+        <td>
+          <a href="montage_gradient_1.jpg"><img src=
+          "montage_gradient_1.jpg" align="middle" vspace="2"
+          hspace="2" border="0" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>
+    <table border="1" cellspacing="3" cellpadding="0" bgcolor=
+    "skyblue" align="center">
+      <tr>
+        <td>
+          <a href="montage_gradient_2.jpg"><img src=
+          "montage_gradient_2.jpg" align="middle" vspace="2"
+          hspace="2" border="0" alt="[IM Output]"></a>
+        </td>
+        <td>
+          <a href="montage_gradient_3.jpg"><img src=
+          "montage_gradient_3.jpg" align="middle" vspace="2"
+          hspace="2" border="0" alt="[IM Output]"></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a href="montage_gradient_4.jpg"><img src=
+          "montage_gradient_4.jpg" align="middle" vspace="2"
+          hspace="2" border="0" alt="[IM Output]"></a>
+        </td>
+        <td>
+          <a href="montage_gradient_5.jpg"><img src=
+          "montage_gradient_5.jpg" align="middle" vspace="2"
+          hspace="2" border="0" alt="[IM Output]"></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <hr>
+  <!-- ---------------------------------------------------------------- -->
+  <address>
+    Created: 5 January 2004<br>
+    Updated: 11 July 2009<br>
+    Author: <a href=
+    "https://antofthy.gitlab.io/anthony.html">Anthony Thyssen</a>,
+    &lt;Anthony.Thyssen@gmail.com&gt;<br>
+    Examples Generated with: <img src="version.gif" align=
+    "absmiddle" alt="[version image]"><br>
+    URL:
+    <code>https://legacy.imagemagick.org/Usage/compose/tables/</code>
+  </address>
+</body>
+</html>
