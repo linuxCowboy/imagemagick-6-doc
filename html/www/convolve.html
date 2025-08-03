@@ -218,7 +218,7 @@ But you can also use an older, more direct operator...
 <tbody><tr valign="top">
 <td><img src="../images/convolve/warning.gif" width="28" height="28"><img src="../images/convolve/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Before IM v6.5.9 the older "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?convolve">-convolve</a></code>" did not understand morphology kernel definitions.
+  Before IM v6.5.9 the older "<code><a href="command-line-options.html#convolve">-convolve</a></code>" did not understand morphology kernel definitions.
   It would only accept the 'old style' of user defined kernels, consisting of
   just a string of comma separated values to produce to some odd-sized square
   kernel.  It will now accept the 'new' style' convolution kernels defintions.
@@ -234,7 +234,7 @@ But you can also use an older, more direct operator...
 <tbody><tr valign="top">
 <td><img src="../images/convolve/expert.gif" width="23" height="26"><img src="../images/convolve/space.gif" width="17" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The older "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?convolve">-convolve</a></code>" operator is not exactly the same as the newer
+  The older "<code><a href="command-line-options.html#convolve">-convolve</a></code>" operator is not exactly the same as the newer
   morphology '<code><a href="#convolve">Convolve</a></code>' method.  The
   following is a list of how the two operations differ... <p></p>
 
@@ -259,14 +259,14 @@ But you can also use an older, more direct operator...
   </li><li>It will however make use of fast 'GPU' code, if the host computer has
       such facilities. Morphology does not have this enabled yet. <p></p>
 
-  </li><li>Currently other convolution related operators, such as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian_blur">-gaussian_blur</a></code>",
-      "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>",
-      "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sharpen">-sharpen</a></code>",
-      "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?unsharpen">-unsharp</a></code>", use
+  </li><li>Currently other convolution related operators, such as "<code><a href="command-line-options.html#gaussian_blur">-gaussian_blur</a></code>",
+      "<code><a href="command-line-options.html#blur">-blur</a></code>",
+      "<code><a href="command-line-options.html#sharpen">-sharpen</a></code>",
+      "<code><a href="command-line-options.html#unsharpen">-unsharp</a></code>", use
       the old version of the operator. <p></p>
 
   </li><li>By default the old command will only convolve against the color channels
-      (as defined by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting.  If you convolve with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a> RGBA</code>" setting it
+      (as defined by the "<code><a href="command-line-options.html#channel">-channel</a></code>" setting.  If you convolve with a "<code><a href="command-line-options.html#channel">-channel</a> RGBA</code>" setting it
       will also weigh the kernel values by the alpha channel to ensure
       correct blurring with regards to transparency. <p></p>
 
@@ -276,11 +276,11 @@ But you can also use an older, more direct operator...
       and thus avoid the <a href="https://legacy.imagemagick.org/Usage/bugs/blur_trans/">Blur Transparency
       Bug</a>, by default. <p></p>
 
-      However if the user modifies the default "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting (by not
+      However if the user modifies the default "<code><a href="command-line-options.html#channel">-channel</a></code>" setting (by not
       including the special '<code>Sync</code>' flag), then it will handle the
       convolution as a pure channel based greyscale operator. <p></p>
 
-      See the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting documentation, or look at <a href="https://legacy.imagemagick.org/Usage/compose/#image_math">Image Channel Mathematics</a> which uses
+      See the "<code><a href="command-line-options.html#channel">-channel</a></code>" setting documentation, or look at <a href="https://legacy.imagemagick.org/Usage/compose/#image_math">Image Channel Mathematics</a> which uses
       the same flag in the same way, for more information. <p></p>
 
   </li></ul><p></p>
@@ -385,7 +385,7 @@ Normalizing the kernel yourself is not pleasant, and as you saw it makes the
 resulting kernel definition a lot harder to understand.  As such, alternative
 ways are provided. <p></p>
 
-As of IM v6.5.9-2 the special expert option "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?define">-define</a> convolve:scale={<i>kernel_scale</i>}</code>' allows you to specify a global scaling factor for
+As of IM v6.5.9-2 the special expert option "<code><a href="command-line-options.html#define">-define</a> convolve:scale={<i>kernel_scale</i>}</code>' allows you to specify a global scaling factor for
 the kernel, and thus adjust the brightness of the overall result.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -437,7 +437,7 @@ fashion using whole numbers.  The normalized kernel will still be the same
 as previous 'scaled' kernel. <p></p>
 
 Typically you will always want to normalize the kernel, and because of this
-the simplier "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?convolve">-convolve</a></code>" variant will automatically do this normalization. <p></p>
+the simplier "<code><a href="command-line-options.html#convolve">-convolve</a></code>" variant will automatically do this normalization. <p></p>
 
 You can have IM normalize the kernel, then scale it further again by a given
 amount to adjust its output range.  To make this even easier you can specify
@@ -578,7 +578,7 @@ The full syntax of the Kernel Scaling Setting is either... <p></p>
       [,{<i>origin_addition</i>}] [%%]'
 </b></code></div><p></p>
 
-Note the doubling of the percent character when using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?set">-set</a></code>". <p></p>
+Note the doubling of the percent character when using "<code><a href="command-line-options.html#set">-set</a></code>". <p></p>
 
 The optional normalization flags '<code>!</code>' or '<code>^</code>" will be
 applied to the user defined or built in kernel first (if requested). <p></p>
@@ -700,7 +700,7 @@ a negative scaling factor. For example using...
 However then you only get the negative results with the positive results
 becoming clipped. <p></p>
 
-However by using the IM setting "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bias">-bias</a></code>" you can still preserve both positive and negative results.
+However by using the IM setting "<code><a href="command-line-options.html#bias">-bias</a></code>" you can still preserve both positive and negative results.
 <p></p>
 
 The settings to use for non-HDRI version of IM is...
@@ -939,7 +939,7 @@ The kernels syntax is straight forward...
 </code></pre></td></tr></tbody></table>
 </div><p></p>
 
-These arguments are in fact exactly the same as that used by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" operator,
+These arguments are in fact exactly the same as that used by the "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" operator,
 which actually performs a <a href="#convolve">Convolution</a> using this
 kernel.  <p></p>
 
@@ -1184,7 +1184,7 @@ in this case).  For example...
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr valign="bottom"><td width="100%" align="justify">
 
-All the above examples are equivalent to each other, and is how the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" operator works.
+All the above examples are equivalent to each other, and is how the "<code><a href="command-line-options.html#blur">-blur</a></code>" operator works.
 
 <table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
 <tbody><tr><td><pre><code execute="">
@@ -1193,15 +1193,15 @@ All the above examples are equivalent to each other, and is how the "<code><a hr
   <a href="https://legacy.imagemagick.org/Usage/convolve/face_blurred.png"><img src="../images/convolve/face_blurred.png" width="80" height="80" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-This represents the real difference between "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" operators.
+This represents the real difference between "<code><a href="command-line-options.html#blur">-blur</a></code>" and "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" operators.
 In the latter one single large 2-dimensional kernel is used,  while the former
 uses two small 1-dimensional kernels are used.  <p></p>
 
-In terms of speed however the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" operator is usually an order of magnitude faster, as it
+In terms of speed however the "<code><a href="command-line-options.html#blur">-blur</a></code>" operator is usually an order of magnitude faster, as it
 uses two much smaller kernels, rather than one very large one.  The larger the
 blurring argument (the size of the <i>sigma</i> argument) the bigger kernels
 become, and the larger the difference in speed between the two operations.  As
-such the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" operator
+such the "<code><a href="command-line-options.html#blur">-blur</a></code>" operator
 is generally the recommended one to use. <p></p>
 
 The only difference in results between the two operators are small quantum
@@ -1286,7 +1286,7 @@ will give the original image. <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/convolve/reminder.gif" width="20" height="16"><img src="../images/convolve/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Remember the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>"
+  Remember the "<code><a href="command-line-options.html#blur">-blur</a></code>"
   operator is exactly equivelent to using the faster 2-pass <a href="#blur">
   Bluring Kernels</a>.
 </i></font></td></tr></tbody></table><p></p>
@@ -1317,7 +1317,7 @@ numbers still adds up to '<code>100%</code>', exactly as it did above.  You
 can also do this with <a href="https://legacy.imagemagick.org/Usage/compose/#blend_use">Composite Blending</a>
 as well. <p></p>
 
-The above example is actually exactly how the mis-named "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sharpen">-sharpen</a></code>" operator works but
+The above example is actually exactly how the mis-named "<code><a href="command-line-options.html#sharpen">-sharpen</a></code>" operator works but
 with only the '<i>sigma</i>' blurring control. However no other control of the
 operation is provided.  The blending is exactly as given above. <p></p>
 
@@ -1356,7 +1356,7 @@ the image, causing some aliasing and color distortions.
   <a href="https://legacy.imagemagick.org/Usage/convolve/face_unsharp_200.png"><img src="../images/convolve/face_unsharp_200.png" width="80" height="80" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-The full "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?unsharp">-unsharp</a></code>"
+The full "<code><a href="command-line-options.html#unsharp">-unsharp</a></code>"
 operator provides provides another type of control.  Specifically,
 a difference threshold, so that the sharpening only applied when the given
 difference is larger, such as near an actual edge within the image.  That
@@ -1685,7 +1685,7 @@ For example radius=1 (for a 3x3 kernel) and a sigma of 1 will generate...
 </td></tr></tbody></table></td></tr></tbody></table><p></p>
 
 The other point about using a "Difference of Gaussians" is that you can use the
-much faster "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>"
+much faster "<code><a href="command-line-options.html#blur">-blur</a></code>"
 operator (which internally uses the '<code><a href="#blur">Blur</a></code>'
 kernels), to generate the same results.  However to do this you will need to
 generate each of the two 'blurred' images separately, and then subtract the
@@ -2355,11 +2355,11 @@ Theorem</a>).
 <tbody><tr valign="top">
 <td><img src="../images/convolve/expert.gif" width="23" height="26"><img src="../images/convolve/space.gif" width="17" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gamma">-gamma</a></code>" function
+  The "<code><a href="command-line-options.html#gamma">-gamma</a></code>" function
   in the above use being used to perform a mathematical 'Square' and 'Square
   Root' of the values returned by the '<code><a href="#sobel">Sobel</a></code>' results.  For more detail see <a href="https://legacy.imagemagick.org/Usage/transform/#evaluate_pow">Power Of Maths Function</a>. <p></p>
 
-  The extra "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?level">+level</a></code>"
+  The extra "<code><a href="command-line-options.html#level">+level</a></code>"
   ensures the <a href="https://legacy.imagemagick.org/Usage/compose/#plus">Plus Composition</a> does not
   overflow the image quantum range. See <a href="https://legacy.imagemagick.org/Usage/basics/#quantum_effects">Quantum Effects, non-HDRI vs HDRI</a> for details.
 
@@ -2388,9 +2388,9 @@ two edge detection results.
   <a href="https://legacy.imagemagick.org/Usage/convolve/face_sobel_direction.png"><img src="../images/convolve/face_sobel_direction.png" width="80" height="80" align="middle" vspace="5" hspace="15" border="0" alt="[IM Output]"></a>
 </div><p></p>
 
-The first "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" expression
+The first "<code><a href="command-line-options.html#fx">-fx</a></code>" expression
 is the one that uses a 'atan()' function to convert a X,Y vector into an
-angle.  This is then colored with the an external <a href="https://legacy.imagemagick.org/Usage/canvas/#gradient_colorspace">Rainbow Gradient Image</a>, as a <a href="https://legacy.imagemagick.org/Usage/color_mods/#clut">Color Lookup Table</a>.  The second "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" expression create a thresholded
+angle.  This is then colored with the an external <a href="https://legacy.imagemagick.org/Usage/canvas/#gradient_colorspace">Rainbow Gradient Image</a>, as a <a href="https://legacy.imagemagick.org/Usage/color_mods/#clut">Color Lookup Table</a>.  The second "<code><a href="command-line-options.html#fx">-fx</a></code>" expression create a thresholded
 transparency mask to make any areas without a slope transparent. <p></p>
 
 However the above technique tends to produce huge mess of information for real

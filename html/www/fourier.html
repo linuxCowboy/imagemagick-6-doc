@@ -293,7 +293,7 @@ images in their own right, but you can still apply many mathematical
 operations to them. <p></p>
 
 To generate this representation we use the 'plus' form of the operators,
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#fft">+fft</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#ift">+ift</a></code>", and will be looked at in
+"<code><a href="command-line-options.html#fft">+fft</a></code>" and "<code><a href="command-line-options.html#ift">+ift</a></code>", and will be looked at in
 detail below in  <a href="#fft_ri">FFT as Real-Imaginary Components</a>. <p></p>
 
 <table align="right"><tbody><tr><td align="center">
@@ -342,7 +342,7 @@ phase will be a pure-black ('<code>0</code>') value. Note that a pure-white
 <p></p>
 
 A Magnitude and Phase FFT representation of an image is generated using the
-normal FFT operators,  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#fft">+fft</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#ift">+ift</a></code>".  This will be looked at first in <a href="#fft">Generating
+normal FFT operators,  "<code><a href="command-line-options.html#fft">+fft</a></code>" and "<code><a href="command-line-options.html#ift">+ift</a></code>".  This will be looked at first in <a href="#fft">Generating
 FFT Images and its Inverse</a>. <p></p>
 
 
@@ -411,12 +411,12 @@ Brayer</a> said about Fourier Transforms... <i>We generally do not display
 PHASE images because most people who see them shortly thereafter succumb to
 hallucinogenics or end up in a Tibetan monastery.</i> <p></p>
 
-Note that the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#fft">-fft</a></code>"
+Note that the "<code><a href="command-line-options.html#fft">-fft</a></code>"
 operator generated two images, the first image is the 'magnitude' component
 (yes it is mostly black with a single colored dot in the middle), while the
 second, almost random looking image, contains the 'phase' component. <p></p>
 
-PNG images can only store one image per file as such neither the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#adjoin">+adjoin</a></code>" or the '<code>%d</code>'
+PNG images can only store one image per file as such neither the "<code><a href="command-line-options.html#adjoin">+adjoin</a></code>" or the '<code>%d</code>'
 in the output filename was actually needed, as IM would handle this.
 However I include the options in the above for completeness, so as to make it
 clear I am generating two separate image files, not one.  See <a href="https://legacy.imagemagick.org/Usage/files/#adjoin">Writing a Multi-Image Sequence</a> for more details.
@@ -442,7 +442,7 @@ saved into "<code>lena_fft_0.png</code>" and phase image (second image) into
   formats. <p></p>
 
   If you must save these images into files for actual viewing, such as for
-  a web browser, use the image format "<code><a href="https://legacy.imagemagick.org/Usage/formats/#png">PNG</a></code>" with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#depth">+depth</a></code>" reset to the internal default, (as we do in these
+  a web browser, use the image format "<code><a href="https://legacy.imagemagick.org/Usage/formats/#png">PNG</a></code>" with a "<code><a href="command-line-options.html#depth">+depth</a></code>" reset to the internal default, (as we do in these
   examples). However it can only store one image per file. <p></p>
 
   The "<code><a href="https://legacy.imagemagick.org/Usage/formats/#tiff">TIFF</a></code>" file format can also
@@ -461,7 +461,7 @@ The best way of saving intermediate images into a single file is to use the
 </code></pre></td></tr></tbody></table>
 </div><p></p>
 
-Or you can save them into complete separate filenames using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#write">-write</a></code>"  (See <a href="https://legacy.imagemagick.org/Usage/files/#write">Writing Images</a>)...
+Or you can save them into complete separate filenames using "<code><a href="command-line-options.html#write">-write</a></code>"  (See <a href="https://legacy.imagemagick.org/Usage/files/#write">Writing Images</a>)...
 
 <div align="center">
 <table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
@@ -713,7 +713,7 @@ become a requirement. <p></p>
 So far we have only look at the 'Magnitude' and a 'Phase' representation of
 Fourier Transformed images.  But if you have compiled a <a href="https://legacy.imagemagick.org/Usage/basics/#hdri">HDRI version of IM</a>, you can also process images
 using floating point 'Real' and 'Imaginary', components. This is done by using
-the 'plus' versions of the options "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#fft">+fft</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi#ift">+ift</a></code>". <p></p>
+the 'plus' versions of the options "<code><a href="command-line-options.html#fft">+fft</a></code>" and "<code><a href="command-line-options.html#ift">+ift</a></code>". <p></p>
 
 For example here I used a <a href="https://legacy.imagemagick.org/Usage/basics/#hdri">HDRI version of IM</a> to
 also perform a 'round trip' FFT of an image, but this time generating
@@ -1451,12 +1451,12 @@ original image. <p></p>
 One of the most important properties of Fourier Transforms is that convolution
 in the spatial domain is equivalent to simple multiplication in the frequency
 domain. In the spatial domain, one uses small, square-sized, simple
-convolution filters (kernels) to blur an image with the <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?convole">-convole</a> option. This is called a low
+convolution filters (kernels) to blur an image with the <a href="command-line-options.html#convole">-convole</a> option. This is called a low
 pass filter. The simplest filter is just an an equally-weighted, square array.
 That is all the values are ones, which are normalized by dividing by their sum
 before applying the convolution.  This is equivalent to a local or
 neighborhood average.  Another low pass filter is the Gaussian-weighted,
-circularly shaped filter provided by either <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a> or <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a>. <p></p>
+circularly shaped filter provided by either <a href="command-line-options.html#gaussian-blur">-gaussian-blur</a> or <a href="command-line-options.html#blur">-blur</a>. <p></p>
 
 In the frequency domain, one type of low pass blurring filter is just
 a constant intensity white circle surrounded by black. This would be similar
@@ -1466,7 +1466,7 @@ multiplication in the frequency domain, all we need do is perform a forward
 Fourier transform, then multiply the filter with the magnitude image and
 finally perform the inverse Fourier transform. We note that a small sized
 convolution filter will correspond to a large circle in the frequency domain.
-Multiplication is carried out via <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?composite">-composite</a> with a <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a>
+Multiplication is carried out via <a href="command-line-options.html#composite">-composite</a> with a <a href="command-line-options.html#compose">-compose</a>
 multiply setting. <p></p>
 
 So lets try doing this with two sizes of circular filters, one of diameter 40
@@ -1590,7 +1590,7 @@ they sum to zero. <p></p>
 Things are much simpler in the frequency domain. Here a high pass filter is
 just the negated version of the low pass filter. That is where the low pass
 filter is bright, the high pass filter is dark and vice versa. So in
-ImageMagick, all we need do is to <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?negate">-negate</a> the low pass filter image. <p></p>
+ImageMagick, all we need do is to <a href="command-line-options.html#negate">-negate</a> the low pass filter image. <p></p>
 
 So lets apply high pass filters to the Lena image  using a circle image.
 And then again using a purely gaussian curve. <p></p>

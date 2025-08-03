@@ -136,8 +136,8 @@ silhouette of the original image. <p></p>
 
 Now while the image transparency data is stored internally as 'matte' values,
 almost all the operators will deal with transparency as 'alpha'.  As such on
-very low level operators such as  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?level">-level</a></code>" and  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?threshold">-threshold</a></code>" actually handle the data as 'matte' rather than alpha.
-Check the <a href="https://legacy.imagemagick.org/Usage/option_link.cgi">Official Option Reference</a> if you
+very low level operators such as  "<code><a href="command-line-options.html#level">-level</a></code>" and  "<code><a href="command-line-options.html#threshold">-threshold</a></code>" actually handle the data as 'matte' rather than alpha.
+Check the <a href="command-line-options.html">Official Option Reference</a> if you
 are unsure.  <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -169,9 +169,9 @@ transparency of an image.  It is now very rarely used. <p></p>
 <h3>Controlling Image Transparency</h3>
 
 There are two operators that give you low-level control of the transparency
-channel of an image in memory.  The newer operator "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?alpha">-alpha</a></code>" methods are now the
+channel of an image in memory.  The newer operator "<code><a href="command-line-options.html#alpha">-alpha</a></code>" methods are now the
 recommended method of control, though many IM Examples still show and use the
-older "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?matte">-matte</a></code>" operator.
+older "<code><a href="command-line-options.html#matte">-matte</a></code>" operator.
 <p></p>
 
 An image cannot only have alpha channel data, but it also has a 'switch' that
@@ -210,7 +210,7 @@ create any transparency channel as images are opaque by default. <p></p>
 
 <br>
 
-Here are the various "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?alpha">-alpha</a></code>" methods and examples of how they effect images and their
+Here are the various "<code><a href="command-line-options.html#alpha">-alpha</a></code>" methods and examples of how they effect images and their
 transparency. <p></p>
 
 <a name="alpha_off"></a>
@@ -248,7 +248,7 @@ color is simply pure-black for any pixel that was fully-transparent.  Note
 that pixels close to the edge may be semi-transparent, and thus still have
 a valid color that is only partially visible.  <p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?alpha">-alpha</a> Off</code>"
+The "<code><a href="command-line-options.html#alpha">-alpha</a> Off</code>"
 operation in the above will have simply 'deactivate' or 'turn off' the
 channel.  The transparency data itself has not been cleared or removed from
 the image data stored in-memory.  It is still present, just unavailable for
@@ -260,12 +260,12 @@ turned-off alpha data is not present in the saved copy of the image, even
 though it is present (just turned off) in the in-memory version. <p></p>
 
 Also as many file formats do not allow transparency (such as JPEG), these file
-formats automatically do the equivalent of a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?alpha">-alpha</a> Off</code>" when the image is
+formats automatically do the equivalent of a "<code><a href="command-line-options.html#alpha">-alpha</a> Off</code>" when the image is
 saved (without actually doing so).  Generally this results in all transparent
 areas typically turning black when saved as a JPEG image.  See <a href="#alpha_remove">Alpha Remove - Removing Transparency</a> below for the
 correct way to remove transparency before saving to a JPEG file format. <p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?matte">+matte</a></code>" operator is
+The "<code><a href="command-line-options.html#matte">+matte</a></code>" operator is
 an older command that is exactly the same as "<code>-alpha Off</code>". That
 is it just turns off the transparency channel. <p></p>
 
@@ -279,7 +279,7 @@ grayscale colors. <p></p>
 <a name="alpha_set"></a>
 <h4>Alpha Set <font size="-1">or</font> "<code>-matte</code>"</h4>
 
-The '<code>Set</code>' alpha method is the same as the older "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?matte">-matte</a></code>" option. <p></p>
+The '<code>Set</code>' alpha method is the same as the older "<code><a href="command-line-options.html#matte">-matte</a></code>" option. <p></p>
 
 This ensures that the image has a 'transparency' or alpha/matte channel, but
 if it was not present or turned off, that it is initialised to be fully-opaque
@@ -336,7 +336,7 @@ and you want to re-enable a clean alpha channel. <p></p>
 <a name="alpha_on"></a>
 <h4>Alpha On</h4>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?alpha">-alpha</a> On</code>" is the
+The "<code><a href="command-line-options.html#alpha">-alpha</a> On</code>" is the
 exact opposite to the previously looked at <a href="#alpha_off">Alpha Off</a>
 method.  Typically this is <i>too simplistic</i> for the purpose you are
 wanting and as such <b>should be very RARELY used</b>. You should use "<code><a href="#alpha_set">-alpha Set</a></code>" in almost all cases. <p></p>
@@ -362,13 +362,13 @@ However if the image does not have any previous alpha data (yet) it will
 initialize it to be fully-opaque.  Which is the logical thing to do.  As such
 for new images just read into memory, it is equivalent to <a href="#alpha_set">Alpha Set</a>, but it should not be used for this purpose.  <p></p>
 
-The only time <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?alpha">Alpha On</a> should be used
+The only time <a href="command-line-options.html#alpha">Alpha On</a> should be used
 is when you previously, and <i>purposefully turned off alpha</i> for some
 reason, and now wish to restore that data. <p></p>
 
 For example turning the alpha channel off then on can be used to preserve the
 alpha channel data before applying some very specific operators, such as
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>". <p></p>
+"<code><a href="command-line-options.html#shade">-shade</a></code>". <p></p>
 
 For an example of this special usage see <a href="https://legacy.imagemagick.org/Usage/transform/#shade_shape">Shaded Shape Images</a>. <p></p>
 
@@ -401,8 +401,8 @@ or 'deactivated/off'.  For example...
   <a href="https://legacy.imagemagick.org/Usage/masking/alpha_opaque.png"><img src="../images/masking/alpha_opaque.png" width="70" height="70" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-On older versions of IM, this was equivalent to using both "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?matte">+matte</a></code>" to turn off the alpha
-channel, then using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?matte">-matte</a></code>" to turn it on, while resetting it to be opaque.
+On older versions of IM, this was equivalent to using both "<code><a href="command-line-options.html#matte">+matte</a></code>" to turn off the alpha
+channel, then using "<code><a href="command-line-options.html#matte">-matte</a></code>" to turn it on, while resetting it to be opaque.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr><td width="100%" align="justify">
@@ -620,9 +620,9 @@ channel.
 <a name="alpha_remove"></a>
 <h4>Alpha Remove</h4>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?alpha">-alpha</a>
+The "<code><a href="command-line-options.html#alpha">-alpha</a>
 <b>Remove</b></code>" method (added to IMv6.7.5) is designed to remove the
-transparency from an image, using the current "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>".
+transparency from an image, using the current "<code><a href="command-line-options.html#background">-background</a></code>".
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -833,12 +833,12 @@ example...
 </td></tr></tbody></table><p></p>
 
 However this will not work with "<code><a href="https://legacy.imagemagick.org/Usage/basics/#mogrify">mogrify</a></code>"  or with a sequence of multiple images, basically because
-the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?flatten">-flatten</a></code>" operator
+the "<code><a href="command-line-options.html#flatten">-flatten</a></code>" operator
 is really designed to merge multiple images into a single image. <p></p>
 
 The other common method that does work with multiple images is to give the
 image a zero sized <a href="https://legacy.imagemagick.org/Usage/crop/#border">Border</a> with the appropriate
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>". For
+"<code><a href="command-line-options.html#bordercolor">-bordercolor</a></code>". For
 example...
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -965,7 +965,7 @@ whether your image mask is a grayscale mask, or a shaped mask. <p></p>
 The mask of an image is a really useful thing to have. <p></p>
 
 We can for example erase parts of an image very easily by
-modify a mask of the original image.  Remember the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operator cannot draw
+modify a mask of the original image.  Remember the "<code><a href="command-line-options.html#draw">-draw</a></code>" operator cannot draw
 nothing, and currently has no erase option. <p></p>
 
 Here we create an image, then by extracting and modifying its mask, before
@@ -1130,7 +1130,7 @@ Before this the simplest solution was to negate the alpha mask into a matte <a h
    <a href="https://legacy.imagemagick.org/Usage/masking/heart_gold.png"><img src="../images/masking/heart_gold.png" align="middle" vspace="0" hspace="5" border="0" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-The color of the shaped mask in this case is defined by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color which <a href="https://legacy.imagemagick.org/Usage/color_basics/#combine">Combine</a> used to fill in the undefined
+The color of the shaped mask in this case is defined by the "<code><a href="command-line-options.html#background">-background</a></code>" color which <a href="https://legacy.imagemagick.org/Usage/color_basics/#combine">Combine</a> used to fill in the undefined
 channels of the new image. <p></p>
 
 An older but more complicated way is to use '<code><a href="https://legacy.imagemagick.org/Usage/compose/#copyopacity">CopyOpacity</a></code>' composition method to
@@ -1376,9 +1376,9 @@ existing image of the size size.  It defines areas of the image which are
 to be classed a 'immutable' or 'not-writable' by most image processing
 operators. <p></p>
 
-The operator "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mask">-mask</a></code>" takes
+The operator "<code><a href="command-line-options.html#mask">-mask</a></code>" takes
 an external image to be linked to the images in memory.  The 'plus' form of
-the operator "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mask">+mask</a></code>"
+the operator "<code><a href="command-line-options.html#mask">+mask</a></code>"
 removes the mask from the image. <p></p>
 
 For example here I use a 'write mask' to protect the background pixels
@@ -1401,7 +1401,7 @@ The mask is bit rough, but it worked well.  Just remember that a 'write mask'
 is used to specify the part to be protected or preserve. Remember, in IMv6...
 <p></p>
 
-<div align="center"><b> The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mask">-mask</a></code>" operator defines a 'write-protect' mask</b></div><p></p>
+<div align="center"><b> The "<code><a href="command-line-options.html#mask">-mask</a></code>" operator defines a 'write-protect' mask</b></div><p></p>
 
 For more advanced example see <a href="https://legacy.imagemagick.org/Usage/photos/#chroma_key">Chroma Key
 Masking</a>, which is more about generating the mask, rather that applying it
@@ -1490,7 +1490,7 @@ That is the mask is negated, then applied to the first 'destination' image.
 the second is then composed over the first image, modifying only the 'white'
 areas of the original mask image. <p></p>
 
-<div align="center"><b> A three image "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?composite">-composite</a></code>" operation uses
+<div align="center"><b> A three image "<code><a href="command-line-options.html#composite">-composite</a></code>" operation uses
 a 'write' mask</b></div><p></p>
 
 <br>
@@ -1508,7 +1508,7 @@ however is currently not done. </i><p></p>
 <a name="clip_mask"></a>
 <h3>Clip Mask and Clip Paths</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clip-mask">-clip-mask</a></code>" form
+The "<code><a href="command-line-options.html#clip-mask">-clip-mask</a></code>" form
 of this operator, is almost exactly the same as the above but only provides
 a boolean (all-or-nothing) style of masking. As a result you cannot achieve
 a 'blended' or smoothed result. <p></p>
@@ -1526,12 +1526,12 @@ For example...
 </td></tr></tbody></table><p></p>
 
 As you can see the result is highly aliased (with stair-cased edges), as
-a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clip-mask">-clip-mask</a></code>" does
-not produce a blended result as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mask">-mask</a></code>" does. <p></p>
+a "<code><a href="command-line-options.html#clip-mask">-clip-mask</a></code>" does
+not produce a blended result as "<code><a href="command-line-options.html#mask">-mask</a></code>" does. <p></p>
 
 The only good thing about this is that it is slightly faster (though not very
 much). It was provided originally to allow the handling of <a href="#clip-path">Clip Paths in TIFF image files</a>, and is a very old
-operator (IMv5). The newer "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mask">-mask</a></code>" operator should be used instead. <p></p>
+operator (IMv5). The newer "<code><a href="command-line-options.html#mask">-mask</a></code>" operator should be used instead. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
 <tbody><tr valign="top">
@@ -1553,7 +1553,7 @@ operator (IMv5). The newer "<code><a href="https://legacy.imagemagick.org/Usage/
 A 'clip path' is part of TIFF image file format, and defines a vector path
 that is used define a 'shaped area' within the TIFF image. <p></p>
 
-In IM the operators "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clip">-clip</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clip-path">-clip-path</a></code>", reads this 'clip-path' and converts it into a <a href="#clip_mask">Clip mask</a> (above). As such it defines a 'write mask'
+In IM the operators "<code><a href="command-line-options.html#clip">-clip</a></code>" and "<code><a href="command-line-options.html#clip-path">-clip-path</a></code>", reads this 'clip-path' and converts it into a <a href="#clip_mask">Clip mask</a> (above). As such it defines a 'write mask'
 that will protect the shape from modification. <p></p>
 
 A clip-path stored in the TIFF image is defined as a <a href="https://legacy.imagemagick.org/Usage/draw/#paths">SVG Path Drawing</a>, which you can extract from a TIFF image file format
@@ -1583,8 +1583,8 @@ again.
 </code></pre></td></tr></tbody></table>
 </div><p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clip">+clip</a></code>" operator also
-turns off and remove the clip mask (just as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clip_mask">+clip_mask</a></code>" does).  However no
+The "<code><a href="command-line-options.html#clip">+clip</a></code>" operator also
+turns off and remove the clip mask (just as "<code><a href="command-line-options.html#clip_mask">+clip_mask</a></code>" does).  However no
 file format saves the current clip mask with the image for any image file
 format. (At least in IMv6) <p></p>
 
@@ -1815,7 +1815,7 @@ areas.
   <a href="https://legacy.imagemagick.org/Usage/masking/lines_regions.gif"><img src="../images/masking/lines_regions.gif" width="600" height="70" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-Note that the "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?implode"><code>-implode</code></a>" and "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?swirl"><code>-swirl</code></a>", fit into the use of regions very well, as they have
+Note that the "<a href="command-line-options.html#implode"><code>-implode</code></a>" and "<a href="command-line-options.html#swirl"><code>-swirl</code></a>", fit into the use of regions very well, as they have
 the property that the outside edge of the distorted image matches up to the
 rest of the image outside the defined region.  That is they are actually
 designed to perform '<i>localized image warping</i>'. <p></p>
@@ -1825,7 +1825,7 @@ the size of the resulting 'wave' image so that it would again fit into the
 original area from which it was extracted. <p></p>
 
 Remember <a href="#region">Regions</a> only work when used with <a href="https://legacy.imagemagick.org/Usage/basics/#option_simple">Simple Image Processing Operators</a>.  Any
-other operator including another "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?region"><code>-region</code></a>" operator will cancel the region processing, before
+other operator including another "<a href="command-line-options.html#region"><code>-region</code></a>" operator will cancel the region processing, before
 that operation is applied. <p></p>
 
 
@@ -1834,11 +1834,11 @@ that operation is applied. <p></p>
 
 In reality the way regions work is... <ul>
 
-<li>Extract from the image a smaller image according to the "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?region"><code>-region</code></a>" operator,
+<li>Extract from the image a smaller image according to the "<a href="command-line-options.html#region"><code>-region</code></a>" operator,
     using a simple crop with the region argument.
 </li><li>Apply any <a href="https://legacy.imagemagick.org/Usage/basics/#option_simple">Simple Image Processing Operators</a>, that follow, to the smaller image.
-</li><li>When a non-Simple Image Operator is seen, OR another "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?region"><code>-region</code></a>" operator is
-    found, OR the region is turned off using "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?region"><code>+region</code></a>", then the
+</li><li>When a non-Simple Image Operator is seen, OR another "<a href="command-line-options.html#region"><code>-region</code></a>" operator is
+    found, OR the region is turned off using "<a href="command-line-options.html#region"><code>+region</code></a>", then the
     extracted region is overlaid on the original image at its extracted
     location.
 </li></ul><p></p>
@@ -1973,7 +1973,7 @@ For an example of this look at the 'wave distortion' example above. <p></p>
 <td align="justify" width="100%"><font size="-1"><i>
   Like "<code><a href="https://legacy.imagemagick.org/Usage/basics/#mogrify">mogrify</a></code>" you cannot
   merge multiple sub-images as that requires the use of a non-simple image
-  operation.  However you can use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" as an alternative composition method. See <a href="https://legacy.imagemagick.org/Usage/basics/#mogrify_compose">Alpha Composition in Mogrify</a> for an
+  operation.  However you can use "<code><a href="command-line-options.html#draw">-draw</a></code>" as an alternative composition method. See <a href="https://legacy.imagemagick.org/Usage/basics/#mogrify_compose">Alpha Composition in Mogrify</a> for an
   example. <p></p>
 
 </i></font></td></tr></tbody></table><p></p>
@@ -1987,7 +1987,7 @@ For an example of this look at the 'wave distortion' example above. <p></p>
   depending on if you find this information useful or not.  The offset is
   currently not used when a region image is restored. <p></p>
 
-  If the offset is not wanted (as it interferes with an operator such as <a href="https://legacy.imagemagick.org/Usage/distorts/#distort">Distort</a>), follow the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?region">-region</a></code>" option by a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" operator to remove the
+  If the offset is not wanted (as it interferes with an operator such as <a href="https://legacy.imagemagick.org/Usage/distorts/#distort">Distort</a>), follow the "<code><a href="command-line-options.html#region">-region</a></code>" option by a "<code><a href="command-line-options.html#repage">+repage</a></code>" operator to remove the
   offset, from the region images. Its removal or modification will not effect
   its restoration back onto the original image.  <p></p>
 
@@ -2306,7 +2306,7 @@ This would not be a problem if the original image was itself a Boolean overlay
 (EG a GIF format image, overlaid on a background). In that case your result
 will be perfect (see the 'ChangeMask' example above). <p></p>
 
-By varying the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?threshold">-threshold</a></code>" you can add a 'fuzz factor' to the boolean (on/off
+By varying the "<code><a href="command-line-options.html#threshold">-threshold</a></code>" you can add a 'fuzz factor' to the boolean (on/off
 only) mask, so as to get the mask closer to the image proper.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -2821,7 +2821,7 @@ Here is the whole sequence all in one command.
 </i></font></td></tr></tbody></table><p></p>
 
 This time the 'gold' background image was used for the color extraction, and
-was selected by the '<code>0</code>' in the second "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clone">-clone</a></code>" operation, but either
+was selected by the '<code>0</code>' in the second "<code><a href="command-line-options.html#clone">-clone</a></code>" operation, but either
 source image could have been used. <p></p>
 
 Just one warning. The above assumes the top-left pixel is the unadulterated

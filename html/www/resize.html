@@ -122,7 +122,7 @@ Because it is often better not to resize images...
 </b></div><p></p>
 
 The exception to this (there is always an exception) is if you actually
-specify a <a href="https://legacy.imagemagick.org/Usage/filter/#filter">Resampling Filter</a> using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?filter">-filter</a></code>" setting.  In that case
+specify a <a href="https://legacy.imagemagick.org/Usage/filter/#filter">Resampling Filter</a> using a "<code><a href="command-line-options.html#filter">-filter</a></code>" setting.  In that case
 the normal "do nothing if image isn't resized" is overridden and the filter
 will be applied.  However, many filters (even the default filters) can blur
 images slightly.  It is part of their nature.  So normally this
@@ -164,14 +164,14 @@ smaller image into a square box 64x64 pixels in size.
   <a href="https://legacy.imagemagick.org/Usage/resize/resize_terminal.gif"><img src="../images/resize/resize_terminal.gif" align="middle" vspace="1" hspace="5" border="1" alt="[IM Output]"></a>
 </nobr></div><p></p>
 
-As you can see a 64x64 square image was <i>NOT</i> produced by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>".  In fact the images
+As you can see a 64x64 square image was <i>NOT</i> produced by "<code><a href="command-line-options.html#resize">-resize</a></code>".  In fact the images
 were only enlarged or reduced just enough so as to best fit into the given
 size.  <p></p>
 
 <a name="noaspect"></a>
 <b>Ignore Aspect Ratio ('<code>!</code>' flag)</b><br>
 
-If you want you can force  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" to ignore the aspect ratio and distort the image so it
+If you want you can force  "<code><a href="command-line-options.html#resize">-resize</a></code>" to ignore the aspect ratio and distort the image so it
 always generates an image exactly the size specified.  This is done by adding
 the character '<code>!</code>' to the size.  Unfortunately this character is
 also sometimes used for special purposes by various UNIX command line shells.
@@ -240,10 +240,10 @@ enlarges images that are smaller than the given size, is rarely used. <p></p>
 The most notable use is with an argument such as '<code>1x1&lt;</code>'.  This
 resize argument will never actually resize any image.  In other words it's a
 no-op, which will allow you to short circuit a resize operation in programs
-and scripts which always uses "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>".  Other than that you probably do not actually want to
+and scripts which always uses "<code><a href="command-line-options.html#resize">-resize</a></code>".  Other than that you probably do not actually want to
 use this feature.  <p></p>
 
-One such example of using this 'short circuit' argument is for the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" setting of
+One such example of using this 'short circuit' argument is for the "<code><a href="command-line-options.html#geometry">-geometry</a></code>" setting of
 "<code>montage</code>".  See <a href="https://legacy.imagemagick.org/Usage/montage/#zero_geometry">Montage and
 Geometry, caution needed</a> for more details. <p></p>
 
@@ -283,14 +283,14 @@ given.
 </nobr></div><p></p>
 
 As it stands this option does not seem very useful, but when combined with
-either a centered (or uncentered) "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" or "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>" to remove the excess parts of the image, you can fit the
+either a centered (or uncentered) "<code><a href="command-line-options.html#crop">-crop</a></code>" or "<code><a href="command-line-options.html#extent">-extent</a></code>" to remove the excess parts of the image, you can fit the
 image so as to completely fill the area specified.  Both the resize and the
 final image size arguments should be the same values. <p></p>
 
-Though the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" is most
-logical, it may require an extra "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" to remove virtual canvas layering information.  The
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>" does not
-require this cleanup, but still allows the use of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>" for positioning.  See
+Though the "<code><a href="command-line-options.html#crop">-crop</a></code>" is most
+logical, it may require an extra "<code><a href="command-line-options.html#repage">+repage</a></code>" to remove virtual canvas layering information.  The
+"<code><a href="command-line-options.html#extent">-extent</a></code>" does not
+require this cleanup, but still allows the use of "<code><a href="command-line-options.html#gravity">-gravity</a></code>" for positioning.  See
 <a href="https://legacy.imagemagick.org/Usage/crop/">Cutting and Bordering</a> for more information.
 
 <div align="center">
@@ -310,8 +310,8 @@ require this cleanup, but still allows the use of "<code><a href="https://legacy
   <a href="https://legacy.imagemagick.org/Usage/resize/fill_crop_terminal.gif"><img src="../images/resize/fill_crop_terminal.gif" align="middle" vspace="1" hspace="5" border="1" alt="[IM Output]"></a>
 </nobr></div><p></p>
 
-Also "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?extent">-extent</a></code>" can be
-used to pad out images that use the normal resize (with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color setting).
+Also "<code><a href="command-line-options.html#extent">-extent</a></code>" can be
+used to pad out images that use the normal resize (with a "<code><a href="command-line-options.html#background">-background</a></code>" color setting).
 See <a href="https://legacy.imagemagick.org/Usage/thumbnails/#fit_summery">Thumbnails, Fit to a Given Space
 Summary</a>, for more on this type of operation. <p></p>
 
@@ -338,7 +338,7 @@ Summary</a>, for more on this type of operation. <p></p>
 <a name="percent"></a>
 <b>Percentage Resize ('<code>%</code>' flag)</b><br>
 
-Adding a percent sign, '%', to the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" argument causes resize to scale the image by the amount
+Adding a percent sign, '%', to the "<code><a href="command-line-options.html#resize">-resize</a></code>" argument causes resize to scale the image by the amount
 specified.
 
 <div align="center">
@@ -390,7 +390,7 @@ using Distort</a> below).  <p></p>
 <td align="justify" width="100%"><font size="-1"><i>
   All these 'flag' options '<code>!</code>', '<code>&lt;</code>',
   '<code>&gt;</code>', '<code>^</code>', '<code>%</code>', and
-  '<code>@</code>' are just on/off switches for the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" operator. Just the
+  '<code>@</code>' are just on/off switches for the "<code><a href="command-line-options.html#resize">-resize</a></code>" operator. Just the
   character's presence (or absence) in the resize argument is what matters,
   not their position.  They can appear at the start or end of the argument, or
   before or after individual numbers (though not in the middle of a number).
@@ -409,7 +409,7 @@ using Distort</a> below).  <p></p>
 <a name="pixel"></a>
 <b>Resize using a Pixel Area Count Limit ('<code>@</code>' flag)</b><br>
 
-There is one final "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" option flag. The "at" symbol '<code>@</code>', will
+There is one final "<code><a href="command-line-options.html#resize">-resize</a></code>" option flag. The "at" symbol '<code>@</code>', will
 resize an image to contain no more than the given number of pixels.  This can
 be used for example to make a collection of images of all different sizes
 roughly the same size.  For example here we resize both our images to a rough
@@ -511,56 +511,56 @@ the image being displayed. This was its original usage and meaning when IM was
 first started.  It was from this that its other 'resize' capabilities came
 about. <p></p>
 
-For "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/basics/#montage">montage</a></code>" "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" is a setting that is
+For "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/basics/#montage">montage</a></code>" "<code><a href="command-line-options.html#geometry">-geometry</a></code>" is a setting that is
 saved until all the arguments have been read in.  At this point it then
 defines the final tile (cell) size (or leaves it up to "<code>montage</code>"
 to work out) while the position arguments are used to specify the space
 surrounding the tile cells. See <a href="https://legacy.imagemagick.org/Usage/montage/#controls">Montage
 Control Settings</a>.  <p></p>
 
-In "<code><a href="https://legacy.imagemagick.org/Usage/basics/#composite">composite</a></code>", "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" is also saved
+In "<code><a href="https://legacy.imagemagick.org/Usage/basics/#composite">composite</a></code>", "<code><a href="command-line-options.html#geometry">-geometry</a></code>" is also saved
 until the end of arguments have been reached.  Then it is used to resize and
 position the overlay image (the first image given) before it is overlaid onto
 the background image (the second image).  For example see <a href="https://legacy.imagemagick.org/Usage/layers/#composite">Composite Multiple Images</a>. <p></p>
 
 As you can see it is used as a 'setting' in most IM commands, but in
-"<code>convert</code>" "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" is both a special image resizing operator and a
+"<code>convert</code>" "<code><a href="command-line-options.html#geometry">-geometry</a></code>" is both a special image resizing operator and a
 positioning setting. <p></p>
 
-What it does is to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" just the <i>last</i> image in the current image sequence.
+What it does is to "<code><a href="command-line-options.html#resize">-resize</a></code>" just the <i>last</i> image in the current image sequence.
 This is the <i>only</i> image processing operator that is designed
 specifically to effect just the one image (the last one), in the current image
 sequence.  <p></p>
 
 To complicate this special option further, the positional parts of the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" option is
+"<code><a href="command-line-options.html#geometry">-geometry</a></code>" option is
 saved by "<code>convert</code>" command, just as it is in "<code><a href="https://legacy.imagemagick.org/Usage/basics/#composite">composite</a></code>".  That is, any position is
-preserved for later use by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?composite">-composite</a></code>", to position the 'overlay' image, (the second last
+preserved for later use by the "<code><a href="command-line-options.html#composite">-composite</a></code>", to position the 'overlay' image, (the second last
 image in the current image sequence) over the 'background' image (the first
 image in the image sequence).  <p></p>
 
-For this reason, you should limit the use of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" in
-"<code>convert</code>" commands to just before a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?composite">-composite</a></code>" or  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a> composite</code>"  operations.
+For this reason, you should limit the use of "<code><a href="command-line-options.html#geometry">-geometry</a></code>" in
+"<code>convert</code>" commands to just before a "<code><a href="command-line-options.html#composite">-composite</a></code>" or  "<code><a href="command-line-options.html#layers">-layers</a> composite</code>"  operations.
 <p></p>
 
 To summarize, this operator is only really useful after reading or creating a
 second image, just before you perform some type of <a href="https://legacy.imagemagick.org/Usage/compose/#compose">Alpha Composition</a> to process with those
 images.  <p></p>
 
-For practical examples of using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" to resize/position images see <a href="https://legacy.imagemagick.org/Usage/layers/#composite">Compositing Multiple Images</a>. <p></p>
+For practical examples of using "<code><a href="command-line-options.html#geometry">-geometry</a></code>" to resize/position images see <a href="https://legacy.imagemagick.org/Usage/layers/#composite">Compositing Multiple Images</a>. <p></p>
 
 
 <a name="thumbnail">
 <h3>Thumbnail
 <font size="-1">- Resize with profile stripping</font></h3>
 
-The "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?thumbnail">-thumbnail</a></code>"
-operator is a variation of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" designed specifically for shrinking very very large
+The "<code></code></a><code><a href="command-line-options.html#thumbnail">-thumbnail</a></code>"
+operator is a variation of "<code><a href="command-line-options.html#resize">-resize</a></code>" designed specifically for shrinking very very large
 images to small thumbnails. <p></p>
 
-First it uses "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strip">-strip</a></code>" to
-remove all profile and other fluff from the image.  It then uses "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sample">-sample</a></code>" to shrink the image down
-to 5 times the final height.  Finally it does a normal "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" to reduce the image to
+First it uses "<code><a href="command-line-options.html#strip">-strip</a></code>" to
+remove all profile and other fluff from the image.  It then uses "<code><a href="command-line-options.html#sample">-sample</a></code>" to shrink the image down
+to 5 times the final height.  Finally it does a normal "<code><a href="command-line-options.html#resize">-resize</a></code>" to reduce the image to
 its final size. <p></p>
 
 All this is to basically speed up thumbnail generation from very large files.
@@ -580,17 +580,17 @@ way to resize images for thumbnail creation. <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/resize/warning.gif" width="28" height="28"><img src="../images/resize/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Before  IM v6.5.4-7 the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?thumbnail">-thumbnail</a></code>" would strip ALL profiles from the image, including
+  Before  IM v6.5.4-7 the "<code><a href="command-line-options.html#thumbnail">-thumbnail</a></code>" would strip ALL profiles from the image, including
   the ICC color profiles.  From this version onward the color profiles will be
-  preserved.  If the color profile is not wanted then "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strip">-strip</a></code>" all profiles.
+  preserved.  If the color profile is not wanted then "<code><a href="command-line-options.html#strip">-strip</a></code>" all profiles.
 </i></font></td></tr></tbody></table><p></p>
 
 <a name="resample">
 <h3>Resample
 <font size="-1">- Changing an image's resolution</font></h3>
 
-Just as in the previous alternative resize operators, "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resample">-resample</a></code>" is also a simple
-wrapper around the normal "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" operator. <p></p>
+Just as in the previous alternative resize operators, "<code></code></a><code><a href="command-line-options.html#resample">-resample</a></code>" is also a simple
+wrapper around the normal "<code><a href="command-line-options.html#resize">-resize</a></code>" operator. <p></p>
 
 Its purpose however is to adjust the number of pixels in an image so that when
 displayed at the given <a href="https://legacy.imagemagick.org/Usage/basics/#density">Resolution or Density</a>
@@ -608,7 +608,7 @@ used to represent the image. <p></p>
 
 For example, suppose you had an image that you scanned at a 300dpi (dots per
 inch).  The image was saved with this resolution (density) or when you read it
-into IM, you specified it as a 300dpi image (using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?density">-density</a></code>").   Now you decide to
+into IM, you specified it as a 300dpi image (using "<code><a href="command-line-options.html#density">-density</a></code>").   Now you decide to
 display it on a screen that has a resolution of 90dpi, so you do a
 "<code>-resample 90</code>".  IM will now resize the image by 90/300 or to 30%
 of the images original size and set the images new density to 90dpi.  The
@@ -618,7 +618,7 @@ you scanned.  That is, it now has a resolution appropriate for a 90dpi
 display, so it will be displayed to the user at its original real world size.
 <p></p>
 
-A "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?units">-units</a></code>" setting (with
+A "<code><a href="command-line-options.html#units">-units</a></code>" setting (with
 arguments '<code>PixelsPerInch</code>' or '<code>PixelsPerCentimeter</code>')
 may be required in some situations to get this operator to work correctly.
 This setting can also be important for output to Postscript and PDF image
@@ -630,7 +630,7 @@ data. <p></p>
 
 For formats which do not support an image resolution, or which are
 multi-resolution (vector based) image formats, the original resolution of the
-image must be specified via the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?density">-density</a></code>" attribute (see <a href="https://legacy.imagemagick.org/Usage/basics/#density">Density
+image must be specified via the "<code><a href="command-line-options.html#density">-density</a></code>" attribute (see <a href="https://legacy.imagemagick.org/Usage/basics/#density">Density
 Image Meta-data</a>) before being read in.  If no density attribute has been
 set IM will assume it has a default density of 72dpi. Setting the density
 AFTER reading such an image will only affect its output resolution, and not
@@ -641,7 +641,7 @@ affect its final size in terms of pixels. <p></p>
 <h3>Scale
 <font size="-1">- Minify with pixel averaging</font></h3>
 
-The "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?scale">-scale</a></code>" resize
+The "<code></code></a><code><a href="command-line-options.html#scale">-scale</a></code>" resize
 operator is a simplified, faster form of the resize command. <p></p>
 
 When enlarging an image, the pixels in the image are replicated to form a
@@ -692,10 +692,10 @@ Moiré patterns, unless the new image is an exact integer reduction (a
 technique known as 'binning'), which also requires the original image size to
 be some exact integer multiple of the final size. <p></p>
 
-Also a real-world photograph that has been heavily minified using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?scale">-scale</a></code>" tends to look overlay
+Also a real-world photograph that has been heavily minified using "<code><a href="command-line-options.html#scale">-scale</a></code>" tends to look overlay
 sharp, with aliasing ('staircase') effects along sharp edges. <p></p>
 
-The pixel averaging of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?scale">-scale</a></code>" allows it to generate 'pixelated' images.  You basically
+The pixel averaging of "<code><a href="command-line-options.html#scale">-scale</a></code>" allows it to generate 'pixelated' images.  You basically
 reduce the size of the image to average the pixels, then enlarge again back to
 the image's original size.
 
@@ -715,13 +715,13 @@ image. See the <a href="https://legacy.imagemagick.org/Usage/photos/#anonymity">
 example for a demonstration of using this technique. <p></p>
 
 The algorithm is also designed to loop over rows of pixels then columns, which
-is inverted to that of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>".  This may allow "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?scale">-scale</a></code>" to handle a "<a href="https://legacy.imagemagick.org/Usage/file/#mpc"><code>mpc:</code></a>" disk cached image better. <p></p>
+is inverted to that of "<code><a href="command-line-options.html#resize">-resize</a></code>".  This may allow "<code><a href="command-line-options.html#scale">-scale</a></code>" to handle a "<a href="https://legacy.imagemagick.org/Usage/file/#mpc"><code>mpc:</code></a>" disk cached image better. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
 <tbody><tr valign="top">
 <td><img src="../images/resize/warning.gif" width="28" height="28"><img src="../images/resize/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Up until IM v6.4.7 the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?scale">-scale</a></code>" still contained the old <a href="https://legacy.imagemagick.org/Usage/bugs/resize_halo/">Resize Halo Bug</a>.
+  Up until IM v6.4.7 the "<code><a href="command-line-options.html#scale">-scale</a></code>" still contained the old <a href="https://legacy.imagemagick.org/Usage/bugs/resize_halo/">Resize Halo Bug</a>.
 </i></font></td></tr></tbody></table><p></p>
 
 <a name="pixel_mixing">
@@ -855,17 +855,17 @@ Special thanks goes to forum user <a href="https://legacy.imagemagick.org/Usage/
 <h3>Sample
 <font size="-1">- Resize by row/column replication/deleting</font></h3>
 
-The "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sample">-sample</a></code>" resize
+The "<code></code></a><code><a href="command-line-options.html#sample">-sample</a></code>" resize
 operator is the fastest resize operator, especially in large scale image
-reduction.  In fact it is also even faster than the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?scale">-scale</a></code>" operator (see above). <p></p>
+reduction.  In fact it is also even faster than the "<code><a href="command-line-options.html#scale">-scale</a></code>" operator (see above). <p></p>
 
 When enlarging or magnifying an image it only performs does pixel replication
 (as per the <a href="https://legacy.imagemagick.org/Usage/filter/#box">Box Filter</a>, generating rectangular
-'blocks' of pixel colors.  However when shrinking an image "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sample">-sample</a></code>" simply deletes rows and
+'blocks' of pixel colors.  However when shrinking an image "<code><a href="command-line-options.html#sample">-sample</a></code>" simply deletes rows and
 columns of pixels. <p></p>
 
 Because whole rows and columns of pixels are simply added or removed,
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sample">-sample</a></code>" will generate
+"<code><a href="command-line-options.html#sample">-sample</a></code>" will generate
 no new or additional colors. This fact can be important for some image
 processing techniques such as resizing GIF animations. <p></p>
 
@@ -944,7 +944,7 @@ For more on sampling offsets see the IM Forum discussion
 <h3>Magnify
 <font size="-1">- Pixel Scaling</font></h3>
 
-The "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?magnify">-magnify</a></code>" option
+The "<code></code></a><code><a href="command-line-options.html#magnify">-magnify</a></code>" option
 doubles the size of an image, but it does so by using a technique known as
 "Pixel Scaling" using the <a href="http://scale2x.sourceforge.net/">Scale2X
 algorithm</a>.  This algorithm tries to smooth the corners of pixels being
@@ -993,10 +993,10 @@ image edges. <p></p>
 <h3>Adaptive Resize
 <font size="-1">- Small resizes without blurring</font></h3>
 
-The <nobr>"<code></code></nobr></a><nobr><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?adaptive-resize">-adaptive-resize</a></code>"</nobr> operator uses the special <a href="https://legacy.imagemagick.org/Usage/misc/#mesh">Mesh Interpolation</a> method to resize images. <p></p>
+The <nobr>"<code></code></nobr></a><nobr><code><a href="command-line-options.html#adaptive-resize">-adaptive-resize</a></code>"</nobr> operator uses the special <a href="https://legacy.imagemagick.org/Usage/misc/#mesh">Mesh Interpolation</a> method to resize images. <p></p>
 
-For example here I resize a simple line, using first a normal "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>", then again using
-<nobr>"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?adaptive-resize">-adaptive-resize</a></code>"</nobr>.
+For example here I resize a simple line, using first a normal "<code><a href="command-line-options.html#resize">-resize</a></code>", then again using
+<nobr>"<code><a href="command-line-options.html#adaptive-resize">-adaptive-resize</a></code>"</nobr>.
 
 <div align="center">
 <table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
@@ -1026,9 +1026,9 @@ If you look at a magnification of the two results...
 
 You can see the <a href="#adaptive-resize">Adaptive Resized</a> image on the
 right is a lot cleaner looking and less blurry than the image produced on the
-left using the normal "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" operator. <p></p>
+left using the normal "<code><a href="command-line-options.html#resize">-resize</a></code>" operator. <p></p>
 
-Basically the operator avoids the excessive blurring that a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?resize">-resize</a></code>" operator can produce
+Basically the operator avoids the excessive blurring that a "<code><a href="command-line-options.html#resize">-resize</a></code>" operator can produce
 with sharp color changes. This works well for slight image size adjustments,
 particularly for magnification, and especially with images with sharp color
 changes. <p></p>
@@ -1047,9 +1047,9 @@ than a more complex resampling filter. <p></p>
 <h3>Interpolative Resize
 <font size="-1">- Resize using an Interpolation Method</font></h3>
 
-The <nobr>"<code></code></nobr></a><nobr><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?interpolative-resize">-interpolative-resize</a></code>"</nobr> operator is practically identical to
+The <nobr>"<code></code></nobr></a><nobr><code><a href="command-line-options.html#interpolative-resize">-interpolative-resize</a></code>"</nobr> operator is practically identical to
 the previous <a href="#adaptive-resize">Adaptive Resize</a> operator.
-However this operator will use the current "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?interpolate">-interpolate</a></code>" setting rather
+However this operator will use the current "<code><a href="command-line-options.html#interpolate">-interpolate</a></code>" setting rather
 than a fixed '<code>Mesh</code>' interpolation method. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
@@ -1057,7 +1057,7 @@ than a fixed '<code>Mesh</code>' interpolation method. <p></p>
 <td align="justify" width="100%"><font size="-1"><i>
 </i></font></td></tr></tbody></table><p>
 
-If you use a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?interpolate">-interpolate</a></code>" setting of '<code><a href="https://legacy.imagemagick.org/Usage/misc/#nearest">Nearest</a></code>', you will essentually get the
+If you use a "<code><a href="command-line-options.html#interpolate">-interpolate</a></code>" setting of '<code><a href="https://legacy.imagemagick.org/Usage/misc/#nearest">Nearest</a></code>', you will essentually get the
 equivelent of a <a href="#sample">Sample Operator</a>.  Similarly many of the
 other <a href="https://legacy.imagemagick.org/Usage/misc/#interpolate_simple">Simple Interpolation Methods</a>,
 will equate to using the equivelent <a href="https://legacy.imagemagick.org/Usage/filter/#interpolated">Interpolated Resize Filters</a>.  But there are a number of Interpolation
@@ -1075,7 +1075,7 @@ other 'sampling resize operators' above. <p></p>
 
 Just as </a><a href="#sample">Sampling</a> an image resizes by directly removing
 or duplicating whole columns and rows from an image, the special IM operator
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?liquid-rescale">-liquid-rescale</a></code>" also removes or duplicates columns and rows of
+"<code><a href="command-line-options.html#liquid-rescale">-liquid-rescale</a></code>" also removes or duplicates columns and rows of
 pixels from an image to reduce/enlarge an image.  The difference is that it
 tries to do so in a more intelligent manner. <p></p>
 
@@ -1094,7 +1094,7 @@ the <a href="http://www.youtube.com/watch?v=vIFCV2spKtg">YouTube Video
 Demo</a>, and the <a href="http://www.faculty.idc.ac.il/arik/imret.pdf">PDF
 paper: Seam Carving for Content-Aware Image Resizing</a>. <p></p>
 
-Here for example is the IM logo as it is resized smaller using the IM "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?liquid-rescale">-liquid-rescale</a></code>"
+Here for example is the IM logo as it is resized smaller using the IM "<code><a href="command-line-options.html#liquid-rescale">-liquid-rescale</a></code>"
 operator.
 
 <div align="center">
@@ -1119,7 +1119,7 @@ operator.
 </td></tr></tbody></table>
 </div><p></p>
 
-Notice how "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?liquid-rescale">-liquid-rescale</a></code>" preserved the complex wizard, while squeezing up
+Notice how "<code><a href="command-line-options.html#liquid-rescale">-liquid-rescale</a></code>" preserved the complex wizard, while squeezing up
 the less complex stars and title part of the image. It also squeeze the right
 foot of the wizard slightly, producing a little jaggedness in the edge of the
 cloak, just as it did to the wizard's thin but simple wand. <p></p>
@@ -1130,7 +1130,7 @@ becoming equally distorted. The stars are not preserved intact and all the
 edges have distinct but uniform <a href="https://legacy.imagemagick.org/Usage/filter/#aliasing">aliasing</a>
 effects.  <p></p>
 
-Basically "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?liquid-rescale">-liquid-rescale</a></code>" will produce a generally better looking
+Basically "<code><a href="command-line-options.html#liquid-rescale">-liquid-rescale</a></code>" will produce a generally better looking
 'squeezed' image without generating extra 'mixed colors' or blurring of the
 image.  However you can get some slight but localized aliasing effects in one
 spot (the wizards wand in this case) rather than spreading that effect across
@@ -1156,10 +1156,10 @@ energy' regions become grouped together. <p></p>
 Note however it will only double each seam once, and as such the technique
 starts to break down when images are expanded too much.  A better method is
 often to resize the image larger first, then use liquid rescaling to reduce it
-to the desired size.  Or to use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?liquid-rescale">-liquid-rescale</a></code>" in
+to the desired size.  Or to use "<code><a href="command-line-options.html#liquid-rescale">-liquid-rescale</a></code>" in
 multiple smaller steps.  <p></p>
 
-To show the effect of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?liquid-rescale">-liquid-rescale</a></code>" better here is an animation, as the same image is
+To show the effect of "<code><a href="command-line-options.html#liquid-rescale">-liquid-rescale</a></code>" better here is an animation, as the same image is
 resized down to a very thin image, then enlarged again. This animation was
 created using the shell script <a href="https://legacy.imagemagick.org/Usage/resize/animate_lqr">animate_lqr</a>.
 
@@ -1256,7 +1256,7 @@ pixel to the right (without actual resize) even though the algorithm could
 quite easily do this.  <p></p>
 
 With IM v6.3.6 the </a><a href="https://legacy.imagemagick.org/Usage/distorts/#distort">General Distortion
-Operator</a> "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?distort">-distort</a></code>"
+Operator</a> "<code><a href="command-line-options.html#distort">-distort</a></code>"
 will let you do this and more, using its <a href="https://legacy.imagemagick.org/Usage/distorts/#srt">Scale-Rotate-Translate</a> distortion method. You can also do this using an
 <a href="https://legacy.imagemagick.org/Usage/distorts/#affine">Affine</a> distortion based on movements of
 control points. <p></p>
@@ -1285,9 +1285,9 @@ exact resize without adjustments for a final integer image size, just as you
 requested. Because of this the edges are fuzzy as the pixel colors are being
 spread over fractions of a pixel size, and not just to whole integers. <p></p>
 
-Note that I used the 'plus' form of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?distort">+distort</a></code>" to allow this image's
+Note that I used the 'plus' form of "<code><a href="command-line-options.html#distort">+distort</a></code>" to allow this image's
 processing operator to set the final images size and offset on the <a href="https://legacy.imagemagick.org/Usage/basics/#page">Virtual Canvas</a> correctly, for further processing
-and layering.  If this offset is not desired it can be removed using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?page">+repage</a></code>" operator.  But if left in
+and layering.  If this offset is not desired it can be removed using "<code><a href="command-line-options.html#page">+repage</a></code>" operator.  But if left in
 place then the actual images location on the larger canvas will be preserved,
 allowing you to exactly position the image correctly with its 'fuzzy edges'.
 <p></p>
@@ -1345,9 +1345,9 @@ resize of embeded images can produce 'jarring' effects. <p></p>
 
 <b>Affine, Transform</b><p></p>
 
-As of IM v6.4.2-8 the older "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?affine">-affine</a></code>" setting used with either "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?transform">-transform</a></code>" or "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operators, provide a similar
+As of IM v6.4.2-8 the older "<code><a href="command-line-options.html#affine">-affine</a></code>" setting used with either "<code><a href="command-line-options.html#transform">-transform</a></code>" or "<code><a href="command-line-options.html#draw">-draw</a></code>" operators, provide a similar
 free-form resize capability. However in reality it is equivalent to a calling
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?distort">+distort</a></code>" with an
+"<code><a href="command-line-options.html#distort">+distort</a></code>" with an
 '<code><a href="https://legacy.imagemagick.org/Usage/distorts/#affine_projection">AffineProjection</a></code>'
 distortion method.  As such all the previous Distort notes apply. <p></p>
 
@@ -1442,7 +1442,7 @@ Colorspace of the Internet</a>. <p></p>
 
 As of version 6.7.5 ImageMagick follows this convention and defines the default
 colorspace of images (at least for most image file formats) to be sRGB.  This
-means we simply need to use the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?colorspace">-colorspace</a></code>" to transform the image to a linear space before doing
+means we simply need to use the "<code><a href="command-line-options.html#colorspace">-colorspace</a></code>" to transform the image to a linear space before doing
 the resize. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
@@ -1564,7 +1564,7 @@ Gamma correction also does not play around with the IMv6 RGB/sRGB colorspace
 settings, so may be a better choice when the exact version may be unknown.
 <p></p>
 
-You may also like to look at the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?auto-gamma">-auto-gamma</a></code>" operator, which
+You may also like to look at the "<code><a href="command-line-options.html#auto-gamma">-auto-gamma</a></code>" operator, which
 tries to adjust the image, do as to produce equal amounts of light and dark
 areas (assuming the image is in a linear colorspace). <p></p>
 
@@ -1753,7 +1753,7 @@ In a lengthy discussion on the ImageMagick Discussion Forums, <a href="https://l
 filter haloing</a>.  A new technique has been developed in which rather than
 trying to resize images in a linear color space,  the image is resized in
 a modified colorspace using the <a href="https://legacy.imagemagick.org/Usage/color_mods/#sigmoidal">Sigmoidal
-Color Modifier Operator</a> (<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sigmoidal-contrast">-sigmoidal-contrast</a></code>).
+Color Modifier Operator</a> (<code><a href="command-line-options.html#sigmoidal-contrast">-sigmoidal-contrast</a></code>).
 This can reduce the clipping of extreme halo or <a href="https://legacy.imagemagick.org/Usage/filter/#ringing">Ringing Artefacts</a> that may develop along very sharp edges. <p></p>
 
 For example, here is a sequence of 'improving' resize techniques,
@@ -1931,7 +1931,7 @@ filled, as it preserved the image's aspect ratio. <p></p>
 
 Now if all your images are either landscape style (they are wider than they
 are high) then you can of course just resize the image to fit either the
-height or width of the area, then use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?crop">-crop</a></code>" to cut the image to fit it exactly.
+height or width of the area, then use "<code><a href="command-line-options.html#crop">-crop</a></code>" to cut the image to fit it exactly.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr><td width="100%" align="justify">

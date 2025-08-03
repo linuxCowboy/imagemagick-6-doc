@@ -104,7 +104,7 @@ generally visible in the result. <p></p>
 <a name="raise"></a>
 <h3>Raise or Sunk Borders</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?raise">-raise</a></code>" operator is
+The "<code><a href="command-line-options.html#raise">-raise</a></code>" operator is
 such a simple image transformation, that it almost isn't.  All it does is
 as a rectangular bevel highlight to an existing image.
 
@@ -130,7 +130,7 @@ operator...
 </td></tr></tbody></table><p></p>
 
 This operator is a bit like <a href="https://legacy.imagemagick.org/Usage/crop/#frame">Framing</a> an image,
-but instead of adding extra pixels as a border, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?raise">-raise</a></code>" operator re-colors the
+but instead of adding extra pixels as a border, the "<code><a href="command-line-options.html#raise">-raise</a></code>" operator re-colors the
 edge pixels of the image. This makes it an image transform. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
@@ -169,12 +169,12 @@ the result.
   <a href="https://legacy.imagemagick.org/Usage/transform/inside_border.jpg"><img src="../images/transform/inside_border.jpg" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-The width of the border added is controlled by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" of the
+The width of the border added is controlled by the "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" of the
 rectangle.  That is
 
 <div align="center"><pre>{stroke width}  =  {border width} * 2 - 1</pre></div><p></p>
 
-As such the above 6 pixel border needed a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" of 11. <p></p>
+As such the above 6 pixel border needed a "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" of 11. <p></p>
 
 
 If you don't know the size of the image, then you can <a href="https://legacy.imagemagick.org/Usage/crop/#shave">Shave</a> the image then add the <a href="https://legacy.imagemagick.org/Usage/crop/#border">Border</a> as
@@ -193,7 +193,7 @@ normal.  This is probably easier, though prehaps not as versatile.
 <a name="spread"></a>
 <h3>Random Pixel Spread</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?spread">-spread</a></code>"  would
+The "<code><a href="command-line-options.html#spread">-spread</a></code>"  would
 replace each pixel the color of a random nearby color from the source image.
 This random selection was made as per the use of <a href="https://legacy.imagemagick.org/Usage/misc/#interpolate">Pixel Interpolation</a> and <a href="https://legacy.imagemagick.org/Usage/misc/#virtual-pixel">Virtual-Pixel Setting</a>. <p></p>
 
@@ -215,7 +215,7 @@ or swapped. This is more pronounce smaller distance values. <p></p>
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr><td width="100%" align="justify">
 
-Also note that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?spread">-spread</a></code>"
+Also note that "<code><a href="command-line-options.html#spread">-spread</a></code>"
 also makes use of the <a href="https://legacy.imagemagick.org/Usage/misc/#virtual-pixel">Virtual-Pixel
 Setting</a>.
 
@@ -231,8 +231,8 @@ pixels Though there are a few grey pixels interpolated from the border between
 the real pixels of the image and virtual pixels. <p></p>
 
 To get a more traditional spread pixels effect, you can prevent this color
-mixing by forcing the color lookup of specific pixels by using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?interpolate">-interpolate</a> <a href="https://legacy.imagemagick.org/Usage/misc/#nearest">Nearest</a></code>".  To avoid the problems with
-virtual pixels and posible 'edge color bias', I recommend you use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?virtual-pixel">-virtual-pixel</a> <a href="https://legacy.imagemagick.org/Usage/misc/#mirror">Mirror</a></code>". <p></p>
+mixing by forcing the color lookup of specific pixels by using "<code><a href="command-line-options.html#interpolate">-interpolate</a> <a href="https://legacy.imagemagick.org/Usage/misc/#nearest">Nearest</a></code>".  To avoid the problems with
+virtual pixels and posible 'edge color bias', I recommend you use "<code><a href="command-line-options.html#virtual-pixel">-virtual-pixel</a> <a href="https://legacy.imagemagick.org/Usage/misc/#mirror">Mirror</a></code>". <p></p>
 
 As such this is a more traditonal random 'spread' of pixels...
 
@@ -258,7 +258,7 @@ The main problem with the above is that you can lose some pixel data from the
 image.  That is the pixels are not 'swapped' but randomally copied, which
 means a specific pixel in the image may become duplicated or lost. <p></p>
 
-As of IM v6.9.2-2 you can use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?spread">+spread</a></code>" to actually swap pixels within the image, meaning that no
+As of IM v6.9.2-2 you can use "<code><a href="command-line-options.html#spread">+spread</a></code>" to actually swap pixels within the image, meaning that no
 pixel in the image will be duplicated or lost.  Every pixel in the original
 image is still present, just displaced to to new location.<p></p>
 
@@ -375,7 +375,7 @@ Soft Edges</a>. <p></p>
 <a name="polaroid"></a>
 <h3>Complex Polaroid Transformation</h3>
 
-Thanks to the work done by Timothy Hunter, (of RMagick fame), a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?polaroid">-polaroid</a></code>" transformation
+Thanks to the work done by Timothy Hunter, (of RMagick fame), a "<code><a href="command-line-options.html#polaroid">-polaroid</a></code>" transformation
 operator, was added to IM v6.3.2.
 
 <div align="right"><font size="-2">
@@ -403,13 +403,13 @@ inside the Arc de Triumph, Paris</a>.  It is a very long staircase!.
 <td><img src="../images/transform/reminder.gif" width="20" height="16"><img src="../images/transform/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
   Note the resulting image has a semi-transparent shadow, so you either have
-  to use a PNG format image, or "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?flatten">-flatten</a></code>" the result onto a fixed background color for GIF or
+  to use a PNG format image, or "<code><a href="command-line-options.html#flatten">-flatten</a></code>" the result onto a fixed background color for GIF or
   JPG formats.
 </i></font></td></tr></tbody></table><p></p>
 
-This operator is very complex, as it adds border (as per the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" setting),
+This operator is very complex, as it adds border (as per the "<code><a href="command-line-options.html#bordercolor">-bordercolor</a></code>" setting),
 'curls' the paper, and adds an inverse curl to the shadow.  The shadow color
-can be controlled by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" color setting. <p></p>
+can be controlled by the "<code><a href="command-line-options.html#background">-background</a></code>" color setting. <p></p>
 
 As you saw above the plus form of the operator will rotate the result by a
 random amount.  This operator makes a <a href="https://legacy.imagemagick.org/Usage/img_photos/INDEX.html">Index of Photos</a> much more interesting and less static than you would
@@ -433,7 +433,7 @@ image.
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr><td width="100%" align="justify">
 
-If the image has "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?caption">-caption</a></code>" meta-data, that text will also be added into the lower
+If the image has "<code><a href="command-line-options.html#caption">-caption</a></code>" meta-data, that text will also be added into the lower
 border of the polaroid frame, via the "<code><a href="https://legacy.imagemagick.org/Usage/text/#caption">caption:</a></code>" image creation operator.  That is it will be word
 wrapped to the width of the photo.
 
@@ -465,10 +465,10 @@ The other standard text settings (as per "<code><a href="https://legacy.imagemag
 <tbody><tr valign="top">
 <td><img src="../images/transform/expert.gif" width="23" height="26"><img src="../images/transform/space.gif" width="17" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The image meta-data attribute "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?caption">-caption</a></code>" was used due to the internal use of "<code><a href="https://legacy.imagemagick.org/Usage/text/#caption">caption:</a></code>" text to image generator.
+  The image meta-data attribute "<code><a href="command-line-options.html#caption">-caption</a></code>" was used due to the internal use of "<code><a href="https://legacy.imagemagick.org/Usage/text/#caption">caption:</a></code>" text to image generator.
   <p></p>
 
-  On the other hand  the IM command "<code><a href="https://legacy.imagemagick.org/Usage/montage/#montage">montage</a></code>" uses "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?label">-label</a></code>" as it uses the non-word wrapping "<code><a href="https://legacy.imagemagick.org/Usage/text/#label">label:</a></code>" text to image generator.
+  On the other hand  the IM command "<code><a href="https://legacy.imagemagick.org/Usage/montage/#montage">montage</a></code>" uses "<code><a href="command-line-options.html#label">-label</a></code>" as it uses the non-word wrapping "<code><a href="https://legacy.imagemagick.org/Usage/text/#label">label:</a></code>" text to image generator.
 
 </i></font></td></tr></tbody></table><p></p>
 
@@ -485,7 +485,7 @@ caption text. <p></p>
 
 However to make this work we not only need an image at least twice the final
 size, but also we may need to a larger border to the image, and draw the text
-at twice its normal "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?density">-density</a></code>".  Do not increase the fonts "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?pointsize">-pointsize</a></code>" as that does not
+at twice its normal "<code><a href="command-line-options.html#density">-density</a></code>".  Do not increase the fonts "<code><a href="command-line-options.html#pointsize">-pointsize</a></code>" as that does not
 enlarge the text in quite the same way.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -520,7 +520,7 @@ Other</a>.  <p></p>
 <a name="paint"></a>
 <h3>Oil Painting, blobs of color</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?paint">-paint</a></code>" operator is
+The "<code><a href="command-line-options.html#paint">-paint</a></code>" operator is
 designed to convert pictures into paintings made by applying thick 'blobs' of
 paint to a canvas. The result is a merging of neighbourhood colors into larger
 single color areas. <p></p>
@@ -551,11 +551,11 @@ image slightly before hand, as shown in the last image above. <p></p>
 It is an interesting effect and could be used to make some weird and wonderful
 background images. For example see its use in <a href="https://legacy.imagemagick.org/Usage/backgrounds/#paint_raw10">Background Examples</a>. <p></p>
 
-On final warning.  While "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?paint">-paint</a></code>" is supposed to produce areas of a single solid color, at
+On final warning.  While "<code><a href="command-line-options.html#paint">-paint</a></code>" is supposed to produce areas of a single solid color, at
 large radius values, it has a tendency to produce a vertical gradient in some
 areas.  This is most annoying, and may be a bug.  Does anyone know? <p></p>
 
-There are alternative to using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?paint">-paint</a></code>".  One is to use "<code>-statistic Mode</code>" instead,
+There are alternative to using "<code><a href="command-line-options.html#paint">-paint</a></code>".  One is to use "<code>-statistic Mode</code>" instead,
 which assigns each pixel with the 'predominate color' within the given
 rectangular neighbourhood, and can produce a nicer result.
 
@@ -604,7 +604,7 @@ brush. <p></p>
 The charcoal effect is meant to simulate artist's charcoal sketch of the given
 image. <p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?charcoal">-charcoal</a></code>" operator
+The "<code><a href="command-line-options.html#charcoal">-charcoal</a></code>" operator
 is in some respects similar to edge detection transforms used by <a href="#vision">Computer Vision</a>.  Basically it tries to convert the major
 borders and edges of object in the image into pencil and charcoal shades. <p></p>
 
@@ -631,14 +631,14 @@ For a better example of using a charcoal transformation on a real image see
 <tbody><tr valign="top">
 <td><img src="../images/transform/expert.gif" width="23" height="26"><img src="../images/transform/space.gif" width="17" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Technically the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?charcoal">-charcoal</a></code>" operator is a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?edge">-edge</a></code>" operator with some
+  Technically the "<code><a href="command-line-options.html#charcoal">-charcoal</a></code>" operator is a "<code><a href="command-line-options.html#edge">-edge</a></code>" operator with some
   thresholding applied to a grey-scale conversion of the original image.
 </i></font></td></tr></tbody></table><p></p>
 
 <a name="sketch"></a>
 <h3>Pencil Sketch Transform</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sketch">-sketch</a></code>" operator
+The "<code><a href="command-line-options.html#sketch">-sketch</a></code>" operator
 basically applies a pattern of line strokes to an image to generate what looks
 like an artistic pencil sketch.  Arguments control the length and angle of the
 strokes. <p></p>
@@ -652,9 +652,9 @@ operator and how it works internally. <p></p>
 <a name="emboss"></a>
 <h3>Emboss, creating a metallic impression</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?emboss">-emboss</a></code>" operator
+The "<code><a href="command-line-options.html#emboss">-emboss</a></code>" operator
 tries to generate the effect of an acid impression of a grey-scale image on a
-sheet of metal.  It is in many respects very similar to the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator we will look at <a href="#shade">below</a>, but without the 3D looking edges. <p></p>
+sheet of metal.  It is in many respects very similar to the "<code><a href="command-line-options.html#shade">-shade</a></code>" operator we will look at <a href="#shade">below</a>, but without the 3D looking edges. <p></p>
 
 Its argument is a radius/sigma, with only the sigma being important. I not
 found the argument very useful, and may in fact be buggy.  The argument has
@@ -712,7 +712,7 @@ please let me know.
 <a name="stegano"></a>
 <h3>Stegano, hiding a secret image within an image</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stegano">-stegano</a></code>" operator
+The "<code><a href="command-line-options.html#stegano">-stegano</a></code>" operator
 is really more of a 'fun' operator.  For example it could be use by a spy to
 hide info in the 'chaos' of a random image. <p></p>
 
@@ -838,7 +838,7 @@ amounts of noise to an existing image. <p></p>
 <a name="encipher"></a>
 <h3>Encrypting Image Data</h3>
 
-The operators "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?encipher">-encipher</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?decipher">-decipher</a></code>" will basically encrypt image data into a garbled mess.
+The operators "<code><a href="command-line-options.html#encipher">-encipher</a></code>" and "<code><a href="command-line-options.html#decipher">-decipher</a></code>" will basically encrypt image data into a garbled mess.
 <p></p>
 
 That is the image content itself is no longer recognisable at all until the
@@ -873,7 +873,7 @@ a pass-phrase I have saved in a, not quite so 'secret', file "<a href="https://l
 <td><img src="../images/transform/reminder.gif" width="20" height="16"><img src="../images/transform/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
   The encrypted image assumes it is saved using a 8 bit image file format.  As
-  such it is recommended to enforce that limitation by setting "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?depth">-depth</a> 8</code>" before the final save
+  such it is recommended to enforce that limitation by setting "<code><a href="command-line-options.html#depth">-depth</a> 8</code>" before the final save
   to the output file. <p></p>
 
   The "<code>png24</code>" was also needed in the above to ensure that the
@@ -930,9 +930,9 @@ the normal way.
   <a href="https://legacy.imagemagick.org/Usage/transform/message_restored_2.png"><img src="../images/transform/message_restored_2.png" width="50" height="40" align="middle" vspace="2" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-If you did not include the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?transpose">-transpose</a></code>" in the decryption command above, the image will not
+If you did not include the "<code><a href="command-line-options.html#transpose">-transpose</a></code>" in the decryption command above, the image will not
 have deciphered correctly.  Also note that due to the streaming cipher used
-(see the expert note below)  using just a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?roll">-roll</a></code>" of some sort will not
+(see the expert note below)  using just a "<code><a href="command-line-options.html#roll">-roll</a></code>" of some sort will not
 prevent the image from being decrypting, at least partially. <p></p>
 
 Note that in the above I did not use a file to hold the 'pass-phrase' but fed
@@ -966,7 +966,7 @@ encrypt and later decrypt the "<code>message.gif</code>" image.
   <a href="https://legacy.imagemagick.org/Usage/transform/message_restored_3.png"><img src="../images/transform/message_restored_3.png" width="50" height="40" align="middle" vspace="2" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-As of IM v6.4.8-0 the file used by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?encipher">-encipher</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?decipher">-decipher</a></code>" can be a binary
+As of IM v6.4.8-0 the file used by "<code><a href="command-line-options.html#encipher">-encipher</a></code>" and "<code><a href="command-line-options.html#decipher">-decipher</a></code>" can be a binary
 file. As such you could even directly use an image itself as the the
 passphrase.
 
@@ -1007,8 +1007,8 @@ hidden one.  <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/transform/warning.gif" width="28" height="28"><img src="../images/transform/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?encipher">-encipher</a></code>" and
-  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?decipher">-decipher</a></code>"
+  The "<code><a href="command-line-options.html#encipher">-encipher</a></code>" and
+  "<code><a href="command-line-options.html#decipher">-decipher</a></code>"
   operators was added to IM v6.3.8-6, but required you to include a
   "<code>--enable-cipher</code>" option in the build configuration.
   However by IM v6.4.6 (when did it change?) this configuration item was no
@@ -1244,7 +1244,7 @@ gaps)</a>. <p></p>
 <a name="edge"></a>
 <h3>Edge Detection</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?edge">-edge</a></code>" operator
+The "<code><a href="command-line-options.html#edge">-edge</a></code>" operator
 highlights areas of color gradients within an image.  It is a grey-scale
 operator, so is applied to each of the three color channels separately.
 
@@ -1268,10 +1268,10 @@ As you can see, the edge is added only to areas with a color gradient that is
 more than 50% white!  I don't know if this is a bug or intentional, but it
 means that the edge in the above is located almost completely in the white
 parts of the original mask image.  This fact can be extremely important when
-making use of the results of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?edge">-edge</a></code>" operator. <p></p>
+making use of the results of the "<code><a href="command-line-options.html#edge">-edge</a></code>" operator. <p></p>
 
 For example if you are edge detecting an image containing an black outline,
-the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?edge">-edge</a></code>" operator will
+the "<code><a href="command-line-options.html#edge">-edge</a></code>" operator will
 'twin' the black lines, producing a weird result.
 
 <div align="center">
@@ -1711,7 +1711,7 @@ For another example of using the "<code><a href="http://autotrace.sourceforge.ne
 <a name="hough"></a>
 <h3>Hough Line Detector</h3>
 
-The Hough Line Detector ("<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?hough-lines">-hough-lines</a></code>" added IM v6.8.9-1), is a very complex transform with
+The Hough Line Detector ("<code><a href="command-line-options.html#hough-lines">-hough-lines</a></code>" added IM v6.8.9-1), is a very complex transform with
 a lot of stages (for details see <a href="http://en.wikipedia.org/wiki/Hough_transform">Wikipedia, Hough
 Transform</a>).  Basically it is designed to examine an image, looking for
 white lines on a black background, and try to return the exact location of any
@@ -1793,7 +1793,7 @@ lines are the two that are close.  <p></p>
 The comment in the MVG output gives you the accumulated number of pixels that
 the line 'hits' in the image, and thus is a good indication of how strong
 the line is in the image.  This value will always be larger than the treshold
-value you give to the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?hough-line">-hough-line</a></code>" operator. From this you can see the first and last
+value you give to the "<code><a href="command-line-options.html#hough-line">-hough-line</a></code>" operator. From this you can see the first and last
 lines (which are close matches) are both roughly equal in strength, so it
 would be hard to pick one of them over another. <p></p>
 
@@ -1850,7 +1850,7 @@ Under Construction
 <img src="../images/transform/const_hole.gif" width="144" height="50" align="middle">
 </b></font></div><p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?lat">-lat</a></code>" operator, tries
+The "<code><a href="command-line-options.html#lat">-lat</a></code>" operator, tries
 to adaptively threshold each pixel based on the value of pixels in a
 surrounding window.  This is commonly used to threshold images with an uneven
 background (i.e., uneven illumination).  It is based on the assumption that
@@ -1963,7 +1963,7 @@ This is also known as an anaglyph
 
 <h3>Shade Usage</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator
+The "<code><a href="command-line-options.html#shade">-shade</a></code>" operator
 I have always thought one of the most interesting operators provided by
 ImageMagick.  The documentation of this operator only gave a rough hint as to
 its capabilities.  It too me a lot of personal research to make sense of the
@@ -1983,13 +1983,13 @@ points far away dark. <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/transform/reminder.gif" width="20" height="16"><img src="../images/transform/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  As a grey-scale image is needed by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>", the operator will
+  As a grey-scale image is needed by "<code><a href="command-line-options.html#shade">-shade</a></code>", the operator will
   automatically remove any color from the input image.  Similarly any
   transparency that may be present in the image is completely useless and
   ignored by the operator.
 </i></font></td></tr></tbody></table><p></p>
 
-Now "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" takes this
+Now "<code><a href="command-line-options.html#shade">-shade</a></code>" takes this
 grey-scale height field and shines a light down onto it.  The result is
 a representation of light shades that would thus be produced.
 Remember you must think of the input image as a 'surface' for the output to
@@ -2009,12 +2009,12 @@ For our demonstrations we will need a 'height field' image so lets draw one.
 </td></tr></tbody></table><p></p>
 
 This image is also equivalent of a 'mask' of an shape, is often not only used
-as input to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>", but
+as input to "<code><a href="command-line-options.html#shade">-shade</a></code>", but
 also for <a href="https://legacy.imagemagick.org/Usage/masking/#masks">Masking Images</a> to cut out the same
 shape from the shaded results. See <a href="#shade_mask">Masking a Shade
 Image</a> below. <p></p>
 
-To the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator
+To the "<code><a href="command-line-options.html#shade">-shade</a></code>" operator
 this image will look like a flat black plain, with a flat white plateau rising
 vertically upward. Only the edges of this image will thus produce interesting
 effects. <p></p>
@@ -2080,7 +2080,7 @@ highlighted on the side from which the light is coming.  Everything else is
 black, as no light shines on any other surface. I call this a 'Dawn Highlight'
 and has its own special uses. <p></p>
 
-This brings us to the first item of note.  An image that is "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" will often have more dark,
+This brings us to the first item of note.  An image that is "<code><a href="command-line-options.html#shade">-shade</a></code>" will often have more dark,
 or shadowed areas, than highlighted areas. The shading is not equal. <p></p>
 
 As the light gets higher over the 'height field' image. The overall brightness
@@ -2092,7 +2092,7 @@ edges are shaded to a grey color, with a mid grey as a maximum, or
 This 'noon' image is another special case that is a bit like an edge detection
 system, though it is between 2 and 4 pixels wide for sharp edges.  I have used
 this image in the past for generating a mask for the the beveled edge of
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" images, so as to
+"<code><a href="command-line-options.html#shade">-shade</a></code>" images, so as to
 make flat areas transparent.  <p></p>
 
 If the <i>elevation</i> angle goes beyond '<code>90</code>' degrees, you will
@@ -2119,10 +2119,10 @@ creates some beveled text...
   <a href="https://legacy.imagemagick.org/Usage/transform/shade_anthony.jpg"><img src="../images/transform/shade_anthony.jpg" width="320" height="100" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-One of the major problems with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" is the thickness of the bevel that is actually produced.
+One of the major problems with "<code><a href="command-line-options.html#shade">-shade</a></code>" is the thickness of the bevel that is actually produced.
 A sharp edge such as I used above will always produce a bevel of about 4
 pixels wide, both into and out of the masked area.  There is no way to adjust
-this thickness, short of resizing images before and after using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator.. <p></p>
+this thickness, short of resizing images before and after using the "<code><a href="command-line-options.html#shade">-shade</a></code>" operator.. <p></p>
 
 If you would like to find out just how bright 'flat areas' will be from a
 specific <i>elevation</i> lighting angle, then you can use the following
@@ -2143,13 +2143,13 @@ general viewing.  However if you plan to use shade for generating 3-D
 highlights of various shapes, then the actual grey level becomes very
 important.  This will be looking at later in <a href="#shade_overlay">Creating Overlay Highlights</a>. <p></p>
 
-That is basically it, for the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator.  However using it effectively presents a whole
+That is basically it, for the "<code><a href="command-line-options.html#shade">-shade</a></code>" operator.  However using it effectively presents a whole
 range of techniques and possibilities, which we will look at next. <p></p>
 
 <a name="shade_mask"></a>
 <h3>Masking Shaded Shapes</h3>
 
-As mentioned above, a simple 'mask' shape is often used with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" to generate complex 3-D
+As mentioned above, a simple 'mask' shape is often used with "<code><a href="command-line-options.html#shade">-shade</a></code>" to generate complex 3-D
 effects from a simple shape. For example lets do this to a directly shaded
 mask image. <p></p>
 
@@ -2166,7 +2166,7 @@ mask image. <p></p>
  <a href="https://legacy.imagemagick.org/Usage/transform/shade_beveled.png"><img src="../images/transform/shade_beveled.png" align="middle" vspace="5" hspace="5" border="0" alt="[IM Output]"></a>
 </div><p></p>
 
-Notice that about half the bevel generated by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator, actually falls
+Notice that about half the bevel generated by the "<code><a href="command-line-options.html#shade">-shade</a></code>" operator, actually falls
 outside the masked area.  In other words, a straight bevel is halved when
 masked. <p></p>
 
@@ -2189,7 +2189,7 @@ the beveled edge, leaving the center of the image hollow.
 </div><p></p>
 
 Note however that the 'midday' shade image, while providing a way to mask the
-location (and intensity) of the effects of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator does not actually
+location (and intensity) of the effects of the "<code><a href="command-line-options.html#shade">-shade</a></code>" operator does not actually
 cover those effects completely. <p></p>
 
 By combining the 'midday' shade image with the original mask you can increase
@@ -2233,7 +2233,7 @@ The <a href="https://legacy.imagemagick.org/Usage/masking/#alpha_extract">Alpha 
 only extract the alpha channel from a shaped images as a gray scale mask, but
 also has the side effect of preserving the shape in the 'turned-off' alpha
 channel. As it is 'turned off' it will not be touched by many image processing
-operators, including "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>", preserving its detail.  <p></p>
+operators, including "<code><a href="command-line-options.html#shade">-shade</a></code>", preserving its detail.  <p></p>
 
 What this means is that for shaped images, you can extract the shape, do the
 work, then simply recover the transparency AFTER you have finished all the
@@ -2328,7 +2328,7 @@ resulting shape very nicely.
 <a name="shade_overlay"></a>
 <h3>Creating Overlay Highlighting</h3>
 
-The output from the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" operator is very nice, but it is rare that you actually
+The output from the "<code><a href="command-line-options.html#shade">-shade</a></code>" operator is very nice, but it is rare that you actually
 want a plain grey scale image of your shape.  What is needs is some color.
 <p></p>
 
@@ -2341,10 +2341,10 @@ darken the color or image as appropriate. <p></p>
 
 These special grey-scale 'overlay highlight' images with perfect mid-tone
 greys for un-modified areas is not so straight forward to create using
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>".  However the
+"<code><a href="command-line-options.html#shade">-shade</a></code>".  However the
 following are some of the more simpler ways I have discovered. <p></p>
 
-Using a 30 degree elevation lighting angle with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>", is one way of producing a
+Using a 30 degree elevation lighting angle with "<code><a href="command-line-options.html#shade">-shade</a></code>", is one way of producing a
 perfect mid-tone grey for flat areas of the shape being shaded. <p></p>
 
 For example here I shade an image, then extract the top-left pixel to check
@@ -2367,16 +2367,16 @@ the resulting color of a 'flat' part of the image.
 </td></tr></tbody></table>
 </td></tr></tbody></table><p></p>
 
-Unfortunately  changing the rounding effect of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" in the above command tends
+Unfortunately  changing the rounding effect of the "<code><a href="command-line-options.html#blur">-blur</a></code>" in the above command tends
 to also vary the result highlight intensity of the shade image. That is using
 a large blur not only produces a well rounded looking edge, but also made the
 highlight so dim as to be near invisible. <p></p>
 
 This means that you need to add lots more contrast to the output of the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>" image produced,
+"<code><a href="command-line-options.html#shade">-shade</a></code>" image produced,
 to make the highlight effective as an overlay image. To fix this we need a way
 remove this contrast effect from the rounding adjustment.  The typical way to
-do this is to just  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?normalize">-normalize</a></code>" the image, but doing this to 30 degree shade image,
+do this is to just  "<code><a href="command-line-options.html#normalize">-normalize</a></code>" the image, but doing this to 30 degree shade image,
 results in the 'flat' areas will no longer being a perfect grey.  For
 example...
 
@@ -2418,12 +2418,12 @@ mid-tone grey level as well as a good strong highlighting effect.
 </td></tr></tbody></table>
 </td></tr></tbody></table><p></p>
 
-As the shade image is now run though the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?normalize">-normalize</a></code>" operator, the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" value used for
+As the shade image is now run though the "<code><a href="command-line-options.html#normalize">-normalize</a></code>" operator, the
+"<code><a href="command-line-options.html#blur">-blur</a></code>" value used for
 'rounding edges' will no longer effect final intensity of the result.  A much
 better method. <p></p>
 
-In summery, <a href="https://legacy.imagemagick.org/Usage/option_link.cgi?normalize">normalizing</a> a shade
+In summery, <a href="command-line-options.html#normalize">normalizing</a> a shade
 image will shift the mid-tones away from a perfect-grey color. <p></p>
 
 Now we can adjust the output intensity of the highlights produces output
@@ -2463,7 +2463,7 @@ can make the highlight brighter, as if the surface was more reflective.  <p></p>
 
 However to make this technique more effective, we need make sure we do not
 have pure white and black colors in the shade result.  This can be achieved by
-first using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?contrast-stretch">-contrast-stretch</a></code>" of '<code>0%</code>' rather than "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?normalize">-normalize</a></code>", and also
+first using a "<code><a href="command-line-options.html#contrast-stretch">-contrast-stretch</a></code>" of '<code>0%</code>' rather than "<code><a href="command-line-options.html#normalize">-normalize</a></code>", and also
 de-normalizing that result by a small amount, as we did above. <p></p>
 
 This may seem to be just adding complexity to the generation of the
@@ -2522,13 +2522,13 @@ controls...
 
 <dl>
 <dt>In summary, the above example has four separate controls...
-</dt><dd>"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">blur</a></code>" :
+</dt><dd>"<code><a href="command-line-options.html#blur">blur</a></code>" :
     Rounding the shape edges (0.001=beveled  2=smoothed  10=rounded)
-</dd><dd>"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">shade</a></code>" :
+</dd><dd>"<code><a href="command-line-options.html#shade">shade</a></code>" :
     The direction the light is coming from (120=top-left  60=top-right)
-</dd><dd>"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sigmoidal-contrast">sigmoidal</a></code>" :
+</dd><dd>"<code><a href="command-line-options.html#sigmoidal-contrast">sigmoidal</a></code>" :
     surface reflective control highlight spots (1=flat 5=good 10=reflective )
-</dd><dd>"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?colorize">colorize</a></code>" :
+</dd><dd>"<code><a href="command-line-options.html#colorize">colorize</a></code>" :
     Overall contrast of the highlight ( 0%=bright  10%=good  50%=dim )
 </dd></dl><p></p>
 
@@ -2559,7 +2559,7 @@ come up with other ideas for highlighting, please let me know. <p></p>
 In <a href="#shade_mask">Masking Shade Images</a> above we showed how useful
 a 'mid-day' or 'high-noon' shade image (using an <i>elevation</i> of
 '<code>90</code>'), can be useful for masking and location and extent of the
-effects produced by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shade">-shade</a></code>.  However the horizontal or 'dawn' shade images  (using an
+effects produced by "<code><a href="command-line-options.html#shade">-shade</a></code>.  However the horizontal or 'dawn' shade images  (using an
 <i>elevation</i> of '<code>0</code>')of a shape can also be quite useful as
 well. <p></p>
 
@@ -2582,7 +2582,7 @@ example of using this technique. <p></p>
 <h2>Using FX, The DIY Image Operator</h2>
 </a>
 
-The new IM version 6 image list operator "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" is a general DIY operator that does not fit into any specific
+The new IM version 6 image list operator "<code><a href="command-line-options.html#fx">-fx</a></code>" is a general DIY operator that does not fit into any specific
 category of IM operators, as it can be used to create just about any image
 operation.  Examples of its use are thought these pages, but here we will look
 specifically at its capabilities and how you can use them. <p></p>
@@ -2601,11 +2601,11 @@ The command is so generic in its abilities, that it can,
 </li></ul><p></p>
 
 Of course many of these techniques are already part of IM, producing a faster
-and more flexible result. But if it isn't built-in the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" allows you to generate your own
+and more flexible result. But if it isn't built-in the "<code><a href="command-line-options.html#fx">-fx</a></code>" allows you to generate your own
 version of the desired operation. In fact I and others have often used it to
 prototype new operations that are later built into IM's core library.
 As an example see <a href="https://legacy.imagemagick.org/Usage/bugs/ordered-dither/#diy">DIY New Ordered Dither
-Replacement</a> where I used "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" to develop a revised version of the <code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?ordered-dither">-ordered-dither</a></code>"
+Replacement</a> where I used "<code><a href="command-line-options.html#fx">-fx</a></code>" to develop a revised version of the <code><a href="command-line-options.html#ordered-dither">-ordered-dither</a></code>"
 operator. <p></p>
 
 The operator is essentially allows you to perform free-form mathematical
@@ -2618,8 +2618,8 @@ Web Site</a>. <p></p>
 
 The command takes an image sequence of as many input images you like. Typically
 one or two images, and replaces ALL the input images with a copy of the first
-image, which has been modified by the results of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" function. That is any meta-data
-that is in the first image will be preserved in the result of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" operator.<p></p>
+image, which has been modified by the results of the "<code><a href="command-line-options.html#fx">-fx</a></code>" function. That is any meta-data
+that is in the first image will be preserved in the result of the "<code><a href="command-line-options.html#fx">-fx</a></code>" operator.<p></p>
 
 For mathematical ease of use, all color values provided are normalized into
 a 0.0 to 1.0 range of values. Results are also expected to be in this range.
@@ -2631,12 +2631,12 @@ transparency' and is actually the negative of how IM normally stores the
 transparency internally (as matte values). It is however more mathematically
 correct and easier to use in this form. <p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting
+The "<code><a href="command-line-options.html#channel">-channel</a></code>" setting
 defines what channel(s) in the first (also called the 'zeroth' or
-"<code>u</code>") image, is replaced with the result of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" operator.  This is limited, by
+"<code>u</code>") image, is replaced with the result of the "<code><a href="command-line-options.html#fx">-fx</a></code>" operator.  This is limited, by
 default, to just the color channels ('<code>RGB</code>') of the original image.
 Any existing transparency in that image will not be modified, unless the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting is
+"<code><a href="command-line-options.html#channel">-channel</a></code>" setting is
 changed, to include the alpha ('<code>A</code>') channel.  <p></p>
 
 The expression is executed once for each pixel, as well an once for each color
@@ -2673,17 +2673,17 @@ channels to zero, so it becomes a black-red gradient.
 <tbody><tr valign="top">
 <td><img src="../images/transform/reminder.gif" width="20" height="16"><img src="../images/transform/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  To make the "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel"><code>-channel</code></a>" setting more like the "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx"><code>-fx</code></a>" operator, it will
+  To make the "<a href="command-line-options.html#channel"><code>-channel</code></a>" setting more like the "<a href="command-line-options.html#fx"><code>-fx</code></a>" operator, it will
   accept any combinations of the letters '<code>RGBA</code>' to specify the
   channels to which operators are to confine their actions. <p></p>
 
-  This means that to limit the output of "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx"><code>-fx</code></a>" to just the blue and green channels you can now say
+  This means that to limit the output of "<a href="command-line-options.html#fx"><code>-fx</code></a>" to just the blue and green channels you can now say
   "<code>-channel BG</code>" instead of the longer "<code>-channel
   blue,green</code>".
 
 </i></font></td></tr></tbody></table><p></p>
 
-We could have generated the above examples without using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>", but being able to do this to an
+We could have generated the above examples without using "<code><a href="command-line-options.html#fx">-fx</a></code>", but being able to do this to an
 existing image is what makes this a powerful image operator. <p></p>
 
 The function can in fact read and use ANY pixel, or specific color from ANY of
@@ -2702,7 +2702,7 @@ processing at that time.  That is it will apply the expression for the blue
 color value when it is processing the blue channel.  <p></p>
 
 Unless told otherwise it will process each of the RGB color values (as set by
-the default "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>"
+the default "<code><a href="command-line-options.html#channel">-channel</a></code>"
 setting), for each and every pixel in the image.  That is 3*w*h calculations
 which modifies all the values in the image by the expression given. <p></p>
 
@@ -2723,7 +2723,7 @@ multiplied by 1.5.  If the resulting value is outside the 0 to 1 range it,
 will be limited to the appropriate bound (1.0 in this case), unless you are
 using a specially built <a href="https://legacy.imagemagick.org/script/high-dynamic-range.php" target="_blank">HDRI version of ImageMagick</a>. <p></p>
 
-Lots of other "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" formulas
+Lots of other "<code><a href="command-line-options.html#fx">-fx</a></code>" formulas
 to recolor images are explored in <a href="https://legacy.imagemagick.org/Usage/color_mods/#linear">Mathematical Color Adjustments</a> and <a href="https://legacy.imagemagick.org/Usage/color_mods/#curves">Histogram Curves</a>.  <p></p>
 
 As we can also reference any image in the current image sequence, as part of
@@ -2761,7 +2761,7 @@ gradient we generated above.
 </i></font></td></tr></tbody></table><p></p>
 
 Now the second image in the above is only used as a source image. What really
-happens is that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" first
+happens is that "<code><a href="command-line-options.html#fx">-fx</a></code>" first
 creates a copy of just the first image. It then modifies that image according
 to the formula, using all the other images given. And finally it junks all the
 input images replacing them with the modified copy of the first image. <p></p>
@@ -2801,7 +2801,7 @@ When generating gray-scale gradients, you can make the -fx operator work about
 the '<code>G</code>' or green channel in the above example.  This channel can
 then be <a href="https://legacy.imagemagick.org/Usage/color_basics/#separate">Separated</a> to generate the
 final gray-scale image.  This can represent a very large speed boost,
-especially when using a very complex "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" formula. <p></p>
+especially when using a very complex "<code><a href="command-line-options.html#fx">-fx</a></code>" formula. <p></p>
 
 For more FX generated gradients, see examples <a href="https://legacy.imagemagick.org/Usage/canvas/#gradient_fx">Roll your own Gradients</a>. <p></p>
 
@@ -2811,7 +2811,7 @@ You can use the position information to lookup specific pixels from the source
 image using the '<code>p{x,y}</code>' syntax. <p></p>
 
 For example you can easily make your own 'mirror image' type function (like
-the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?flop">-flop</a></code>" image
+the "<code><a href="command-line-options.html#flop">-flop</a></code>" image
 operator), that replaces each pixel, with the color values from the 'mirror'
 position of the original source.
 
@@ -2890,14 +2890,14 @@ rose image.  See if you can figure how it works.
 <tbody><tr valign="top">
 <td><img src="../images/transform/reminder.gif" width="20" height="16"><img src="../images/transform/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  A faster and better way to do the same thing, is to use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?separate">-separate</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?combine">-combine</a></code>"). See <a href="https://legacy.imagemagick.org/Usage/color_basics/#combine">Combining RGB Channel Images</a>.
-  Alternatively you can also use a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?color-matrix">-color-matrix</a></code>" to do the
+  A faster and better way to do the same thing, is to use "<code><a href="command-line-options.html#separate">-separate</a></code>" and "<code><a href="command-line-options.html#combine">-combine</a></code>"). See <a href="https://legacy.imagemagick.org/Usage/color_basics/#combine">Combining RGB Channel Images</a>.
+  Alternatively you can also use a "<code><a href="command-line-options.html#color-matrix">-color-matrix</a></code>" to do the
   same thing faster still.  <p></p>
 
   Do you see a trend here?
 </i></font></td></tr></tbody></table><p></p>
 
-As the default "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting, it limits the output of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" operator to just the three color
+As the default "<code><a href="command-line-options.html#channel">-channel</a></code>" setting, it limits the output of the "<code><a href="command-line-options.html#fx">-fx</a></code>" operator to just the three color
 channels.  This means that if you want to effect the alpha or transparency
 channel, you must explicitly specify it, by changing the channel setting. <p></p>
 
@@ -2914,16 +2914,16 @@ setting all the alpha channel values to half.
 </td></tr></tbody></table><p></p>
 
 Note the for the above to work properly I needed to ensure that the
-"<code>rose:</code>" actually had an alpha channel for the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" to work with. I did this with
+"<code>rose:</code>" actually had an alpha channel for the "<code><a href="command-line-options.html#fx">-fx</a></code>" to work with. I did this with
 the <a href="https://legacy.imagemagick.org/Usage/basics/#alpha">Alpha Channel Control Operator</a>. <p></p>
 
-This ability of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>"
+This ability of the "<code><a href="command-line-options.html#fx">-fx</a></code>"
 operator to manipulate the RGBA channels of an image makes this operator
 perfect for manipulating Channels and Masks. <p></p>
 
 <br>
 
-As of IM 6.2.10 you can add variable assignments to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" expressions, which allows you to
+As of IM 6.2.10 you can add variable assignments to "<code><a href="command-line-options.html#fx">-fx</a></code>" expressions, which allows you to
 reduce the complexity of some expressions, that would basically be impossible
 any other way. <p></p>
 
@@ -2947,7 +2947,7 @@ read.
 <tbody><tr valign="top">
 <td><img src="../images/transform/reminder.gif" width="20" height="16"><img src="../images/transform/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Due the simple tokenization handling used by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>", variable names can only
+  Due the simple tokenization handling used by "<code><a href="command-line-options.html#fx">-fx</a></code>", variable names can only
   consist of letters, and must not contain numbers.  Also as a lot of single
   letters are used for internal variables accessing image information, it is
   recommended that variable names be at least two letters long.  As such I use
@@ -2960,7 +2960,7 @@ read.
 <tbody><tr valign="top">
 <td><img src="../images/transform/warning.gif" width="28" height="28"><img src="../images/transform/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" function
+  The "<code><a href="command-line-options.html#fx">-fx</a></code>" function
   'rr=<code>hypot(xx,yy)</code>' was added to IM v6.3.6 to speed up the very
   commonly used expression '<code>rr=sqrt(xx*xx+yy*yy)</code>'. <p></p>
 
@@ -2973,7 +2973,7 @@ would be impossible with out multiple statement assignments. The same is true
 for <a href="https://legacy.imagemagick.org/Usage/distorts/#perspective_internals">FX form of Perspective
 Distortion</a>.  <p></p>
 
-As of IM version 6.3.0-1, the complexity of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" expressions started to require
+As of IM version 6.3.0-1, the complexity of "<code><a href="command-line-options.html#fx">-fx</a></code>" expressions started to require
 external files, so the standard '<code>@<i>filename</i></code>' can now be
 used to read the expression from a file.
 
@@ -2990,7 +2990,7 @@ This also means you can use more complex scripts to generate the specific FX
 expressions for a particular job.  Internally the file is simply read into a
 string and interpreted as usual.  <p></p>
 
-Other settings that are important to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" are "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?virtual-pixel">-virtual-pixel</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?interpolate">-interpolate</a></code>". <p></p>
+Other settings that are important to "<code><a href="command-line-options.html#fx">-fx</a></code>" are "<code><a href="command-line-options.html#virtual-pixel">-virtual-pixel</a></code>" and "<code><a href="command-line-options.html#interpolate">-interpolate</a></code>". <p></p>
 
 The <a href="https://legacy.imagemagick.org/Usage/misc/#virtual-pixel">Virtual Pixel Setting</a> allows one to
 set what colors or image results should be returned when the lookup
@@ -3046,65 +3046,65 @@ just one pixel, even for this small image. <p></p>
 <a name="fx_builtins"></a>
 <h3>FX-like Built-in Operations</h3>
 
-The <code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code> operator
+The <code><a href="command-line-options.html#fx">-fx</a></code> operator
 represents a way to develop new image processing functions that
 previously did not exist in ImageMagick.  The result of such development by
 users has allows ImageMagick to expand, with new functions and methods, such
-as  the <a href="https://legacy.imagemagick.org/Usage/color_mods/#clut">Color Lookup Table</a> ("<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clut">-clut</a></code>"). <p></p>
+as  the <a href="https://legacy.imagemagick.org/Usage/color_mods/#clut">Color Lookup Table</a> ("<code><a href="command-line-options.html#clut">-clut</a></code>"). <p></p>
 
-Generally however once a new method has stabilized using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>", the expression is converted
+Generally however once a new method has stabilized using "<code><a href="command-line-options.html#fx">-fx</a></code>", the expression is converted
 into a faster built-in operation, usually added as part of a group of similar
 operators. <p></p>
 
 These include the follow general image operator and there methods...
 
 <table border="0" align="center">
-<tbody><tr valign="top"><td><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a>
+<tbody><tr valign="top"><td><a href="command-line-options.html#evaluate">-evaluate</a>
 </td><td>Direct pixel, color values, channel modification functions.
 <br>(See <a href="#evaluate">Evaluate</a> below).
 
-</td></tr><tr valign="top"><td><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-function</a>
+</td></tr><tr valign="top"><td><a href="command-line-options.html#evaluate">-function</a>
 </td><td>More Complex pixel, color value, channel modification functions.
 <br>(See <a href="#function">Function</a> below).
 
-</td></tr><tr valign="top"><td><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate-sequence">-evaluate-sequence</a>
+</td></tr><tr valign="top"><td><a href="command-line-options.html#evaluate-sequence">-evaluate-sequence</a>
 </td><td>Merge a multi-image sequence of images mathematically
 <br>(See <a href="#evaluate-sequence">Evaluate-Sequence</a> below).
 
-</td></tr><tr valign="top"><td><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sparse-color">-sparse-color</a>
+</td></tr><tr valign="top"><td><a href="command-line-options.html#sparse-color">-sparse-color</a>
 </td><td>General Image Re-Coloring Operator.
 <br>(See <a href="https://legacy.imagemagick.org/Usage/canvas/#sparse-color">Sparse Color Gradients</a> )
 
-</td></tr><tr valign="top"><td><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a>
+</td></tr><tr valign="top"><td><a href="command-line-options.html#compose">-compose</a>
 </td><td>General Multi-Image combining and overlaying method.
 <br>(See <a href="https://legacy.imagemagick.org/Usage/compose/#compose">Alpha Composition</a>).
 
-</td></tr><tr valign="top"><td><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?distort">-distort</a>
+</td></tr><tr valign="top"><td><a href="command-line-options.html#distort">-distort</a>
 </td><td>General Image Distortion operator, using reversed pixel mapping.
 <br>(See the <a href="https://legacy.imagemagick.org/Usage/distorts/#distort">Distort Operator</a> )
 
-</td></tr><tr valign="top"><td><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?distort">-morphology</a>
+</td></tr><tr valign="top"><td><a href="command-line-options.html#distort">-morphology</a>
 </td><td>General Area Effect Convolution/Morphology function.
 <br>(See the <a href="https://legacy.imagemagick.org/Usage/morphology/#morphology">Morphology Operator</a>
     and the <a href="https://legacy.imagemagick.org/Usage/convolve/#convolve">Convolve Operator</a> )
 </td></tr></tbody></table><p></p>
 
 As people developed new types of image operations, they usually prototype it
-using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" operator
+using a "<code><a href="command-line-options.html#fx">-fx</a></code>" operator
 first.  When they have it worked out that 'method' is then converted into a
 new super-fast built-in operator in the ImageMagick Core library.
 
-Users are welcome to contribute their own "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" expressions (or other defined
+Users are welcome to contribute their own "<code><a href="command-line-options.html#fx">-fx</a></code>" expressions (or other defined
 functions) that they feel would be an useful addition to IM, but which are not
 yet covered by other image operators, if they can be handled by one of the
 above generalized operators, it should be reasonably easy to add it. <p></p>
 
 For example I myself needed a 'mask if color similar' type operation for
-comparing two images.  This has been added as a new "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?compose">-compose</a></code>" method "<code><a href="https://legacy.imagemagick.org/Usage/compose/#changemask">ChangeMask</a></code>". This in turn allowed me
+comparing two images.  This has been added as a new "<code><a href="command-line-options.html#compose">-compose</a></code>" method "<code><a href="https://legacy.imagemagick.org/Usage/compose/#changemask">ChangeMask</a></code>". This in turn allowed me
 to then add a more complex <a href="https://legacy.imagemagick.org/Usage/anim_opt/#opt_trans">Transparency
 Optimization</a> for GIF animations. <p></p>
 
-If "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" speed and complexity is starting to become a problem then it is
+If "<code><a href="command-line-options.html#fx">-fx</a></code>" speed and complexity is starting to become a problem then it is
 probably better to move on to an API scripting language such as PerlMagick.  An
 example of this using PerlMagick "<code><a href="https://www.imagemagick.org/subversion/ImageMagick/trunk/PerlMagick/demo/">pixel_fx.pl</a></code>" is part of that API's distribution.  <p></p>
 
@@ -3114,7 +3114,7 @@ example of this using PerlMagick "<code><a href="https://www.imagemagick.org/sub
 <h3>FX Expressions as Format and Annotate Escapes</h3>
 
 As of IM version 6.2.10 you can now use  <a href="https://legacy.imagemagick.org/script/fx.php">FX Expressions</a> within <a href="https://legacy.imagemagick.org/script/escape.php">Image Property
-Escaped</a> strings such as used by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?format">-format</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?annotate">-annotate</a></code>" arguments.  <p></p>
+Escaped</a> strings such as used by "<code><a href="command-line-options.html#format">-format</a></code>" and "<code><a href="command-line-options.html#annotate">-annotate</a></code>" arguments.  <p></p>
 
 The escape sequence '<code>%[fx:...]</code>' is replaced by a number as
 a floating point value, calculated once for each image in the current image
@@ -3144,7 +3144,7 @@ however is modified slightly during processing.  Specifically... <p></p>
   equivalent percent escapes '<code>%p</code>' and '<code>%n</code>'.
 </i></font></td></tr></tbody></table><p></p>
 
-For example here I "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?annotate">-annotate</a></code>" each image with the color of the top left corner of
+For example here I "<code><a href="command-line-options.html#annotate">-annotate</a></code>" each image with the color of the top left corner of
 each image.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -3184,7 +3184,7 @@ argument.
   <a href="https://legacy.imagemagick.org/Usage/transform/annotate_pixel.gif"><img src="../images/transform/annotate_pixel.gif" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-You can just output the result directly using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?format">-format</a></code>" with the "<code><a href="https://legacy.imagemagick.org/Usage/basics/#identify">identify</a></code>" command.
+You can just output the result directly using a "<code><a href="command-line-options.html#format">-format</a></code>" with the "<code><a href="https://legacy.imagemagick.org/Usage/basics/#identify">identify</a></code>" command.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr><td width="100%" align="justify">
@@ -3231,12 +3231,12 @@ files based on calculated values.  For an example, see the final example in
 
 <a name="fx_print"></a>
 
-All the above will essentially run the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?format">-format</a></code>" and thus any containing
+All the above will essentially run the "<code><a href="command-line-options.html#format">-format</a></code>" and thus any containing
 <a href="https://legacy.imagemagick.org/script/fx.php">FX Expression</a> one for
 each image in the current image sequence. <p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?print">-print</a></code>" operator will
-work much like "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?identify">-identify</a></code>" except that it is only run once, with access to ALL the
+The "<code><a href="command-line-options.html#print">-print</a></code>" operator will
+work much like "<code><a href="command-line-options.html#identify">-identify</a></code>" except that it is only run once, with access to ALL the
 images in the current image sequence. With this operator you can use
 '<code>u[{i}]</code>' to access values from any image, unlike the above. <p></p>
 
@@ -3282,7 +3282,7 @@ colors...
   <a href="https://legacy.imagemagick.org/Usage/transform/fx_hues.png"><img src="../images/transform/fx_hues.png" width="90" height="60" align="middle" vspace="0" hspace="5" border="0" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-You can also use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?print">-print</a></code>"
+You can also use "<code><a href="command-line-options.html#print">-print</a></code>"
 to print information. This is applied only once against the whole image
 sequence.  That means you can use this operator to calculate much more complex
 '<code>%[fx:...]</code>' expressions involving multiple images.  <p></p>
@@ -3332,11 +3332,11 @@ including those for image creation.
 
 This is not intuitive but we now get the correct result. <p></p>
 
-The special '<code>option:</code>' tag, tells the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?set">-set</a></code>" option that you want the given
+The special '<code>option:</code>' tag, tells the "<code><a href="command-line-options.html#set">-set</a></code>" option that you want the given
 setting saved as a global <a href="https://legacy.imagemagick.org/Usage/basics/#define">Artifact</a>, rather
-than as an image 'Attribute' or 'Properties' string, just as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?define">-define</a></code>" can.  However the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?set">-set</a></code>" form allows you to
-expand <a href="https://legacy.imagemagick.org/Usage/basics/#arg_percent">Percent Escapes</a> in setting the <a href="https://legacy.imagemagick.org/Usage/basics/#define">Artifact</a>, where as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?define">-define</a></code>" does not. <p></p>
+than as an image 'Attribute' or 'Properties' string, just as "<code><a href="command-line-options.html#define">-define</a></code>" can.  However the
+"<code><a href="command-line-options.html#set">-set</a></code>" form allows you to
+expand <a href="https://legacy.imagemagick.org/Usage/basics/#arg_percent">Percent Escapes</a> in setting the <a href="https://legacy.imagemagick.org/Usage/basics/#define">Artifact</a>, where as "<code><a href="command-line-options.html#define">-define</a></code>" does not. <p></p>
 
 When the "<code>label:</code>" operator expands its percent escapes, the given
 'key' is looked for first as a per image 'attribute' or 'proprieties', but if
@@ -3358,13 +3358,13 @@ without needing IM to store that information in such a convoluted way. <p></p>
 <a name="evaluate"></a>
 <h2>Evaluate and Function,  Freeform Channel Modifiers</h2>
 
-Because the <a href="#fx">FX Operator</a> is an interpretted expression handler, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" operator was added to let you make simple image modifications more quickly. <p></p>
+Because the <a href="#fx">FX Operator</a> is an interpretted expression handler, the "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" operator was added to let you make simple image modifications more quickly. <p></p>
 
-Later a more complex "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?function">-function</a></code>" operator was added in IM v6.4.8-8, to allow greater
+Later a more complex "<code><a href="command-line-options.html#function">-function</a></code>" operator was added in IM v6.4.8-8, to allow greater
 flexibility in complex image adjustments.
 
 These two operators, along with other <a href="https://legacy.imagemagick.org/Usage/color_mods/#levels">Image
-Level Adjustment Operators</a> such as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?negate">-negate</a></code>", "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?level">-level</a></code>", will probably be most
+Level Adjustment Operators</a> such as "<code><a href="command-line-options.html#negate">-negate</a></code>", "<code><a href="command-line-options.html#level">-level</a></code>", will probably be most
 useful for minor tweaks to grey-scale images, before you apply those images.
 <p></p>
 
@@ -3374,8 +3374,8 @@ generation and fine-tuning of <a href="https://legacy.imagemagick.org/Usage/mapp
 
 <h3>Evaluate, Simple Math Operations</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>"
-operator is basically a fast, but very simple version of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" operator (actually pre-dates its
+The "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>"
+operator is basically a fast, but very simple version of "<code><a href="command-line-options.html#fx">-fx</a></code>" operator (actually pre-dates its
 addition to IM by just a couple of months).  However it is limited to just one
 simple operation, using a single user provided constant number. <p></p>
 
@@ -3392,7 +3392,7 @@ This includes the typical mathematical functions  '<code>add</code>',
 '<code>subtract</code>', '<code>multiply</code>', and '<code>divide</code>'.
 against constant values.  <p></p>
 
-Unlike the <code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code> operator the
+Unlike the <code><a href="command-line-options.html#fx">-fx</a></code> operator the
 values are not normalised to a 0 to 1 range, but remain the real color values
 of the image. As such subtracting a value of 50 in a Q8 IM (See <a href="https://legacy.imagemagick.org/Usage/basics/#quality">Quality and Depth</a> will result in a large
 subtraction, but for a Q16 version of IM, it will only be a small hardly
@@ -3401,7 +3401,7 @@ noticeable change. <p></p>
 However if you add a '%' to the argument, that argument will represent a
 percentage of the maximum color value (known as '<code>QuantumRange</code>'
 which is equal to ('<code>2<sup><i>quality</i></sup>-1</code>').   This means
-you can make your "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" arguments IM quality level independent, by the
+you can make your "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" arguments IM quality level independent, by the
 appropriate use of percentages for the appropriate evaluate methods.  <p></p>
 
 <a name="evaluate_set"></a> For example to just simply replace all color
@@ -3417,7 +3417,7 @@ values in an image to a 50% gray level is very simple and very fast, using
   <a href="https://legacy.imagemagick.org/Usage/transform/rose_set_gray.gif"><img src="../images/transform/rose_set_gray.gif" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>"
+The "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>"
 operator also includes the typical mathematical functions '<code>add</code>',
 '<code>subtract</code>', '<code>multiply</code>', and '<code>divide</code>'.
 <p></p>
@@ -3440,21 +3440,21 @@ perfect grey. <p></p>
 </td></tr></tbody></table><p></p>
 
 This is a couple of orders of magnitude faster than directly using the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" operator with
+"<code><a href="command-line-options.html#fx">-fx</a></code>" operator with
 '<code>u/2+.25</code>'.  As such you should use this operator in preference to
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" if at all possible.
+"<code><a href="command-line-options.html#fx">-fx</a></code>" if at all possible.
 <p></p>
 
-The <i>major</i> problem with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" is that all results are clipped to the 0 to
+The <i>major</i> problem with "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" is that all results are clipped to the 0 to
 '<code>QuantumRange</code>' limits (unless you are using a <a href="https://legacy.imagemagick.org/Usage/basics/#hdri">HDRI version of ImageMagick</a>), as each modified
 value is saved back into the image data.  That means that after any individual
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" operation,
+"<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" operation,
 the values could be clipped by the '<code>QuantumRange</code>'. <p></p>
 
 <a name="evaluate_multiply"></a>
 
 As such if you try to apply a contrast enhancement function (equivalent to
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a> '2*u-.25' </code>") directly
+"<code><a href="command-line-options.html#fx">-fx</a> '2*u-.25' </code>") directly
 as it stands, you will fail to get the correct results, as the doubled value
 will be clipped, before the subtraction is made.
 
@@ -3497,18 +3497,18 @@ specify the original color values that you want to stretch out, to fill whole
 color range. <p></p>
 
 Basically be careful with regards to color value clipping when using multiple
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" methods.
+"<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" methods.
 <p></p>
 
 <br>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>"
-operator, like "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" (and
-most other low level IM operators) is "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" effected.  This allows
+The "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>"
+operator, like "<code><a href="command-line-options.html#fx">-fx</a></code>" (and
+most other low level IM operators) is "<code><a href="command-line-options.html#channel">-channel</a></code>" effected.  This allows
 you to control an images alpha transparency separately to the color channels.
 <p></p>
 
-And yes, like "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>",
+And yes, like "<code><a href="command-line-options.html#fx">-fx</a></code>",
 transparency is treated as 'alpha values' and not a 'matte' value. <p></p>
 
 For example to make an image 50% transparent, as part of a <a href="https://legacy.imagemagick.org/Usage/compose/#dissolve">Dissolve</a> type operation.
@@ -3525,7 +3525,7 @@ The result is a semi-transparent image, which means when displayed, half the
 color you see is the web-pages background color. As such the image shown is
 dimmed toward the background color. <p></p>
 
-Often I have also found that it is often easier to use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" on the individual
+Often I have also found that it is often easier to use "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" on the individual
 color channels before separating the various channels into separate images for
 specific purposes,  (See <a href="https://legacy.imagemagick.org/Usage/color_basics/#separate">Separating
 Channels</a>).  <p></p>
@@ -3682,7 +3682,7 @@ produce an appreciable slope as it approaches '<code>0</code>', where
 A logrithmic function is also closely related to an exponential function, which
 is currently only implemented as <a href="https://legacy.imagemagick.org/Usage/color_mods/#sigmoidal-contrast">Sigmoidal Contrast Adjustment</a> operator.  This contains the same slope
 features you can see in the above logrithmic curves.  This explains why
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sigmoidal-contrast">-sigmoidal-contrast</a></code>" is a better technique for enhancing images
+"<code><a href="command-line-options.html#sigmoidal-contrast">-sigmoidal-contrast</a></code>" is a better technique for enhancing images
 involving low light conditions, than a <a href="https://legacy.imagemagick.org/Usage/color_mods/#gamma">Gamma
 Adjustment</a> or 'power of' curve. <p></p>
 
@@ -3772,7 +3772,7 @@ correctly.
 
 Which is great generating smooth gradients for use in overlapping photos. <p></p>
 
-However these last two "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" methods are rarely used as they have been superseded by
+However these last two "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" methods are rarely used as they have been superseded by
 a more general <a href="#function_sinusoid">Sinusoid Function</a> (see below)
 that provide more control options, beyond that of a simple frequency option.
 <p></p>
@@ -3786,10 +3786,10 @@ The above wave generators proved to be extremely useful, especially with <a href
 that a much finer control of the functions was needed, requiring more than one
 parameter. <p></p>
 
-Because of this the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?function">-function</a></code>" operator was added in IM v6.4.8-9. <p></p>
+Because of this the "<code><a href="command-line-options.html#function">-function</a></code>" operator was added in IM v6.4.8-9. <p></p>
 
-Basically "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?function">-function</a></code>"
-is a multi-argument form of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>". However unlike the <a href="#evaluate">Evaluate
+Basically "<code><a href="command-line-options.html#function">-function</a></code>"
+is a multi-argument form of "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>". However unlike the <a href="#evaluate">Evaluate
 Operator</a>, these operators like the mathematical operators, all the
 functions above work only on normalised channel values (0.0 to 1.0 range) of
 the image, which in most cases makes them easier to use.  <p></p>
@@ -3810,7 +3810,7 @@ Each value will be used as a coefficient from the highest order to the lowest,
 to produce a polynomial with the number of terms given. <p></p>
 
 For example an argument of  '<code>4,-4,1</code>' will generate the polynomial
-expression equivalent to the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" expression "<code> 4*u^2 - 4*u + 1 </code>". <p></p>
+expression equivalent to the "<code><a href="command-line-options.html#fx">-fx</a></code>" expression "<code> 4*u^2 - 4*u + 1 </code>". <p></p>
 
 If you know your high school maths you should know then that this polynomial
 function produces a parabolic curve going from 1.0 to 0.0 then back to 1.0,
@@ -3874,7 +3874,7 @@ Note however that you can not use '<code>Polynomial</code>' to do a full <a href
 infinite coefficients to do so, though you can get pretty close. <p></p>
 
 A single value is naturally just a constant, and results in a direct
-assignment of that value.  In other words it is just like the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a> Set </code>" method, in this
+assignment of that value.  In other words it is just like the "<code><a href="command-line-options.html#evaluate">-evaluate</a> Set </code>" method, in this
 case to a 33% gray value.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -3896,7 +3896,7 @@ create even more complex gradient modifications. <p></p>
 
 For example by taking the square root of a polynomial, I can create a true
 circular arc over a linear gradient.  The equivalent 
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fx">-fx</a></code>" expression
+"<code><a href="command-line-options.html#fx">-fx</a></code>" expression
 '<nobr><code>sqrt( -4*u^2 + 4*u + 0 )</code></nobr>'...
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -3922,7 +3922,7 @@ alternative to the above. <p></p>
 <h4>Sinusoid Function</h4>
 
 The '<b><code>Sinusoid</code></b>' function method is a much more advanced
-version of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?evaluate">-evaluate</a></code>" methods '<code>sin</code>' and '<code>cos</code>', and
+version of the "<code><a href="command-line-options.html#evaluate">-evaluate</a></code>" methods '<code>sin</code>' and '<code>cos</code>', and
 can in fact replicate those functions, but you have much better controls over
 how it modifies the color values in an image. <p></p>
 
@@ -4270,7 +4270,7 @@ If your gradient images are purely grey-scale images, with no alpha channels,
 then you can use the <a href="https://legacy.imagemagick.org/Usage/compose/#math">Mathematical Compose
 Methods</a> directly.  However if you want to limit these methods to
 a specific channel, or apply them to the alpha (transparency) channel, then
-you need to ensure that you set the appropriate "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting, with no
+you need to ensure that you set the appropriate "<code><a href="command-line-options.html#channel">-channel</a></code>" setting, with no
 special '<code>Sync</code>' channel flag.  See <a href="https://legacy.imagemagick.org/Usage/compose/#image_math">Image Mathematics using Image Composition</a>
 for more details. <p></p>
 
@@ -4648,7 +4648,7 @@ of 3 biased sinusoids, and a constant DC value.
   <a href="https://legacy.imagemagick.org/Usage/transform/added_waves_pf.gif"><img src="../images/transform/added_waves_pf.gif" width="150" height="100" align="middle" vspace="2" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-Note in the above how I used the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?flatten">-flatten</a></code>" operator with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" setting to
+Note in the above how I used the "<code><a href="command-line-options.html#flatten">-flatten</a></code>" operator with a "<code><a href="command-line-options.html#background">-background</a></code>" setting to
 implement a mutliple image composition.  Or in this case a 'Biased Sum' of all
 the given images plus the background constant. <p></p>
 

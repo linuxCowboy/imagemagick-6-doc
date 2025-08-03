@@ -125,14 +125,14 @@ GIF animations, and knowing about these is the first step into the world of GIF
 animations... <p></p>
 
 <table border="0" width="90%" align="center">
-<tbody><tr valign="top"><td colspan="2"><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose"><b>-dispose</b></a> {method}</code></td></tr><tr><td></td>
+<tbody><tr valign="top"><td colspan="2"><code><a href="command-line-options.html#dispose"><b>-dispose</b></a> {method}</code></td></tr><tr><td></td>
 <td align="justify">
     What the following images should do with the previous results of the GIF
     animation. Valid options are '<code>Undefined</code>', '<code><a href="#none">None</a></code>', '<code><a href="#previous">Previous</a></code>', and '<code><a href="#background">Background</a></code>.  (See below for explanation of the settings)
     <p></p>
 
 </td></tr>
-<tr valign="top"><td><nobr><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?loop"><b>-loop</b></a> {number}</code></nobr></td>
+<tr valign="top"><td><nobr><code><a href="command-line-options.html#loop"><b>-loop</b></a> {number}</code></nobr></td>
 <td align="justify">
     Number of times the GIF animation is to cycle though the image sequence
     before stopping.  It is an output 'image write' setting, so can be set
@@ -141,14 +141,14 @@ animations... <p></p>
 
     Usually this set by default, to zero (infinite loop), however if any image
     read in has a different value, then this setting will be set to that
-    images value.  As such I recommend that you always set "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?loop">-loop</a></code>" when creating a GIF
+    images value.  As such I recommend that you always set "<code><a href="command-line-options.html#loop">-loop</a></code>" when creating a GIF
     animation, after all the images has been read in. <p></p>
 
     For more information see <a href="#loop">The End of the Loop</a> below.
     <p></p>
 
 </td></tr>
-<tr valign="top"><td><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?delay"><b>-delay</b></a> {time} &nbsp;</code></td>
+<tr valign="top"><td><code><a href="command-line-options.html#delay"><b>-delay</b></a> {time} &nbsp;</code></td>
 <td align="justify">
     Set the time delay (in 1/100th of a second) to pause after drawing the
     images that are read in or created after this setting has been defined.
@@ -174,26 +174,26 @@ animations... <p></p>
     </i></font></td></tr></tbody></table><p></p>
 
 </td></tr>
-<tr valign="top"><td colspan="2"><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?set"><b>-set</b></a> dispose {method}
-<br><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?set"><b>-set</b></a> delay {time}</code></td></tr><tr><td></td>
+<tr valign="top"><td colspan="2"><code><a href="command-line-options.html#set"><b>-set</b></a> dispose {method}
+<br><a href="command-line-options.html#set"><b>-set</b></a> delay {time}</code></td></tr><tr><td></td>
 <td align="justify">
     While the previous option settings will set image attributes on newly
     created, or image that are read in, <i>after</i> that option is given, the
-    "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?set">-set</a></code>" option is an
+    "<code><a href="command-line-options.html#set">-set</a></code>" option is an
     operator, that will allow you set image attributes on all images that have
     <i>already</i> in the current image sequence.  This allows you to change
     the setting over a whole animation, or just a single frame, after the
     images have been loaded or modified.  <p></p>
 
 </td></tr>
-<tr valign="top"><td colspan="2"><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?page"><b>-page</b></a> {w}x{h}+{x}+{y}</code></td></tr><tr><td></td>
+<tr valign="top"><td colspan="2"><code><a href="command-line-options.html#page"><b>-page</b></a> {w}x{h}+{x}+{y}</code></td></tr><tr><td></td>
 <td align="justify">
     This lets you set the offset position of the image about to be read in. As
     this is a setting option, it only applies the geometry you give to images
     that follow the setting.  It does not effect images already read into
     memory.  <p>
 
-    If not given, or turned off using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?page">+page</a></code>" the offset for the image read will be preserved.  If
+    If not given, or turned off using "<code><a href="command-line-options.html#page">+page</a></code>" the offset for the image read will be preserved.  If
     the image does not have an offset it will be positioned at
     '<code>+0+0</code>' or the top left corner of the working canvas or
     'page'. </p>
@@ -224,21 +224,21 @@ animations... <p></p>
     </i></font></td></tr></tbody></table><p></p>
 
 </td></tr>
-<tr valign="top"><td colspan="2"><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage"><b>-repage</b></a> {w}x{h}+{x}+{y}</code></td></tr><tr><td></td>
+<tr valign="top"><td colspan="2"><code><a href="command-line-options.html#repage"><b>-repage</b></a> {w}x{h}+{x}+{y}</code></td></tr><tr><td></td>
 <td align="justify">
-    This is exactly like "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?page">-page</a></code>" except that it is an image operator instead of a
+    This is exactly like "<code><a href="command-line-options.html#page">-page</a></code>" except that it is an image operator instead of a
     setting.  That means you can use this to change or reset the 'page
     geometry' of an image or animation frame that has already being read into
     memory. <p></p>
 
-    The simpler "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>"
+    The simpler "<code><a href="command-line-options.html#repage">+repage</a></code>"
     form, just resets the 'page geometry' of all images to the actual image in
     each frame in the current image sequence to a zero offset, and the images
     actual size.  This operation is vital when you are extracting the
     individual frames from an animation, (See the <a href="#adjoin">Adjoin
     Examples</a> below). <p></p>
 
-    However "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" will
+    However "<code><a href="command-line-options.html#repage">+repage</a></code>" will
     destroy a lot of positioning information stored in each image, as such you
     should also probably extract this information into a separate file for
     later re-use.  See <a href="#list_info">Animation List Information</a>
@@ -273,7 +273,7 @@ section <a href="https://legacy.imagemagick.org/Usage/anim_opt/">Animation Optim
 <h2>Frame Disposal Methods</h2>
 
 The first thing people creating GIF animation have trouble with is the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" setting.  This
+"<code><a href="command-line-options.html#dispose">-dispose</a></code>" setting.  This
 is not surprising as it is a complex setting.  Worse still a lot of animation
 programs, including many web browsers, don't always handle the GIF disposal
 meta-data setting correctly.  However using the right disposal can make a big
@@ -281,12 +281,12 @@ difference to how well your animation works and optimizes. <p></p>
 
 The first thing to remember in ImageMagick is that almost all the special
 animation options, are settings for image reading.  That is they are applied
-to images that are read in, after, the setting has been given.  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?loop">-loop</a></code>" setting is the only one
+to images that are read in, after, the setting has been given.  The "<code><a href="command-line-options.html#loop">-loop</a></code>" setting is the only one
 typically used after the animation has been completed, just before the the
 animation is saved. <p></p>
 
-The basic task of  the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" defines how an image is to be removed, <i>after</i> it
-has been displayed for its "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?delay">-delay</a></code>" time period.  That is, you need to give an image's "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?delay">-delay</a></code>" settings <i>before</i>
+The basic task of  the "<code><a href="command-line-options.html#dispose">-dispose</a></code>" defines how an image is to be removed, <i>after</i> it
+has been displayed for its "<code><a href="command-line-options.html#delay">-delay</a></code>" time period.  That is, you need to give an image's "<code><a href="command-line-options.html#dispose">-dispose</a></code>" and "<code><a href="command-line-options.html#delay">-delay</a></code>" settings <i>before</i>
 reading the image for that frame.  But the action is applied after that image
 is displayed.  This is a little counter intuitive but does make sense in the
 way IM operates on images.  <p></p>
@@ -306,7 +306,7 @@ difficult animation technique). <p></p>
 <a name="none"></a>
 <h3>Dispose None <font size="-1">- each frame overlaid in sequence</font></h3>
 
-The default "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>"
+The default "<code><a href="command-line-options.html#dispose">-dispose</a></code>"
 setting for GIF animations is '<code><b>Undefined</b></code>' which most
 animation programs treats the same as a '<code><b>None</b></code>' disposal
 setting.  Basically this tells the computer to just leave whatever is overlaid
@@ -390,17 +390,17 @@ for just the duration of that image...
   <a href="https://legacy.imagemagick.org/Usage/anim_basics/canvas_prev.gif"><img src="../images/animate/canvas_prev.gif" width="100" height="100" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-Note the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" method
+Note the "<code><a href="command-line-options.html#dispose">-dispose</a></code>" method
 '<code><a href="#none">None</a></code>' used for the first image. This is
 important, otherwise the 'previous' frame will go all the way back to the
 original empty canvas that was present before the first frame.  <p></p>
 
-Also note that I used a  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?delay">-delay</a></code>" of '<code>0</code>' in the above animation.  This says not
+Also note that I used a  "<code><a href="command-line-options.html#delay">-delay</a></code>" of '<code>0</code>' in the above animation.  This says not
 to wait before overlaying the first frame onto this 'background canvas'.
 Without it you will see a short delay, showing just the canvas image with
 nothing on top of it. <p></p>
 
-Of course I need to still set a longer "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?delay">-delay</a></code>" for the later images, or they will appear and disappear in
+Of course I need to still set a longer "<code><a href="command-line-options.html#delay">-delay</a></code>" for the later images, or they will appear and disappear in
 the wink of an eye, and incidentally use up a lot of the viewers CPU cycles.
 <p></p>
 
@@ -421,7 +421,7 @@ may not exist in an un-optimized version of that animation. <p></p>
 <a name="background"></a>
 <h3>Dispose Background <font size="-1">- clear to background</font></h3>
 
-While the first two "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" methods are relatively simple, the
+While the first two "<code><a href="command-line-options.html#dispose">-dispose</a></code>" methods are relatively simple, the
 '<code><b>Background</b></code>' is probably the hardest to understand. <p></p>
 
 When the time delay is finished for a particular frame, the area that was
@@ -496,14 +496,14 @@ sequence which makes it much more difficult for computers to optimize.  <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/animate/warning.gif" width="28" height="28"><img src="../images/animate/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Before IM version 6.2.6-1, the IM "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" operations
+  Before IM version 6.2.6-1, the IM "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" and "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" operations
   did not handle animations that used '<code>Background</code>' disposal to
   make pixels transparent, as per all the major web browsers. See <a href="https://legacy.imagemagick.org/Usage/bugs/animation_bgnd/">Animation Bugs</a> for examples and
   details. <p></p>
 
   These functions however did work fine when no pixel clearing was applied
-  or intended.  This has now been fixed for "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" and the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a>&nbsp;<a href="https://legacy.imagemagick.org/Usage/anim_opt/#optframe">OptimizeFrame</a></code>' method was created
-  to replace the use of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" as a GIF animation frame optimizing function.
+  or intended.  This has now been fixed for "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" and the "<code><a href="command-line-options.html#layers">-layers</a>&nbsp;<a href="https://legacy.imagemagick.org/Usage/anim_opt/#optframe">OptimizeFrame</a></code>' method was created
+  to replace the use of "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" as a GIF animation frame optimizing function.
 
 </i></font></td></tr></tbody></table><p></p>
 
@@ -578,7 +578,7 @@ proper use of the later '<a href="#previous">Previous</a>' disposal method.
 
 Now as you saw above, ImageMagick will by default try to save multiple images
 into one file if that file format allows it.  However as discussed in <a href="https://legacy.imagemagick.org/Usage/files/#write_list">Writing a Multi-Image List</a> IM will let you
-use the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?adjoin">+adjoin</a></code>" setting
+use the "<code><a href="command-line-options.html#adjoin">+adjoin</a></code>" setting
 to tell it to save each image to disk as a separate individual image. <p></p>
 
 For example, here we read in one of the GIF animations and output the individual
@@ -607,7 +607,7 @@ image of the animation defines that larger 'canvas' and every other frame
 defines an 'offset' position on this larger canvas.  <p></p>
 
 This extra information is preserved in the frames that was saved by the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?adjoin">+adjoin</a></code>" setting.  As
+"<code><a href="command-line-options.html#adjoin">+adjoin</a></code>" setting.  As
 as such you can easilly re-build the GIF animation.  Not only is the page
 information preserved in each separate frame image, but also any delay,
 looping and GIF dispose settings, is also preserved. <p></p>
@@ -627,7 +627,7 @@ in.
 
 Sometimes however you don't want to preserve this page geometry information.
 For example if you want to use the individual frames for other projects.  You
-can reset the page size and offset using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" option, to remove the
+can reset the page size and offset using the "<code><a href="command-line-options.html#repage">+repage</a></code>" option, to remove the
 'virtual canvas' information, leaving just the actual image. <p></p>
 
 <br>
@@ -692,7 +692,7 @@ did, just by looking at the individual sub-frames of the animation.
 </nobr>
 </div><p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>"
+The "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>"
 operation basically converts an image into exactly what the animation should
 look like after the previous frame has been correctly <a href="#dispose">disposed</a>, and the next sub-frame overlaid. <p></p>
 
@@ -703,7 +703,7 @@ rather than an animation sequence. Such a sequence, known as a <a href="#coalesc
 modify and re-optimize. <p></p>
 
 Here for example will generate a montage of the same 'confusing' animation
-sequence I showed above, but this time we'll "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" the sequences, so
+sequence I showed above, but this time we'll "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" the sequences, so
 you can see what is really happening.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -724,7 +724,7 @@ to clearly see how the previous pieces fit together to form a hand drawn
 letter 'K'. <p></p>
 
 As of  IM version 6.2.6, the "<code>montage</code>" command understood the
-use of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>",
+use of "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>",
 allowing you to create 'film strip' like image of the animation frames,
 exactly as shown above. This version also contained fixes for coalesce, and
 any GIF animation work should be at least this version (or better still the
@@ -738,10 +738,10 @@ latest version). <p></p>
   next example section.
 </i></font></td></tr></tbody></table><p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" setting of
+The "<code><a href="command-line-options.html#dispose">-dispose</a></code>" setting of
 a <i>coalesced image sequence</i> is actually irrelevant, in a <a href="#coalesced">Coalesced Animation</a>.  However for users piece of mind
-the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" operator
-will set the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>"
+the "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" operator
+will set the "<code><a href="command-line-options.html#dispose">-dispose</a></code>"
 setting of each frame to either '<code><a href="#none">None</a></code>' or
 '<code><a href="#background">Background</a></code>' as appropriate, so that
 the coalesced image sequence will continue to animate correctly (as shown
@@ -755,7 +755,7 @@ above).  <p></p>
   disposal means the next frame needed to clear at least one or more pixels,
   to be displayed correctly.  <p></p>
 
-  As such animations in which "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" added a '<code><a href="#background">Background</a></code>' dispose, means that the animation can not be
+  As such animations in which "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" added a '<code><a href="#background">Background</a></code>' dispose, means that the animation can not be
   saved as a simple <a href="#overlay">Overlay Animation</a> (see below).
   <p></p>
 
@@ -766,7 +766,7 @@ above).  <p></p>
 
 </i></font></td></tr></tbody></table><p></p>
 
-Their are also some non-animation uses of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" operator. See <a href="https://legacy.imagemagick.org/Usage/layers/#coalesce">Coalesce, and Progressive Flattening</a>
+Their are also some non-animation uses of the "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" operator. See <a href="https://legacy.imagemagick.org/Usage/layers/#coalesce">Coalesce, and Progressive Flattening</a>
 examples of these uses.  <p></p>
 
 <br>
@@ -775,8 +775,8 @@ examples of these uses.  <p></p>
 <h3>Animation Frame Montage
 <font size="-1">- the "gif_anim_montage" script</font></h3>
 
-While "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?adjoin">+adjoin</a></code>" operator
-will let you extract the actual images from an animation and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" will let you see the
+While "<code><a href="command-line-options.html#adjoin">+adjoin</a></code>" operator
+will let you extract the actual images from an animation and "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" will let you see the
 resulting frames of the animation, both methods leave out a lot of information
 about the animation. <p></p>
 
@@ -851,12 +851,12 @@ Suggestions and comments are welcome. <p></p>
 <h3>Animation List Information
 <font size="-1">- options used to build an animation</font></h3>
 
-As I noted,  using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?adjoin">+adjoin</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>", as well as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>", are all useful methods of extracting and looking at GIF
+As I noted,  using "<code><a href="command-line-options.html#adjoin">+adjoin</a></code>" and "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>", as well as "<code><a href="command-line-options.html#repage">+repage</a></code>", are all useful methods of extracting and looking at GIF
 animations. However they all destroy information about the original animation
 in the process. <p></p>
 
 You can see this extra information on framing, time delays, frame dispose,
-etc., using the  IM "<code>identify</code>" command with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?verbose">-verbose</a></code>" option.  However I, and
+etc., using the  IM "<code>identify</code>" command with a "<code><a href="command-line-options.html#verbose">-verbose</a></code>" option.  However I, and
 probably most other users, find the output from this command, overwhelming
 and not really directly usable. <p></p>
 
@@ -967,19 +967,19 @@ and the timings that is being applied between frames.  <p></p>
 <h3>Dispose Images
 <font size="-1">- the GIF dispose form of the frames</font></h3>
 
-This special "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a></code>"
+This special "<code><a href="command-line-options.html#layers">-layers</a></code>"
 method, '<code><b>Dispose</b></code>' shows what the frame should look like
 <i>after</i> the time delay is finished, and the GIF dispose method has been
 applied, but <i>before</i> the next frames image is overlaid. <p></p>
 
-In other words this show exactly what the GIF "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" method setting actually
+In other words this show exactly what the GIF "<code><a href="command-line-options.html#dispose">-dispose</a></code>" method setting actually
 does to the frame, allowing you figure out exactly what is going wrong with
 your animation. <p></p>
 
 For example here is how each of our three <a href="#dispose">Dispose Method
 Example Animations</a> look like after the individual frame dispose method was
 applied.   Remember each of these animations consist of a 'canvas image' that
-was set with a '<code><a href="#none">None</a></code>' "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>"  setting, then followed
+was set with a '<code><a href="#none">None</a></code>' "<code><a href="command-line-options.html#dispose">-dispose</a></code>"  setting, then followed
 by four smaller images overlaid then disposed of by the various GIF dispose
 methods. <p></p>
 
@@ -1055,7 +1055,7 @@ method in the later frames that is imporant. <p></p>
 <font size="-1">- report areas of frame differences</font></h3>
 
 The traditional way in ImageMagick to optimize an animation, making the result
-smaller and faster to download and animate, is to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" its "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" form. <i>This is no
+smaller and faster to download and animate, is to "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" its "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" form. <i>This is no
 longer recommended</i>. Instead you use should use the <a href="https://legacy.imagemagick.org/Usage/anim_opt/#optimize">General GIF Optimizer</a>. <p></p>
 
 This operator will take a coalesced sequence of images (the animation frames
@@ -1071,7 +1071,7 @@ Animations</a> animation however only use a '<code><a href="#none">None</a></cod
 
 For example lets take the <a href="#coalesce">coalesce previous animation</a>
 we generated above, which happens to form a  <a href="#overlay">Overlay
-Animation</a>, and run it though the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" operator.
+Animation</a>, and run it though the "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" operator.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr valign="top">
@@ -1095,7 +1095,7 @@ Animation</a>, and run it though the "<code><a href="https://legacy.imagemagick.
 A 'previous dispose animation' if you remember clears each frame to the last
 non-previous disposed frame, in this case the initial background canvas.
 
-As you can see "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" returned the area that changed from one coalesced
+As you can see "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" returned the area that changed from one coalesced
 frame to the next.  Resulting in an optimized <a href="#overlay">Overlay
 Animation</a>, that requires no special dispose setting. <p></p>
 
@@ -1104,8 +1104,8 @@ started with, but is useful in itself. <p></p>
 
 <table cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr><td align="justify">
-Unfortunately "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" has absolutely no understanding of the GIF animation
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?dispose">-dispose</a></code>" settings.
+Unfortunately "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" has absolutely no understanding of the GIF animation
+"<code><a href="command-line-options.html#dispose">-dispose</a></code>" settings.
 Consequently if you try this on an animation that clears pixels from one frame
 to the next, such as the '<a href="#background">background disposed</a>'
 animation we created above (and shown left), it will fail badly.
@@ -1117,7 +1117,7 @@ animation we created above (and shown left), it will fail badly.
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr valign="bottom"><td width="100%" align="justify">
 
-Here we take the just shown animation, and run it though a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" cycle.
+Here we take the just shown animation, and run it though a "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" and "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" cycle.
 
 <table border="1" cellspacing="0" cellpadding="5" width="100%" bgcolor="#CCCCCC">
 <tbody><tr><td><pre><code execute="">
@@ -1126,7 +1126,7 @@ Here we take the just shown animation, and run it though a "<code><a href="https
   <a href="https://legacy.imagemagick.org/Usage/anim_basics/deconstruct_erase.gif"><img src="../images/animate/deconstruct_erase.gif" width="100" height="100" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-As you can see "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>", slowly destroys the animation. Basically "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" is designed to
+As you can see "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>", slowly destroys the animation. Basically "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" is designed to
 simply find the differences between image layers.  It was never designed to
 correctly optimize animations, and will fail for animations that need to use
 various disposal techniques to clear (erase or make transparent) previously
@@ -1148,9 +1148,9 @@ interfaces. <p></p>
 <a name="compareany"></a>
 <h4>Compare_Any</h4>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a></code>" method
-'<code><b>CompareAny</b></code>' is actually exactly the same as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>".  In fact the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>"
+The "<code><a href="command-line-options.html#layers">-layers</a></code>" method
+'<code><b>CompareAny</b></code>' is actually exactly the same as "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>".  In fact the
+"<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>"
 operator is only a functional alias for the '<code>CompareAny</code>' method.
 <p></p>
 
@@ -1181,7 +1181,7 @@ new pixel color, or a clearing of an old pixel to transparency. <p></p>
 <a name="compareclear"></a>
 <h4>Compare_Clear</h4>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a></code>" method
+The "<code><a href="command-line-options.html#layers">-layers</a></code>" method
 '<code><b>CompareClear</b></code>' will show the smallest rectangular area
 that contains all the pixels that needed to be cleared from one frame to the
 next.
@@ -1197,7 +1197,7 @@ next.
 
 Notice that as no pixels were cleared between the first and second frame, a
 special <a href="https://legacy.imagemagick.org/Usage/crop/#crop_missed">Missed Image</a> was generated. The
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?quiet">-quiet</a></code>" setting was used
+"<code><a href="command-line-options.html#quiet">-quiet</a></code>" setting was used
 to tell IM not to give any warning about this image. <p></p>
 
 If all the later frames all become 'missed' images, then the GIF animation
@@ -1206,7 +1206,7 @@ never clears pixels, and the animation can be classed as a <a href="#overlay">Ov
 <a name="compareoverlay"></a>
 <h4>Compare_Overlay</h4>
 
-The last "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a></code>"
+The last "<code><a href="command-line-options.html#layers">-layers</a></code>"
 comparison method, '<code><b>CompareOverlay</b></code>', returns the area of
 pixels that were overlaid (added or changed in color, but not cleared) since
 the previous frame.
@@ -1230,8 +1230,8 @@ Optimization</a>. <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/animate/reminder.gif" width="20" height="16"><img src="../images/animate/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-    None of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a></code>"
-    comparison methods, nor the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?deconstruct">-deconstruct</a></code>" operator, look at or modify the image GIF
+    None of the "<code><a href="command-line-options.html#layers">-layers</a></code>"
+    comparison methods, nor the "<code><a href="command-line-options.html#deconstruct">-deconstruct</a></code>" operator, look at or modify the image GIF
     dispose method that is used.  The results is just a list of images, and
     not expected to be used as animations themselves.
 </i></font></td></tr></tbody></table><p></p>
@@ -1253,7 +1253,7 @@ Optimization</a>. <p></p>
     <p></p>
 
     Note that this is different to the more normal '<code><a href="https://legacy.imagemagick.org/Usage/compose/#over">Over</a></code>' composition method that the
-    "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" operator
+    "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" operator
     would use for handling the 'dispose/overlay' cycle needed to display
     a GIF animation. <p></p>
 
@@ -1278,7 +1278,7 @@ an animation should look like when displayed to an user after each
 you were looking at an actual 'film strip' of the animation.  It is the
 simplified and completely un-optimized form of any animation. <p></p>
 
-This naming convention is from the name of the IM "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" operator that is used
+This naming convention is from the name of the IM "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" operator that is used
 to convert GIF disposal animations, into an un-optimized 'Coalesced Animation'.
 <p></p>
 
@@ -1290,7 +1290,7 @@ widely varying time delays from immediate '0' delays, to very fast, or very
 very very slow. <p></p> <p></p>
 
 Any GIF disposal setting in a coalesced animation does not have any meaning,
-however the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?coalesce">-coalesce</a></code>" operator will set the disposal appropriately so the
+however the "<code><a href="command-line-options.html#coalesce">-coalesce</a></code>" operator will set the disposal appropriately so the
 resulting image sequence can still work as a valid GIF animation. <p></p>
 
 Video formats which always replaces every pixel from one frame to the next can
@@ -1653,19 +1653,19 @@ a web page.  Depending on the overall time for which an animation runs, 10 to
 30 loops is usually enough for large logos.  And you should add a loop limit
 for all such animations, to be kind to your users. <p></p>
 
-A "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?loop">-loop</a></code>" save setting of 0,
+A "<code><a href="command-line-options.html#loop">-loop</a></code>" save setting of 0,
 means to loop forever.  This is typically what is used, and that is okay, for
 small animations.  Some browsers however enforce a stop when an animation
 reaches some internal loop limit (often 256 loops). <p></p>
 
-For IM Examples I have generally used a '0' "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?loop">-loop</a></code>" save setting, meaning 'loop
+For IM Examples I have generally used a '0' "<code><a href="command-line-options.html#loop">-loop</a></code>" save setting, meaning 'loop
 forever', because the animations can appear anywhere on a page.  That means it
 may be some time between when the user loaded a page to when they finally look
 at and read about a particular GIF animation.  If I did use a smaller number
 of 'loops', the animation would no longer be doing what it should be
 demonstrating, loosing its effectiveness. <p></p>
 
-For large animations on top level flash pages, a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?loop">-loop</a></code>" of '1', the normal GIF
+For large animations on top level flash pages, a "<code><a href="command-line-options.html#loop">-loop</a></code>" of '1', the normal GIF
 animation default, can be used.   This means run though the animation once
 only and then stop. <p></p>
 

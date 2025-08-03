@@ -94,7 +94,7 @@
 Drawing in IM is the way to add new elements to an existing image.  While
 a lot of text drawing is covered in the examples page for <a href="https://legacy.imagemagick.org/Usage/fonts/">Compound Font Effects</a>, and in <a href="https://legacy.imagemagick.org/Usage/annotating/">Image
 Annotating</a>, this page deals with the other more general aspects of the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operator. <p></p>
+"<code><a href="command-line-options.html#draw">-draw</a></code>" operator. <p></p>
 
 The draw command started as a means to create simple images. But has expanded
 over time to be the interface for vector graphic to raster image conversion.
@@ -124,7 +124,7 @@ Examples of vector graphic images include postscript, and the new <a href="http:
 True-Type Fonts are also examples of vector graphics, as this  allows the
 individual character descriptions to be used at any scale. <p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" image
+The "<code><a href="command-line-options.html#draw">-draw</a></code>" image
 operator, is a window into the ImageMagick vector drawing functions, and forms
 a set of commands quite separate from the normal command line image operators
 of IM. <p></p>
@@ -155,7 +155,7 @@ of IM. <p></p>
 <h3>Primitive Draw Commands</h3>
 
 Lets start with the oldest, simplest, and most common drawing primitives of
-the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" image operator
+the "<code><a href="command-line-options.html#draw">-draw</a></code>" image operator
 of MVG commands. <p></p>
 
 Note that all arguments are treated as floating point, and do not have to be
@@ -300,17 +300,17 @@ A better method of drawing lines and curves is to use the <a href="#paths">SVG P
 </td></tr></tbody></table><p></p>
 
 These last two fill type operations are currently the only draw operations
-that are affected by "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a></code>". <p></p>
+that are affected by "<code><a href="command-line-options.html#gravity">-gravity</a></code>". <p></p>
 
 Other modifiers for these operations, include:
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>",
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?tile">-tile</a></code>",
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?origin">-origin</a></code>",
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>",
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>",
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?font">-font</a></code>",
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?pointsize">-pointsize</a></code>",
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?box">-box</a></code>",
+"<code><a href="command-line-options.html#fill">-fill</a></code>",
+"<code><a href="command-line-options.html#tile">-tile</a></code>",
+"<code><a href="command-line-options.html#origin">-origin</a></code>",
+"<code><a href="command-line-options.html#stroke">-stroke</a></code>",
+"<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>",
+"<code><a href="command-line-options.html#font">-font</a></code>",
+"<code><a href="command-line-options.html#pointsize">-pointsize</a></code>",
+"<code><a href="command-line-options.html#box">-box</a></code>",
 <p></p>
 
 Their are other modifiers but these are related to the more advanced <a href="#mvg">Magick Vector Graphics language</a>. <p></p>
@@ -459,7 +459,7 @@ in the path. <p></p>
 <a name="color"></a>
 <h3>Color Fill Primitives</h3>
 
-On top of the above 'simple' primitives, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" also provides a set of color
+On top of the above 'simple' primitives, "<code><a href="command-line-options.html#draw">-draw</a></code>" also provides a set of color
 fill or modification primitives.  These modify the color(s) in the image
 starting at the point specified, according to the method chosen.  <p></p>
 
@@ -468,16 +468,16 @@ replacement function.  They were added to draw as it was the easiest place to
 insert their operations into ImageMagick in a very early version of the
 program. <p></p>
 
-Just as in the above, the color used is set with the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>" color setting, but if set,
-the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?tile">-tile</a></code>" image will be
+Just as in the above, the color used is set with the "<code><a href="command-line-options.html#fill">-fill</a></code>" color setting, but if set,
+the "<code><a href="command-line-options.html#tile">-tile</a></code>" image will be
 used instead. <p></p>
 
 The other setting options above are not used, and have no effect on these
 operations. <p></p>
 
-Two extra settings as you will also apply to these primitives, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a></code>" and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fuzz">-fuzz</a></code>" factor settings.  However
+Two extra settings as you will also apply to these primitives, "<code><a href="command-line-options.html#bordercolor">-bordercolor</a></code>" and "<code><a href="command-line-options.html#fuzz">-fuzz</a></code>" factor settings.  However
 these settings can NOT be defined within the 'MVG' language, so can only be
-set before using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operator. <p></p>
+set before using the "<code><a href="command-line-options.html#draw">-draw</a></code>" operator. <p></p>
 
 The first of these '<code>color point</code>' you have already seen as an
 alternative to the '<code>point</code>' draw primitive in the above examples.
@@ -550,15 +550,15 @@ such edge pixels. This is a recurring problem with all these 'color fill'
 methods, and one that has no general solution. <p></p>
 
 If you want to replace a specific known color, rather than select a color from
-the image itself, then the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?opaque">-opaque</a></code>" image operator can be used instead. This function also
-uses a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fuzz">-fuzz</a></code>" factor
+the image itself, then the "<code><a href="command-line-options.html#opaque">-opaque</a></code>" image operator can be used instead. This function also
+uses a "<code><a href="command-line-options.html#fuzz">-fuzz</a></code>" factor
 setting to increase the range of colors that match the given color. <p></p>
 
 The '<code>floodfill</code>' method is also quite simple as it will just fill
 the the whole area around the point selected and not select any other area of
 similar colors which are not connected in some way. <p></p>
 
-You can also expand the area being filled by using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fuzz">-fuzz</a></code>" to include similar colors.
+You can also expand the area being filled by using "<code><a href="command-line-options.html#fuzz">-fuzz</a></code>" to include similar colors.
 In this case we chose a value high enough to also include the cross border,
 allowing the flood fill to 'leak' to the other side of the image.
 
@@ -632,7 +632,7 @@ plain solid color (or tiled image) canvas from an existing image.  (See <a href=
 other ways of doing the same thing. <p></p>
 
 
-FUTURE: Using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?tile">-tile</a></code>" pattern to fill the area. <p></p>
+FUTURE: Using a "<code><a href="command-line-options.html#tile">-tile</a></code>" pattern to fill the area. <p></p>
 
 
 <a name="matte"></a>
@@ -645,7 +645,7 @@ color of the areas selected, only the 'matte' channel of the areas selected.
 functions). <p></p>
 
 Just as like the '<code>color</code>' fill function, the 'matte' value uses
-the fill color (unless "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?tile">-tile</a></code>" as the source of the 'alpha value' to use). <p></p>
+the fill color (unless "<code><a href="command-line-options.html#tile">-tile</a></code>" as the source of the 'alpha value' to use). <p></p>
 
 Here we use the same '<code>color floodfill</code>' example above, but here
 only adjust the matte channel to make the filled parts fully-transparent.
@@ -686,7 +686,7 @@ Notice that the '<code>black</code>' color component was not used in
 operations, only the matte component of the color. The images original color
 is left as is. <p></p>
 
-FUTURE: Using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?tile">-tile</a></code>" pattern for in interesting matte effect. <p></p>
+FUTURE: Using "<code><a href="command-line-options.html#tile">-tile</a></code>" pattern for in interesting matte effect. <p></p>
 
 
 Both '<code>color</code>' and '<code>matte</code>' are full replacement of
@@ -706,7 +706,7 @@ examples for <a href="https://legacy.imagemagick.org/Usage/masking/#bg_remove">B
 <a name="coordinates"></a>
 <h3>Pixel Coordinates</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" command (and
+The "<code><a href="command-line-options.html#draw">-draw</a></code>" command (and
 many others in IM) use what is calls "Pixel Coordinates".  That is
 a coordinate of '<code>10,10</code> is the center of the pixel 10 pixels down
 and to the left from the top-left corner. <p></p>
@@ -732,7 +732,7 @@ pixel is '<code>w-0.5,h-0.5</code>'. <p></p>
 <a name="colorspace"></a>
 <h3>Drawing with Gamma and Colorspace Correction</h3>
 
-As with almost all ImageMagick operations, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" is a linear operator.  and
+As with almost all ImageMagick operations, "<code><a href="command-line-options.html#draw">-draw</a></code>" is a linear operator.  and
 as such works in a linear RGB colorspace. This means to get nice smooth edges
 you may need to do some gamma correction of images, before you save them so
 they are stored using non-linear (gamma corrected) sRGB colorspace. <p></p>
@@ -852,10 +852,10 @@ when drawing directly. (You need a very good monitor to see it) <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/draw/reminder.gif" width="20" height="16"><img src="../images/draw/space.gif" width="20" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The line in the above was drawn using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" color.  You can draw
-  the line using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>"
+  The line in the above was drawn using a "<code><a href="command-line-options.html#stroke">-stroke</a></code>" color.  You can draw
+  the line using "<code><a href="command-line-options.html#fill">-fill</a></code>"
   and get the same results, but then you will not have line thickness control
-  using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>".   See <a href="#stroke">Stroke Color Setting</a>
+  using "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>".   See <a href="#stroke">Stroke Color Setting</a>
   below for more information.
 </i></font></td></tr></tbody></table><p></p>
 
@@ -879,12 +879,12 @@ when drawing directly. (You need a very good monitor to see it) <p></p>
 <a name="stroke"></a>
 <h3>Stroke, StrokeWidth and Fill Interaction</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" and
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>"
+The "<code><a href="command-line-options.html#stroke">-stroke</a></code>" and
+"<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>"
 options are used when drawing an outline around a font's
 edge. <p></p>
 
-These options commonly used with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>" to make text more interesting, for very little effort.
+These options commonly used with "<code><a href="command-line-options.html#fill">-fill</a></code>" to make text more interesting, for very little effort.
 
 <div align="center">
 <table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
@@ -896,19 +896,19 @@ These options commonly used with "<code><a href="https://legacy.imagemagick.org/
    <a href="https://legacy.imagemagick.org/Usage/draw/stroke_font.jpg"><img src="../images/draw/stroke_font.jpg" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-The default settings is "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a> 1</code>"  and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a> None</code>". <p></p>
+The default settings is "<code><a href="command-line-options.html#strokewidth">-strokewidth</a> 1</code>"  and "<code><a href="command-line-options.html#stroke">-stroke</a> None</code>". <p></p>
 
-But this makes the outline stroke invisible, leaving just the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>" color, you will not see it.
+But this makes the outline stroke invisible, leaving just the "<code><a href="command-line-options.html#fill">-fill</a></code>" color, you will not see it.
 <p></p>
 
-The only effect "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" has when the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" is 'invisible', is on
+The only effect "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" has when the "<code><a href="command-line-options.html#stroke">-stroke</a></code>" is 'invisible', is on
 font size attributes, which means it can still effect font positioning and the
 size of a <a href="https://legacy.imagemagick.org/Usage/text/#label">Label and Caption</a> image generation.
 Otherwise the width has not visible effect until you make the stroke visible.
 <p></p>
 
 
-To see how the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" actually effects the look of a font (when made
+To see how the "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" actually effects the look of a font (when made
 visible) here I have drawn some text with various widths from 'turned off'
 and getting larger.
 
@@ -926,21 +926,21 @@ and getting larger.
    <a href="https://legacy.imagemagick.org/Usage/draw/stroke_table.jpg"><img src="../images/draw/stroke_table.jpg" width="320" height="420" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-Note from the the above examples that setting a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" of
-'<code>0</code>' is NOT the same as setting the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" color to
+Note from the the above examples that setting a "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" of
+'<code>0</code>' is NOT the same as setting the "<code><a href="command-line-options.html#stroke">-stroke</a></code>" color to
 '<code>none</code>' (the default).  The former makes a very very thin stroke
 outline, while the latter effectively turns it off.  In both cases the stroke
 is still drawn. <p></p>
 
-However you should also note that even with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" of
+However you should also note that even with a "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" of
 '<code>0</code>' the image outline will be expanded very very slightly over
-that of just a plain 'filled' image (using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" color of
+that of just a plain 'filled' image (using a "<code><a href="command-line-options.html#stroke">-stroke</a></code>" color of
 '<code>none</code>'. <p></p>
 
 Essentually using any width smaller than '<code>1.0</code>' does not work
 properly. And you should exercise caution in cases where this can matter. <p></p>
 
-Remember however that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" is also a floating point setting. That is a stroke
+Remember however that "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" is also a floating point setting. That is a stroke
 width of '<code>0.5</code>' is also valid.   However usally this is only
 important when you are attempting to draw <a href="https://legacy.imagemagick.org/Usage/antialiasing/#thin_circles">Drawing Thin Bitmapped Circles</a> with
 the <a href="https://legacy.imagemagick.org/Usage/antialiasing/#intro">Anti-Alising</a> turned off. <p></p>
@@ -959,7 +959,7 @@ Here is an example of using an extremely large stroke width.
    <a href="https://legacy.imagemagick.org/Usage/draw/stroke_thick.jpg"><img src="../images/draw/stroke_thick.jpg" width="320" height="100" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </div><p></p>
 
-Note that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" expands both lines inward and outward.  Here is the
+Note that "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" expands both lines inward and outward.  Here is the
 same example but with the font re-drawn, without the stroke outline, to remove
 the inside part of the very thick stroke.
 
@@ -997,7 +997,7 @@ Here is the default line draw...
   <a href="https://legacy.imagemagick.org/Usage/draw/line_default.jpg"><img src="../images/draw/line_default.jpg" width="100" height="40" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-You can set the color of the line with a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>" option.
+You can set the color of the line with a "<code><a href="command-line-options.html#fill">-fill</a></code>" option.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -1010,7 +1010,7 @@ You can set the color of the line with a "<code><a href="https://legacy.imagemag
   <a href="https://legacy.imagemagick.org/Usage/draw/line.jpg"><img src="../images/draw/line.jpg" width="100" height="40" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-Also you can make a line slightly thicker by setting the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" color.
+Also you can make a line slightly thicker by setting the "<code><a href="command-line-options.html#stroke">-stroke</a></code>" color.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -1024,7 +1024,7 @@ Also you can make a line slightly thicker by setting the "<code><a href="https:/
 </td></tr></tbody></table><p></p>
 
 
-But what happened to the white color we specified with the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>" option? <p></p>
+But what happened to the white color we specified with the "<code><a href="command-line-options.html#fill">-fill</a></code>" option? <p></p>
 
 This is the tricky aspect of drawing lines in ImageMagick.  What the program
 does is actually consider the line as a filled object about 1 pixel wide.
@@ -1037,8 +1037,8 @@ stroke color.  The result is that the above stroke color line is now slightly
 thicker, with the fill color completely hidden underneath.  If you make the
 stroke color semi-transparent you can make that fill color visible again. <p></p>
 
-To summarize, lines will appear to be drawn with the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a></code>" color, but that option is of
-no consequence once the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" color has been defined as something other than the
+To summarize, lines will appear to be drawn with the "<code><a href="command-line-options.html#fill">-fill</a></code>" color, but that option is of
+no consequence once the "<code><a href="command-line-options.html#stroke">-stroke</a></code>" color has been defined as something other than the
 default "<code>none</code>" or "<code>transparent</code>" colors. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="90%" align="center">
@@ -1046,12 +1046,12 @@ default "<code>none</code>" or "<code>transparent</code>" colors. <p></p>
 <td><img src="../images/draw/warning.gif" width="28" height="28"><img src="../images/draw/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
   The option  "<code>-linewidth</code>" is really only an alias for
-  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>",
+  "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>",
   and should not be used.
 </i></font></td></tr></tbody></table><p></p>
 
 For example, you would probably think that this command would produce a very
-thick line.  It does, but as the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?stroke">-stroke</a></code>" color is invisible you can't see it.  You only see the
+thick line.  It does, but as the "<code><a href="command-line-options.html#stroke">-stroke</a></code>" color is invisible you can't see it.  You only see the
 inside 'fill' of the one pixel wide area of the line.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -1090,7 +1090,7 @@ requested...
   <a href="https://legacy.imagemagick.org/Usage/draw/line_stroke_3.jpg"><img src="../images/draw/line_stroke_3.jpg" width="100" height="40" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-If the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" setting is set to one, the above line will be
+If the "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" setting is set to one, the above line will be
 completely covered.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -1119,7 +1119,7 @@ creative, just as you can with font drawing.
   <a href="https://legacy.imagemagick.org/Usage/draw/line_multi.jpg"><img src="../images/draw/line_multi.jpg" width="100" height="40" align="middle" vspace="0" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-Here I used the thinnest "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a></code>" setting of '<code>0</code>', just as I did for the
+Here I used the thinnest "<code><a href="command-line-options.html#strokewidth">-strokewidth</a></code>" setting of '<code>0</code>', just as I did for the
 fonts above.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -1323,7 +1323,7 @@ together so you can actually see the overlap of the drawn black areas.  If the
 two polygons were a perfect fit the 'added' drawing would be a solid white
 color. <p></p>
 
-The actual amount of overlap is equivalent to the default "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a> 1.0</code>" setting.
+The actual amount of overlap is equivalent to the default "<code><a href="command-line-options.html#strokewidth">-strokewidth</a> 1.0</code>" setting.
 So it is normally expected that this extra area would be covered by a normal
 stroke width. However it can cause some real problems. <p></p>
 
@@ -1350,7 +1350,7 @@ color (unless it is itself specifically set). <p></p>
 <a name="mvg"></a>
 <h2>MVG - Magick Vector Graphics</h2>
 
-The primitives shown above form the basis of all the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operations provided.
+The primitives shown above form the basis of all the "<code><a href="command-line-options.html#draw">-draw</a></code>" operations provided.
 Together that are the starting point for a special internal language in
 ImageMagick, called the <b>Magick Vector Graphics</b> language.  For more
 detail of this language see <a href="https://legacy.imagemagick.org/script/magick-vector-graphics.php">Summary
@@ -1363,7 +1363,7 @@ given the SVG format to the simpler internal MVG format.  For more details see
 <a href="#svg">SVG handling</a> below. <p></p>
 
 Consequently what you saw above is only a tiny part of the capabilities of the
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operator.  Though
+"<code><a href="command-line-options.html#draw">-draw</a></code>" operator.  Though
 if you want to draw complex objects, I do recommend you create a separate SVG
 format image of the object using an SVG editor such as "<code><a href="http://the-labs.com/Sodipodi/">Sodipodi</a></code>".  (See <a href="#other">Non-IM Vector Graphic Programs</a> below). <p></p>
 
@@ -1380,7 +1380,7 @@ that the the draw primitives use have direct equivalents in the MVG drawing
 commands. <p></p>
 
 The main difference between setting the via a command line option, (such as
-"<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?strokewidth">-strokewidth</a>") or using
+"<a href="command-line-options.html#strokewidth">-strokewidth</a>") or using
 a setting within a MVG drawing string (for example
 '<code>stroke-width</code>), is that the MVG setting only lasts for the
 duration of the MVG command string.  <p></p>
@@ -1427,13 +1427,13 @@ demonstrated above. <p></p>
 </i></font></td></tr></tbody></table><p></p>
 
 As you can see the special settings for the 'color fill' primitives do not have
-direct equivalents in the MVG.  That is the  "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?bordercolor">-bordercolor</a>" and the "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fuzz">-fuzz</a>" factor setting.  These must
-be specified from the command line before using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operator. <p></p>
+direct equivalents in the MVG.  That is the  "<a href="command-line-options.html#bordercolor">-bordercolor</a>" and the "<a href="command-line-options.html#fuzz">-fuzz</a>" factor setting.  These must
+be specified from the command line before using the "<code><a href="command-line-options.html#draw">-draw</a></code>" operator. <p></p>
 
 Some MVG settings would probably be more useful as global command line
 settings, such as the '<code>decorate</code>' setting for font drawing. <p></p>
 
-WARNING: "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a>" is not
+WARNING: "<a href="command-line-options.html#gravity">-gravity</a>" is not
 part of the SVG specification.  Within MVG it is only used for text and image
 placement, and justification.  Their is currently no justification setting
 that is separate to the default 'gravitational' effects. However as
@@ -1441,7 +1441,7 @@ justification is part of SVG text handling, that will probably change sometime
 in the future. <p></p>
 
 Now the global command line settings (outside the MVG draw string) are used to
-initialise the settings for each "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" operation you apply, which is why you can set a "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?fill">-fill</a>" colour which you can then
+initialise the settings for each "<a href="command-line-options.html#draw">-draw</a>" operation you apply, which is why you can set a "<a href="command-line-options.html#fill">-fill</a>" colour which you can then
 use to draw a circle of that color.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -1455,7 +1455,7 @@ use to draw a circle of that color.
   <a href="https://legacy.imagemagick.org/Usage/draw/draw_circle_global.gif"><img src="../images/draw/draw_circle_global.gif" width="100" height="60" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-You can override that global setting locally within the "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" MVG argument...
+You can override that global setting locally within the "<a href="command-line-options.html#draw">-draw</a>" MVG argument...
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td colspan="2" align="justify">
@@ -1468,9 +1468,9 @@ You can override that global setting locally within the "<a href="https://legacy
   <a href="https://legacy.imagemagick.org/Usage/draw/draw_circle_override.gif"><img src="../images/draw/draw_circle_override.gif" width="100" height="60" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-However settings set within a single "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" MVG argument only exist for the duration of that "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" operation.  That is settings
-within a "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" are local only
-to that draw and do not carry into later separate "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" arguments. <p></p>
+However settings set within a single "<a href="command-line-options.html#draw">-draw</a>" MVG argument only exist for the duration of that "<a href="command-line-options.html#draw">-draw</a>" operation.  That is settings
+within a "<a href="command-line-options.html#draw">-draw</a>" are local only
+to that draw and do not carry into later separate "<a href="command-line-options.html#draw">-draw</a>" arguments. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td colspan="2" align="justify">
@@ -1484,7 +1484,7 @@ to that draw and do not carry into later separate "<a href="https://legacy.image
 </td></tr></tbody></table><p></p>
 
 If you plan to do a lot of operations, it may be better to do them all in the
-single MVG string, rather than multiple "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" operations.
+single MVG string, rather than multiple "<a href="command-line-options.html#draw">-draw</a>" operations.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td colspan="2" align="justify">
@@ -2382,7 +2382,7 @@ to give the vertical Y axis of the image a slant.
   <a href="https://legacy.imagemagick.org/Usage/draw/transform_skewY.gif"><img src="../images/draw/transform_skewY.gif" width="100" height="60" align="middle" vspace="5" hspace="5" border="1" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-These operators have equivalents outside the MVG "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" string, for general use.
+These operators have equivalents outside the MVG "<code><a href="command-line-options.html#draw">-draw</a></code>" string, for general use.
 However these command line versions are operators and are applied immediately
 to images already existing in memory rather that to a drawn surface only which
 vector objects have yet to be drawn.  For more details see <a href="https://legacy.imagemagick.org/Usage/distorts/#summary">Distorting Images</a>. <p></p>
@@ -2395,7 +2395,7 @@ vector objects have yet to be drawn.  For more details see <a href="https://lega
 
 All five of the above canvas transformations can be combined into a general
 Affine Matrix Operator.  either by using the MVG primitive
-'<code>affine</code>' or setting the affine transformation using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?affine">-affine</a></code>" before calling "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>". <p></p>
+'<code>affine</code>' or setting the affine transformation using "<code><a href="command-line-options.html#affine">-affine</a></code>" before calling "<code><a href="command-line-options.html#draw">-draw</a></code>". <p></p>
 
 Affine transformations use a set of '<i>Matrix Coefficients</i>' which defines
 how the coordinates you give should be modified into actual drawing coordinates.
@@ -2460,8 +2460,8 @@ Rotate by 30 degrees around the origin...
 For more complex Affine transformations you can make use of the <a href="https://legacy.imagemagick.org/Usage/distorts/affine/#affine_scripts">Affine Helper Scripts</a> that were
 created for the purpose.  These scripts convert things like a rotation angle
 and center point into affine coordinates that you can directly use in your
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a> affine</code>", or
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?affine">-affine</a></code>" setting. <p></p>
+"<code><a href="command-line-options.html#draw">-draw</a> affine</code>", or
+"<code><a href="command-line-options.html#affine">-affine</a></code>" setting. <p></p>
 
 
 <a name="push_context"></a>
@@ -2567,7 +2567,7 @@ For examples see <i>Florent Monnier's</i> development site...
 <h3>Reading MVG Files</h3>
 </a>
 
-As you can see in the above examples the MVG "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" arguments can become very long.  In fact the conversion of
+As you can see in the above examples the MVG "<a href="command-line-options.html#draw">-draw</a>" arguments can become very long.  In fact the conversion of
 SVG to MVG can produce some extremely long MVG drawing arguments (see below).
 <p></p>
 
@@ -2601,7 +2601,7 @@ For example, If I put MVG operations into a file called
 Not only that but ImageMagick also understands reading "MVG:" image file
 format directly allowing you to draw such commands more directly.  However
 unless the MVG file defines a canvas, you may need to specify the initial
-canvas ("<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?size">-size</a>" and "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a>") for it to draw
+canvas ("<a href="command-line-options.html#size">-size</a>" and "<a href="command-line-options.html#background">-background</a>") for it to draw
 onto.
 
 <table border="0" cellspacing="0" cellpadding="0" width="80%" align="center">
@@ -2661,9 +2661,9 @@ Under Construction
 <img src="../images/draw/const_hole.gif" width="144" height="50" align="middle">
 </b></font></div><p></p>
 
-<pre>You can generate the low level draw operations of IM, using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?render">+render</a></code>" to record them. <p></p>
+<pre>You can generate the low level draw operations of IM, using the "<code><a href="command-line-options.html#render">+render</a></code>" to record them. <p></p>
 
-When you then give a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?render">-render</a></code>" setting/operator, IM will immediately draw those saved
+When you then give a "<code><a href="command-line-options.html#render">-render</a></code>" setting/operator, IM will immediately draw those saved
 operations. <p></p>
 
 Strangely just outputting to a "MVG" file also seems to do this...
@@ -3086,7 +3086,7 @@ edge coordinate, but can just give the radius directly.
 </td></tr></tbody></table><p></p>
 
 However when drawing multiple circles the above will need either separate
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operations for
+"<code><a href="command-line-options.html#draw">-draw</a></code>" operations for
 each circle, or use <a href="#push_context">Context Pushing</a>. <p></p>
 
 Using an ellipse you can directly specify the radius as axis lengths
@@ -3335,7 +3335,7 @@ of the arrow head, keeping things consistent.
 
 
 Now as you are warping the canvas to draw individual arrows, perhaps with many
-other drawing operations, you may like do them all in one "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operation.  Say to draw the
+other drawing operations, you may like do them all in one "<code><a href="command-line-options.html#draw">-draw</a></code>" operation.  Say to draw the
 line and then add arrows at BOTH ends, requiring different sets of colors,
 positions, rotations, and may be even different scales.  That means we need to
 limit the scope of the canvas warp to the drawing of each individual arrow
@@ -3600,7 +3600,7 @@ The biggest culprit in this regard are the two types of quoting characters, as
 well as variable substitutions characters like dollars '<code>$</code>' and
 the shell and ImageMagick escape character, backslash '<code>\</code>'. <p></p>
 
-Basically as the MVG argument to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" needs to be quoted, <i>and</i> the '<code>text</code>'
+Basically as the MVG argument to "<code><a href="command-line-options.html#draw">-draw</a></code>" needs to be quoted, <i>and</i> the '<code>text</code>'
 string argument within also may need some extra quoting as well. <p></p>
 
 To solve this, users typically use two different quote characters, one for the
@@ -3737,14 +3737,14 @@ Here are the four cases of quoting, and special character handling...
 
 </li></ul>
 
-As you can see "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>"
+As you can see "<code><a href="command-line-options.html#draw">-draw</a></code>"
 arguments from the command line have to deal both with the command line shell
 as well as backslash and quote escaping within the MVG text string.  The
 results can be confusing and tricky.  Just remember that the shell treats the
 two types of quotes differently, while the MVG text string does not. <p></p>
 
 Of course in complex scripts, the better way may be to avoid the shell and any
-scripting problems entirely.  You can do this by reading the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" arguments from a MVG draw
+scripting problems entirely.  You can do this by reading the "<code><a href="command-line-options.html#draw">-draw</a></code>" arguments from a MVG draw
 file. <p></p>
 
 <dl><dd><code><nobr><b>
@@ -3786,7 +3786,7 @@ rather than the double quote characters in the string. <p></p>
 <a name="percent">
 <b>About Percent Characters</b> <p></p>
 
-Just one final point about special 'escape' characters in the  "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a> text</code>" operator.  Percent
+Just one final point about special 'escape' characters in the  "<code></code></a><code><a href="command-line-options.html#draw">-draw</a> text</code>" operator.  Percent
 characters '<code>%</code>' should draw 'as is'.  You should not need to do
 anything special to draw them.  If they don't draw 'as is', then you have an
 old version of IM and should upgrade ASAP. <p></p>
@@ -3803,7 +3803,7 @@ old version of IM and should upgrade ASAP. <p></p>
 
 
 This use of percent 'escapes' (as well as '<code>\n</code>' newline escapes)
-was deemed incompatible with the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" operator, and MVG format's intended use for handling SVG
+was deemed incompatible with the "<code><a href="command-line-options.html#draw">-draw</a></code>" operator, and MVG format's intended use for handling SVG
 image formats.  As such from IM version 6.2.4 onward, % escapes do not work,
 and backslashes only escape itself and the surround quotes.
 
@@ -3818,7 +3818,7 @@ and backslashes only escape itself and the surround quotes.
 </td></tr></tbody></table><p></p>
 
 For more details of the 'percent bug', and ways to avoid it when using
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a></code>" in older
+"<code><a href="command-line-options.html#draw">-draw</a></code>" in older
 ImageMagick's, see the <a href="https://legacy.imagemagick.org/Usage/bugs/draw_percent/">Drawing a Percent
 Bug</a> page. <p></p>
 
@@ -3826,7 +3826,7 @@ Bug</a> page. <p></p>
 <a name="annotate">
 <b>Annotate instead of Draw</b> <p></p>
 
-The better way of avoiding these types of problems is to use "<code></code></a><code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?annotate">-annotate</a></code>" rather than draw for
+The better way of avoiding these types of problems is to use "<code></code></a><code><a href="command-line-options.html#annotate">-annotate</a></code>" rather than draw for
 text drawing.  This operator is a wrapper around the draw operator and allows
 the use of all the capabilities of draw, but in a simpler form. <p></p>
 
@@ -3917,7 +3917,7 @@ format into a raster image that IM has no problems handling.  This engine is
 complete in just about all aspects of SVG handling. <p></p>
 
 The second method is for IM to try to convert SVG into MVG, using a built-im
-method called <b>MSVG</b>.  MSVG tries to convert a SVG image into the IM "<a href="https://legacy.imagemagick.org/Usage/option_link.cgi?draw">-draw</a>" operators "MVG" drawing
+method called <b>MSVG</b>.  MSVG tries to convert a SVG image into the IM "<a href="command-line-options.html#draw">-draw</a>" operators "MVG" drawing
 language.  A lot of the functionality of the draw MVG was created specifically
 for this purpose. Unfortunatally while the basic line drawing and coloring is
 present, it is far from being a complete SVG convertor. <p></p>
@@ -4030,11 +4030,11 @@ effect. <p></p>
 The SVG image format is a vector format (See <a href="https://legacy.imagemagick.org/Usage/formats/#vector">A
 word about Vector Image formats</a>), and as such the image normally does not
 have a default 'size'.  Instead it is 'drawn' or 'rendered' at a particular
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?density">-density</a></code>" just like
+"<code><a href="command-line-options.html#density">-density</a></code>" just like
 postscript (default density is 72 dpi). <p></p>
 
 Also if the SVG does not 'paint' the background, you can specify the
-background color to use by using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?background">-background</a></code>" setting. <p></p>
+background color to use by using the "<code><a href="command-line-options.html#background">-background</a></code>" setting. <p></p>
 
 For example here is another small SVG image "<code><a href="https://legacy.imagemagick.org/Usage/images/home.svg">home.svg</a></code>", which has been 'rendered' using 3 different densities,
 with 3 different backgrounds, including a transparent background.
@@ -4062,7 +4062,7 @@ recommended when transparency is involved in the final image. <p></p>
 <td align="justify" width="100%"><font size="-1"><i>
   I have found that some SVG images will not scale. That is they have been
   defined terms of 'pixels', rather than real-world lengths such as 'points',
-  'inches' or 'millimeters'. As a consequence while the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?density">-density</a></code>" setting may change
+  'inches' or 'millimeters'. As a consequence while the "<code><a href="command-line-options.html#density">-density</a></code>" setting may change
   the overall image size (in real-world units), the size of 'pixels' does not
   change, and so the image itself does not change size.  Such SVG images are
   however quite rare. <p></p>

@@ -274,7 +274,7 @@ array of floating point values.  We will be looking at these actual values
 <a name="morphology"></a>
 <h3>Morphology Operator</h3>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?morphology">-morphology</a></code>"
+The "<code><a href="command-line-options.html#morphology">-morphology</a></code>"
 operator is a very complex, as it provides the user with a lot of controls
 over its actions. <p></p>
 
@@ -302,13 +302,13 @@ methods, and the kernels that those methods may use later.  <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/morphology/warning.gif" width="28" height="28"><img src="../images/morphology/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?morphology">-morphology</a></code>"
+  The "<code><a href="command-line-options.html#morphology">-morphology</a></code>"
   operator (basic methods) and the initial set of kernels was added to
   ImageMagick version 6.5.9-0 by myself, while I was on a vacation in China.
   December 2009 to January 2010. <p></p>
 
   However it is posible to perform simplified 'square' kernel morphology using
-  the older and closely related "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?convolve">-convolve</a></code>" method.  See <a href="#alturnative"> Alternative
+  the older and closely related "<code><a href="command-line-options.html#convolve">-convolve</a></code>" method.  See <a href="#alturnative"> Alternative
   Basic Morphology Techniques</a> below. <p></p>
 
 </i></font></td></tr></tbody></table><p></p>
@@ -328,7 +328,7 @@ kernels by using "<code>-list&nbsp;kernel</code>"
 
 All kernels have a specific size, typically a square which has an odd number of
 pixels per side, the center of which is the 'origin' of the kernel.  However
-as you will see the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?morphology">-morphology</a></code>" operator is not restricted to this limitation. <p></p>
+as you will see the "<code><a href="command-line-options.html#morphology">-morphology</a></code>" operator is not restricted to this limitation. <p></p>
 
 The most common <i>k_argument</i> used for built-in kernels, and
 generally the first argument given is a '<i>radius</i>'.  This defines how big
@@ -1106,7 +1106,7 @@ situation may be needed. <p></p>
 <h3>Verbose Output of Changes</h3>
 
 If you want to see the results of iterating (repeating) a morphological
-operation, you can set the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?define">-define debug=True</a></code>" option, which turns on the <a href="https://legacy.imagemagick.org/Usage/basics/#verbose">Verbose Operational Control</a>.  As the morphology operator iterates, it
+operation, you can set the "<code><a href="command-line-options.html#define">-define debug=True</a></code>" option, which turns on the <a href="https://legacy.imagemagick.org/Usage/basics/#verbose">Verbose Operational Control</a>.  As the morphology operator iterates, it
 will report an incrementing count of the iteration, and how many pixels in the
 image were changed by each iterated step. The output is to standard error, so
 that you can still pipe the image results..  <p></p>
@@ -1151,7 +1151,7 @@ however operations will finish long before that internal limit is reached.
 
 Some morphology methods are actually defined in terms of simpler more
 primitive methods.  For example a '<code><a href="#smooth">Smooth</a></code>'
-method for example is one such compound method.  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?define">-define</a></code>" output that is
+method for example is one such compound method.  The "<code><a href="command-line-options.html#define">-define</a></code>" output that is
 generated when using this method, shows the multiple internal steps that
 goes to make up its processing. <p></p>
 
@@ -1315,7 +1315,7 @@ The size and spacing of the values in the output can be controlled by the
 special <a href="https://legacy.imagemagick.org/Usage/basics/#precision">Precision Operational Control</a>.
 That was added to IM at about the same time as the morphology operator.  <p></p>
 
-For example here is a repeat of the previous example but using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?precision">-precision</a></code>" to limit the
+For example here is a repeat of the previous example but using "<code><a href="command-line-options.html#precision">-precision</a></code>" to limit the
 number of significant digits from the default of 6 to 3.
 
 <div align="center">
@@ -1334,7 +1334,7 @@ number of significant digits from the default of 6 to 3.
 <tbody><tr valign="top">
 <td><img src="../images/morphology/warning.gif" width="28" height="28"><img src="../images/morphology/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?precision">-precision</a></code>"
+  The "<code><a href="command-line-options.html#precision">-precision</a></code>"
   option was added to ImageMagick version 6.5.9-1 during the morphology
   development cycle. As such if morphology is available, precision can also be
   regarded as available.
@@ -2125,7 +2125,7 @@ a result... <p></p>
 </b></div><p></p>
 
 Because of their nature the <a href="#intensity">Intensity Methods</a>
-will ignore the current "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting completely.  <p></p>
+will ignore the current "<code><a href="command-line-options.html#channel">-channel</a></code>" setting completely.  <p></p>
 
 For example here I use the binary and intensity variants of '<code><a href="#dilate">Dilate</a></code>' Morphology (expand bright areas), on the
 built-in "<code>rose:</code>" image.
@@ -2435,7 +2435,7 @@ a completely different set of islands to the previous method. <p></p>
 
 All the above basic morphology methods are channel methods, as such they are
 applied to the individual channels of an image according to the current
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting.
+"<code><a href="command-line-options.html#channel">-channel</a></code>" setting.
 <p></p>
 
 This means you can apply these methods to color images, provided you are not
@@ -2731,7 +2731,7 @@ kernel patterns provided. <p></p>
 <td><img src="../images/morphology/expert.gif" width="23" height="26"><img src="../images/morphology/space.gif" width="17" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
   If you were to examine the <a href="#verbose">Verbose Output</a> of the
-  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?morphology">-morphology</a></code>"
+  "<code><a href="command-line-options.html#morphology">-morphology</a></code>"
   operation above, you will find that the '<code><a href="#hmt">Hit-And-Miss</a></code>' uses a '<code><a href="https://legacy.imagemagick.org/Usage/compose/#set_theory">Lighten</a></code>' composition method to create a 'union' of all the
   pixels that match each of the pattern kernels provided. <p></p>
 
@@ -2840,7 +2840,7 @@ just how much contrast is present between a particular foreground and
 background in the matching pattern.  <p></p>
 
 If you really only want a Boolean (on/off) result of what pixels actually
-match the pattern in a grey-scale image, you should add a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?threshold">-threshold</a> 0</code>" option after the
+match the pattern in a grey-scale image, you should add a "<code><a href="command-line-options.html#threshold">-threshold</a> 0</code>" option after the
 command. <p></p>
 
 
@@ -3044,7 +3044,7 @@ a 50% grey version of the shape.
 
 When using a <a href="https://legacy.imagemagick.org/Usage/basics/#hdri">HDRI version of Imagemagick</a> with
 '<code><a href="#thicken">Thicken</a></code>' it is probably a good idea to
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?clamp">-clamp</a></code>" or "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?auto-level">-auto-level</a></code>" the results to
+"<code><a href="command-line-options.html#clamp">-clamp</a></code>" or "<code><a href="command-line-options.html#auto-level">-auto-level</a></code>" the results to
 prevent it overflowing the image pixel value range limits. <p></p>
 
 <br>
@@ -4542,7 +4542,7 @@ In other words, we see a very dark, but not really completely black image.
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr valign="top"><td width="100%" align="justify">
 
-Lets use the mathematical "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?auto-level">-auto-level</a></code>" to adjust the resulting color values so the
+Lets use the mathematical "<code><a href="command-line-options.html#auto-level">-auto-level</a></code>" to adjust the resulting color values so the
 brightest, or most distant pixel from an edge is set to white.  This way we
 can actually see the full effect of the 'distance gradient' generated.
 
@@ -5771,21 +5771,21 @@ This will preserve ALL edges exactly, unlike the simpler <a href="https://legacy
 
 I could have applied the above directly against the alpha channel except that
 some operators do not treat the transparency channel as 'alpha values' but as
-'opacity values' (specifically "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?white-threshold">-white-threshold</a></code>"
+'opacity values' (specifically "<code><a href="command-line-options.html#white-threshold">-white-threshold</a></code>"
 operator).  As such I extracted the alpha channel so as to handle it as
 a grey-scale image, before merge it back into the final image. <p></p>
 
 The special distance kernel will do three iterations of a 4 pixel <a href="#euclidean">Euclidean Kernel</a>, to generate enough of a distance
-gradient close to the edge of the shape.  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?level">-level</a></code>" operator then convert that
+gradient close to the edge of the shape.  The "<code><a href="command-line-options.html#level">-level</a></code>" operator then convert that
 into a linear gradient form the edge ('<code>0</code>') to 10 pixels
 ('<code>1000</code>' units) into the shape.. <p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?virtual-pixel">-virtual-pixel</a></code>" setting is also provided to ensure the any shape
+The "<code><a href="command-line-options.html#virtual-pixel">-virtual-pixel</a></code>" setting is also provided to ensure the any shape
 that touches the edge of the rectangular image container is also thought to
 be surrounded by transparency. <p></p>
 
 The result of the distance function in this case is a 'linear ramp' or 'bevel'
-which can produce some sharp looking effects.  As such an a small "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sigmoidal-contrast">-sigmoidal-contrast</a></code>"
+which can produce some sharp looking effects.  As such an a small "<code><a href="command-line-options.html#sigmoidal-contrast">-sigmoidal-contrast</a></code>"
 modification will smooth this transition from transparency to opaque. The
 higher the strength ('<code>3</code>' in the above) the sharper the feathering
 will be at the edge. If you like to have the feather 'taper' more smoothly
@@ -5821,7 +5821,7 @@ Another example of this type of feathering (a larger 'linear feather') can
 be seen in <a href="https://legacy.imagemagick.org/Usage/thumbnails/#soft_edges">Thumbnails, Soft Edges</a>.
 <p></p>
 
-You can use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sigmoidal-contrast">-sigmoidal-contrast</a></code>" operator in the above to smooth out larger
+You can use "<code><a href="command-line-options.html#sigmoidal-contrast">-sigmoidal-contrast</a></code>" operator in the above to smooth out larger
 feathers, but be warned that at this time it processes transparency as 'matte'
 values rather than alpha values. as such a value of '<code>100%</code>' should
 be used instead of '<code>05</code>' in the previous solution. <p></p>

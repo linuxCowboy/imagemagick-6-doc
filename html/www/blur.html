@@ -61,16 +61,16 @@ features to produce highlighting effects. <p></p>
 Blurring is so important it is an integral part of <a href="https://legacy.imagemagick.org/Usage/resize/">Image Resizing</a>, though a different method of blurring, which is restricted
 to within the boundaries of a single pixel of the original image. <p></p>
 
-Their are two general image blurring operators in ImageMagick.  The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" spread and
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>".  The results of
-the two as very close, but as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" is a faster algorithm, it is generally preferred to the
+Their are two general image blurring operators in ImageMagick.  The "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" spread and
+"<code><a href="command-line-options.html#blur">-blur</a></code>".  The results of
+the two as very close, but as "<code><a href="command-line-options.html#blur">-blur</a></code>" is a faster algorithm, it is generally preferred to the
 former even though the former is more mathematically correct. (See <a href="#blur_gaussian">Blur vs the Gaussian Blur Operator</a>.) <p></p>
 
 <a name="blur_args"></a>
 <h3>Blur/Gaussian Arguments</h3>
 
-The arguments for "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>"
-and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" are the same, but to someone new to image
+The arguments for "<code><a href="command-line-options.html#blur">-blur</a></code>"
+and "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" are the same, but to someone new to image
 processing, the argument values can be confusing. <p></p>
 
 <pre><b>     -blur  {<i>radius</i>}x{<i>sigma</i>} </b></pre>
@@ -206,8 +206,8 @@ But if we try this again with an image containing a transparent background...
 
 Hang on, what happened!  The image didn't change!  <p></p>
 
-Well in actual fact the operator did work.  But "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" as a grey-scale channel
-operator, is limited by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting, to just the three colour channels. <p></p>
+Well in actual fact the operator did work.  But "<code><a href="command-line-options.html#blur">-blur</a></code>" as a grey-scale channel
+operator, is limited by the "<code><a href="command-line-options.html#channel">-channel</a></code>" setting, to just the three colour channels. <p></p>
 
 That means only the three color channels of the image were blurred, leaving
 the transparency or alpha channel of the image as is.
@@ -228,7 +228,7 @@ just ended up with the transparency of the image being unchanged. That is a
 black circle! <p></p>
 
 What we really wanted to do, is blur all four image channels, particularly the
-alpha channel.  To do this we set the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting to all four
+alpha channel.  To do this we set the "<code><a href="command-line-options.html#channel">-channel</a></code>" setting to all four
 channels of the image (EG: using a value of '<code>RGBA</code>').
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -266,11 +266,11 @@ Just to summarize...
 </i></font></td></tr></tbody></table><p></p>
 
 
-As you can see from the above, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting is very important for a grey-scale operator such
-as "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>".  But is not
+As you can see from the above, the "<code><a href="command-line-options.html#channel">-channel</a></code>" setting is very important for a grey-scale operator such
+as "<code><a href="command-line-options.html#blur">-blur</a></code>".  But is not
 the only thing that can be important when using such an operator.   <p></p>
 
-For example lets try that last 'forgot the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting' example
+For example lets try that last 'forgot the "<code><a href="command-line-options.html#channel">-channel</a></code>" setting' example
 again, but this time with a yellow circle. <p></p>
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -299,7 +299,7 @@ This problem is caused by a fact that few new IM users realise.
 In the above case that transparent color was black, which leaked into the
 yellow circle.  <p></p>
 
-Of course we can fix this by setting the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting correctly for
+Of course we can fix this by setting the "<code><a href="command-line-options.html#channel">-channel</a></code>" setting correctly for
 a transparent image, things do work as expected.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
@@ -316,7 +316,7 @@ a transparent image, things do work as expected.
 <h3>Blur Internals</h3>
 
 Lets take this step further with a more complicated example, which will let
-use explore exactly what "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" is doing internally. <p></p>
+use explore exactly what "<code><a href="command-line-options.html#blur">-blur</a></code>" is doing internally. <p></p>
 
 Here we create a very special image of a yellow circle, which has been drawn
 on a fully-transparent red background.  This will let us see the effect of a
@@ -337,7 +337,7 @@ areas of the image is actually an invisible red in color, instead of the more
 typical fully-transpaent black.  This is important for later tests. <p></p>
 
 We can see the color of the transparent parts of the image by effectively
-deleting the alpha or matte channel of the image using the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?matte">+matte</a></code>" operator.
+deleting the alpha or matte channel of the image using the "<code><a href="command-line-options.html#matte">+matte</a></code>" operator.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -349,7 +349,7 @@ deleting the alpha or matte channel of the image using the "<code><a href="https
 </td></tr></tbody></table><p></p>
 
 Now lets try blurring just the colors of the image again, using the default
-'<code>RGB</code>', "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting.
+'<code>RGB</code>', "<code><a href="command-line-options.html#channel">-channel</a></code>" setting.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -377,8 +377,8 @@ Just prove you can blur this image correctly, lets do it properly...
 </td></tr></tbody></table><p></p>
 
 The reason that blurring with the alpha channel produces no orange colors as
-it did previously, is that when the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" operator sees that the alpha channel is involved (according
-to the current "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting), it will only blur using the pixels which are
+it did previously, is that when the "<code><a href="command-line-options.html#blur">-blur</a></code>" operator sees that the alpha channel is involved (according
+to the current "<code><a href="command-line-options.html#channel">-channel</a></code>" setting), it will only blur using the pixels which are
 <i>visible</i> according to that alpha channel.  If the alpha channel is not
 involved, it will completely ignore it, and the fully-transparent red will
 blur with the yellow to produce various shades of orange.<p></p>
@@ -411,11 +411,11 @@ colors within the image (transparent or otherwise). That is each of the red,
 green, blue, and alpha channels are blurred completely separately to each
 other as if they were each a separate grey-scale image. <p></p>
 
-Just remember, as the default "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting is '<code>RGB</code>', the default action is not
+Just remember, as the default "<code><a href="command-line-options.html#channel">-channel</a></code>" setting is '<code>RGB</code>', the default action is not
 to blur the alpha channel, <i>and</i> to blur invisible colors with the
 visible color within the image. <p></p>
 
-Aren't you glad that "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" is no longer always a pure grey-scale operator. Though you
+Aren't you glad that "<code><a href="command-line-options.html#blur">-blur</a></code>" is no longer always a pure grey-scale operator. Though you
 can use it in that way if you really want. You didn't always have this choice
 however... <p></p>
 
@@ -423,7 +423,7 @@ however... <p></p>
 <tbody><tr valign="top">
 <td><img src="../images/blur/warning.gif" width="28" height="28"><img src="../images/blur/space.gif" width="12" height="16"></td>
 <td align="justify" width="100%"><font size="-1"><i>
-  Before IM version 6.2.4-4, the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>", and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" operators were applied as pure grey-scale
+  Before IM version 6.2.4-4, the "<code><a href="command-line-options.html#blur">-blur</a></code>", and "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" operators were applied as pure grey-scale
   operation, and as such did not adjust color weighting according to their
   alpha channel 'visibility'.  The result was that any form of blurring with
   transparency, almost always produced horrible 'black halo' effects, such as
@@ -440,28 +440,28 @@ however... <p></p>
 <a name="blur_gaussian"></a>
 <h3>Blur vs Gaussian Blur Operators</h3>
 
-There has been some confusion as to which operator, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" or the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" is better
-for blurring images.  First of all "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" is faster, but it does this using two stage technique.
-First in one axis, then in the other. The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" operator
+There has been some confusion as to which operator, "<code><a href="command-line-options.html#blur">-blur</a></code>" or the "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" is better
+for blurring images.  First of all "<code><a href="command-line-options.html#blur">-blur</a></code>" is faster, but it does this using two stage technique.
+First in one axis, then in the other. The "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" operator
 on the other hand is more mathematically correct as it blurs in all directions
 simultaneously. The speed cost between the two can be enormous, by a factor of
 10 or more, depending on the amount of bluring involved. <p></p>
 
-In a more technical context, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" is a 2 pass, 1 dimensional orthogonal convolution filter,
-while "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" is a 2 dimensional cylindrical convolution filter.
+In a more technical context, "<code><a href="command-line-options.html#blur">-blur</a></code>" is a 2 pass, 1 dimensional orthogonal convolution filter,
+while "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" is a 2 dimensional cylindrical convolution filter.
 See <a href="https://legacy.imagemagick.org/Usage/morphology/#convolve">Convolution</a> for more details.
 The results of the two method should be the same, unlike the use of other
 'filtered' convolution operations.  However the two pass system means that
 there is an intermediate stage in which rounding, or quantum effects, can
 occur. <p></p>
 
-Cristy also bears this out when he reported... You should always use "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" instead of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gaussian-blur">-gaussian-blur</a></code>" because
+Cristy also bears this out when he reported... You should always use "<code><a href="command-line-options.html#blur">-blur</a></code>" instead of "<code><a href="command-line-options.html#gaussian-blur">-gaussian-blur</a></code>" because
 its faster.  Some pixels will be different on the interior due to rounding,
 and the edge pixels may be different because of loss of <a href="https://legacy.imagemagick.org/Usage/misc/#virtual">Virtual Pixel</a> edge effects, again in the
 intermediate stage. <p></p>
 
 In summary, the two operators are slightly different, but only minimally.  As
-"<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" is much faster,
+"<code><a href="command-line-options.html#blur">-blur</a></code>" is much faster,
 use it.  I do in just about all the examples involving blurring. <p></p>
 
 <a name="blur_resize"></a>
@@ -557,7 +557,7 @@ for the 'sigma' factor you give.  The larger the sigma the more it sharpens.
 </td></tr><tr><td>-sharpen 0x3.0  </td><td>probably getting too large
 </td></tr></tbody></table><p></p>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sharpen">-sharpen</a></code>" operator
+The "<code><a href="command-line-options.html#sharpen">-sharpen</a></code>" operator
 is sort of an inverted blur. In fact it works in just about the same way. For
 examples which show how this is related to blur see, <a href="http://netpbm.sourceforge.net/doc/extendedopacity.html">Image
 Processing By Interpolation and Extrapolation</a>. <p></p>
@@ -605,12 +605,12 @@ Under Construction
 <img src="../images/blur/const_hole.gif" width="144" height="50">
 </b></font></div><p></p>
 
-Both the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sharpen">-sharpen</a></code>",
-and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?unsharp">-unsharp</a></code>"
+Both the "<code><a href="command-line-options.html#sharpen">-sharpen</a></code>",
+and "<code><a href="command-line-options.html#unsharp">-unsharp</a></code>"
 operators, work using the exact same technique of subtracting a blur from
 the original image. <p></p>
 
-For the internal details of how both "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sharpen">-sharpen</a></code>", and "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?sharpen">-unsharp</a></code>" actually work see <a href="https://legacy.imagemagick.org/Usage/convolve/#unsharpen">Unsharpen Convolution</a>. <p></p>
+For the internal details of how both "<code><a href="command-line-options.html#sharpen">-sharpen</a></code>", and "<code><a href="command-line-options.html#sharpen">-unsharp</a></code>" actually work see <a href="https://legacy.imagemagick.org/Usage/convolve/#unsharpen">Unsharpen Convolution</a>. <p></p>
 
 <div align="center">
 <table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
@@ -701,7 +701,7 @@ and a number of such methods are demonstrated (trialed) in the sub-section
 <a name="shadow"></a>
 <h2>Generating Shadows</h2>
 
-The "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" operator
+The "<code><a href="command-line-options.html#shadow">-shadow</a></code>" operator
 is an advanced operator that was developed with the IM example pages.
 Basically it represents a very complex blur and re-coloring of transparency
 shape of the given image.  This is an operation that IM users performed all
@@ -740,7 +740,7 @@ semi-transparent shadow.
   <a href="https://legacy.imagemagick.org/Usage/blur/shadow_hard.png"><img src="../images/blur/shadow_hard.png" align="middle" vspace="1" hspace="5" border="0" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-The use of "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a>
+The use of "<code><a href="command-line-options.html#layers">-layers</a>
 merge</code>" to layer shadow images with the original image makes it easy to
 generate shadows from a light source from any direction, not just the upper
 left side.
@@ -757,7 +757,7 @@ left side.
 
 While  it is easiest to just use a <a href="https://legacy.imagemagick.org/Usage/layers/#merge">Layers
 Merge</a>, it will tend to shift the overall offset of the resulting image.
-The shift however is not caused by the layering method, but due to "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>" removing any negative or
+The shift however is not caused by the layering method, but due to "<code><a href="command-line-options.html#repage">+repage</a></code>" removing any negative or
 positive offset that may be present in the resulting 'layer' image. See <a href="#shadow_offset">Shadows and the Offset Problem</a> for alternative
 techniques. <p></p>
 
@@ -767,7 +767,7 @@ techniques. <p></p>
 <td align="justify" width="100%"><font size="-1"><i>
   The <a href="https://legacy.imagemagick.org/Usage/layers/#merge">Layers Merge</a> method was added to IM
   v6.3.6-2. Before this you would need to use the similar layer flattening
-  operator "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mosaic">-mosaic</a></code>"
+  operator "<code><a href="command-line-options.html#mosaic">-mosaic</a></code>"
   instead.  However this operator has problems (see next).
 </i></font></td></tr></tbody></table><p></p>
 
@@ -775,7 +775,7 @@ techniques. <p></p>
 <a name="shadow_shape"></a>
 <h3>Shaped Shadows</h3>
 
-Now "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" was designed
+Now "<code><a href="command-line-options.html#shadow">-shadow</a></code>" was designed
 with shaped images in mind, (and this is the reason for its complexity).
 For example here is a typical shadowed font.
 
@@ -814,7 +814,7 @@ did not have quite enough extra space for the requested shadow. <p></p>
 <h3>Shadows and the Offset Problem</h3>
 
 The problem with shadow is that a blurry shadow extends in all directions.  To
-compensate the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>"
+compensate the "<code><a href="command-line-options.html#shadow">-shadow</a></code>"
 operator enlarges the actual original image by adding a border 2 times the
 size of the blur '<i>sigma</i>' value given.  That is if you blur a shadow
 using '<code>x3</code>', it will enlarge the image by 12 pixels (2 times 3
@@ -826,7 +826,7 @@ that it will be positioned correctly relative to the image being shadowed. For
 a normal image that means the shadow image generated will have a negative
 offset.  <p></p>
 
-This however generates a problem when your IM does not have a the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?layers">-layers</a></code>" method
+This however generates a problem when your IM does not have a the "<code><a href="command-line-options.html#layers">-layers</a></code>" method
 '<code>merge</code>' available.  For example here we try to add a shadow on
 the left side, of the image as if a light shone from the upper right.
 
@@ -840,7 +840,7 @@ the left side, of the image as if a light shone from the upper right.
   <a href="https://legacy.imagemagick.org/Usage/blur/shadow_left_clipped.png"><img src="../images/blur/shadow_left_clipped.png" align="middle" vspace="1" hspace="5" border="0" alt="[IM Output]"></a>
 </td></tr></tbody></table><p></p>
 
-As you can see as the shadow, was clipped by the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mosaic">-mosaic</a></code>" operator, because of the
+As you can see as the shadow, was clipped by the "<code><a href="command-line-options.html#mosaic">-mosaic</a></code>" operator, because of the
 negative offset.  Not good!  <p></p>
 
 One solution is to add an initial offset to the original image so the
@@ -858,8 +858,8 @@ resulting shadow images offset will not be negative.
 </td></tr></tbody></table><p></p>
 
 Another method is offset both images by an appropriate amount after the shadow
-has been generated.  This removes any negative offsets before you  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?mosaic">-mosaic</a></code>" them together.  Note the
-use of a '<code>!</code>' flag with "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">-repage</a></code>" to add the given offset to both images.
+has been generated.  This removes any negative offsets before you  "<code><a href="command-line-options.html#mosaic">-mosaic</a></code>" them together.  Note the
+use of a '<code>!</code>' flag with "<code><a href="command-line-options.html#repage">-repage</a></code>" to add the given offset to both images.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
 <tbody><tr><td width="100%" align="justify">
@@ -921,7 +921,7 @@ a symmetrical padding (like the above) is used for convenience. <p></p>
 <h3>Shadows and Composite</h3>
 
 Many people on the forums generate a shadow image and then try to use the
-lower-level "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?composite">-composite</a></code>" to merge the images.  For example directly overlay the
+lower-level "<code><a href="command-line-options.html#composite">-composite</a></code>" to merge the images.  For example directly overlay the
 original image onto a generated (larger) shadow image.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -950,7 +950,7 @@ edge effect. <p></p>
 You have essentially give up the built-in offset calculation that the <a href="#shadow">Shadow Operator</a> provides. <p></p>
 
 Of course you can calculate and set the appropriate <a href="https://legacy.imagemagick.org/Usage/compose/#geometry">Composite Geometry/Gravity</a> settings instead,
-and the easiest way is to use a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?gravity">-gravity</a> Center</code>" setting, as the enlarged shadow image is expanded
+and the easiest way is to use a "<code><a href="command-line-options.html#gravity">-gravity</a> Center</code>" setting, as the enlarged shadow image is expanded
 equally on all sides.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -969,7 +969,7 @@ swapped. <p></p>
 <a name="shadow_outline"></a>
 <h3>Shadow Outlines</h3>
 
-You can also use  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" to generate a fuzzy outlines of shapes, such as text.
+You can also use  "<code><a href="command-line-options.html#shadow">-shadow</a></code>" to generate a fuzzy outlines of shapes, such as text.
 By using <a href="https://legacy.imagemagick.org/Usage/layers/#merge">Layers Merge</a> IM will automatically
 add the extra space needed for the semi-transparent blur.
 
@@ -1029,11 +1029,11 @@ An alternative is to over-do the transparency adjustment (using
 -->
 
 Another method of handling the shadow positioning and offset, is to basically
-junk all the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>"
-generated offsets (using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?repage">+repage</a></code>"), and center overlaid the original image on the larger
+junk all the "<code><a href="command-line-options.html#shadow">-shadow</a></code>"
+generated offsets (using "<code><a href="command-line-options.html#repage">+repage</a></code>"), and center overlaid the original image on the larger
 shadow image.  <p></p>
 
-By adding a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?geometry">-geometry</a></code>" composition offset you can then offset the shadow as
+By adding a "<code><a href="command-line-options.html#geometry">-geometry</a></code>" composition offset you can then offset the shadow as
 a separate action.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -1067,7 +1067,7 @@ Logo Generation</a>. <p></p>
 <a name="shadow_montage"></a>
 <h3>Shadow in the Montage Command</h3>
 
-As of IM v6.3.1 the "<code>montage</code>" "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" setting, started to make
+As of IM v6.3.1 the "<code>montage</code>" "<code><a href="command-line-options.html#shadow">-shadow</a></code>" setting, started to make
 use of the soft 'shaped' shadows this operator provides.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%">
@@ -1087,13 +1087,13 @@ a simple on/off option. <p></p>
 <a name="shadow_internals"></a>
 <h3>Shadow Internals</h3>
 
-Internally "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" is
+Internally "<code><a href="command-line-options.html#shadow">-shadow</a></code>" is
 extremely complex.  Basically not only does it need to enlarge an image to
 accommodate a 'soft blurry shadow', but it also needs to blur the existing
 shape of the image, set its color appropriately, and finally adjust virtual
 page/canvas offsets; all to the users specifications.  <p></p>
 
-For example given the following "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" command...
+For example given the following "<code><a href="command-line-options.html#shadow">-shadow</a></code>" command...
 
 <div align="center">
 <table border="1" cellspacing="0" cellpadding="5" width="80%" bgcolor="#CCCCCC">
@@ -1141,16 +1141,16 @@ offsets involved with shadow images. <p></p>
   recommended PNG be used if saving shadow images, for future use.
 </i></font></td></tr></tbody></table><p></p>
 
-As I said "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" is a
+As I said "<code><a href="command-line-options.html#shadow">-shadow</a></code>" is a
 very complex operation. <p></p>
 
-Of course while the above example is close to what "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>" does internally, it is
+Of course while the above example is close to what "<code><a href="command-line-options.html#shadow">-shadow</a></code>" does internally, it is
 not exactly the same. <p></p>
 
-The actual "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?shadow">-shadow</a></code>"
+The actual "<code><a href="command-line-options.html#shadow">-shadow</a></code>"
 operator, does not change any of the global settings, such as
 border/background/fill colors, or the current virtual-pixel setting.  Also it
-will short circuit the use of the "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" operator if the blur sigma is set to 0, to prevent
+will short circuit the use of the "<code><a href="command-line-options.html#blur">-blur</a></code>" operator if the blur sigma is set to 0, to prevent
 the blur function from  giving a warning for a zero sigma or radius. <p></p>
 
 <pre>FUTURE: overlaying multiple shadows
@@ -1194,7 +1194,7 @@ WARNING:  All these blurs are experimental, and syntax may change!
 <a name="radial-blur"></a>
 <h3>Radial Blur</h3>
 
-You can blur the image around in a circle using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?radial-blur">-radial-blur</a></code>", as if it was
+You can blur the image around in a circle using a "<code><a href="command-line-options.html#radial-blur">-radial-blur</a></code>", as if it was
 spinning around and around.  Though technically this is a rotational or
 angular blur, rather than a radial blur.  <p></p>
 
@@ -1202,7 +1202,7 @@ angular blur, rather than a radial blur.  <p></p>
 slower speed) using a <a href="https://legacy.imagemagick.org/Usage/distorts/#rotation_blur">Depolar-Polar
 - Rotational Blur</a> technique.<p></p>
 
-Note however that like a normal  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?blur">-blur</a></code>" operator,  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?radial-blur">-radial-blur</a></code>" is affected by the  "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?channel">-channel</a></code>" setting.
+Note however that like a normal  "<code><a href="command-line-options.html#blur">-blur</a></code>" operator,  "<code><a href="command-line-options.html#radial-blur">-radial-blur</a></code>" is affected by the  "<code><a href="command-line-options.html#channel">-channel</a></code>" setting.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -1217,7 +1217,7 @@ Note however that like a normal  "<code><a href="https://legacy.imagemagick.org/
 </td></tr></tbody></table><p></p>
 
 You can place the object off center (by adding some space to an image) for
-more interesting "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?radial-blur">-radial-blur</a></code>" effects.
+more interesting "<code><a href="command-line-options.html#radial-blur">-radial-blur</a></code>" effects.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -1300,7 +1300,7 @@ I did try though...
 <h3>Motion Blur</h3>
 
 You can add a linearly fading blur in one direction only (giving a radius and
-sigma, plus an the angle in which the blur should occur), by using a "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?motion-blur">-motion-blur</a></code>". <p></p>
+sigma, plus an the angle in which the blur should occur), by using a "<code><a href="command-line-options.html#motion-blur">-motion-blur</a></code>". <p></p>
 
 This gives your image a look as if it (or the camera) was moving very very
 fast.
@@ -1321,7 +1321,7 @@ of motion also has the background blurred into it. <p></p>
 
 
 This leading edge blurring can be improved by re-drawing or overlaying the
-original image and re-applying a smaller "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?motion-blur">-motion-blur</a></code>" multiple times.
+original image and re-applying a smaller "<code><a href="command-line-options.html#motion-blur">-motion-blur</a></code>" multiple times.
 
 <table border="0" cellspacing="0" cellpadding="0" width="100%" align="center">
 <tbody><tr><td width="100%" align="justify">
@@ -1379,11 +1379,11 @@ to make things even more interesting...
 
 <br>
 
-Note that while "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?radial-blur">-radial-blur</a></code>" blurs in both directions, "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?motion-blur">-motion-blur</a></code>" only
+Note that while "<code><a href="command-line-options.html#radial-blur">-radial-blur</a></code>" blurs in both directions, "<code><a href="command-line-options.html#motion-blur">-motion-blur</a></code>" only
 blurs in one direction. <p></p>
 
 In both cases I recommend you pad your image with extra space around the edge
-(generally using "<code><a href="https://legacy.imagemagick.org/Usage/option_link.cgi?border">-border</a></code>") as both of these specialized blurs have strong edge
+(generally using "<code><a href="command-line-options.html#border">-border</a></code>") as both of these specialized blurs have strong edge
 effects that is best to avoid. <p></p>
 
 If you find a more practical or interesting example or use of the above please
