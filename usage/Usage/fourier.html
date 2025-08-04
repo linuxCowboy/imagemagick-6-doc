@@ -5,13 +5,13 @@
 <TITLE>Fourier Transforms -- IM v6 Examples</TITLE>
 <meta name="author" content="Fred Weinhaus">
 <meta name="description" content="Fourier Transforms in ImageMagick">
-<LINK REL="icon" HREF="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
-<LINK REL="shortcut" HREF="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
+<LINK REL="icon" HREF="img_www/favicon.ico" type="image/x-icon">
+<LINK REL="shortcut" HREF="img_www/favicon.ico" type="image/x-icon">
 <LINK REL="canonical" HREF="fourier.html">
 </HEAD><BODY BGCOLOR="#B0C4DE">
 
 <H1>ImageMagick v6 Examples -- <BR>
-    <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif" width=50 height=1>
+    <IMG SRC="img_www/space.gif" width=50 height=1>
     Fourier Transforms</H1>
 
 <DIV ALIGN=justify>
@@ -19,13 +19,13 @@
 <DL>
 <DT><B>Index</B>
 <DT><A HREF="../Usage.html"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_left.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_left.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > ImageMagick Examples Preface and Index</A>
 <DD><A HREF="fourier.html#introduction"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Introduction</A>
 <DD><A HREF="fourier.html#fourier_transform"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > The Fourier Transform</A>
     <UL>
     <LI><A HREF="fourier.html#waves"
@@ -34,7 +34,7 @@
         >2 Dimensional Waves in Images</A>
     </UL>
 <DD><A HREF="fourier.html#im_fft"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > FFT/IFT In ImageMagick</A>
     <UL>
     <LI><A HREF="fourier.html#fft"
@@ -49,7 +49,7 @@
         >FFT as Real-Imaginary Components</A>
    </UL>
 <DD><A HREF="fourier.html#ft_properties"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Properties Of The Fourier Transform</A>
     <UL>
     <LI><A HREF="fourier.html#fft_constant"
@@ -70,7 +70,7 @@
         >Spectrum Of A Grid Pattern Image</A>
    </UL>
 <DD><A HREF="fourier.html#ft_applications"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Practical Applications</A>
     <UL>
     <LI><A HREF="fourier.html#contrast"
@@ -85,12 +85,12 @@
         >Noise Removal - Notch Filtering</A>
    </UL>
 <DD><A HREF="fourier.html#advanced"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Advanced Applications</A>
 <DD>&nbsp;
 
-<DD><A HREF="https://legacy.imagemagick.org/Usage/fourier/fft_math/"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+<DD><A HREF="fourier/fft_math/index.html"
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > FFT Multiplication and Division</A> (low level examples - sub-page)
 
 </UL>
@@ -187,7 +187,7 @@ But how can an image be represented as a 'wave'?
 
 Well if we take a single row or column of pixel from <I>any</I> image, and
 graph it (generated using "gnuplot" using the script "<CODE><A
-HREF="https://legacy.imagemagick.org/Usage/scripts/im_profile" >im_profile</A></CODE>"), you will find that it
+HREF="scripts/im_profile" >im_profile</A></CODE>"), you will find that it
 looks rather like a wave.
 
 <DIV ALIGN=center>
@@ -196,12 +196,12 @@ looks rather like a wave.
   convert holocaust_tn.gif -colorspace gray miff:- |\
     im_profile -s - image_profile.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/holocaust_tn.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/holocaust_tn.gif"   WIDTH=120 HEIGHT=90
+  <A HREF="img_photos/holocaust_tn.gif"
+     ><IMG SRC="img_photos/holocaust_tn.gif"   WIDTH=120 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/image_profile.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/image_profile.gif"   WIDTH=150 HEIGHT=100
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/image_profile.gif"
+     ><IMG SRC="fourier/image_profile.gif"   WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -215,12 +215,12 @@ something more like a wave pattern, such as...
           -function sinusoid 3.5,0,.4   wave.gif
   im_profile -s wave.gif wave_profile.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/wave.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/wave.gif"   WIDTH=150 HEIGHT=20
+  <A HREF="fourier/wave.gif"
+     ><IMG SRC="fourier/wave.gif"   WIDTH=150 HEIGHT=20
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/wave_profile.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/wave_profile.gif"   WIDTH=150 HEIGHT=100
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/wave_profile.gif"
+     ><IMG SRC="fourier/wave_profile.gif"   WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -249,24 +249,24 @@ even closer to the one from the image.
   im_profile -s wave_3.png wave_3_pf.gif
   im_profile -s added_waves.png added_waves_pf.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/wave_1_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/wave_1_pf.gif"     WIDTH=150 HEIGHT=100
+  <A HREF="fourier/wave_1_pf.gif"
+     ><IMG SRC="fourier/wave_1_pf.gif"     WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/plus.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT=" + ">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/wave_2_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/wave_2_pf.gif"     WIDTH=150 HEIGHT=100
+  <IMG SRC="img_www/plus.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT=" + ">
+  <A HREF="fourier/wave_2_pf.gif"
+     ><IMG SRC="fourier/wave_2_pf.gif"     WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/plus.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT=" + ">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/wave_3_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/wave_3_pf.gif"     WIDTH=150 HEIGHT=100
+  <IMG SRC="img_www/plus.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT=" + ">
+  <A HREF="fourier/wave_3_pf.gif"
+     ><IMG SRC="fourier/wave_3_pf.gif"     WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/added_waves_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/added_waves_pf.gif"  WIDTH=150 HEIGHT=100
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/added_waves_pf.gif"
+     ><IMG SRC="fourier/added_waves_pf.gif"  WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
-See also <A HREF="https://legacy.imagemagick.org/Usage/transform/#math_addition" >Adding Biased Gradients</A>
+See also <A HREF="transform/index.html#math_addition" >Adding Biased Gradients</A>
 for an alternative example to the above. </P>
 
 This '<I>wave superposition</I>' (addition of waves) is much closer, but still
@@ -319,7 +319,7 @@ from floating point values (complex numbers), and was first implemented in
 IM version 6.5.4-3. </P>
 
 To make it work as people generally expect for images, any non-square image or
-one with an odd dimension will be padded (using <A HREf="https://legacy.imagemagick.org/Usage/misc/#vitural"
+one with an odd dimension will be padded (using <A HREf="misc/index.html#vitural"
 >Virtual Pixels</A> to be square of the maximum width or height of the image.
 To allow for proper centering of the 'FFT origin' in the center of the image,
 it is also forced to have an even (multiple of 2) dimensions.  The consequence
@@ -332,7 +332,7 @@ result of the transform cannot be visualized directly.  Therefore, the complex
 transform is separated into two component images in one of two forms. </P>
 
 <TABLE ALIGN=right><TR><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_diagrams/complex_number.jpg"   WIDTH=132 HEIGHT=142
+  <IMG SRC="img_diagrams/complex_number.jpg"   WIDTH=132 HEIGHT=142
        ALIGN=middle VSPACE=0 HSPACE=0 BORDER=1 ALT="[Diagram]"></A>
   <BR><B>Complex Number
   <BR>Real/Imaginary</B>
@@ -363,7 +363,7 @@ HREF="../../html/www/command-line-options.html#ift" >+ift</A></CODE>", and will 
 detail below in  <A HREf="fourier.html#fft_ri" >FFT as Real-Imaginary Components</A>. </P>
 
 <TABLE ALIGN=right><TR><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_diagrams/polar_number.jpg"   WIDTH=132 HEIGHT=142
+  <IMG SRC="img_diagrams/polar_number.jpg"   WIDTH=132 HEIGHT=142
        ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[Diagram]"></A>
   <BR><B>Complex Polar
   <BR>Magnitude/Phase</B>
@@ -438,17 +438,17 @@ see the level of quality produced. </P>
 <n>  echo -n "PAE = "
 <n>  compare -metric PAE  lena.png lena_roundtrip.png null:
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_roundtrip.png"
+     ><IMG SRC="fourier/lena_roundtrip.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_cmp.txt"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_cmp.txt.gif"
+  <A HREF="fourier/lena_roundtrip_cmp.txt"
+    ><IMG SRC="fourier/lena_roundtrip_cmp.txt.gif"
           ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -471,20 +471,20 @@ round trip.
   convert lena.png -fft    +depth +adjoin lena_fft_%d.png
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Original
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_fft_0.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_fft_0.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_fft_0.png"
+     ><IMG SRC="fourier/lena_fft_0.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Magnitude
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_fft_1.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_fft_1.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_fft_1.png"
+     ><IMG SRC="fourier/lena_fft_1.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Phase
 </TD></TR></TABLE>
@@ -505,7 +505,7 @@ HREF="../../html/www/command-line-options.html#adjoin" >+adjoin</A></CODE>" or t
 in the output filename was actually needed, as IM would handle this.
 However I include the options in the above for completeness, so as to make it
 clear I am generating two separate image files, not one.  See <A
-HREF="https://legacy.imagemagick.org/Usage/files/#adjoin" >Writing a Multi-Image Sequence</A> for more details.
+HREF="files/index.html#adjoin" >Writing a Multi-Image Sequence</A> for more details.
 </P>
 
 As two images are generated the magnitude image (first of zeroth image) is
@@ -514,37 +514,37 @@ saved into "<CODE>lena_fft_0.png</CODE>" and phase image (second image) into
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   To prevent any chance of distortions resulting from saving FFT images, It is
   best not to save them to disk at all, but hold them in memory while you
   process the image.  </P>
 
   If you must save then it is best to use the Magick File Format "<CODE><A
-  HREF="https://legacy.imagemagick.org/Usage/files/#miff"" >MIFF</A></CODE>" so as to preserve the image at its
+  HREF="files/index.html#miff"" >MIFF</A></CODE>" so as to preserve the image at its
   highest quality (bit depth).  This format can also save multiple images in
   the one file.  For script work you can also use the  verbose "<CODE><A
-  HREF="https://legacy.imagemagick.org/Usage/files/#txt" >TXT</A></CODE>" Enumerated Pixel Format.  </P>
+  HREF="files/index.html#txt" >TXT</A></CODE>" Enumerated Pixel Format.  </P>
 
-  <B>DO NOT</B> save them using "<CODE><A HREF="https://legacy.imagemagick.org/Usage/formats/#jpg"
-  >JPEG</A></CODE>", "<CODE><A HREF="https://legacy.imagemagick.org/Usage/formats/#gif" >GIF</A></CODE>" image
+  <B>DO NOT</B> save them using "<CODE><A HREF="formats/index.html#jpg"
+  >JPEG</A></CODE>", "<CODE><A HREF="formats/index.html#gif" >GIF</A></CODE>" image
   formats. </P>
 
   If you must save these images into files for actual viewing, such as for
-  a web browser, use the image format "<CODE><A HREF="https://legacy.imagemagick.org/Usage/formats/#png"
+  a web browser, use the image format "<CODE><A HREF="formats/index.html#png"
   >PNG</A></CODE>" with a "<CODE><A HREF="../../html/www/command-line-options.html#depth"
   >+depth</A></CODE>" reset to the internal default, (as we do in these
   examples). However it can only store one image per file. </P>
 
-  The "<CODE><A HREF="https://legacy.imagemagick.org/Usage/formats/#tiff" >TIFF</A></CODE>" file format can also
+  The "<CODE><A HREF="formats/index.html#tiff" >TIFF</A></CODE>" file format can also
   be used though is not as acceptable for web browsers, though it does allow
   multiple images per file. </P>
 
 </I></FONT></TD></TR></TABLE></P>
 
 The best way of saving intermediate images into a single file is to use the
-"<CODE><A HREF="https://legacy.imagemagick.org/Usage/files/#miff"" >MIFF</A></CODE>", file format...
+"<CODE><A HREF="files/index.html#miff"" >MIFF</A></CODE>", file format...
 
 <DIV ALIGN=center>
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
@@ -555,7 +555,7 @@ The best way of saving intermediate images into a single file is to use the
 
 Or you can save them into complete separate filenames using "<CODE><A
 HREF="../../html/www/command-line-options.html#write" >-write</A></CODE>"  (See <A
-HREF="https://legacy.imagemagick.org/Usage/files/#write" >Writing Images</A>)...
+HREF="files/index.html#write" >Writing Images</A>)...
 
 <DIV ALIGN=center>
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
@@ -572,7 +572,7 @@ HREF="https://legacy.imagemagick.org/Usage/files/#write" >Writing Images</A>)...
   ln -s lena_fft_1.png lena_phase.png
 </CODE>-->
 
-Note that in the above I used the special "<CODE><A HREF="https://legacy.imagemagick.org/Usage/files/#null"
+Note that in the above I used the special "<CODE><A HREF="files/index.html#null"
 >NULL:</A></CODE>" image format to junk the two images which are still
 preserved in memory for further processing. </P>
 
@@ -584,15 +584,15 @@ into a normal 'spatial' image...
 <TR><TD><PRE><CODE EXECUTE>
   convert lena_magnitude.png lena_phase.png -ift lena_restored.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_magnitude.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_magnitude.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_magnitude.png"
+     ><IMG SRC="fourier/lena_magnitude.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_phase.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_phase.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_phase.png"
+     ><IMG SRC="fourier/lena_phase.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_restored.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_restored.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_restored.png"
+     ><IMG SRC="fourier/lena_restored.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -630,13 +630,13 @@ just its phase component. </P>
 </CODE></PRE></TD></TR></TABLE>
 <TABLE WIDTH=60%>
 <TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_magitude_only.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_magitude_only.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_magitude_only.png"
+     ><IMG SRC="fourier/lena_magitude_only.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Magnitude Only
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_phase_only.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_phase_only.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_phase_only.png"
+     ><IMG SRC="fourier/lena_phase_only.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Phase Only
 </TD></TR></TABLE></DIV></P>
@@ -667,8 +667,8 @@ values are very very small.  Such an image isn't really very interesting to
 look at to study, so lets enhance the result with a log transform to produce
 a '<I>frequency spectrum</I>' image. </P>
 
-This is done by applying a strong <A HREF="https://legacy.imagemagick.org/Usage/transform/#evaluate_log"
->Evaluate Log Transform</A> to a <A HREF="https://legacy.imagemagick.org/Usage/color_mods/#normalize"
+This is done by applying a strong <A HREF="transform/index.html#evaluate_log"
+>Evaluate Log Transform</A> to a <A HREF="color_mods/index.html#normalize"
 >Normalized</A> 'magnitude' image.
 
 <DIV ALIGN=center>
@@ -677,12 +677,12 @@ This is done by applying a strong <A HREF="https://legacy.imagemagick.org/Usage/
   convert lena_fft_0.png -auto-level -evaluate log 10000 \
           lena_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_fft_0.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_fft_0.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_fft_0.png"
+     ><IMG SRC="fourier/lena_fft_0.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_spectrum.png"
+     ><IMG SRC="fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -711,8 +711,8 @@ a <I>log scaling factor</I> to use for the specific magnitude image.
   convert lena_fft_0.png -auto-level \
           -evaluate log $scale    lena_spectrum_auto.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum_auto.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum_auto.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_spectrum_auto.png"
+     ><IMG SRC="fourier/lena_spectrum_auto.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -721,7 +721,7 @@ a <I>log scaling factor</I> to use for the specific magnitude image.
 <TR><TD WIDTH=100% ALIGN=justify>
 
 However remember that you can not use a spectrum image, for the inverse
-"<CODE><A HREF="https://legacy.imagemagick.org/Usage/option_link.php#ift" >-ift</A></CODE>" transform as it will
+"<CODE><A HREF="../../html/www/command-line-options.html#ift" >-ift</A></CODE>" transform as it will
 produce an overly bright image.
 
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
@@ -734,8 +734,8 @@ the resulting image in the same way, producing the badly 'clipped' result
 shown.  </P>
 
 </TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_fail.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_fail.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_roundtrip_fail.png"
+     ><IMG SRC="fourier/lena_roundtrip_fail.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -782,15 +782,15 @@ ImageMagick</A> to generate another 'round trip' conversion of an image.
 <n>  echo -n "PAE = "
 <n>  compare -metric PAE  lena.png lena_roundtrip_hdri.png null:
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_hdri.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_hdri.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_roundtrip_hdri.png"
+     ><IMG SRC="fourier/lena_roundtrip_hdri.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 <DIV ALIGN=center>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_hdri_cmp.txt"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_hdri_cmp.txt.gif"
+  <A HREF="fourier/lena_roundtrip_hdri_cmp.txt"
+    ><IMG SRC="fourier/lena_roundtrip_hdri_cmp.txt.gif"
           ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -800,8 +800,8 @@ If you compare the results above with the previous non-HDRI comparison...
 <DIV ALIGN=center>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_cmp.txt"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_cmp.txt.gif"
+  <A HREF="fourier/lena_roundtrip_cmp.txt"
+    ><IMG SRC="fourier/lena_roundtrip_cmp.txt.gif"
           ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV>
@@ -818,12 +818,12 @@ Formats</A> that can handle floating-point values. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Floating point compatible file formats include "<CODE><A
-  HREF="https://legacy.imagemagick.org/Usage/files/#miff"" >MIFF</A></CODE>", "<CODE><A HREF="https://legacy.imagemagick.org/Usage/formats/#tiff"
-  >TIFF</A></CODE>",  "<CODE><A HREF="https://legacy.imagemagick.org/Usage/formats/#netpbm" >PFM</A></CODE>" and
+  HREF="files/index.html#miff"" >MIFF</A></CODE>", "<CODE><A HREF="formats/index.html#tiff"
+  >TIFF</A></CODE>",  "<CODE><A HREF="formats/index.html#netpbm" >PFM</A></CODE>" and
   the HDRI specific "<CODE>EXR</CODE>" file format. However you may need to
   set "<CODE>-define quantum:format=floating-point</CODE>" for it to work.
 </I></FONT></TD></TR></TABLE></P>
@@ -861,15 +861,15 @@ Real/Imaginary images.
 <n>  echo -n "PAE = "
 <n>  compare -metric PAE  lena.png lena_roundtrip_ri.png null:
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_ri.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_ri.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_roundtrip_ri.png"
+     ><IMG SRC="fourier/lena_roundtrip_ri.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 <DIV ALIGN=center>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_ri_cmp.txt"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_ri_cmp.txt.gif"
+  <A HREF="fourier/lena_roundtrip_ri_cmp.txt"
+    ><IMG SRC="fourier/lena_roundtrip_ri_cmp.txt.gif"
           ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -886,8 +886,8 @@ resulting in an image that looks 'dirty'.  For example...
   # non-HDRI Q16 version of IM used  -- THIS IS BAD
   convert lena.png   +fft +ift   lena_roundtrip_ri_bad.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_ri_bad.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_roundtrip_ri_bad.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_roundtrip_ri_bad.png"
+     ><IMG SRC="fourier/lena_roundtrip_ri_bad.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -911,13 +911,13 @@ restore the final image.  For example, here is what happens if we substitute a
 </CODE></PRE></TD></TR></TABLE>
 <TABLE WIDTH=60%>
 <TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_real_only.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_real_only.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_real_only.png"
+     ><IMG SRC="fourier/lena_real_only.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Real Only
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_imaginary_only.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_imaginary_only.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_imaginary_only.png"
+     ><IMG SRC="fourier/lena_imaginary_only.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Imaginary Only
 </TD></TR></TABLE></DIV></P>
@@ -953,12 +953,12 @@ First lets simply take a constant color image and get its magnitude.
   convert -size 128x128 xc:gold constant.png
   convert constant.png -fft +delete constant_magnitude.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/constant.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/constant.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/constant.png"
+     ><IMG SRC="fourier/constant.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/constant_magnitude.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/constant_magnitude.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/constant_magnitude.png"
+     ><IMG SRC="fourier/constant_magnitude.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -980,8 +980,8 @@ image...
   convert constant_magnitude.png -gravity center -extent 5x5 \
            -scale 2000% constant_dc_zoom.gif
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/constant_dc_zoom.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/constant_dc_zoom.gif"   WIDTH=100 HEIGHT=100
+  <A HREF="fourier/constant_dc_zoom.gif"
+     ><IMG SRC="fourier/constant_dc_zoom.gif"   WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -999,8 +999,8 @@ of values, and that is all. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   While the 'phase' of the DC value is not important, it should always be
   a 'zero' angle (a phase color value of 50% gray). If it is not set to 50%
@@ -1025,16 +1025,16 @@ For example lets extract the DC pixel from the FFT of the "Lena" image.
   convert lena_magnitude.png -gravity center -extent 1x1 \
           -scale 60x60   lena_dc_zoom.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_magnitude.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_magnitude.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_magnitude.png"
+     ><IMG SRC="fourier/lena_magnitude.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_dc_zoom.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_dc_zoom.gif"   WIDTH=60 HEIGHT=60
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_dc_zoom.gif"
+     ><IMG SRC="fourier/lena_dc_zoom.gif"   WIDTH=60 HEIGHT=60
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1057,8 +1057,8 @@ such as the more orange color 'tomato'...
           \( -clone 0  -draw "fill tomato  color 64,64 point" \) \
           -swap 0 +delete -ift lena_dc_replace.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_dc_replace.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_dc_replace.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/lena_dc_replace.png"
+     ><IMG SRC="fourier/lena_dc_replace.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1089,31 +1089,31 @@ image with 4 cycles across the image </P>
   convert sine4.png -fft +delete \
           -auto-level -evaluate log 100  sine4_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/sine4.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/sine4.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/sine4.png"
+     ><IMG SRC="fourier/sine4.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/sine4_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/sine4_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/sine4_spectrum.png"
+     ><IMG SRC="fourier/sine4_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The unusual creation of the gradient image in the above is necessary to
   ensure that the resulting sine wave image tiles perfectly across the image.
   </P>
 
-  A normal "<CODE><A HREF="https://legacy.imagemagick.org/Usage/canvas/#gradient" >gradient:</A></CODE>" image
+  A normal "<CODE><A HREF="canvas/index.html#gradient" >gradient:</A></CODE>" image
   does not perfectly tile, so neither does a sine wave generated from it.
   A FFT transform of such an im-perfect tile, will result in an array of
   undesired harmonics, rather than single 'dots' in the Fourier Transform
   Spectrum. </P>
 
-  See <A HREF="https://legacy.imagemagick.org/Usage/canvas/#perfect_gradients" >Generating the Perfect
+  See <A HREF="canvas/index.html#perfect_gradients" >Generating the Perfect
   Gradient</A> for more details about this problem.  </P>
 
 </I></FONT></TD></TR></TABLE></P>
@@ -1143,12 +1143,12 @@ spaced 16 pixels to the left and right sides of the center dot.
           -write sine16.png -fft -delete 1 \
           -auto-level -evaluate log 100 sine16_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/sine16.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/sine16.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/sine16.png"
+     ><IMG SRC="fourier/sine16.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/sine16_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/sine16_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/sine16_spectrum.png"
+     ><IMG SRC="fourier/sine16_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1190,8 +1190,8 @@ magnitudes (not the logarithmic spectrum).
   convert sine16.png -fft -delete 1  miff:- |\
      im_profile - sine16_magnitude_pf.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/sine16_magnitude_pf.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/sine16_magnitude_pf.png"   WIDTH=150 HEIGHT=100
+  <A HREF="fourier/sine16_magnitude_pf.png"
+     ><IMG SRC="fourier/sine16_magnitude_pf.png"   WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1205,8 +1205,8 @@ transform divided that magnitude into two, sharing the results across both
 plotted frequency waves, so each of the two components only has a magnitude of
 1/4.  That is a normal part of fourier transforms. </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
+<A HREF="fourier/lena_spectrum.png"
+    ><IMG SRC="fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
           ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 This duality of positive and negative frequencies in FFT images explains why
@@ -1225,8 +1225,8 @@ image, and half in the other.  Together they produce a whole. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   During generation the FFT algorithm only generates the left half the images.
   The other half is generated by rotations and duplication of the generated
@@ -1266,15 +1266,15 @@ For example...
   convert generated_magnitude.png generated_phase.png \
           -ift  generated_wave.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/generated_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/generated_spectrum.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/generated_spectrum.png"
+     ><IMG SRC="fourier/generated_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/generated_phase.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/generated_phase.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/generated_phase.png"
+     ><IMG SRC="fourier/generated_phase.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/generated_wave.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/generated_wave.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/generated_wave.png"
+     ><IMG SRC="fourier/generated_wave.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1289,8 +1289,8 @@ technique. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Actually only the first (left most) 'gray25' dot was needed to generate the
   sine wave as the IFT transform completely ignores the right half of the image
@@ -1299,8 +1299,8 @@ technique. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The phase of the DC value must have a 'zero angle' (50% gray color).  If you
   don't ensure that is the case the DC color value will be modulated by its
@@ -1309,8 +1309,8 @@ technique. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The other pixels in the phase can be any grey level you like, and will
   effectively 'roll' the sine wave across the image.  Again only the phase of
@@ -1346,12 +1346,12 @@ inside a black background.  </P>
   convert rectangle.png -fft +delete \
           -auto-level -evaluate log 100 rect_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/rectangle.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/rectangle.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/rectangle.png"
+     ><IMG SRC="fourier/rectangle.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/rect_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/rect_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/rect_spectrum.png"
+     ><IMG SRC="fourier/rect_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1374,12 +1374,12 @@ also rotated in the same direction by 45 degrees. </P>
           -write rect_rot45.png -fft -delete 1 \
           -auto-level -evaluate log 100 rect_rot45_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/rect_rot45.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/rect_rot45.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/rect_rot45.png"
+     ><IMG SRC="fourier/rect_rot45.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/rect_rot45_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/rect_rot45_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/rect_rot45_spectrum.png"
+     ><IMG SRC="fourier/rect_rot45_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1395,12 +1395,12 @@ However if we now move the rectangle...
           -write rect_rot45off.png -fft -delete 1 \
           -auto-level -evaluate log 100 rect_rot45off_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/rect_rot45off.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/rect_rot45off.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/rect_rot45off.png"
+     ><IMG SRC="fourier/rect_rot45off.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/rect_rot45off_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/rect_rot45off_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/rect_rot45off_spectrum.png"
+     ><IMG SRC="fourier/rect_rot45off_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1432,20 +1432,20 @@ with diameter of 24 (radius 12). </P>
           -draw "circle 64,64 64,76" -write circle12.png -fft -delete 1 \
           -auto-level -evaluate log 100 circle12_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/circle6.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/circle6.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/circle6.png"
+     ><IMG SRC="fourier/circle6.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/circle6_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/circle6_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/circle6_spectrum.png"
+     ><IMG SRC="fourier/circle6_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 <BR>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/circle12.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/circle12.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/circle12.png"
+     ><IMG SRC="fourier/circle12.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/circle12_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/circle12_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/circle12_spectrum.png"
+     ><IMG SRC="fourier/circle12_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1487,24 +1487,24 @@ circular pattern having sigmas of 8 and 16, respectively </P>
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0>
 <TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus8.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus8.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/gaus8.png"
+     ><IMG SRC="fourier/gaus8.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD><TD>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus8_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus8_spectrum.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/gaus8_spectrum.png"
+     ><IMG SRC="fourier/gaus8_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR><TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus8_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus8_pf.gif"   WIDTH=150 HEIGHT=100
+  <A HREF="fourier/gaus8_pf.gif"
+     ><IMG SRC="fourier/gaus8_pf.gif"   WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD><TD>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus8_spectrum_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus8_spectrum_pf.gif"   WIDTH=150 HEIGHT=100
+  <A HREF="fourier/gaus8_spectrum_pf.gif"
+     ><IMG SRC="fourier/gaus8_spectrum_pf.gif"   WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -1522,24 +1522,24 @@ circular pattern having sigmas of 8 and 16, respectively </P>
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0>
 <TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus16.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus16.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/gaus16.png"
+     ><IMG SRC="fourier/gaus16.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD><TD>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus16_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus16_spectrum.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/gaus16_spectrum.png"
+     ><IMG SRC="fourier/gaus16_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR><TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus16_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus16_pf.gif"   WIDTH=150 HEIGHT=100
+  <A HREF="fourier/gaus16_pf.gif"
+     ><IMG SRC="fourier/gaus16_pf.gif"   WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD><TD>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaus16_spectrum_pf.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaus16_spectrum_pf.gif"   WIDTH=150 HEIGHT=100
+  <A HREF="fourier/gaus16_spectrum_pf.gif"
+     ><IMG SRC="fourier/gaus16_spectrum_pf.gif"   WIDTH=150 HEIGHT=100
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -1577,12 +1577,12 @@ pixels apart.
           -write grid16x8.png -fft -delete 1 \
           -auto-level -evaluate log 100000 grid16x8_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/grid16x8.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/grid16x8.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/grid16x8.png"
+     ><IMG SRC="fourier/grid16x8.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/grid16x8_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/grid16x8_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/grid16x8_spectrum.png"
+     ><IMG SRC="fourier/grid16x8_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1651,20 +1651,20 @@ exponent of 1.1. </P>
           \( -clone 0 -evaluate pow 1.1 \) -delete 0 \
           +swap -ift lena_minus_contrast.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_plus_contrast.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_plus_contrast.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_plus_contrast.png"
+     ><IMG SRC="fourier/lena_plus_contrast.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 <BR>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_minus_contrast.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_minus_contrast.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_minus_contrast.png"
+     ><IMG SRC="fourier/lena_minus_contrast.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1724,37 +1724,37 @@ So lets try doing this with two sizes of circular filters, one of diameter 40
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0>
 <TR><TD ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_spectrum.png"
+     ><IMG SRC="fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/multiply.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="x">
+  <IMG SRC="img_www/multiply.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="x">
 </TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/circle_r20.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/circle_r20.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/circle_r20.png"
+     ><IMG SRC="fourier/circle_r20.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r20_spec.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r20_spec.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_blur_r20_spec.png"
+     ><IMG SRC="fourier/lena_blur_r20_spec.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r20.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r20.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_blur_r20.png"
+     ><IMG SRC="fourier/lena_blur_r20.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR><TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/circle_r14.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/circle_r14.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/circle_r14.png"
+     ><IMG SRC="fourier/circle_r14.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r14_spec.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r14_spec.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_blur_r14_spec.png"
+     ><IMG SRC="fourier/lena_blur_r14_spec.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r14.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_blur_r14.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_blur_r14.png"
+     ><IMG SRC="fourier/lena_blur_r14.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -1792,37 +1792,37 @@ most of the sever 'ringing' effects.
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0>
 <TR><TD ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_spectrum.png"
+     ><IMG SRC="fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/multiply.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="x">
+  <IMG SRC="img_www/multiply.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="x">
 </TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaussian_r20.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaussian_r20.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/gaussian_r20.png"
+     ><IMG SRC="fourier/gaussian_r20.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r20_spec.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r20_spec.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_gblur_r20_spec.png"
+     ><IMG SRC="fourier/lena_gblur_r20_spec.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r20.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r20.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_gblur_r20.png"
+     ><IMG SRC="fourier/lena_gblur_r20.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR><TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaussian_r14.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaussian_r14.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/gaussian_r14.png"
+     ><IMG SRC="fourier/gaussian_r14.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r14_spec.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r14_spec.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_gblur_r14_spec.png"
+     ><IMG SRC="fourier/lena_gblur_r14_spec.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r14.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_gblur_r14.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_gblur_r14.png"
+     ><IMG SRC="fourier/lena_gblur_r14.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -1880,37 +1880,37 @@ And then again using a purely gaussian curve. </P>
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0>
 <TR><TD ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_spectrum.png"
+     ><IMG SRC="fourier/lena_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/multiply.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="x">
+  <IMG SRC="img_www/multiply.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="x">
 </TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/circle_r14i.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/circle_r14i.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/circle_r14i.png"
+     ><IMG SRC="fourier/circle_r14i.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_edge_r14_spec.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_edge_r14_spec.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_edge_r14_spec.png"
+     ><IMG SRC="fourier/lena_edge_r14_spec.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_edge_r14.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_edge_r14.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_edge_r14.png"
+     ><IMG SRC="fourier/lena_edge_r14.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR><TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/gaussian_s14i.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/gaussian_s14i.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/gaussian_s14i.png"
+     ><IMG SRC="fourier/gaussian_s14i.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_edge_s14_spec.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_edge_s14_spec.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_edge_s14_spec.png"
+     ><IMG SRC="fourier/lena_edge_s14_spec.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_edge_s14.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_edge_s14.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_edge_s14.png"
+     ><IMG SRC="fourier/lena_edge_s14.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=2 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -1936,12 +1936,12 @@ the normalization stretch) and then blend it with the original image.
        lena.png -compose blend -set option:compose:args 100x100 -composite \
        lena_sharp14.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/lena.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/lena.png"   WIDTH=128 HEIGHT=128
+  <A HREF="img_photos/lena.png"
+     ><IMG SRC="img_photos/lena.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/lena_sharp14.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/lena_sharp14.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/lena_sharp14.png"
+     ><IMG SRC="fourier/lena_sharp14.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1980,20 +1980,20 @@ magnitude and phase images. </P>
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0>
 <TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_orig.jpg"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_orig.jpg"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_orig.jpg"
+     ><IMG SRC="fourier/clown_orig.jpg"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Original
 </TD><TD>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_spectrum.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_spectrum.png"
+     ><IMG SRC="fourier/clown_spectrum.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Spectrum
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_phase.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_phase.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_phase.png"
+     ><IMG SRC="fourier/clown_phase.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Phase
 </TD></TR></TABLE>
@@ -2027,12 +2027,12 @@ a difference image against the unedited version. Like this...
   convert clown_spectrum_mask.png -negate -background red -alpha shape \
           clown_spectrum.png +swap -composite  clown_spectrum_edited.png
 </CODE> -->
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_spectrum_edited.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_spectrum_edited.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_spectrum_edited.png"
+     ><IMG SRC="fourier/clown_spectrum_edited.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/clown_spectrum_mask.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/clown_spectrum_mask.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="img_photos/clown_spectrum_mask.png"
+     ><IMG SRC="img_photos/clown_spectrum_mask.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -2047,12 +2047,12 @@ original image next to it for comparison </P>
           -compose multiply -composite \
           clown_phase.png -ift clown_filtered.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_orig.jpg"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_orig.jpg"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_orig.jpg"
+     ><IMG SRC="fourier/clown_orig.jpg"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_filtered.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_filtered.png"   WIDTH=128 HEIGHT=128
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/clown_filtered.png"
+     ><IMG SRC="fourier/clown_filtered.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -2069,8 +2069,8 @@ friendly to a FFT image, so lets blur the mask slightly...
   convert clown_spectrum_mask.png \
           -blur 0x5 -level 50x100%  clown_mask_blurred.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_mask_blurred.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_mask_blurred.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_mask_blurred.png"
+     ><IMG SRC="fourier/clown_mask_blurred.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2085,8 +2085,8 @@ And filter the clown, this time re-generating the FFT images in memory.
           \( -clone 0 clown_mask_blurred.png -compose multiply -composite \) \
           -swap 0 +delete -ift clown_filtered_2.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_filtered_2.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_filtered_2.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_filtered_2.png"
+     ><IMG SRC="fourier/clown_filtered_2.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2104,8 +2104,8 @@ an image of the areas where noise was removed.
   convert clown_orig.jpg clown_filtered_2.png -compose difference \
           -composite -normalize clown_noise.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/clown_noise.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/clown_noise.png"   WIDTH=128 HEIGHT=128
+  <A HREF="fourier/clown_noise.png"
+     ><IMG SRC="fourier/clown_noise.png"   WIDTH=128 HEIGHT=128
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2122,12 +2122,12 @@ Again we extract a grey-scale spectrum image, just as we did before.
   convert twigs.jpg -fft +delete -colorspace gray \
           -auto-level -evaluate log 100000 twigs_spectrum.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/twigs.jpg"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/twigs.jpg"   WIDTH=256 HEIGHT=256
+  <A HREF="fourier/twigs.jpg"
+     ><IMG SRC="fourier/twigs.jpg"   WIDTH=256 HEIGHT=256
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/twigs_spectrum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/twigs_spectrum.png"   WIDTH=256 HEIGHT=256
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/twigs_spectrum.png"
+     ><IMG SRC="fourier/twigs_spectrum.png"   WIDTH=256 HEIGHT=256
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -2150,12 +2150,12 @@ color (it really doesn't matter which color is used)...
   convert twigs_spectrum_mask.png -negate -background blue -alpha shape \
           twigs_spectrum.png +swap -composite  twigs_spectrum_edited.png
 </CODE> -->
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/twigs_spectrum_edited.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/twigs_spectrum_edited.png"   WIDTH=256 HEIGHT=256
+  <A HREF="fourier/twigs_spectrum_edited.png"
+     ><IMG SRC="fourier/twigs_spectrum_edited.png"   WIDTH=256 HEIGHT=256
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/img_photos/twigs_spectrum_mask.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/twigs_spectrum_mask.png"   WIDTH=256 HEIGHT=256
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="img_photos/twigs_spectrum_mask.png"
+     ><IMG SRC="img_photos/twigs_spectrum_mask.png"   WIDTH=256 HEIGHT=256
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -2169,12 +2169,12 @@ the image.
           \( -clone 0 twigs_spectrum_mask.png -compose multiply -composite \) \
           -swap 0 +delete  -ift twigs_filtered.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/twigs.jpg"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/twigs.jpg"   WIDTH=256 HEIGHT=256
+  <A HREF="fourier/twigs.jpg"
+     ><IMG SRC="fourier/twigs.jpg"   WIDTH=256 HEIGHT=256
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/twigs_filtered.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/twigs_filtered.png"   WIDTH=256 HEIGHT=256
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="fourier/twigs_filtered.png"
+     ><IMG SRC="fourier/twigs_filtered.png"   WIDTH=256 HEIGHT=256
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -2187,8 +2187,8 @@ an image of the areas where noise was removed. </P>
   convert twigs.jpg twigs_filtered.png -compose difference -composite \
           -normalize twigs_noise.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/fourier/twigs_noise.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/fourier/twigs_noise.png"   WIDTH=256 HEIGHT=256
+  <A HREF="fourier/twigs_noise.png"
+     ><IMG SRC="fourier/twigs_noise.png"   WIDTH=256 HEIGHT=256
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -2209,7 +2209,7 @@ and 2) normalized cross correlation to find where a small image best matches
 within a larger image. </P>
 
 Examples of FFT Multiplication and Division (deconvolution) moved to a <A
-HREF="https://legacy.imagemagick.org/Usage/fourier/fft_math/">sub-directory</A> as it is waiting a more formally defined
+HREF="fourier/fft_math/index.html">sub-directory</A> as it is waiting a more formally defined
 image processing operators. </P>
 
 </DIV>
@@ -2223,7 +2223,7 @@ with editing and formatting by
         <A HREF="https://antofthy.gitlab.io/anthony.html"
         >Anthony Thyssen</A>, &lt;Anthony.Thyssen&#64;gmail.com&gt;<BR>
 Examples Generated with:
-        <IMG SRC="https://legacy.imagemagick.org/Usage/fourier/version.gif" ALIGN=absmiddle ALT="[version image]"><BR>
+        <IMG SRC="fourier/version.gif" ALIGN=absmiddle ALT="[version image]"><BR>
 URL: <CODE>https://legacy.imagemagick.org/Usage/fourier/</CODE>
 </ADDRESS></BODY></HTML>
 

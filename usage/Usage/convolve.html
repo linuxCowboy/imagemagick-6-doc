@@ -3,13 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" >
 <link rel="stylesheet" href="../../html/www/css/magick.css">
 <TITLE>Convolution of Images -- IM v6 Examples</TITLE>
-<LINK REL="icon" HREF="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
-<LINK REL="shortcut" HREF="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
+<LINK REL="icon" HREF="img_www/favicon.ico" type="image/x-icon">
+<LINK REL="shortcut" HREF="img_www/favicon.ico" type="image/x-icon">
 <LINK REL="canonical" HREF="convolve.html">
 </HEAD><BODY BGCOLOR="#B0C4DE">
 
 <H1>ImageMagick v6 Examples -- <BR>
-    <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif" width=50 height=1>
+    <IMG SRC="img_www/space.gif" width=50 height=1>
     Convolution of Images</H1>
 
 <DIV ALIGN=justify>
@@ -17,10 +17,10 @@
 <DL>
 <DT><B>Index</B>
 <DT><A HREF="../Usage.html"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_left.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_left.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > ImageMagick Examples Preface and Index</A>
 <DD><A HREF="convolve.html#intro"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Introduction to Convolution</A>
     <UL>
     <LI><A HREF="convolve.html#convolve"
@@ -37,7 +37,7 @@
         >Output result Bias Control</A>
     </UL>
 <DD><A HREF="convolve.html#blurring_images"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Blurring Images</A> (Low-Pass Filtering)
     <UL>
     <LI><A HREF="convolve.html#blurring_kernels"
@@ -59,7 +59,7 @@
         (subtracting from the original image)
     </UL>
 <DD><A HREF="convolve.html#edgedet"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Edge Detection Convolutions</A> (High-Pass Filtering)
     <UL>
     <LI><A HREF="convolve.html#edgedet_kernels"
@@ -74,7 +74,7 @@
         (enhancing the edges of the original image)
     </UL>
 <DD><A HREF="convolve.html#directional"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Directional Convolutions</A> (Slopes, Compass Filtering)
     <UL>
     <LI><A HREF="convolve.html#directional_kernels"
@@ -89,7 +89,7 @@
         </UL>
     </UL>
 <DD><A HREF="convolve.html#correlate"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Correlate</A>
     <UL>
     <LI><A HREF="convolve.html#convolve_vs_correlate"
@@ -101,7 +101,7 @@
         >Correlate vs HitAndMiss</A>
     </UL>
 <DD><A HREF="convolve.html#neighbours"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Neighbour Counting</A>
     <UL>
     <LI><A HREF="convolve.html#counting"
@@ -134,8 +134,8 @@ definitions that was defined in <A HREF="morphology.html#kernels" >Basic
 Kernels</A> and <A HREF="morphology.html#user" >User Defined Kernels</A>.  For
 more specific kernels designed for use by this operator, (and there are many),
 I refer you to <A HREF="convolve.html#blurring_kernels" >Blurring Kernels</A>, and <A
-HREF="https://legacy.imagemagick.org/Usage/convolve/edgedet_kernels" >Edge Detection Kernels</A>.  The most important
-kernel being the '<CODE><A HREF="https://legacy.imagemagick.org/Usage/convolve/gaussian" >Gaussian</A></CODE>' kernel. </P>
+HREF="convolve/edgedet_kernels" >Edge Detection Kernels</A>.  The most important
+kernel being the '<CODE><A HREF="convolve/gaussian" >Gaussian</A></CODE>' kernel. </P>
 
 However, convolution is much older than morphology, and it generates more
 grey-scale gradient effects, rather than the binary shape studying effects
@@ -167,7 +167,7 @@ a minor way. But in most circumstances they are the same method.  </P>
 <A NAME="convolve"></A>
 <H3>Convolve
 &nbsp; <FONT SIZE=5>(
-<IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=absmiddle>
+<IMG SRC="img_www/mph_convolve.gif" ALIGN=absmiddle>
 )</FONT></H3>
 
 As was mentioned above the '<CODE>Convolve</CODE>' method works by weighting
@@ -198,20 +198,20 @@ have been enlarged).
 </CODE>-->
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/spread_kernel.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/spread_kernel.txt.gif"
+  <A HREF="convolve/spread_kernel.txt"
+     ><IMG SRC="convolve/spread_kernel.txt.gif"
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/pixel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/pixel_mag.gif"  WIDTH=88 HEIGHT=88
+  <A HREF="convolve/pixel.gif"
+     ><IMG SRC="convolve/pixel_mag.gif"  WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_spread.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_spread.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_spread.gif"
+     ><IMG SRC="convolve/kernel_spread.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/pixel_spread.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/pixel_spread_mag.gif"  WIDTH=88 HEIGHT=88
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/pixel_spread.gif"
+     ><IMG SRC="convolve/pixel_spread_mag.gif"  WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -262,8 +262,8 @@ But you can also use an older, more direct operator...
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+    ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Before IM v6.5.9 the older "<CODE><A HREF="../../html/www/command-line-options.html#convolve"
   >-convolve</A></CODE>" did not understand morphology kernel definitions.
@@ -280,8 +280,8 @@ But you can also use an older, more direct operator...
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The older "<CODE><A HREF="../../html/www/command-line-options.html#convolve"
   >-convolve</A></CODE>" operator is not exactly the same as the newer
@@ -329,7 +329,7 @@ But you can also use an older, more direct operator...
       The Morphology '<CODE>convolve</CODE>' method will automatically handle
       transparency weighting of the color channels by default. That is
       image blurring using it will treat transparent colors as transparent,
-      and thus avoid the <A HREF="https://legacy.imagemagick.org/Usage/bugs/blur_trans/" >Blur Transparency
+      and thus avoid the <A HREF="bugs/blur_trans/index.html" >Blur Transparency
       Bug</A>, by default. </P>
 
       However if the user modifies the default "<CODE><A
@@ -375,16 +375,16 @@ but if you were to apply this to a real image, you will have a problem...
           -morphology Convolve '3x3: 0.0,0.5,0.0  0.5,1.0,0.5   0.0,0.5,0.0' \
           face_spread.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+  <A HREF="images/face.png"
+     ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_spread.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_spread.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_spread.gif"
+     ><IMG SRC="convolve/kernel_spread.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_spread.png"      WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="images/face.png"
+     ><IMG SRC="convolve/face_spread.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -423,20 +423,20 @@ convert face.png  -define morphology:showkernel=1 \
 </CODE></PRE></TD></TR></TABLE>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-<A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_spread_norm.txt"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_spread_norm.txt.gif"
+<A HREF="convolve/kernel_spread_norm.txt"
+    ><IMG SRC="convolve/kernel_spread_norm.txt.gif"
           ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
-<A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+<A HREF="images/face.png"
+    ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
           ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-<IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-<A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_spread_norm.gif"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_spread_norm.gif"
+<IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+<A HREF="convolve/kernel_spread_norm.gif"
+    ><IMG SRC="convolve/kernel_spread_norm.gif"
           ALIGN=middle VSPACE=5 HSPACE=15 BORDER=0 ALT="[IM Output]"></A>
-<IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-<A HREF="https://legacy.imagemagick.org/Usage/convolve/face_spread_norm.png"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_spread_norm.png"      WIDTH=80 HEIGHT=80
+<IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+<A HREF="convolve/face_spread_norm.png"
+    ><IMG SRC="convolve/face_spread_norm.png"      WIDTH=80 HEIGHT=80
           ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -445,8 +445,8 @@ each pixel was spread out to each of its immediate neighbours.  </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-  ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+  ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The 'kernel image' that is shown in the above (generated using a special <A
   HREF="morphology.html#kernel2image" >Kernel 2 Image Script</A>) also shows
@@ -477,8 +477,8 @@ convert face.png  -define convolve:scale=0.33333 \
         -morphology Convolve '3x3: 0.0,0.5,0.0  0.5,1.0,0.5  0.0,0.5,0.0' \
         face_spread_scale.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-<A HREF="https://legacy.imagemagick.org/Usage/convolve/face_spread_scale.png"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_spread_scale.png"      WIDTH=80 HEIGHT=80
+<A HREF="convolve/face_spread_scale.png"
+    ><IMG SRC="convolve/face_spread_scale.png"      WIDTH=80 HEIGHT=80
           ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -503,15 +503,15 @@ convert face.png  -define convolve:scale=\! \
         -morphology Convolve  '3x3: 0,1,0  1,2,1  0,1,0' \
         face_spread_normalize.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-<A HREF="https://legacy.imagemagick.org/Usage/convolve/face_spread_normalize.png"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_spread_normalize.png"      WIDTH=80 HEIGHT=80
+<A HREF="convolve/face_spread_normalize.png"
+    ><IMG SRC="convolve/face_spread_normalize.png"      WIDTH=80 HEIGHT=80
           ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-  ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+  ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The '<CODE>!</CODE>' character is also sometimes used for special purposes
   by various UNIX command line shells.  So you may have to escape the
@@ -541,8 +541,8 @@ the calculated size, so as to produce a darker result.
           -morphology Convolve  '3x3: 0,1,0  1,2,1  0,1,0' \
           face_spread_norm_half.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_spread_norm_half.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_spread_norm_half.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_spread_norm_half.png"
+     ><IMG SRC="convolve/face_spread_norm_half.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -652,7 +652,7 @@ guranteeed as a whole, to add up to zero. </P>
 
 Note that if you use this normalization method for an all-positive kernel such
 as 'Gaussian' you will still get a properly normalized kernel.  As such this
-form of normalization can still be used with <A HREF="https://legacy.imagemagick.org/Usage/convolve/blurring_kernels"
+form of normalization can still be used with <A HREF="convolve/blurring_kernels"
 >Blurring Kernels</A>. </P>
 
 However it should not be used to normalize directly defined <A
@@ -837,7 +837,7 @@ One example of doing this is shown in the <A HREF="convolve.html#correlate_searc
 <H2>Blurring Images
 <FONT SIZE=-1>(low-pass filtering)</FONT></H2>
 
-Another section of IM examples, specifically <A HREF="https://legacy.imagemagick.org/Usage/blur/"
+Another section of IM examples, specifically <A HREF="blur/index.html"
 >Blurring, and Sharpening Images</A>, actually deals with practical aspects of
 this subject.  Here we look at more specific details. </P>
 
@@ -852,8 +852,8 @@ the bluring to generate other effects. </P>
 <!--<CODE EXECUTE>
    kernel2image -35.2 -m "Unity"    kernel_unity.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_unity.gif"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_unity.gif"
+  <A HREF="convolve/kernel_unity.gif"
+      ><IMG SRC="convolve/kernel_unity.gif"
             ALIGN=right BORDER=0 ALT="[IM Output]"></A>
 
 <A NAME="unity"></A>
@@ -870,16 +870,16 @@ For example here is a no-op <A HREF="convolve.html#convolve" >Convolution</A>...
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png -morphology Convolve Unity  face_unity.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+  <A HREF="images/face.png"
+     ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_unity.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_unity.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_unity.gif"
+     ><IMG SRC="convolve/kernel_unity.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_unity.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_unity.png"         WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/face_unity.png"
+     ><IMG SRC="convolve/face_unity.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -893,8 +893,8 @@ an image, such as make an image brighter or darker.
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png -morphology Convolve Unity:0.5  face_dimmed.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_dimmed.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_dimmed.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_dimmed.png"
+     ><IMG SRC="convolve/face_dimmed.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -919,8 +919,8 @@ surrounding by 8 '<CODE>0.0</CODE>' values. </P>
 <!--<CODE EXECUTE>
   kernel2image -10.1 -m -n "Octagon:2"   kernel_shape.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_shape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_shape.gif"
+  <A HREF="convolve/kernel_shape.gif"
+     ><IMG SRC="convolve/kernel_shape.gif"
            ALIGN=right VSPACE=0 HSPACE=10 BORDER=0 ALT="[IM Output]"></A>
 
 <A NAME="mean"></A>
@@ -943,16 +943,16 @@ a circlular areas surrounding each pixel.
   convert face.png  -define convolve:scale=! \
           -morphology Convolve Octagon:2  face_mean.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+  <A HREF="images/face.png"
+     ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_shape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_shape.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_shape.gif"
+     ><IMG SRC="convolve/kernel_shape.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_mean.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_mean.png"      WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/face_mean.png"
+     ><IMG SRC="convolve/face_mean.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -996,15 +996,15 @@ the shape of the 'flat' or averaging kernel.
           -define convolve:scale=! -morphology Convolve Disk:5 \
           shape_mean_disk.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shape.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shape.png"               WIDTH=80 HEIGHT=80
+  <A HREF="convolve/shape.png"
+     ><IMG SRC="convolve/shape.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shape_mean_square.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shape_mean_square.png"   WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/shape_mean_square.png"
+     ><IMG SRC="convolve/shape_mean_square.png"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shape_mean_disk.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shape_mean_disk.png"   WIDTH=80 HEIGHT=80
+  <A HREF="convolve/shape_mean_disk.png"
+     ><IMG SRC="convolve/shape_mean_disk.png"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1021,8 +1021,8 @@ commonly used by Fred Wienhaus in his scripts before morphology was available.
   kernel2image -8.1 -mn -n -ml "Gaussian:0x2" \
                "Gaussian:5x2"    kernel_gaussian.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_gaussian.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_gaussian.gif"
+  <A HREF="convolve/kernel_gaussian.gif"
+     ><IMG SRC="convolve/kernel_gaussian.gif"
            ALIGN=right VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
 
 <A NAME="gaussian"></A>
@@ -1044,8 +1044,8 @@ quickly)...
 </CODE></PRE></TD></TR></TABLE>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_gaussian.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_gaussian.txt.gif"
+  <A HREF="convolve/kernel_gaussian.txt"
+     ><IMG SRC="convolve/kernel_gaussian.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -1054,7 +1054,7 @@ I did not actually want to apply a convolution to the above, as I only wanted
 to show the kernel that it was going to use.  As such I used
 a '<CODE>:0</CODE>' <A HREF="morphology.html#iterate" >Iteration Count</A>, so
 it does nothing. Similarly I junk the resulting image output using the special
-'<CODE><A HREF="https://legacy.imagemagick.org/Usage/files/#null" >null:</A></CODE>' file format. </P>
+'<CODE><A HREF="files/index.html#null" >null:</A></CODE>' file format. </P>
 
 As you can see by the convolution output range, a '<CODE>Gaussian</CODE>'
 kernel has already been normalized (scaled) for you.  However you will also
@@ -1070,16 +1070,16 @@ Here is typical Gaussian blur using a convolution...
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png   -morphology Convolve Gaussian:0x2  face_gaussian.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+  <A HREF="images/face.png"
+     ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=10 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_gaussian.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_gaussian.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_gaussian.gif"
+     ><IMG SRC="convolve/kernel_gaussian.gif"
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_gaussian.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_gaussian.png"      WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/face_gaussian.png"
+     ><IMG SRC="convolve/face_gaussian.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=10 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1123,7 +1123,7 @@ meaningful results), though it depends on the <A HREF="basics.html#quality"
 >Compile-time Quality</A> of your specific IM installation. </P>
 
 For more information on the effect of the '<CODE>Gaussian</CODE>' kernel
-arguments, and on blurring images in general, see... <A HREF="https://legacy.imagemagick.org/Usage/blur/#blur"
+arguments, and on blurring images in general, see... <A HREF="blur/index.html#blur"
 >Blurring Images</A>. </P>
 
 
@@ -1131,8 +1131,8 @@ arguments, and on blurring images in general, see... <A HREF="https://legacy.ima
 <!--<CODE EXECUTE>
   kernel2image -10.1 -mn -n -ml "Blur:0x2"  "Blur:7x2"  kernel_blur.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_blur.gif"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_blur.gif"
+  <A HREF="convolve/kernel_blur.gif"
+    ><IMG SRC="convolve/kernel_blur.gif"
            ALIGN=right VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
 
 <A NAME="blur"></A>
@@ -1158,22 +1158,22 @@ a small '<CODE>Blur</CODE>' kernel.
   convert xc:  -define morphology:showkernel=1 \
                -morphology Convolve:0 Blur:0x0.8  null:
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_blur_profile.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_blur_profile.gif"
+  <A HREF="convolve/kernel_blur_profile.gif"
+     ><IMG SRC="convolve/kernel_blur_profile.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_blur.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_blur.txt.gif"
+  <A HREF="convolve/kernel_blur.txt"
+     ><IMG SRC="convolve/kernel_blur.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
 The graph shown above is an actual profile of the default '<CODE>Blur</CODE>'
 kernel.  It was created using the <A HREF="morphology.html#kernel2image"
->Kernel Image</A> script "<CODE><A HREF="https://legacy.imagemagick.org/Usage/scripts/kernel2image"
+>Kernel Image</A> script "<CODE><A HREF="scripts/kernel2image"
 >kernel2image</A></CODE>", and that image then graphed using the "<CODE><A
-HREF="https://legacy.imagemagick.org/Usage/scripts/im_profile" >im_profile</A></CODE>" script.  It clearly shows
+HREF="scripts/im_profile" >im_profile</A></CODE>" script.  It clearly shows
 the 'Gaussian Bell Curve' that this kernel represents. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=100%>
@@ -1185,8 +1185,8 @@ Here is an example of using this kernel to horizontally blur an image.
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png -morphology Convolve Blur:0x4  face_blur.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_blur.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_blur.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_blur.png"
+     ><IMG SRC="convolve/face_blur.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1214,8 +1214,8 @@ blur an image vertically.
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png -morphology Convolve Blur:0x4,90  face_blur_vert.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_blur_vert.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_blur_vert.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_blur_vert.png"
+     ><IMG SRC="convolve/face_blur_vert.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1231,8 +1231,8 @@ The purpose of this kernel is actually to create a faster form of
 <!--<CODE EXECUTE>
   kernel2image -10.1 -mn -n -ml "Comet:0x3"  "Comet:9x3"  kernel_comet.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_comet.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_comet.gif"
+  <A HREF="convolve/kernel_comet.gif"
+     ><IMG SRC="convolve/kernel_comet.gif"
            ALIGN=right VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
 
 <A NAME="comet"></A>
@@ -1250,8 +1250,8 @@ kernel.
 </CODE></PRE></TD></TR></TABLE>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_comet.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_comet.txt.gif"
+  <A HREF="convolve/kernel_comet.txt"
+     ><IMG SRC="convolve/kernel_comet.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -1270,8 +1270,8 @@ a comet, or the trail left by a meteor, or falling star.
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png -morphology Convolve Comet:0x5  face_comet.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_comet.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_comet.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_comet.png"
+     ><IMG SRC="convolve/face_comet.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1288,13 +1288,13 @@ multiple of 90 degrees about its 'origin'.
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png -morphology Convolve comet:0x5+90  face_comet_vert.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_comet_vert.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_comet_vert.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_comet_vert.png"
+     ><IMG SRC="convolve/face_comet_vert.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
 This kernel is actually the same kernel that is use by the specialized <A
-HREF="https://legacy.imagemagick.org/Usage/blur/#motion_blur" >Motion Blur</A> operator, though that operator
+HREF="blur/index.html#motion_blur" >Motion Blur</A> operator, though that operator
 also does some very fancy coordinate look-up handling to allow the blur to
 work at any angle. Though it does so poorly, producing 'clumps' of color at
 large angles, such as 45 degrees. </P>
@@ -1303,8 +1303,8 @@ Hopefully proper kernel rotation will be implemented to create better motion
 blur type effects at angles outside of 90 degree increments. </P>
 
 
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_blur_profile.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_blur_profile.gif"
+  <A HREF="convolve/kernel_blur_profile.gif"
+     ><IMG SRC="convolve/kernel_blur_profile.gif"
            ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 <A NAME="gaussian_vs_blur"></A>
@@ -1325,8 +1325,8 @@ equivalent to "<CODE>-morphology Convolve Gaussian:0x2</CODE>" operation.
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png    -gaussian-blur 0x2      face_gaussian-blur.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_gaussian-blur.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_gaussian-blur.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_gaussian-blur.png"
+     ><IMG SRC="convolve/face_gaussian-blur.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1341,8 +1341,8 @@ either)...
   convert face.png -morphology Convolve Blur:0x2 \
                    -morphology Convolve Blur:0x2+90  face_blur_x2.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_blur_x2.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_blur_x2.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_blur_x2.png"
+     ><IMG SRC="convolve/face_blur_x2.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1383,8 +1383,8 @@ HREF="../../html/www/command-line-options.html#blur" >-blur</A></CODE>" operator
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png    -blur 0x2      face_blurred.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_blurred.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_blurred.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_blurred.png"
+     ><IMG SRC="convolve/face_blurred.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1404,7 +1404,7 @@ is generally the recommended one to use. </P>
 
 The only difference in results between the two operators are small quantum
 rounding effects (unless you are using HDRI) and edge effects (depending on <A
-HREF="https://legacy.imagemagick.org/Usage/misc/#virtual" >Virtual Pixel Setting</A>). Both of these being
+HREF="misc/index.html#virtual" >Virtual Pixel Setting</A>). Both of these being
 caused by a loss of information generated due to saving an intermediate image
 between the two separate passes of the 'blur' convolutions.  This difference
 is typically so small as to be invisible and of no concern to any practical
@@ -1425,16 +1425,16 @@ original image.  Especially when applying a very strong blur.  For example...
           -compose Blend -define compose:args=60,40% -composite \
           face_soft_blur.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+  <A HREF="images/face.png"
+     ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=10 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/plus.gif" ALIGN=middle WIDTH=20 HEIGHT=20" ALT="+">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_strong_blur.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_strong_blur.png"   WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/plus.gif" ALIGN=middle WIDTH=20 HEIGHT=20" ALT="+">
+  <A HREF="convolve/face_strong_blur.png"
+     ><IMG SRC="convolve/face_strong_blur.png"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=10 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_soft_blur.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_soft_blur.png"      WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/face_soft_blur.png"
+     ><IMG SRC="convolve/face_soft_blur.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=10 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1454,8 +1454,8 @@ However you can do the same thing directly by <A HREF="convolve.html#identity_ad
   convert face.png -define convolve:scale=60,40% \
           -morphology Convolve 'Gaussian:0x3' face_soft_blur2.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_soft_blur2.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_soft_blur2.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_soft_blur2.png"
+     ><IMG SRC="convolve/face_soft_blur2.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1482,8 +1482,8 @@ the <A HREF="compose.html#blend" >Blend Composition</A> afterwards. </P>
           -compose Blend -define compose:args=60 -composite \
           face_soft_blur3.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_soft_blur3.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_soft_blur3.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_soft_blur3.png"
+     ><IMG SRC="convolve/face_soft_blur3.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1494,8 +1494,8 @@ will give the original image. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-  ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+  ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Remember the "<CODE><A HREF="../../html/www/command-line-options.html#blur" >-blur</A></CODE>"
   operator is exactly equivelent to using the faster 2-pass <A HREF="convolve.html#blur">
@@ -1521,8 +1521,8 @@ how it came to get such an unfortunate name.
   convert face.png -define convolve:scale=-100,200% \
           -morphology Convolve 'Gaussian:0x2' face_unsharp.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_unsharp.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_unsharp.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_unsharp.png"
+     ><IMG SRC="convolve/face_unsharp.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1549,8 +1549,8 @@ a separate step.
           -compose Blend -define compose:args=-100,200 -composite \
           face_unsharp_fast.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_unsharp_fast.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_unsharp_fast.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_unsharp_fast.png"
+     ><IMG SRC="convolve/face_unsharp_fast.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1572,8 +1572,8 @@ the image, causing some aliasing and color distortions.
           -compose Blend -define compose:args=-200 -composite \
           face_unsharp_200.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_unsharp_200.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_unsharp_200.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_unsharp_200.png"
+     ><IMG SRC="convolve/face_unsharp_200.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1658,12 +1658,12 @@ edge detector on an image containing some basic shapes...
   convert shapes.gif  -define convolve:scale='!' \
           -morphology Convolve Sobel  shapes_sobel.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shapes.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shapes.gif"               WIDTH=80 HEIGHT=80
+  <A HREF="convolve/shapes.gif"
+     ><IMG SRC="convolve/shapes.gif"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel.gif"         WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/shapes_sobel.gif"
+     ><IMG SRC="convolve/shapes_sobel.gif"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1682,8 +1682,8 @@ To get the 'negative' slopes you will need to negate the kernel, by using the
   convert shapes.gif  -define convolve:scale='-1!' \
           -morphology Convolve Sobel  shapes_sobel_neg.gif
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel_neg.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel_neg.gif"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/shapes_sobel_neg.gif"
+     ><IMG SRC="convolve/shapes_sobel_neg.gif"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1704,8 +1704,8 @@ results remain 'unclipped' by the 'black' and 'white' limits of the image.
   convert shapes.gif  -define convolve:scale='50%!' -bias 50% \
           -morphology Convolve Sobel  shapes_sobel_bias.gif
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel_bias.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel_bias.gif"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/shapes_sobel_bias.gif"
+     ><IMG SRC="convolve/shapes_sobel_bias.gif"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1720,8 +1720,8 @@ value of the results with a little trickiness..
           -morphology Convolve Sobel  -solarize 50% -level 50,0% \
           shapes_sobel_abs.gif
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel_abs.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shapes_sobel_abs.gif"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/shapes_sobel_abs.gif"
+     ><IMG SRC="convolve/shapes_sobel_abs.gif"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1747,8 +1747,8 @@ intermediate image results, making things easier to handle.  </P>
 <!--<CODE EXECUTE>
   kernel2image -8.1 -mn -n -ml "LoG:0x2"  "Log:5x2"  kernel_log.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_log.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_log.gif"
+  <A HREF="convolve/kernel_log.gif"
+     ><IMG SRC="convolve/kernel_log.gif"
            ALIGN=right VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
 
 <A NAME="log"></A>
@@ -1782,16 +1782,16 @@ And here is its effect.. showing how it highlights the edges of the image.
 <TR><TD><PRE><CODE EXECUTE>
   convert face.png -bias 50% -morphology Convolve LoG:0x2  face_log.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+  <A HREF="images/face.png"
+     ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=10 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_log.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_log.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_log.gif"
+     ><IMG SRC="convolve/kernel_log.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_log.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_log.png"         WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/face_log.png"
+     ><IMG SRC="convolve/face_log.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -1809,8 +1809,8 @@ This kernel is also ideal for <A HREF="convolve.html#sharpen" >Sharpening Images
 <!--<CODE EXECUTE>
   kernel2image -8.1 -mn -n -ml "DoG:0,1.8,2.4" "DoG:5,1.8,2.4" kernel_dog.gif
 </CODE>-->
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_dog.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_dog.gif"
+  <A HREF="convolve/kernel_dog.gif"
+     ><IMG SRC="convolve/kernel_dog.gif"
            ALIGN=right VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
 
 <A NAME="dog"></A>
@@ -1851,11 +1851,11 @@ For example here I have placed the <A HREF="morphology.html#kernel2image"
 '<CODE><A HREF="convolve.html#dog" >DoG</A></CODE>' kernel side-by-side for comparison.
 
 <DIV ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_dog.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_dog.gif"
+  <A HREF="convolve/kernel_dog.gif"
+     ><IMG SRC="convolve/kernel_dog.gif"
            ALIGN=middle VSPACE=0 HSPACE=10 BORDER=0 ALT="[IM Output]"></A>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_log.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_log.gif"
+  <A HREF="convolve/kernel_log.gif"
+     ><IMG SRC="convolve/kernel_log.gif"
            ALIGN=middle VSPACE=0 HSPACE=10 BORDER=0 ALT="[IM Output]"></A>
 </DIV>
 
@@ -1879,8 +1879,8 @@ The applied results are also the very similar.
 <TR VALIGN=bottom><TD><PRE><CODE EXECUTE>
   convert face.png -bias 50% -morphology Convolve DoG:0,1.8,2.4  face_dog.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_dog.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_dog.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_dog.png"
+     ><IMG SRC="convolve/face_dog.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1907,8 +1907,8 @@ filter value of sigma2=2 </P>
 <TR VALIGN=bottom><TD><PRE><CODE EXECUTE>
   convert face.png -bias 50% -morphology Convolve DoG:0,0,2  face_dog_unity.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_dog_unity.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_dog_unity.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_dog_unity.png"
+     ><IMG SRC="convolve/face_dog_unity.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1933,14 +1933,14 @@ For example radius=1 (for a 3x3 kernel) and a sigma of 1 will generate...
   convert face.png  -define morphology:showkernel=1 -bias 50% \
           -morphology Convolve DoG:1,0,1  face_laplacian_isotropic.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_isotropic.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_isotropic.png"
+  <A HREF="convolve/face_laplacian_isotropic.png"
+     ><IMG SRC="convolve/face_laplacian_isotropic.png"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_isotropic.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_isotropic.txt.gif"
+  <A HREF="convolve/kernel_laplacian_isotropic.txt"
+     ><IMG SRC="convolve/kernel_laplacian_isotropic.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -1962,15 +1962,15 @@ For example...
           -compose Mathematics -define compose:args=0,-4,4,0.5 -composite \
           face_diff_of_blurs.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_diff_blurs.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_diff_of_blurs.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_diff_blurs.png"
+     ><IMG SRC="convolve/face_diff_of_blurs.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
 The above uses the special <A HREF="compose.html#mathematics" >Mathematics
 Composition Method</A> to avoid problems with 'clipping' during the
 subtraction of the images in a non-<A HREF="basics.html#hdri" >HDRI</A> version
-of IM.  For more details see <A HREF="https://legacy.imagemagick.org/Usage/transform/#math_addition" >Adding
+of IM.  For more details see <A HREF="transform/index.html#math_addition" >Adding
 Biased Gradients</A>. </P>
 
 The only other factor is the use of a larger scaling factor during the
@@ -2049,14 +2049,14 @@ normalized kernel with a <A HREF="convolve.html#kernel_bias" >Output Bias</A>.
   convert face.png -define convolve:scale='!' -bias 50% \
           -morphology Convolve Laplacian:0   face_laplacian_0.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_0.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_0.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_0.png"
+     ><IMG SRC="convolve/face_laplacian_0.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_0.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_0.txt.gif"
+  <A HREF="convolve/kernel_laplacian_0.txt"
+     ><IMG SRC="convolve/kernel_laplacian_0.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2077,8 +2077,8 @@ So lets repeat the above without a bias, so as to only keep the brigher
           -morphology Convolve Laplacian:0 \
           -auto-level face_laplacian_positives.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_positives.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_positives.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_positives.png"
+     ><IMG SRC="convolve/face_laplacian_positives.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2097,8 +2097,8 @@ than positive edges), and seemd to work better on our test image.
           -morphology Convolve Laplacian:0 \
           -auto-level face_laplacian_negatives.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_negatives.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_negatives.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_negatives.png"
+     ><IMG SRC="convolve/face_laplacian_negatives.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2147,14 +2147,14 @@ The 4 neighbour Laplacian. Also very commonly used.
   convert face.png -define convolve:scale='!' -bias 50% \
                    -morphology Convolve Laplacian:1   face_laplacian_1.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_1.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_1.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_1.png"
+     ><IMG SRC="convolve/face_laplacian_1.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_1.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_1.txt.gif"
+  <A HREF="convolve/kernel_laplacian_1.txt"
+     ><IMG SRC="convolve/kernel_laplacian_1.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2177,14 +2177,14 @@ laplacian. </P>
   convert face.png -define convolve:scale='!' -bias 50% \
                    -morphology Convolve Laplacian:2   face_laplacian_2.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_2.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_2.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_2.png"
+     ><IMG SRC="convolve/face_laplacian_2.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_2.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_2.txt.gif"
+  <A HREF="convolve/kernel_laplacian_2.txt"
+     ><IMG SRC="convolve/kernel_laplacian_2.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2204,14 +2204,14 @@ laplacian. </P>
   convert face.png -define convolve:scale='400%!' -bias 50% \
           -morphology Convolve Laplacian:3    face_laplacian_3.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_3.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_3.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_3.png"
+     ><IMG SRC="convolve/face_laplacian_3.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_3.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_3.txt.gif"
+  <A HREF="convolve/kernel_laplacian_3.txt"
+     ><IMG SRC="convolve/kernel_laplacian_3.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2234,14 +2234,14 @@ above) to see make any result visible. </P>
   convert face.png -define convolve:scale='!' -bias 50% \
                    -morphology Convolve Laplacian:5   face_laplacian_5.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_5.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_5.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_5.png"
+     ><IMG SRC="convolve/face_laplacian_5.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_5.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_5.txt.gif"
+  <A HREF="convolve/kernel_laplacian_5.txt"
+     ><IMG SRC="convolve/kernel_laplacian_5.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2265,14 +2265,14 @@ detail. </P>
   convert face.png -define convolve:scale='!' -bias 50% \
                    -morphology Convolve Laplacian:7   face_laplacian_7.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_7.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_7.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_7.png"
+     ><IMG SRC="convolve/face_laplacian_7.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_7.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_7.txt.gif"
+  <A HREF="convolve/kernel_laplacian_7.txt"
+     ><IMG SRC="convolve/kernel_laplacian_7.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2292,14 +2292,14 @@ A Discrete 5x5 LoG (Sigma approximatally 1.4)
   convert face.png -define convolve:scale='!' -bias 50% \
                    -morphology Convolve Laplacian:15   face_laplacian_15.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_15.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_15.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_15.png"
+     ><IMG SRC="convolve/face_laplacian_15.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_15.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_15.txt.gif"
+  <A HREF="convolve/kernel_laplacian_15.txt"
+     ><IMG SRC="convolve/kernel_laplacian_15.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2319,14 +2319,14 @@ A Discrete 9x9 LoG (Sigma approximatally 1.4)
   convert face.png -define convolve:scale='!' -bias 50% \
                    -morphology Convolve Laplacian:19   face_laplacian_19.png
 </CODE></PRE></TD></TR></TABLE></TD><TD ALIGN=center ROWSPAN=2>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_19.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_laplacian_19.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_laplacian_19.png"
+     ><IMG SRC="convolve/face_laplacian_19.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Text]"></A>
 </TD></TR><TR><TD>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=100% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_19.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_laplacian_19.txt.gif"
+  <A HREF="convolve/kernel_laplacian_19.txt"
+     ><IMG SRC="convolve/kernel_laplacian_19.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE></TD></TR></TABLE></P>
 
@@ -2356,8 +2356,8 @@ For example...
   convert face.png -define convolve:scale='100,100%' \
           -morphology Convolve 'Log:0x2' face_sharpen.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sharpen.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sharpen.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sharpen.png"
+     ><IMG SRC="convolve/face_sharpen.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 
@@ -2370,8 +2370,8 @@ That is because it is an actual true sharpening of the image, and not one
 faked by the subtraction of a blur. </P>
 
 </TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_unsharp.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_unsharp.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_unsharp.png"
+     ><IMG SRC="convolve/face_unsharp.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2388,8 +2388,8 @@ For example less sharp...
   convert face.png -define convolve:scale='50,100%' \
           -morphology Convolve 'Log:0x2' face_sharpen_50.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sharpen_50.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sharpen_50.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sharpen_50.png"
+     ><IMG SRC="convolve/face_sharpen_50.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2403,8 +2403,8 @@ Or more sharp...
   convert face.png -define convolve:scale='150,100%' \
           -morphology Convolve 'Log:0x2' face_sharpen_150.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sharpen_150.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sharpen_150.png"      WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sharpen_150.png"
+     ><IMG SRC="convolve/face_sharpen_150.png"      WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2469,14 +2469,14 @@ So lets have a look at some of the 'named' directional kernels. </P>
    Sobel:{<I>angle</I>} &nbsp;
 </CODE></PRE></TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.txt.gif"
+  <A HREF="convolve/kernel_sobel.txt"
+     ><IMG SRC="convolve/kernel_sobel.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </BLOCKQUOTE></P>
 
 We already saw the '<I>Sobel</I>' kernel above in the discussion of <A
-HREF="https://legacy.imagemagick.org/Usage/convolve/zero-summing_kernels" >Zero-Summing Kernels</A>. </P>
+HREF="convolve/zero-summing_kernels" >Zero-Summing Kernels</A>. </P>
 
 This kernel is a raw directional (first derivative) kernel designed to return
 the slope of an edge in some specific orthogonal direction.  By default it is
@@ -2493,23 +2493,23 @@ operation.  The result is essentually a X-derivative (slope) of the image.
   convert -size 60x60 xc:black xc:white +append slope_positive.gif
   convert slope_positive.gif -morphology Convolve Sobel slope_sobel.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/slope_positive.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/slope_positive.gif"  WIDTH=120 HEIGHT=60
+  <A HREF="convolve/slope_positive.gif"
+     ><IMG SRC="convolve/slope_positive.gif"  WIDTH=120 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_sobel.gif"
+     ><IMG SRC="convolve/kernel_sobel.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/slope_sobel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/slope_sobel.gif"  WIDTH=120 HEIGHT=60
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/slope_sobel.gif"
+     ><IMG SRC="convolve/slope_sobel.gif"  WIDTH=120 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=20 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   If you look at the kernel you may think that it is declared backwards.  In
   one sense you are actually correct. However this is due to the way '<A
@@ -2535,23 +2535,23 @@ see it. </P>
   convert slope_both.gif -define convolve:scale='50%!' -bias 50% \
                          -morphology Convolve Sobel slope_sobel_bias.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/slope_both.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/slope_both.gif"  WIDTH=120 HEIGHT=60
+  <A HREF="convolve/slope_both.gif"
+     ><IMG SRC="convolve/slope_both.gif"  WIDTH=120 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_sobel.gif"
+     ><IMG SRC="convolve/kernel_sobel.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/slope_sobel_bias.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/slope_sobel_bias.gif"  WIDTH=120 HEIGHT=60
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/slope_sobel_bias.gif"
+     ><IMG SRC="convolve/slope_sobel_bias.gif"  WIDTH=120 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=20 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-  ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+  ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   If you use this kernel with '<CODE>Correlate</CODE>', you will find slopes
   that 'match' the way the kernel is defined. In that case you would get
@@ -2579,16 +2579,16 @@ image.
   convert face.png -define convolve:scale='50%!' -bias 50% \
                    -morphology Convolve Sobel  face_sobel.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/face.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/face.png"               WIDTH=80 HEIGHT=80
+  <A HREF="images/face.png"
+     ><IMG SRC="images/face.png"               WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=10 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_sobel.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_sobel.gif"
+     ><IMG SRC="convolve/kernel_sobel.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel.png"         WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/face_sobel.png"
+     ><IMG SRC="convolve/face_sobel.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -2613,8 +2613,8 @@ Here it is again, but rotated 90 degrees (top to bottom).
   convert face.png -define convolve:scale='50%!' -bias 50% \
           -morphology Convolve Sobel:90   face_sobel_90.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel_90.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel_90.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sobel_90.png"
+     ><IMG SRC="convolve/face_sobel_90.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2638,8 +2638,8 @@ gradient magnitude.
            -delete 0 -background Black -compose Lighten -flatten \
            face_sobel_maximum.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel_maximum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel_maximum.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sobel_maximum.png"
+     ><IMG SRC="convolve/face_sobel_maximum.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2656,8 +2656,8 @@ rotations of the '<CODE><A HREF="convolve.html#sobel" >Sobel</A></CODE>' kernel.
            -define morphology:compose=Lighten \
            -morphology Convolve  'Sobel:&gt;'   face_sobel_maximum_2.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel_maximum_2.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel_maximum_2.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sobel_maximum_2.png"
+     ><IMG SRC="convolve/face_sobel_maximum_2.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2682,8 +2682,8 @@ processing.
            -delete 0 -solarize 50% -level 50,0% \
            -compose Lighten -composite      face_sobel_maximum_3.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel_maximum_3.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel_maximum_3.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sobel_maximum_3.png"
+     ><IMG SRC="convolve/face_sobel_maximum_3.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2705,21 +2705,21 @@ Theorem</A>).
            +level 0,70% -gamma 0.5 -compose plus -composite  -gamma 2 \
            -auto-level face_sobel_magnitude.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel_magnitude.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel_magnitude.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sobel_magnitude.png"
+     ><IMG SRC="convolve/face_sobel_magnitude.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The "<CODE><A HREF="../../html/www/command-line-options.html#gamma" >-gamma</A></CODE>" function
   in the above use being used to perform a mathematical 'Square' and 'Square
   Root' of the values returned by the '<CODE><A HREF="convolve.html#sobel"
   >Sobel</A></CODE>' results.  For more detail see <A
-  HREF="https://legacy.imagemagick.org/Usage/transform/#evaluate_pow" >Power Of Maths Function</A>. </P>
+  HREF="transform/index.html#evaluate_pow" >Power Of Maths Function</A>. </P>
 
   The extra "<CODE><A HREF="../../html/www/command-line-options.html#level" >+level</A></CODE>"
   ensures the <A HREF="compose.html#plus" >Plus Composition</A> does not
@@ -2746,20 +2746,20 @@ two edge detection results.
       -delete 0,1 -alpha off -compose CopyOpacity -composite \
       face_sobel_direction.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/shapes.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/shapes.gif"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/shapes.gif"
+     ><IMG SRC="convolve/shapes.gif"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel_direction.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel_direction.png"         WIDTH=80 HEIGHT=80
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/face_sobel_direction.png"
+     ><IMG SRC="convolve/face_sobel_direction.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=0 ALT="[IM Output]"></A>
 </DIV></P>
 
 The first "<CODE><A HREF="../../html/www/command-line-options.html#fx" >-fx</A></CODE>" expression
 is the one that uses a 'atan()' function to convert a X,Y vector into an
 angle.  This is then colored with the an external <A
-HREF="https://legacy.imagemagick.org/Usage/canvas/#gradient_colorspace" >Rainbow Gradient Image</A>, as a <A
-HREF="https://legacy.imagemagick.org/Usage/color_mods/#clut" >Color Lookup Table</A>.  The second "<CODE><A
+HREF="canvas/index.html#gradient_colorspace" >Rainbow Gradient Image</A>, as a <A
+HREF="color_mods/index.html#clut" >Color Lookup Table</A>.  The second "<CODE><A
 HREF="../../html/www/command-line-options.html#fx" >-fx</A></CODE>" expression create a thresholded
 transparency mask to make any areas without a slope transparent. </P>
 
@@ -2787,8 +2787,8 @@ needed by a factor of three.  It then uses HSB colorspace to create direction
           -set colorspace HSB -combine -colorspace RGB \
           face_sobel_magnitude_n_direction.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_sobel_magnitude_n_direction.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_sobel_magnitude_n_direction.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_sobel_magnitude_n_direction.png"
+     ><IMG SRC="convolve/face_sobel_magnitude_n_direction.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2809,8 +2809,8 @@ needed by a factor of three.  It then uses HSB colorspace to create direction
    Roberts:{<I>angle</I>} &nbsp;
 </CODE></PRE></TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_roberts.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_roberts.txt.gif"
+  <A HREF="convolve/kernel_roberts.txt"
+     ><IMG SRC="convolve/kernel_roberts.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </BLOCKQUOTE></P>
@@ -2835,8 +2835,8 @@ a 'Roberts-Cross' kernel.
   convert face.png -define convolve:scale='50%!' -bias 50% \
                    -morphology Convolve Roberts:45  face_roberts.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_roberts.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_roberts.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_roberts.png"
+     ><IMG SRC="convolve/face_roberts.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2852,8 +2852,8 @@ directions, rather than just 4.
    convert face.png -define morphology:compose=Lighten \
            -morphology Convolve  'Roberts:@'   face_roberts_maximum.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_roberts_maximum.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_roberts_maximum.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_roberts_maximum.png"
+     ><IMG SRC="convolve/face_roberts_maximum.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2885,8 +2885,8 @@ adding them together, you get a much smaller sharper edge detection with only
    Prewitt:{<I>angle</I>} &nbsp;
 </CODE></PRE></TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_prewitt.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_prewitt.txt.gif"
+  <A HREF="convolve/kernel_prewitt.txt"
+     ><IMG SRC="convolve/kernel_prewitt.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </BLOCKQUOTE></P>
@@ -2903,8 +2903,8 @@ specific edge detection.  The result is thus a little more fuzzy.
   convert face.png -define convolve:scale='50%!' -bias 50% \
                    -morphology Convolve Prewitt  face_prewitt.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_prewitt.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_prewitt.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_prewitt.png"
+     ><IMG SRC="convolve/face_prewitt.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2922,8 +2922,8 @@ specific edge detection.  The result is thus a little more fuzzy.
    Compass:{<I>angle</I>} &nbsp;
 </CODE></PRE></TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_compass.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_compass.txt.gif"
+  <A HREF="convolve/kernel_compass.txt"
+     ><IMG SRC="convolve/kernel_compass.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </BLOCKQUOTE></P>
@@ -2939,8 +2939,8 @@ sense than '<CODE><A HREF="convolve.html#sobel" >Sobel</A></CODE>'.
   convert face.png -define convolve:scale='50%!' -bias 50% \
                    -morphology Convolve Compass  face_compass.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_compass.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_compass.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_compass.png"
+     ><IMG SRC="convolve/face_compass.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2957,8 +2957,8 @@ sense than '<CODE><A HREF="convolve.html#sobel" >Sobel</A></CODE>'.
    Kirsch:{<I>angle</I>} &nbsp;
 </CODE></PRE></TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_kirsch.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_kirsch.txt.gif"
+  <A HREF="convolve/kernel_kirsch.txt"
+     ><IMG SRC="convolve/kernel_kirsch.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </BLOCKQUOTE></P>
@@ -2973,8 +2973,8 @@ This is another strong direction sensing edge detector.
   convert face.png -define convolve:scale='50%!' -bias 50% \
                    -morphology Convolve Kirsch  face_kirsch.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_kirsch.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_kirsch.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_kirsch.png"
+     ><IMG SRC="convolve/face_kirsch.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2998,8 +2998,8 @@ replaced by a Square Root of 2.
    Frei-Chen:[{<I>type</I>},][{<I>angle</I>}] &nbsp;
 </CODE></PRE></TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_freichen.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_freichen.txt.gif"
+  <A HREF="convolve/kernel_freichen.txt"
+     ><IMG SRC="convolve/kernel_freichen.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </BLOCKQUOTE></P>
@@ -3015,8 +3015,8 @@ The kernel above is the default unweighted kernel that is the heart of the
   convert face.png -define convolve:scale='50%!' -bias 50% \
                    -morphology Convolve Frei-Chen  face_freichen.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/face_freichen.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/face_freichen.png"         WIDTH=80 HEIGHT=80
+  <A HREF="convolve/face_freichen.png"
+     ><IMG SRC="convolve/face_freichen.png"         WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -3039,14 +3039,14 @@ provided, one like the above for orthogonal use, the other for diagonal use.
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 BGCOLOR="#CCCCCC">
 <TR><TD ALIGN=center>Frei-Chen:1</TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_freichen1.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_freichen1.txt.gif"
+  <A HREF="convolve/kernel_freichen1.txt"
+     ><IMG SRC="convolve/kernel_freichen1.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR>
 <TR><TD ALIGN=center>Frei-Chen:2</TD></TR>
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_freichen2.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_freichen2.txt.gif"
+  <A HREF="convolve/kernel_freichen2.txt"
+     ><IMG SRC="convolve/kernel_freichen2.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </BLOCKQUOTE></P>
@@ -3102,7 +3102,7 @@ let me know, so I can include it here for others to use.  </PRE>
 <A NAME="correlate"></A>
 <H2>Correlate
 &nbsp; <FONT SIZE=5>(
-<IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_correlate.gif" ALIGN=absmiddle>
+<IMG SRC="img_www/mph_correlate.gif" ALIGN=absmiddle>
 )</FONT></H2>
 
 Where the '<CODE><A HREF="convolve.html#convolve" >Convolve</A></CODE>' method is basically
@@ -3153,16 +3153,16 @@ image.
                                    1,0,0
                                    1,1,0'   convolve_shape.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/pixel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/pixel.gif"  WIDTH=88 HEIGHT=88
+  <A HREF="convolve/pixel.gif"
+     ><IMG SRC="convolve/pixel.gif"  WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_lshape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_lshape.gif"
+  <IMG SRC="img_www/mph_convolve.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_lshape.gif"
+     ><IMG SRC="convolve/kernel_lshape.gif"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/convolve_shape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/convolve_shape.gif"  WIDTH=88 HEIGHT=88
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/convolve_shape.gif"
+     ><IMG SRC="convolve/convolve_shape.gif"  WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -3181,16 +3181,16 @@ Now lets repeat this example but using '<CODE><A HREF="convolve.html#correlate"
                                     1,0,0
                                     1,1,0'  correlate_shape.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/pixel.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/pixel.gif"  WIDTH=88 HEIGHT=88
+  <A HREF="convolve/pixel.gif"
+     ><IMG SRC="convolve/pixel.gif"  WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_lshape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_lshape.gif"
+  <IMG SRC="img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_lshape.gif"
+     ><IMG SRC="convolve/kernel_lshape.gif"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/correlate_shape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/correlate_shape.gif"  WIDTH=88 HEIGHT=88
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/correlate_shape.gif"
+     ><IMG SRC="convolve/correlate_shape.gif"  WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -3270,16 +3270,16 @@ method example above, we get...
                                     1,0,0
                                     1,1,0' correlate.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/convolve_shape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/convolve_shape_mag.gif"    WIDTH=88 HEIGHT=88
+  <A HREF="convolve/convolve_shape.gif"
+     ><IMG SRC="convolve/convolve_shape_mag.gif"    WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_lshape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_lshape.gif"
+  <IMG SRC="img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_lshape.gif"
+     ><IMG SRC="convolve/kernel_lshape.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/correlate.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/correlate_mag.gif"      WIDTH=88 HEIGHT=88
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/correlate.gif"
+     ><IMG SRC="convolve/correlate_mag.gif"      WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=80%>
 <TR><TD ALIGN=Justify><FONT SIZE=-1><I>
@@ -3331,16 +3331,16 @@ match the background should make the resulting pixel less bright.
                                           -1 +1 +1 -1
                                            0 -1 -1  0 '  correlate_pattern.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/convolve_shape.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/convolve_shape_mag.gif"    WIDTH=88 HEIGHT=88
+  <A HREF="convolve/convolve_shape.gif"
+     ><IMG SRC="convolve/convolve_shape_mag.gif"    WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_lpattern.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_lpattern.gif"
+  <IMG SRC="img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_lpattern.gif"
+     ><IMG SRC="convolve/kernel_lpattern.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/correlate_pattern.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/correlate_pattern_mag.gif"       WIDTH=88 HEIGHT=88
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/correlate_pattern.gif"
+     ><IMG SRC="convolve/correlate_pattern_mag.gif"       WIDTH=88 HEIGHT=88
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=80%>
 <TR><TD ALIGN=Justify><FONT SIZE=-1><I>
@@ -3381,16 +3381,16 @@ both positive and negative 'L' shapes. (images shown have been magnified)
                                           -1  1  1 -1
                                            0 -1 -1  0 '  correlate_bias.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/test_mag.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/test_mag.gif"            WIDTH=208  HEIGHT=136
+  <A HREF="convolve/test_mag.gif"
+     ><IMG SRC="convolve/test_mag.gif"            WIDTH=208  HEIGHT=136
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_lpattern.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_lpattern.gif"
+  <IMG SRC="img_www/mph_correlate.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_lpattern.gif"
+     ><IMG SRC="convolve/kernel_lpattern.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/correlate_bias.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/correlate_bias_mag.gif"    WIDTH=208 HEIGHT=136
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/correlate_bias.gif"
+     ><IMG SRC="convolve/correlate_bias_mag.gif"    WIDTH=208 HEIGHT=136
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 <!--<CODE EXECUTE>
@@ -3430,16 +3430,16 @@ by darker colored pixels.  Other '<CODE><A HREF="morphology.html#peaks"
   convert correlate_bias.gif  -morphology hitandmiss peaks:1.9 \
           -auto-level  correlate_peaks.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/correlate_bias.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/correlate_bias_mag.gif"              WIDTH=208  HEIGHT=136
+  <A HREF="convolve/correlate_bias.gif"
+     ><IMG SRC="convolve/correlate_bias_mag.gif"              WIDTH=208  HEIGHT=136
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/mph_hitmiss.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/kernel_peaks.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/kernel_peaks.gif"
+  <IMG SRC="img_www/mph_hitmiss.gif" ALIGN=middle WIDTH=20 HEIGHT=30">
+  <A HREF="convolve/kernel_peaks.gif"
+     ><IMG SRC="convolve/kernel_peaks.gif"
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/correlate_peaks.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/correlate_peaks_mag.gif"    WIDTH=208 HEIGHT=136
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/correlate_peaks.gif"
+     ><IMG SRC="convolve/correlate_peaks_mag.gif"    WIDTH=208 HEIGHT=136
            ALIGN=middle VSPACE=5 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 <!--<CODE EXECUTE>
@@ -3452,7 +3452,7 @@ was found, though the degree of the match has been lost. </P>
 
 
 You may like to look at the 'peak finding' section of <A
-HREF="https://legacy.imagemagick.org/Usage/compare/#sub-image" >Compare and Sub-Image Searching</A>. But also
+HREF="compare/index.html#sub-image" >Compare and Sub-Image Searching</A>. But also
 look at Fred Weinhaus's script "<CODE><A
 HREF="http://www.fmwconcepts.com/imagemagick/maxima/" >maxima</A></CODE>". </P>
 
@@ -3530,7 +3530,7 @@ matches only, or near matches with lots more errors, and the possible use of
 a faster algorithm. </P>
 
 Note that for finding exact matches of small color images within larger
-images, the <A HREF="https://legacy.imagemagick.org/Usage/compare/#sub-image" >Sub-Image Locating Feature</A> of
+images, the <A HREF="compare/index.html#sub-image" >Sub-Image Locating Feature</A> of
 the "<CODE>compare</CODE>" program will provide a much better method than
 either  '<CODE><A HREF="morphology.html#hmt" >Hit-And-Miss</A></CODE>' or
 '<CODE><A HREF="convolve.html#correlate" >Correlate</A></CODE>' methods. This is because it
@@ -3561,7 +3561,7 @@ size '<CODE>1.5</CODE>' you get a neighbour count. </P>
 
 Here is a count the neighbours of each pixel in a small area, and show the
 enlargement of individual pixels before and after (generated using the <A
-HREF="https://legacy.imagemagick.org/Usage/scripts/enlarge_image" >Enlarge Image Script</A>)...
+HREF="scripts/enlarge_image" >Enlarge Image Script</A>)...
 
 <DIV ALIGN=center>
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
@@ -3569,12 +3569,12 @@ HREF="https://legacy.imagemagick.org/Usage/scripts/enlarge_image" >Enlarge Image
   convert area.gif  -define convolve:scale=\! \
           -morphology Convolve Ring:1.5     neighbour.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/area_enlarged.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/area_enlarged.png"
+  <A HREF="convolve/area_enlarged.png"
+     ><IMG SRC="convolve/area_enlarged.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/neighbour_enlarged.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/neighbour_enlarged.png"
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/neighbour_enlarged.png"
+     ><IMG SRC="convolve/neighbour_enlarged.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
 </DIV></P>
 <!-- <CODE EXECUTE>
@@ -3583,14 +3583,14 @@ HREF="https://legacy.imagemagick.org/Usage/scripts/enlarge_image" >Enlarge Image
 </CODE> -->
 
 As you can see all the pixels grey-level show how many neighbours they have,
-including any <A HREF="https://legacy.imagemagick.org/Usage/misc/#virtual" >Virtual Pixel</A> neighbours along
+including any <A HREF="misc/index.html#virtual" >Virtual Pixel</A> neighbours along
 the edges.  </P>
 
 If you want to include the current pixel in the count, you can use a <A
 HREF="morphology.html#square" >Square Kernel</A> instead. </P>
 
 With appropriate conversions (including level adjustments) and using the <A
-HREf="https://legacy.imagemagick.org/Usage/formats/#pbmplus" >PbmPlus File Format</A>, you can convert the above
+HREf="formats/index.html#pbmplus" >PbmPlus File Format</A>, you can convert the above
 grey levels, into actual numbers if that is what you want.
 
 <DIV ALIGN=center>
@@ -3600,8 +3600,8 @@ grey levels, into actual numbers if that is what you want.
 </CODE></PRE></TD></TR></TABLE>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/neighbour.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/neighbour.txt.gif"
+  <A HREF="convolve/neighbour.txt"
+     ><IMG SRC="convolve/neighbour.txt.gif"
            ALIGN=middle VSPACE=5 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 
@@ -3622,12 +3622,12 @@ a large negative center is to negatively scale a standard <A HREF="convolve.html
   convert area.gif  -define convolve:scale=-1\! \
           -morphology Convolve Laplacian:0 -clamp  neigh_edge.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/area_enlarged.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/area_enlarged.png"
+  <A HREF="convolve/area_enlarged.png"
+     ><IMG SRC="convolve/area_enlarged.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/neigh_edge_enlarged.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/neigh_edge_enlarged.png"
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/neigh_edge_enlarged.png"
+     ><IMG SRC="convolve/neigh_edge_enlarged.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
 </DIV></P>
 <!-- <CODE EXECUTE>
@@ -3710,7 +3710,7 @@ for the '<CODE>0</CODE>'  grey-level and a white value for the
 a value. </P>
 
 Now we can encode the '<I>Game of Life</I>' rules into an <A
-HREF="https://legacy.imagemagick.org/Usage/color_mods/#clut" >Color Lookup Table Image</A>, so as to convert the
+HREF="color_mods/index.html#clut" >Color Lookup Table Image</A>, so as to convert the
 resulting neighbour count 'grey-level', generated by the above kernel, into
 the appropriate 'life and death' result according to the 'Life Rules'.</P>
 
@@ -3722,12 +3722,12 @@ the appropriate 'life and death' result according to the 'Life Rules'.</P>
           life_clut.gif
   enlarge_image -25.3 -ml 'Life Rules'  life_clut.gif  life_clut_enlarged.png
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/life_clut_enlarged.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/life_clut_enlarged.png"
+  <A HREF="convolve/life_clut_enlarged.png"
+     ><IMG SRC="convolve/life_clut_enlarged.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
 </DIV></P>
 
-The image is very small, so I used a <A HREF="https://legacy.imagemagick.org/Usage/scripts/enlarge_image"
+The image is very small, so I used a <A HREF="scripts/enlarge_image"
 >Enlarge Image Script</A> to generate a larger version to display above, with
 each pixel clearly separated.  </P>
 
@@ -3739,7 +3739,7 @@ cell) is a 'birth', while the two white pixels on the right side (neighbour
 counts 2 and 3 next to a live cell) allows an existing 'live cell' to continue
 to live.  Any other result leaves the result as black (dead). </P>
 
-The <A HREF="https://legacy.imagemagick.org/Usage/color_mods/#clut" >Color Lookup Table</A> is 21 pixels long
+The <A HREF="color_mods/index.html#clut" >Color Lookup Table</A> is 21 pixels long
 because I will be dividing by a scaling factor of 20, whice means we could
 generate a value in the range from 0 to 20, or 21 distinct gray-scale levels.
 We could actually use a different value than 10 for the center (cells previous
@@ -3747,7 +3747,7 @@ state), and 20 for the scaling, but these values are easy numbers to work
 with. </P>
 
 In summary, we divide the convolution kernel by 20, and use an CLUT that is
-21 pixels long (with <A HREF="https://legacy.imagemagick.org/Usage/misc/#integer" >Integer Interpolation</A>) to
+21 pixels long (with <A HREF="misc/index.html#integer" >Integer Interpolation</A>) to
 match convolution results (grey-levels) to the right output color value.  </P>
 
 ASIDE: This 'Life Rules' CLUT, can be regarded as a general Cellular Automata
@@ -3788,24 +3788,24 @@ it is working as expected.
           life_clut.gif -interpolate integer -clut \
           life_gen_004.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/life_gen_000.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/life_gen_000_mag.gif"   WIDTH=90 HEIGHT=90
+  <A HREF="convolve/life_gen_000.gif"
+     ><IMG SRC="convolve/life_gen_000_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/life_gen_001.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/life_gen_001_mag.gif"   WIDTH=90 HEIGHT=90
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/life_gen_001.gif"
+     ><IMG SRC="convolve/life_gen_001_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/life_gen_002.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/life_gen_002_mag.gif"   WIDTH=90 HEIGHT=90
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/life_gen_002.gif"
+     ><IMG SRC="convolve/life_gen_002_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/life_gen_003.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/life_gen_003_mag.gif"   WIDTH=90 HEIGHT=90
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/life_gen_003.gif"
+     ><IMG SRC="convolve/life_gen_003_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/life_gen_004.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/life_gen_004_mag.gif"   WIDTH=90 HEIGHT=90
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/life_gen_004.gif"
+     ><IMG SRC="convolve/life_gen_004_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 <!-- <CODE EXECUTE NOIMAGE OUT=life_gen_000_mag.gif>
@@ -3821,8 +3821,8 @@ with the patterns).  The 'blinker' in the top left corner flips back and
 forth, while the 'glider' in the bottom moved 1 diagonal step toward it, over
 the 4 'generations' we iterated the life rules.  </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/images/glider_gun.gif"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/images/glider_gun.gif"   WIDTH=50 HEIGHT=36
+<A HREF="images/glider_gun.gif"
+   ><IMG SRC="images/glider_gun.gif"   WIDTH=50 HEIGHT=36
          ALIGN=right VSPACE=0 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
 
 And here is a larger example known as <A
@@ -3844,17 +3844,17 @@ I scale the resulting animation for better viewing. <BR CLEAR=all HEIGHT=1>
                  -set delay 10 -layers Optimize -loop 0  glider_gun_anim.gif
   convert glider_gun.gif -scale 500% life_pattern.gif
 </CODE></PRE></TD></TR></TABLE>
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/life_pattern.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/life_pattern.gif"   WIDTH=250 HEIGHT=180
+  <A HREF="convolve/life_pattern.gif"
+     ><IMG SRC="convolve/life_pattern.gif"   WIDTH=250 HEIGHT=180
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/convolve/glider_gun_anim.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/convolve/glider_gun_anim.gif"  WIDTH=250 HEIGHT=180
+  <IMG SRC="img_www/right.gif" ALIGN=middle WIDTH=20 HEIGHT=20 ALT="==>">
+  <A HREF="convolve/glider_gun_anim.gif"
+     ><IMG SRC="convolve/glider_gun_anim.gif"  WIDTH=250 HEIGHT=180
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </DIV></P>
 
 Note that the reason the glider 'explodes' on the bottom edge is because of
-the default '<A HREF="https://legacy.imagemagick.org/Usage/misc/#virtual" >Virtual Pixel</A>' handling that
+the default '<A HREF="misc/index.html#virtual" >Virtual Pixel</A>' handling that
 convolve uses, and the loss of the life information as it goes beyond the
 bounds of the image. </P>
 
@@ -3889,6 +3889,6 @@ Major Input:
         <A HREF="http://www.fmwconcepts.com/fmw/fmw.html" >Fred Weinhaus</A>,
         &lt;fmw at alink dot net&gt;<BR>
 Examples Generated with:
-        <IMG SRC="https://legacy.imagemagick.org/Usage/convolve/version.gif" ALIGN=absmiddle ALT="[version image]"><BR>
+        <IMG SRC="convolve/version.gif" ALIGN=absmiddle ALT="[version image]"><BR>
 URL: <CODE>https://legacy.imagemagick.org/Usage/convolve/</CODE>
 </ADDRESS></BODY></HTML>

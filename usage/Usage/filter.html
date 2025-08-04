@@ -3,13 +3,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" >
 <link rel="stylesheet" href="../../html/www/css/magick.css">
 <TITLE>Resampling Filters -- IM v6 Examples</TITLE>
-<LINK REL="icon" HREF="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
-<LINK REL="shortcut" HREF="https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type="image/x-icon">
+<LINK REL="icon" HREF="img_www/favicon.ico" type="image/x-icon">
+<LINK REL="shortcut" HREF="img_www/favicon.ico" type="image/x-icon">
 <LINK REL="canonical" HREF="filter.html">
 </HEAD><BODY BGCOLOR="#B0C4DE">
 
 <H1>ImageMagick v6 Examples -- <BR>
-    <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif" width=50 height=1>
+    <IMG SRC="img_www/space.gif" width=50 height=1>
     Resampling Filters</H1>
 
 <DIV ALIGN=justify>
@@ -18,13 +18,13 @@
 <TABLE CELLSPACING=0>
 <TR VALIGN=top><TD COLSPAN=2>
 <A HREF="../Usage.html"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_left.gif" BORDER=0 WIDTH=15 HEIGHT=15
+   ><IMG SRC="img_www/granitesm_left.gif" BORDER=0 WIDTH=15 HEIGHT=15
    > ImageMagick Examples Preface and Index</A>
 </TD></TR>
 <TR VALIGN=bottom><TD><DL>
 
 <DD><A HREF="filter.html#artifacts"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Resampling Artefacts </A> - How good is Resize?
     <DL><DD><FONT SIZE=-1>
         <A HREF="filter.html#blocking" >Blocking</A>,&nbsp;
@@ -39,7 +39,7 @@
 &nbsp;
 
 <DD><A HREF="filter.html#filter"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Resampling Filters</A>
     <UL>
     <LI><A HREF="filter.html#interpolated" >Interpolated Filters</A>
@@ -85,7 +85,7 @@
 </DL></TD><TD><DL>
 
 <DT><! HREF="#filter"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Resampling Filters (Cont)</A>
     <UL>
     <LI><A HREF="filter.html#lagrange" >Lagrange Filter</A>
@@ -124,8 +124,8 @@
         </UL>
     </UL>
 &nbsp;
-<DT><A HREF="https://legacy.imagemagick.org/Usage/filter/nicolas/"
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
+<DT><A HREF="filter/nicolas/index.html"
+    ><IMG SRC="img_www/granitesm_right.gif" BORDER=0 WIDTH=15 HEIGHT=15
     > Resampling by Nicolas Robidoux</A> (sub-section)
 </DL>
 </TD></TR></TABLE></P>
@@ -175,25 +175,25 @@ isolated pixels with round dots, to remove some of the blockiness.
   convert storm.gif -filter Gaussian -resize 300%  storm_resized_gas.gif
 </CODE></PRE></TD></TR></TABLE><NOBR>
 <TABLE><TR VALIGN=center><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/images/storm.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/images/storm.gif"                WIDTH=32  HEIGHT=32
+  <A HREF="images/storm.gif"
+     ><IMG SRC="images/storm.gif"                WIDTH=32  HEIGHT=32
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Original
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/storm_scaled.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/storm_scaled.gif"         WIDTH=96  HEIGHT=96
+  <A HREF="filter/storm_scaled.gif"
+     ><IMG SRC="filter/storm_scaled.gif"         WIDTH=96  HEIGHT=96
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Scaled
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/storm_resized.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/storm_resized.gif"         WIDTH=96  HEIGHT=96
+  <A HREF="filter/storm_resized.gif"
+     ><IMG SRC="filter/storm_resized.gif"         WIDTH=96  HEIGHT=96
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Resized
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/storm_resized_gas.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/storm_resized_gas.gif"         WIDTH=96  HEIGHT=96
+  <A HREF="filter/storm_resized_gas.gif"
+     ><IMG SRC="filter/storm_resized_gas.gif"         WIDTH=96  HEIGHT=96
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Gaussian Resized
 </TD></TR></TABLE>
@@ -249,15 +249,15 @@ enlargements.
                          -resize 100x100\!  gray_edge_ringing.gif
   convert gray_edge.gif  -resize 100x100\!  gray_edge_resize.gif
 </CODE></PRE></TD></TR></TABLE><NOBR>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/gray_edge.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/gray_edge.gif"                WIDTH=16  HEIGHT=16
+  <A HREF="filter/gray_edge.gif"
+     ><IMG SRC="filter/gray_edge.gif"                WIDTH=16  HEIGHT=16
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/gray_edge_ringing.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/gray_edge_ringing.gif"         WIDTH=100  HEIGHT=100
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 ALIGN=middle ALT="==>">
+  <A HREF="filter/gray_edge_ringing.gif"
+     ><IMG SRC="filter/gray_edge_ringing.gif"         WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/gray_edge_resize.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/gray_edge_resize.gif"         WIDTH=100  HEIGHT=100
+  <A HREF="filter/gray_edge_resize.gif"
+     ><IMG SRC="filter/gray_edge_resize.gif"         WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </NOBR></DIV>
 
@@ -278,8 +278,8 @@ single pixel, on a gray background.
           -define filter:lobes=5  -filter Sinc \
           -resize 100x100\!   dot_sinc.gif
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_sinc.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_sinc.gif"         WIDTH=100  HEIGHT=100
+  <A HREF="filter/dot_sinc.gif"
+     ><IMG SRC="filter/dot_sinc.gif"         WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -301,8 +301,8 @@ HREF="resize.html#resize" >Resize Operator</A> uses.
           -define filter:lobes=5  -filter Jinc \
           -distort resize 100x100\! +repage dot_jinc.gif
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_jinc.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_jinc.gif"     WIDTH=100  HEIGHT=100
+  <A HREF="filter/dot_jinc.gif"
+     ><IMG SRC="filter/dot_jinc.gif"     WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -329,8 +329,8 @@ patterns, including: patterns of parallel lines,  cloth weaves (silk exhibits
 this effect in real life!), as well as brick and tile patterns in photos of
 brick buildings, fences, and paving.  </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/img_photos/rings_sm_orig.gif"
- ><IMG SRC="https://legacy.imagemagick.org/Usage/img_photos/rings_sm_orig.gif"         WIDTH=200  HEIGHT=200
+<A HREF="img_photos/rings_sm_orig.gif"
+ ><IMG SRC="img_photos/rings_sm_orig.gif"         WIDTH=200  HEIGHT=200
        ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 For some examples of resized images producing strong Moir&eacute; effects see
@@ -338,7 +338,7 @@ the <A HREF="http://en.wikipedia.org/wiki/Moir%C3%A9_pattern" >Wikipedia,
 Moir&eacute; Pattern</A> Page. </P>
 
 The classic way of checking if a resize will produce aliasing problems, is by
-minifying a <A HREF="https://legacy.imagemagick.org/Usage/img_photos/rings_sm_orig.gif" >Rings Image</A> (see right).  This
+minifying a <A HREF="img_photos/rings_sm_orig.gif" >Rings Image</A> (see right).  This
 image will often show Moir&eacute; effects when any form of resize is applied
 at any scale.  Web browsers in particular show such Moir&eacute; effects when
 displaying such an image due to the use of an ultra fast (but often poor)
@@ -360,18 +360,18 @@ operator  and the normal default "<CODE><A HREF="../../html/www/command-line-opt
   convert rings_sm_orig.gif  -resize 100x100  rings_resize.png
 </CODE></PRE></TD></TR></TABLE>
 <TABLE WIDTH=80%><TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_sample.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_sample.png"         WIDTH=100  HEIGHT=100
+  <A HREF="filter/rings_sample.png"
+     ><IMG SRC="filter/rings_sample.png"         WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>sample
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_scale.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_scale.png"         WIDTH=100  HEIGHT=100
+  <A HREF="filter/rings_scale.png"
+     ><IMG SRC="filter/rings_scale.png"         WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>scale
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_resize.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_resize.png"         WIDTH=100  HEIGHT=100
+  <A HREF="filter/rings_resize.png"
+     ><IMG SRC="filter/rings_resize.png"         WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>resize
 </TD></TR></TABLE></DIV></P>
@@ -381,7 +381,7 @@ effects, though IM's default resize operator produces the least amount of
 this undesirable secondary patterns in the final image. </P>
 
 To show the effects of only a slight resize, I cropped the corner from the
-<A HREF="https://legacy.imagemagick.org/Usage/img_photos/rings_lg_orig.png" >Large Rings Image</A>, the result of which is
+<A HREF="img_photos/rings_lg_orig.png" >Large Rings Image</A>, the result of which is
 shown first, and then reduced its size by just 5%.
 
 <DIV ALIGN=center>
@@ -393,25 +393,25 @@ shown first, and then reduced its size by just 5%.
   convert rings_crop.png    -resize 100x100    rings_crop_resize.png
 </CODE></PRE></TD></TR></TABLE>
 <TABLE WIDTH=80%><TR VALIGN=top><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_crop.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_crop.png"   WIDTH=105 HEIGHT=105
+  <A HREF="filter/rings_crop.png"
+     ><IMG SRC="filter/rings_crop.png"   WIDTH=105 HEIGHT=105
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>cropped original
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_crop_sample.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_crop_sample.png"  WIDTH=100 HEIGHT=100
+  <A HREF="filter/rings_crop_sample.png"
+     ><IMG SRC="filter/rings_crop_sample.png"  WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>sample
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_crop_scale.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_crop_scale.png"  WIDTH=100 HEIGHT=100
+  <A HREF="filter/rings_crop_scale.png"
+     ><IMG SRC="filter/rings_crop_scale.png"  WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>scale
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_crop_resize.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_crop_resize.png"  WIDTH=100 HEIGHT=100
+  <A HREF="filter/rings_crop_resize.png"
+     ><IMG SRC="filter/rings_crop_resize.png"  WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>resize
 </TD></TR></TABLE></DIV></P>
@@ -462,8 +462,8 @@ that are being used.  No guarantees can be given. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+    ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Before IM v6.3.6-3 the <A HREF="filter.html#blur" >Filter Blur</A>
   setting was called "<CODE><A HREF="../../html/www/command-line-options.html#support"
@@ -616,7 +616,7 @@ Interpolation is usually only used for 'point' sampling images, when image
 scaling is either not known or needed.  For example, when rotating image or
 minor distortions, the image's scaling or size does not change, and as such an
 interpolation can produce a reasonable result, though not a very accurate one.
-For more information see IM's <A HREF="https://legacy.imagemagick.org/Usage/misc/#interpolate" >Interpolation
+For more information see IM's <A HREF="misc/index.html#interpolate" >Interpolation
 Setting</A>. </P>
 
 It is not however suitable for general image resizing. </P>
@@ -643,17 +643,17 @@ sampling, with controls to tune the exact sampling point. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   For the <A HREF="distorts.html#distort" >Distort Operator</A> selecting
   "<CODE><A HREF="../../html/www/command-line-options.html#filter" >-filter</A> Point</CODE>", will
-  force the use of <A HREF="https://legacy.imagemagick.org/Usage/misc/#interpolate" >Interpolated Point
+  force the use of <A HREF="misc/index.html#interpolate" >Interpolated Point
   Sampling</A> instead of a <A HREF="filter.html#cylindrical"> Cylindrical
   Filter</A>.   See <A HREF="distorts.html#distort_filter" >Image Filters in
   the Distort Operator</A> for more detail.  </P>
 
-  If you desire the same <A HREF="https://legacy.imagemagick.org/Usage/misc/#interpolate" >Interpolated Point
+  If you desire the same <A HREF="misc/index.html#interpolate" >Interpolated Point
   Sampling</A> for normal image resize you can use the <A
   HREF="resize.html#interpolative-resize" >Interpolative Resize</A> operator
   instead. Or use point filtered <A HREF="distorts.html#resize" >Distort
@@ -675,35 +675,35 @@ scaling so that you can see the result.
   convert checks_10.gif -filter point -resize 5x5  checks_point-5.gif
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR VALIGN=bottom><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_10.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_10_mag.gif"      WIDTH=100 HEIGHT=100
+  <A HREF="filter/checks_10.gif"
+     ><IMG SRC="filter/checks_10_mag.gif"      WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>&nbsp;
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_point-1.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_point-1_mag.gif"   WIDTH=90 HEIGHT=90
+  <A HREF="filter/checks_point-1.gif"
+     ><IMG SRC="filter/checks_point-1_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Point-1
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_point-2.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_point-2_mag.gif"   WIDTH=80 HEIGHT=80
+  <A HREF="filter/checks_point-2.gif"
+     ><IMG SRC="filter/checks_point-2_mag.gif"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Point-2
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_point-3.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_point-3_mag.gif"   WIDTH=70 HEIGHT=70
+  <A HREF="filter/checks_point-3.gif"
+     ><IMG SRC="filter/checks_point-3_mag.gif"   WIDTH=70 HEIGHT=70
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Point-3
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_point-4.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_point-4_mag.gif"   WIDTH=60 HEIGHT=60
+  <A HREF="filter/checks_point-4.gif"
+     ><IMG SRC="filter/checks_point-4_mag.gif"   WIDTH=60 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Point-4
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_point-5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_point-5_mag.gif"   WIDTH=50 HEIGHT=50
+  <A HREF="filter/checks_point-5.gif"
+     ><IMG SRC="filter/checks_point-5_mag.gif"   WIDTH=50 HEIGHT=50
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Point 50%
 </TD></TR></TABLE></DIV></P>
@@ -735,8 +735,8 @@ The '<CODE><B>Box</B></CODE>' filter setting is exactly the same as
 average, and merge the pixels together. The smaller the resulting image the
 more pixels will be averaged together. </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_filter_box.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_filter_box.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_filter_box.jpg"
+   ><IMG SRC="filter/graph_filter_box.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 Here is a graph of the filter's weighting function, from which you can see why
@@ -767,35 +767,35 @@ as it is being slowly compressed using a '<CODE>Box</CODE>' filter.
   convert checks_10.gif -filter box -resize 5x5  checks_box-5.gif
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR VALIGN=bottom><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_10.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_10_mag.gif"      WIDTH=100 HEIGHT=100
+  <A HREF="filter/checks_10.gif"
+     ><IMG SRC="filter/checks_10_mag.gif"      WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>&nbsp;
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box-1.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box-1_mag.gif"   WIDTH=90 HEIGHT=90
+  <A HREF="filter/checks_box-1.gif"
+     ><IMG SRC="filter/checks_box-1_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box-1
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box-2.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box-2_mag.gif"   WIDTH=80 HEIGHT=80
+  <A HREF="filter/checks_box-2.gif"
+     ><IMG SRC="filter/checks_box-2_mag.gif"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box-2
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box-3.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box-3_mag.gif"   WIDTH=70 HEIGHT=70
+  <A HREF="filter/checks_box-3.gif"
+     ><IMG SRC="filter/checks_box-3_mag.gif"   WIDTH=70 HEIGHT=70
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box-3
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box-4.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box-4_mag.gif"   WIDTH=60 HEIGHT=60
+  <A HREF="filter/checks_box-4.gif"
+     ><IMG SRC="filter/checks_box-4_mag.gif"   WIDTH=60 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box-4
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box-5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box-5_mag.gif"   WIDTH=50 HEIGHT=50
+  <A HREF="filter/checks_box-5.gif"
+     ><IMG SRC="filter/checks_box-5_mag.gif"   WIDTH=50 HEIGHT=50
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box 50%
 </TD></TR></TABLE></DIV></P>
@@ -826,8 +826,8 @@ pixels. When 'binning' it will produce identical results. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The <A HREF="resize.html#scale" >Scale Operator</A> is not exactly the same
   as a 'Box Filter', as it is implemented using a special 'Pixel Mixing'
@@ -851,35 +851,35 @@ in using a simple 'nearest-neighbour' selection.
   convert checks_5.gif -filter box   -resize 10x10  checks_box+5.gif
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR VALIGN=bottom><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_5_mag.gif"      WIDTH=50 HEIGHT=50
+  <A HREF="filter/checks_5.gif"
+     ><IMG SRC="filter/checks_5_mag.gif"      WIDTH=50 HEIGHT=50
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>&nbsp;
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box+1.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box+1_mag.gif"   WIDTH=60 HEIGHT=60
+  <A HREF="filter/checks_box+1.gif"
+     ><IMG SRC="filter/checks_box+1_mag.gif"   WIDTH=60 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box+1
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box+2.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box+2_mag.gif"   WIDTH=70 HEIGHT=70
+  <A HREF="filter/checks_box+2.gif"
+     ><IMG SRC="filter/checks_box+2_mag.gif"   WIDTH=70 HEIGHT=70
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box+2
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box+3.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box+3_mag.gif"   WIDTH=80 HEIGHT=80
+  <A HREF="filter/checks_box+3.gif"
+     ><IMG SRC="filter/checks_box+3_mag.gif"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box+3
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box+4.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box+4_mag.gif"   WIDTH=90 HEIGHT=90
+  <A HREF="filter/checks_box+4.gif"
+     ><IMG SRC="filter/checks_box+4_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box+4
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_box+5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_box+5_mag.gif"   WIDTH=100 HEIGHT=100
+  <A HREF="filter/checks_box+5.gif"
+     ><IMG SRC="filter/checks_box+5_mag.gif"   WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Box+5
 </TD></TR></TABLE></DIV></P>
@@ -894,8 +894,8 @@ in using a simple 'nearest-neighbour' selection.
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The <A HREF="resize.html#scale" >Scale Operator</A> also produces similar
   results, but with some pixel color mixing, when enlarging, unless enlarging
@@ -907,11 +907,11 @@ in using a simple 'nearest-neighbour' selection.
 <A NAME="triangle"></A>
 <H4>Triangle</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_filter_triangle.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_filter_triangle.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_filter_triangle.jpg"
+   ><IMG SRC="filter/graph_filter_triangle.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
-The '<B>Triangle</B>' or '<CODE><A HREF="https://legacy.imagemagick.org/Usage/misc/#bilinear"
+The '<B>Triangle</B>' or '<CODE><A HREF="misc/index.html#bilinear"
 >Bilinear</A></CODE>' interpolation filter just takes the interpolation of the
 nearest neighbourhood one step further.  Instead of just directly averaging
 the nearby pixels together, as '<CODE>Box</CODE>' does, it weights them
@@ -932,35 +932,35 @@ in size.
   convert checks_10.gif -filter triangle -resize 5x5 checks_tri-5.gif
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR VALIGN=bottom><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_10.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_10_mag.gif"      WIDTH=100 HEIGHT=100
+  <A HREF="filter/checks_10.gif"
+     ><IMG SRC="filter/checks_10_mag.gif"      WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>&nbsp;
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri-1.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri-1_mag.gif"   WIDTH=90 HEIGHT=90
+  <A HREF="filter/checks_tri-1.gif"
+     ><IMG SRC="filter/checks_tri-1_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri-1
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri-2.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri-2_mag.gif"   WIDTH=80 HEIGHT=80
+  <A HREF="filter/checks_tri-2.gif"
+     ><IMG SRC="filter/checks_tri-2_mag.gif"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri-2
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri-3.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri-3_mag.gif"   WIDTH=70 HEIGHT=70
+  <A HREF="filter/checks_tri-3.gif"
+     ><IMG SRC="filter/checks_tri-3_mag.gif"   WIDTH=70 HEIGHT=70
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri-3
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri-4.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri-4_mag.gif"   WIDTH=60 HEIGHT=60
+  <A HREF="filter/checks_tri-4.gif"
+     ><IMG SRC="filter/checks_tri-4_mag.gif"   WIDTH=60 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri-4
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri-5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri-5_mag.gif"   WIDTH=50 HEIGHT=50
+  <A HREF="filter/checks_tri-5.gif"
+     ><IMG SRC="filter/checks_tri-5_mag.gif"   WIDTH=50 HEIGHT=50
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri
 </TD></TR></TABLE></DIV></P>
@@ -994,35 +994,35 @@ generating the pixels being added to the image. </P>
   convert checks_5.gif -filter triangle -resize 10x10 checks_tri+5.gif
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR VALIGN=bottom><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_5_mag.gif"      WIDTH=50 HEIGHT=50
+  <A HREF="filter/checks_5.gif"
+     ><IMG SRC="filter/checks_5_mag.gif"      WIDTH=50 HEIGHT=50
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>&nbsp;
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=50 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri+1.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri+1_mag.gif"   WIDTH=60 HEIGHT=60
+  <A HREF="filter/checks_tri+1.gif"
+     ><IMG SRC="filter/checks_tri+1_mag.gif"   WIDTH=60 HEIGHT=60
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri+1
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri+2.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri+2_mag.gif"   WIDTH=70 HEIGHT=70
+  <A HREF="filter/checks_tri+2.gif"
+     ><IMG SRC="filter/checks_tri+2_mag.gif"   WIDTH=70 HEIGHT=70
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri+2
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri+3.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri+3_mag.gif"   WIDTH=80 HEIGHT=80
+  <A HREF="filter/checks_tri+3.gif"
+     ><IMG SRC="filter/checks_tri+3_mag.gif"   WIDTH=80 HEIGHT=80
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri+3
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri+4.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri+4_mag.gif"   WIDTH=90 HEIGHT=90
+  <A HREF="filter/checks_tri+4.gif"
+     ><IMG SRC="filter/checks_tri+4_mag.gif"   WIDTH=90 HEIGHT=90
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri+4
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/checks_tri+5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/checks_tri+5_mag.gif"   WIDTH=100 HEIGHT=100
+  <A HREF="filter/checks_tri+5.gif"
+     ><IMG SRC="filter/checks_tri+5_mag.gif"   WIDTH=100 HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Tri+5
 </TD></TR></TABLE></DIV></P>
@@ -1046,16 +1046,16 @@ I then enlarge that image enormously.
   convert pixel_5.gif  -filter triangle -resize 300x  pixel_triangle.gif
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR VALIGN=bottom><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/pixel_5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/pixel_5_mag.gif"   WIDTH=100 HEIGHT=20
+  <A HREF="filter/pixel_5.gif"
+     ><IMG SRC="filter/pixel_5_mag.gif"   WIDTH=100 HEIGHT=20
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Single Pixel Image
   <BR>(magnified)
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=35 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=35 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/pixel_triangle.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/pixel_triangle.gif"
+  <A HREF="filter/pixel_triangle.gif"
+     ><IMG SRC="filter/pixel_triangle.gif"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Triangle Filter Enlarged
 </TD></TR></TABLE></DIV></P>
@@ -1064,14 +1064,14 @@ I then enlarge that image enormously.
 </CODE> -->
 
 If you were to graph the colors in the above image (using the "<CODE><A
-HREF="https://legacy.imagemagick.org/Usage/scripts/im_profile" >im_profile</A></CODE>" script), you will see a
+HREF="scripts/im_profile" >im_profile</A></CODE>" script), you will see a
 replica of the triangular filter graph.
 
 <!--<CODE EXECUTE>
   im_profile pixel_triangle.gif plot_triangle.gif
 </CODE>-->
 <DIV ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/filter/plot_triangle.gif"
+  <IMG SRC="filter/plot_triangle.gif"
        ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Profile]"></A>
   <BR>Profile of Image
 </DIV></P>
@@ -1088,25 +1088,25 @@ image enlargements. </P>
 <A NAME="interpolate_other"></A>
 <H4>Other Interpolation Filters</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_interpolation.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_interpolation.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_interpolation.jpg"
+   ><IMG SRC="filter/graph_interpolation.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 To the right I have graphed the various interpolation filters, except for
 '<CODE>Point</CODE>' which is actually very special case of an unscaled
-'<CODE>Box</CODE>' filter (a pure '<CODE><A HREF="https://legacy.imagemagick.org/Usage/misc/#nearest"
+'<CODE>Box</CODE>' filter (a pure '<CODE><A HREF="misc/index.html#nearest"
 >NearestNeighbor</A></CODE>' interpolation). </P>
 
 Other interpolation filters include '<CODE><B>Hermite</B></CODE>' which is
 very similar to triangle in results, but producing a smoother round off for
 enlargements, that smooths gradient transitions.  Click on the <A
-HREF="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_interpolate.jpg" >graph on the right</A> to see a graph
+HREF="filter/graph_lagrange_interpolate.jpg" >graph on the right</A> to see a graph
 of these three filter functions. <BR CLEAR=all></P>
 
 <A NAME="lagrange-i"></A>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_interpolate.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_interpolate.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_lagrange_interpolate.jpg"
+   ><IMG SRC="filter/graph_lagrange_interpolate.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 The '<CODE><B>Lagrange</B></CODE>' filter has been called a 'universal'
@@ -1123,8 +1123,8 @@ images and line drawings this can be a good thing. </P>
 
 More on the other <A HREF="filter.html#lagrange" >Lagrange Filter</A> orders later. </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_filter_catrom.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_filter_catrom.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_filter_catrom.jpg"
+   ><IMG SRC="filter/graph_filter_catrom.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 <A NAME="catrom"></A>
@@ -1151,24 +1151,24 @@ HREF="filter.html#cubics" >Cubic Filters</A>. </P>
 
 <H4>Interpolation and IM's Interpolate Setting</H4>
 
-The <A HREF="https://legacy.imagemagick.org/Usage/misc/#interpolate" >Interpolate</A> setting of IM which is
+The <A HREF="misc/index.html#interpolate" >Interpolate</A> setting of IM which is
 used to produce an unscaled 'point' lookup of images in operators like the <A
-HREF="https://legacy.imagemagick.org/Usage/transform/#fx" >FX DIY Operator</A> ("<CODE><A
+HREF="transform/index.html#fx" >FX DIY Operator</A> ("<CODE><A
 HREF="../../html/www/command-line-options.html#fx" >-fx</A></CODE>") and <A
-HREF="https://legacy.imagemagick.org/Usage/color_mods/#clut" >Color Lookup Replacement Operator</A> ("<CODE><A
+HREF="color_mods/index.html#clut" >Color Lookup Replacement Operator</A> ("<CODE><A
 HREF="../../html/www/command-line-options.html#clut" >-clut</A></CODE>"), and some older <A
-HREF="https://legacy.imagemagick.org/Usage/warping/#circular" >Circular Distortion</A> functions are based on
+HREF="warping/index.html#circular" >Circular Distortion</A> functions are based on
 these simple interpolation resize filters. However they are currently
 implemented using separate code and also have different setting names. </P>
 
-These <A HREF="https://legacy.imagemagick.org/Usage/misc/#interpolate" >Interpolation Settings</A> include:
-'<CODE><A HREF="https://legacy.imagemagick.org/Usage/misc/#nearestneighbor" >NearestNeighbor</A></CODE>',
+These <A HREF="misc/index.html#interpolate" >Interpolation Settings</A> include:
+'<CODE><A HREF="misc/index.html#nearestneighbor" >NearestNeighbor</A></CODE>',
 implementing the '<CODE>Point</CODE>' (or unscaled '<CODE>Box</CODE>') filter,
-and '<CODE><A HREF="https://legacy.imagemagick.org/Usage/misc/#bilinear" >BiLinear</A></CODE>' to get an
+and '<CODE><A HREF="misc/index.html#bilinear" >BiLinear</A></CODE>' to get an
 unscaled '<CODE>Triangle</CODE>' filter. </P>
 
 <I>ASIDE: At this time the smoothed triangle filter '<CODE>Hermite</CODE>' has
-not been directly implemented as an <A HREF="https://legacy.imagemagick.org/Usage/misc/#interpolate"
+not been directly implemented as an <A HREF="misc/index.html#interpolate"
 >Interpolation Setting</A>, which is a shame as it is quite a good
 interpolation filter. </I><P>
 
@@ -1187,8 +1187,8 @@ resizing or resample filter, as it is the ideal model for real world effects.
 
 <H4>Gaussian</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_filter_gaussian.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_filter_gaussian.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_filter_gaussian.jpg"
+   ><IMG SRC="filter/graph_filter_gaussian.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 The <B>Gaussian</B> filter is a very special filter that generates that same
@@ -1213,13 +1213,13 @@ which we will look at later)
 </CODE></PRE></TD></TR></TABLE>
 <TABLE><TR VALIGN=bottom><TD ALIGN=center>
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/logo_gaussian.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/logo_gaussian.png"
+  <A HREF="filter/logo_gaussian.png"
+     ><IMG SRC="filter/logo_gaussian.png"
            ALIGN=middle VSPACE=5 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
   <BR>Gaussian
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/logo_normal.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/logo_normal.png"
+  <A HREF="filter/logo_normal.png"
+     ><IMG SRC="filter/logo_normal.png"
            ALIGN=middle VSPACE=5 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
   <BR>Normal Resize
 </TD></TR></TABLE></DIV></P>
@@ -1249,8 +1249,8 @@ dots, rather than square looking dots. For example, here I greatly enlarge a
   convert xc:red -bordercolor yellow -border 1 \
           -filter Gaussian   -resize 99x99  -normalize dot_gaussian.jpg
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_gaussian.jpg"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_gaussian.jpg"      WIDTH=99 HEIGHT=99
+   <A HREF="filter/dot_gaussian.jpg"
+      ><IMG SRC="filter/dot_gaussian.jpg"      WIDTH=99 HEIGHT=99
             ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1282,8 +1282,8 @@ typically not necessary.  </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The '<CODE>filter:sigma</CODE>' expert option only works for the <A
   HREF="filter.html#gaussian" >Gaussian Filter</A>.  No other filters are effected by
@@ -1300,8 +1300,8 @@ typically not necessary.  </P>
 <A NAME="gaussian_other"></A>
 <H4>Other Gaussian-like Filters</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_gaussian.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_gaussian.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_gaussian.jpg"
+   ><IMG SRC="filter/graph_gaussian.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 If you study the comparative graphs to the right you will see that
@@ -1371,7 +1371,7 @@ filter:support=<I>{value}</I></CODE>". </P>
 
 For example here I resize an image with a single pixel using the smaller
 support value of 1.25, or 2-1/2 times the sigma value.(see the <A
-HREF="https://legacy.imagemagick.org/Usage/filter/graph_gaussian_support.jpg" >resulting graph</A> right).  This is of
+HREF="filter/graph_gaussian_support.jpg" >resulting graph</A> right).  This is of
 course smaller that the normal generally accepted minimum of 3 times the sigma
 value.
 
@@ -1383,8 +1383,8 @@ value.
 </CODE></PRE></TD></TR></TABLE>
 
 </TD><TD>
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_gaussian_support.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_gaussian_support.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_gaussian_support.jpg"
+   ><IMG SRC="filter/graph_gaussian_support.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TR></TABLE>
 
@@ -1393,20 +1393,20 @@ value.
   im_profile pixel_gaussian.png plot_gaussian.gif
 </CODE>-->
 <TABLE><TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/pixel_5.gif"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/pixel_5.gif"   WIDTH=100 HEIGHT=20
+  <A HREF="filter/pixel_5.gif"
+     ><IMG SRC="filter/pixel_5.gif"   WIDTH=100 HEIGHT=20
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Single Pixel Image
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=25 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=25 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/pixel_gaussian.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/pixel_gaussian.png"
+  <A HREF="filter/pixel_gaussian.png"
+     ><IMG SRC="filter/pixel_gaussian.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>Gaussian Filtered
 </TD>
 </TD></TR></TABLE>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/filter/plot_gaussian.gif"
+  <IMG SRC="filter/plot_gaussian.gif"
        ALIGN=middle VSPACE=5 HSPACE=5 BORDER=0 ALT="[IM Profile]"></A>
   <BR>Profile of Image
 </DIV></P>
@@ -1455,8 +1455,8 @@ filter can generate visible artifacts in the resulting image. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+    ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Previous to IM v6.3.6-3 the 'support' for the Gaussian filter was set to this
   value of '<CODE>1.25</CODE>' producing <A HREF="filter.html#ringing" >Ringing</A>
@@ -1526,22 +1526,22 @@ using a <A HREF="filter.html#spline" >Gaussian-like Spline Filter</A>..
   done
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0><TR VALIGN=top><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/logo_blur_0.5.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/logo_blur_0.5.png"
+  <A HREF="filter/logo_blur_0.5.png"
+     ><IMG SRC="filter/logo_blur_0.5.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>blur 0.5
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/left.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="<==">
+  <IMG SRC="img_www/left.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="<==">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/logo_blur_1.0.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/logo_blur_1.0.png"
+  <A HREF="filter/logo_blur_1.0.png"
+     ><IMG SRC="filter/logo_blur_1.0.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>blur 1.0
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/logo_blur_1.5.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/logo_blur_1.5.png"
+  <A HREF="filter/logo_blur_1.5.png"
+     ><IMG SRC="filter/logo_blur_1.5.png"
            ALIGN=middle VSPACE=5 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
   <BR>blur 1.5
 </TD></TR></TABLE>
@@ -1563,8 +1563,8 @@ example...
   convert rose: -define filter:blur=0.1 -filter Gaussian \
           -resize 100x100  rose_black_bars.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/rose_black_bars.png"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rose_black_bars.png"      WIDTH=100
+   <A HREF="filter/rose_black_bars.png"
+      ><IMG SRC="filter/rose_black_bars.png"      WIDTH=100
             ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -1587,8 +1587,8 @@ below). </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Using bad support settings with filters containing negative weightings
   (basically any of the filters we will look at next) can produce inverse
@@ -1603,8 +1603,8 @@ below). </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+    ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Before IM v6.3.6-3 the '<CODE>filter:blur</CODE>' define was mistakenly
   set by the option "<CODE>-support</CODE>", which was very misleading in
@@ -1616,8 +1616,8 @@ below). </P>
 <A NAME="gaussian_interpolator"></A>
 <H3>Gaussian Interpolator Filter Variant</H3>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_blurred.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_blurred.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_blurred.jpg"
+   ><IMG SRC="filter/graph_blurred.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 A <A HREF="filter.html#blur" >Blur Control</A> value of '<CODE>0.75</CODE>' on <A
@@ -1641,15 +1641,15 @@ non-symmetrical skew that does seem to work better as an interpolator.
           -resize 150x logo_gaussian_interpolate.png
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0><TR VALIGN=top><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/logo_blur_1.0.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/logo_blur_1.5.png"
+  <A HREF="filter/logo_blur_1.0.png"
+     ><IMG SRC="filter/logo_blur_1.5.png"
            ALIGN=middle VSPACE=5 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
   <BR>Gaussian
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/logo_gaussian_interpolate.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/logo_gaussian_interpolate.png"
+  <A HREF="filter/logo_gaussian_interpolate.png"
+     ><IMG SRC="filter/logo_gaussian_interpolate.png"
            ALIGN=middle VSPACE=5 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
   <BR>Gaussian Interpolator
   <BR><FONT SIZE=-1>(blur=0.75 or sigma=0.375)</FONT>
@@ -1673,15 +1673,15 @@ is the trade off of using a less blurry form of the filter. </P>
                               -resize 100x100  rings_gaussian_interpolate.png
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0><TR VALIGN=top><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_gaussian.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_gaussian.png"   WIDTH=100  HEIGHT=100
+  <A HREF="filter/rings_gaussian.png"
+     ><IMG SRC="filter/rings_gaussian.png"   WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=30 BORDER=1 ALT="[IM Output]"></A>
   <BR>Gaussian
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/rings_gaussian_interpolate.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/rings_gaussian_interpolate.png"   WIDTH=100  HEIGHT=100
+  <A HREF="filter/rings_gaussian_interpolate.png"
+     ><IMG SRC="filter/rings_gaussian_interpolate.png"   WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=5 HSPACE=30 BORDER=1 ALT="[IM Output]"></A>
   <BR>Gaussian Interpolator
   <BR><FONT SIZE=-1>(blur=0.75 or sigma=0.375)</FONT>
@@ -1701,8 +1701,8 @@ a 2-pass 'tensor' resize technique) is the the <I>Sinc()</I> function.  (See
 HREF="http://en.wikipedia.org/wiki/Nyquist-Shannon_sampling_theorem#Application_+to_multivariable_signals_and_images"
 >Nyquist-Shannon sampling theorem</A>). </P>
 
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/graph_sinc.jpg"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_sinc.gif"   WIDTH=180 HEIGHT=120
+   <A HREF="filter/graph_sinc.jpg"
+      ><IMG SRC="filter/graph_sinc.gif"   WIDTH=180 HEIGHT=120
             ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 The <I>Sinc()</I> being mathematically perfect has some special features that
@@ -1774,8 +1774,8 @@ These <I>Windowing Filters</I> include filters such as; '<CODE>Blackman</CODE>',
 <A NAME="window_how"></A>
 <H4>How Windowed Filters Work</H4>
 
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/graph_sinc_windowing.jpg"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_sinc_windowing.gif"   WIDTH=180 HEIGHT=120
+   <A HREF="filter/graph_sinc_windowing.jpg"
+      ><IMG SRC="filter/graph_sinc_windowing.gif"   WIDTH=180 HEIGHT=120
             ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 For example, the graph to the right shows three functions (click to get an
@@ -1799,8 +1799,8 @@ or the Jinc function (depending on the image processing operator), and the
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+    ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Before v6.3.6-3, IM made the grave mistake of actually using the windowing
   functions directly as the filter's weighting function.  This in turn caused
@@ -1822,8 +1822,8 @@ or the Jinc function (depending on the image processing operator), and the
 <A NAME="parzen"></A>
 <H4>The Various Windowing Filters</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_windowing.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_windowing.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_windowing.jpg"
+   ><IMG SRC="filter/graph_windowing.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 To the right is a graph of all the various windowing functions that IM has
@@ -1901,8 +1901,8 @@ any of the resize filters.  They are all about the same only with very slight
 variations in the amount of ringing and blocking effects that is produced.
 </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_windowing_support.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_windowing_support.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_windowing_support.jpg"
+   ><IMG SRC="filter/graph_windowing_support.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 To the right is the same windowing functions but using the default <A
@@ -1917,8 +1917,8 @@ functions have not changed much, with the extremes still being between
 '<B><CODE>Lanczos</CODE></B>' falling squarely in the middle of the resulting
 curve roll-offs. </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_windowed_sinc.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_windowed_sinc.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_windowed_sinc.jpg"
+   ><IMG SRC="filter/graph_windowed_sinc.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 And to the right is the resulting windowed-sinc filters that would be provided
@@ -1948,7 +1948,7 @@ filter. </P>
 On the other hand an image processing expert, who has been instrumental in
 ImageMagick's Resampling filters, disagrees with this. Though he selects
 filters based more on the exact requirements for specific images. You can see
-his suggestions and comments in <A HREF="https://legacy.imagemagick.org/Usage/filter/nicolas/" >Techniques Recommended by
+his suggestions and comments in <A HREF="filter/nicolas/index.html" >Techniques Recommended by
 Nicolas Robidoux</A>.
 
 <A NAME="lanczos"></A>
@@ -1978,8 +1978,8 @@ in that it is just a single lobe that cuts off, with the functions first zero
 crossing coinciding with the window support limits. See <A
 HREF="filter.html#window_how" >How Windowed Filters Work</A> above.  </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_lanczos_filters.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_lanczos_filters.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_lanczos_filters.jpg"
+   ><IMG SRC="filter/graph_lanczos_filters.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 However a 2-lobed '<B><CODE>Lanczos2</CODE></B>' filter (Lanczos with
@@ -2019,8 +2019,8 @@ to zero over the  <A HREF="filter.html#support" >support</A> setting range. But 
 the windowing function is scaled to fit the 'support' window, the resulting
 filter function will also change. </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_lanczos_lobes.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_lanczos_lobes.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_lanczos_lobes.jpg"
+   ><IMG SRC="filter/graph_lanczos_lobes.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 For example, to the right I have graphed the '<CODE>Lanczos</CODE>' windowed
@@ -2049,7 +2049,7 @@ function, and thus the 'support' of the filter, end at a 'zero-crossing'.
 However while the <I>Sinc()</I> function has 'lobe' (zero-crossings) at
 integer 'support' settings, the <I>Jinc()</I> weighting function does not.
 This presents a problem for users wanting to adjust the support window for
-a filter being used with the <A HREF="https://legacy.imagemagick.org/Usage/distort../distorts//#distort" >Distort
+a filter being used with the <A HREF="distort../distorts//index.html#distort" >Distort
 Operator</A>.  In fact, <I>Jinc()</I> has 'zero crossings' at highly <A
 HREF="http://en.wikipedia.org/wiki/Irrational_number" >irrational numbered</A>
 positions.   These zero crossings are very difficult to work out without being
@@ -2108,8 +2108,8 @@ HREF="filter.html#blurring" >blurring</A> effects. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The <A HREF="filter.html#support" >Support Expert Control</A> is really
   defining the 'order' of the Lagrange filter that should be used.  That is,
@@ -2122,8 +2122,8 @@ HREF="filter.html#blurring" >blurring</A> effects. </P>
   &nbsp; <NOBR><CODE>-define filter:support=2.5</CODE></NOBR>
 </FONT></TD></TR></TABLE></P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_windowed.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_windowed.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_lagrange_windowed.jpg"
+   ><IMG SRC="filter/graph_lagrange_windowed.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 With larger <A HREF="filter.html#support" >support</A> settings, the
@@ -2134,8 +2134,8 @@ closer the filter emulates a <I>Sinc()</I> function, but also the slower the
 calculation. (see graph of larger support Lagrange filters left).  <BR
 CLEAR=all></P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_interpolate.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_interpolate.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_lagrange_interpolate.jpg"
+   ><IMG SRC="filter/graph_lagrange_interpolate.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 Using smaller <A HREF="filter.html#support" >support</A> settings and the
@@ -2148,8 +2148,8 @@ The <A HREF="filter.html#support" >support</A> setting is limited to adjustments
 by half-integers, and using any other support factor is not very productive.
 <BR CLEAR=all></P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_even.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_lagrange_even.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_lagrange_even.jpg"
+   ><IMG SRC="filter/graph_lagrange_even.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 The other half-integer support, Lagrange Filters (generating even orders),
@@ -2171,8 +2171,8 @@ or small that setting is.  It is a self-windowing resize filter.  </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+   ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The '<CODE><A HREF="filter.html#lagrange" >Lagrange</A></CODE>' filter was not fully
   defined and usable until IM version v6.3.7-1.
@@ -2192,8 +2192,8 @@ piece-wise sections.  However unlike Lagrange filters the pieces were designed
 to fit together to form a smooth curve, to reduce sharp <A
 HREF="filter.html#blocking" >blocking</A> effects. </P>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_cubics.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_cubics.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_cubics.jpg"
+   ><IMG SRC="filter/graph_cubics.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 Shown in the graph left are four such 'smooth' cubic filters that are
@@ -2211,7 +2211,7 @@ Also shown is '<B><CODE>Catrom</CODE></B>', or more correctly the 'Catmull-Rom
 Filter' or the 'Keys Cubic Convolution' which generates a smooth non-blurring
 form of <A HREF="filter.html#interpolated" >Interpolation Filter</A>. However it
 can overshot slightly.  It is essentually an ideal self-sharpened filter, and
-as such also the function commonly used for basic <A HREF="https://legacy.imagemagick.org/Usage/misc/#bicubic"
+as such also the function commonly used for basic <A HREF="misc/index.html#bicubic"
 >Bi-Cubic Interpolation</A>. </P>
 
 And finally the '<B><CODE>Hermite</CODE></B>' Cubic filter, which is type of
@@ -2274,7 +2274,7 @@ the 'Cardinal' curves and equivalent to the 'Keys' filter <B>&alpha;</B>
 value).  With these two values you can generate any smoothly fitting
 (continuious first derivative) piece-wise cubic filter. </P>
 
-<IMG SRC="https://legacy.imagemagick.org/Usage/img_diagrams/cubic_survey.gif" WIDTH=301 HEIGHT=320
+<IMG SRC="img_diagrams/cubic_survey.gif" WIDTH=301 HEIGHT=320
      ALIGN=right VSPACE=0 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
 
 More importantally they then surveyed a group of 9 image processing experts,
@@ -2393,8 +2393,8 @@ filter used by the <A HREF="distorts.html#distort" >General Distort Operator</A>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The '<CODE>Parzen</CODE>' windowing filter uses a '<CODE>Spline</CODE>'
   filter as its windowing function.  As such you can re-define this windowing
@@ -2421,7 +2421,7 @@ pixel and thus the final color at the sample point. </P>
 <A HREF="resize.html#resize" >Resize</A> in contrast, processes the image twice
 using orthogonally aligned filters. Once in the X direction, and then again in
 the Y direction, it is thus limited to simple rectangular resizing of images,
-and does not involve the use of <A HREF="https://legacy.imagemagick.org/Usage/misc/#virtual"
+and does not involve the use of <A HREF="misc/index.html#virtual"
 >Virtual-Pixels</A>.  </P>
 
 That is to say <A HREF="distorts.html#distort" >Distort</A> applies the filters
@@ -2451,14 +2451,14 @@ pixel image by 30 times using the equivalent <A HREF="resize.html#resize"
 </CODE></PRE></TD></TR></TABLE><NOBR>
 <TABLE CELLPADDING=0 CELLSPACING=0><TR VALIGN=bottom>
 <TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_resize_box_black.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_resize_box_black.png"
+  <A HREF="filter/dot_resize_box_black.png"
+     ><IMG SRC="filter/dot_resize_box_black.png"
            ALIGN=middle VSPACE=2 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
   <BR>Resize
 
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_distort_box_black.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_distort_box_black.png"
+  <A HREF="filter/dot_distort_box_black.png"
+     ><IMG SRC="filter/dot_distort_box_black.png"
            ALIGN=middle VSPACE=2 HSPACE=25 BORDER=1 ALT="[IM Output]"></A>
   <BR>Distort
 </TD></TR></TABLE>
@@ -2485,8 +2485,8 @@ a 'Cylindrical Box' filter for enlargement...
           \( xc:black xc:red   xc:blue  +append \) -append \
           -filter Box   +distort SRT 30,0  color_box_distort.gif
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/color_box_distort.gif"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/color_box_distort.gif"
+   <A HREF="filter/color_box_distort.gif"
+      ><IMG SRC="filter/color_box_distort.gif"
             ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2504,15 +2504,15 @@ a set of overlapping ellipses.  For example...
           +distort Perspective '0,0 0,0  0,3 0,90 3,0 90,30 3,3 90,60' \
           color_box_distort.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/color_box_distort.png"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/color_box_distort.png"
+   <A HREF="filter/color_box_distort.png"
+      ><IMG SRC="filter/color_box_distort.png"
             ALIGN=middle VSPACE=0 HSPACE=5 BORDER=0 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The support 'radius' for a cylindrical '<CODE>Box</CODE>' filter is
   increased from '<CODE>0.5</CODE>' to '<CODE>0.707</CODE>'
@@ -2526,8 +2526,8 @@ a set of overlapping ellipses.  For example...
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/expert.gif"   WIDTH=23 HEIGHT=26
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/expert.gif"   WIDTH=23 HEIGHT=26
+    ><IMG SRC="img_www/space.gif"   WIDTH=17 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   If the support is not at least '<CODE>0.707</CODE>', then you may get areas
   of your image in which the filter 'misses' all source pixels, and thus
@@ -2547,11 +2547,11 @@ a set of overlapping ellipses.  For example...
           -filter Box -define filter:support=0.83 \
           +distort SRT 30,0  color_box_distort_overlap.png
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/color_box_distort_overlap.png"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/color_box_distort_overlap.png"
+   <A HREF="filter/color_box_distort_overlap.png"
+      ><IMG SRC="filter/color_box_distort_overlap.png"
             ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE> </P>
-  The result is a sort of circular form of a <A HREF="https://legacy.imagemagick.org/Usage/misc/#blend" >Blend
+  The result is a sort of circular form of a <A HREF="misc/index.html#blend" >Blend
   Interpolation</A>. </P>
 
   At a support of 1.0 or larger every resample will be a 'box' or 'average'
@@ -2577,43 +2577,43 @@ an orthogonal resize, while the bottom line uses a cylindrical distortion.
   done
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=0 CELLPADDING=0 WIDTH=80%><TR><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_resize_box.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_resize_box.png"
+  <A HREF="filter/dot_resize_box.png"
+     ><IMG SRC="filter/dot_resize_box.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
-<BR><A HREF="https://legacy.imagemagick.org/Usage/filter/dot_distort_box.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_distort_box.png"
+<BR><A HREF="filter/dot_distort_box.png"
+     ><IMG SRC="filter/dot_distort_box.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
 <BR>Box
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_resize_triangle.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_resize_triangle.png"
+  <A HREF="filter/dot_resize_triangle.png"
+     ><IMG SRC="filter/dot_resize_triangle.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
-<BR><A HREF="https://legacy.imagemagick.org/Usage/filter/dot_distort_triangle.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_distort_triangle.png"
+<BR><A HREF="filter/dot_distort_triangle.png"
+     ><IMG SRC="filter/dot_distort_triangle.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
 <BR>Triangle
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_resize_hermite.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_resize_hermite.png"
+  <A HREF="filter/dot_resize_hermite.png"
+     ><IMG SRC="filter/dot_resize_hermite.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
-<BR><A HREF="https://legacy.imagemagick.org/Usage/filter/dot_distort_hermite.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_distort_hermite.png"
+<BR><A HREF="filter/dot_distort_hermite.png"
+     ><IMG SRC="filter/dot_distort_hermite.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
 <BR>Hermite
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_resize_lagrange.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_resize_lagrange.png"
+  <A HREF="filter/dot_resize_lagrange.png"
+     ><IMG SRC="filter/dot_resize_lagrange.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
-<BR><A HREF="https://legacy.imagemagick.org/Usage/filter/dot_distort_lagrange.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_distort_lagrange.png"
+<BR><A HREF="filter/dot_distort_lagrange.png"
+     ><IMG SRC="filter/dot_distort_lagrange.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
 <BR>Lagrange
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_resize_catrom.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_resize_catrom.png"
+  <A HREF="filter/dot_resize_catrom.png"
+     ><IMG SRC="filter/dot_resize_catrom.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
-<BR><A HREF="https://legacy.imagemagick.org/Usage/filter/dot_distort_catrom.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_distort_catrom.png"
+<BR><A HREF="filter/dot_distort_catrom.png"
+     ><IMG SRC="filter/dot_distort_catrom.png"
            ALIGN=middle VSPACE=2 HSPACE=2 BORDER=1 ALT="[IM Output]"></A>
 <BR>Catrom
 </TD></TR></TABLE>
@@ -2646,8 +2646,8 @@ orthogonal 'resize' and a cylindrical 'distort' forms,  is the special
   convert xc:red -bordercolor yellow -border 1 \
           -filter Gaussian   +distort SRT 33,0  -normalize  dot_distort.jpg
 </CODE></PRE></TD></TR></TABLE></TD><TD>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/dot_distort.jpg"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/dot_distort.jpg"
+   <A HREF="filter/dot_distort.jpg"
+      ><IMG SRC="filter/dot_distort.jpg"
             ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2669,8 +2669,8 @@ filter. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+    ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   As of IM v6.6.5-0, IM no longer used this filter, by default for <A
   HREF="distorts.html#distort" >Image Distortions</A>. Instead another filter
@@ -2685,8 +2685,8 @@ filter. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/warning.gif"  WIDTH=28 HEIGHT=28
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/warning.gif"  WIDTH=28 HEIGHT=28
+    ><IMG SRC="img_www/space.gif"   WIDTH=12 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   Before IM v6.6.7-6, IM would use a slightly larger 'sigma' value for
   a Cylindrical Gaussian, of 1/sqrt(2) or approximatally 0.707, instead of
@@ -2712,8 +2712,8 @@ filter. </P>
 <A NAME="jinc"></A>
 <H4>Windowed Jinc Cylindrical Filters</H4>
 
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/graph_jinc.jpg"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_jinc.gif"   WIDTH=180 HEIGHT=120
+   <A HREF="filter/graph_jinc.jpg"
+      ><IMG SRC="filter/graph_jinc.gif"   WIDTH=180 HEIGHT=120
             ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 The <I>Jinc()</I> function (sometimes inaccurately called
@@ -2791,8 +2791,8 @@ Cublic two-lobe sinc equivelent Catmull-Rom filter. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The resize operator will by default short-circuit itself, so as to do
   nothing for the no-op case.  As such unless you specifically specify
@@ -2836,26 +2836,26 @@ pattern from an image. No scaling is used, just a distortion applied
 </CODE></PRE></TD></TR></TABLE>
 <TABLE CELLSPACING=5 CELLPADDING=0><TR VALIGN=top><TD ALIGN=center>
 <TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/hash.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/hash.png"        WIDTH=100  HEIGHT=100
+  <A HREF="filter/hash.png"
+     ><IMG SRC="filter/hash.png"        WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=0 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </TD><TD ALIGN=center>
-  <IMG SRC="https://legacy.imagemagick.org/Usage/img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
+  <IMG SRC="img_www/right.gif" WIDTH=20 HEIGHT=20 VSPACE=40 ALT="==>">
 </TD><TD ALIGN=center>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/hash_removed.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/hash_removed.png"        WIDTH=100  HEIGHT=100
+  <A HREF="filter/hash_removed.png"
+     ><IMG SRC="filter/hash_removed.png"        WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=0 HSPACE=15 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE>
 </DIV></P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The reason the percieved gray-level of the hash is so much darker than the
   the overall gray-level of the hash is because of the way <A
-  HREF="https://legacy.imagemagick.org/Usage/color_basics/#perception" >Human Color Perception</A> works.</P>
+  HREF="color_basics/index.html#perception" >Human Color Perception</A> works.</P>
 
   The fix is to include '<CODE>-set colorspace RGB</CODE>' in the above to
   tell IM that we are resizing in linear-RGB colorspace See <A
@@ -2889,8 +2889,8 @@ also have major influence on this effect. In some case even enhance the hash
 pattern further. </P>
 
 </TD><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/hash_2_lobes.png"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/hash_2_lobes.png"        WIDTH=100  HEIGHT=100
+  <A HREF="filter/hash_2_lobes.png"
+     ><IMG SRC="filter/hash_2_lobes.png"        WIDTH=100  HEIGHT=100
            ALIGN=middle VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 </TD></TR></TABLE></P>
 
@@ -2935,7 +2935,7 @@ use in distortions.</P>
 
 It is really just a cylindrical '<CODE>Lanczos</CODE>' (Jinc-Jinc) filter with
 a '<CODE>filter:lobes=2</CODE> expert setting. See the <A
-HREF="https://legacy.imagemagick.org/Usage/filter/graph_jinc.jpg" >graph above</A>, and as IM filter automatically
+HREF="filter/graph_jinc.jpg" >graph above</A>, and as IM filter automatically
 switches between using <I>Sinc()</I>, and <I>Jinc()</I> functions as
 appropriate, it is not just for a '2D' (cylindrical) use. </P>
 
@@ -2967,8 +2967,8 @@ hash' patterns, of <A HREF="filter.html#jinc" >Windowed Jinc Cylindrical Filters
 <A NAME="lanczos2sharp"></A>
 <H4>Lanczos2 Sharpened</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_cyl_lanczos_2.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_cyl_lanczos_2.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_cyl_lanczos_2.jpg"
+   ><IMG SRC="filter/graph_cyl_lanczos_2.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 The same problem was more severe in '<CODE>Lanzcos2</CODE>' filters, so
@@ -2985,8 +2985,8 @@ generates for images with little to no distortion. </P>
 <A NAME="lanczos_radius"></A>
 <H4>Lanczos Radius</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_cyl_lanczos_3.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_cyl_lanczos_3.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_cyl_lanczos_3.jpg"
+   ><IMG SRC="filter/graph_cyl_lanczos_3.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 This is an EWA Lanczos filter that is blurred (sharpened) so that the number of
@@ -3009,8 +3009,8 @@ Include number of lobes as a reference. </I></P>
 <A NAME="robidoux"></A>
 <H4>Robidoux Cylindrical Filter</H4>
 
-<A HREF="https://legacy.imagemagick.org/Usage/filter/graph_robidoux.jpg"
-   ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/graph_robidoux.gif"   WIDTH=180 HEIGHT=120
+<A HREF="filter/graph_robidoux.jpg"
+   ><IMG SRC="filter/graph_robidoux.gif"   WIDTH=180 HEIGHT=120
          ALIGN=right VSPACE=0 HSPACE=5 BORDER=1 ALT="[IM Output]"></A>
 
 
@@ -3045,7 +3045,7 @@ to use other filters, but it is a very good compromise, just as
 '<CODE>Mitchell</CODE>' is a good compromise for orthogonal (tensor) resizing.
 </P>
 
-I have marked this filter on the "<A HREF="https://legacy.imagemagick.org/Usage/img_diagrams/cubic_survey.gif"
+I have marked this filter on the "<A HREF="img_diagrams/cubic_survey.gif"
 >Cubics Map</A>" generated by the <A HREF="filter.html#mitchell" >Mitchell-Netravali
 Survey</A>, so you an see just how closely related to the '<CODE><A
 HREF="filter.html#mitchell" >Mitchell</A></CODE>' filter it is.  It would in fact make
@@ -3099,7 +3099,7 @@ HREF="http://www.luminous-landscape.com/forum/index.php?topic=77949.msg723814#ms
 <H4>Cylindrical Filter Summary</H4>
 
 Nicolas Robidoux in the long, and on going, forum discussion on the <A
-HREF="https://legacy.imagemagick.org/Usage/forum_link.cgo?p=83754" >Proper Scaling of a Jinc Filter in EWA</A>
+HREF="https://legacy.imagemagick.org/Usage/forum_link.cgi?p=83754" >Proper Scaling of a Jinc Filter in EWA</A>
 gives this as a summary of cylindrical filters... </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
@@ -3119,7 +3119,7 @@ gives this as a summary of cylindrical filters... </P>
 </FONT></TD></TR></TABLE></P>
 
 Nicolas has a lot more to say. So much he has his own section <A
-HREF="https://legacy.imagemagick.org/Usage/filter/nicolas/" > Resampling by Nicolas Robidoux</A> which is now
+HREF="filter/nicolas/index.html" > Resampling by Nicolas Robidoux</A> which is now
 a separate and extensive page in its own right. </P>
 
 
@@ -3146,8 +3146,8 @@ a specific resize or distortion image processing operation. </P>
 
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0 WIDTH=90% ALIGN=center>
 <TR VALIGN=top>
-<TD><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/reminder.gif" WIDTH=20 HEIGHT=16
-    ><IMG SRC="https://legacy.imagemagick.org/Usage/img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
+<TD><IMG SRC="img_www/reminder.gif" WIDTH=20 HEIGHT=16
+    ><IMG SRC="img_www/space.gif"   WIDTH=20 HEIGHT=16></TD>
 <TD ALIGN=justify WIDTH=100%><FONT SIZE=-1><I>
   The "<CODE><A HREF="../../html/www/command-line-options.html#filter" >-filter</A></CODE>" setting
   'Point' completely bypasses all the above filter setup, and degenerates into
@@ -3191,8 +3191,8 @@ a Sinc windowed Sinc support 3.
 </CODE></PRE></TD></TR></TABLE>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/filter_verbose.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/filter_verbose.txt.gif"
+  <A HREF="filter/filter_verbose.txt"
+     ><IMG SRC="filter/filter_verbose.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -3214,8 +3214,8 @@ Algorithm</A>) "-distort" filter.
 </CODE></PRE></TD></TR></TABLE>
 <TABLE BORDER=0 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD>
-  <A HREF="https://legacy.imagemagick.org/Usage/filter/filter_verbose2.txt"
-     ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/filter_verbose2.txt.gif"
+  <A HREF="filter/filter_verbose2.txt"
+     ><IMG SRC="filter/filter_verbose2.txt.gif"
            ALIGN=middle VSPACE=0 HSPACE=0 BORDER=0 ALT="[IM Text]"></A>
 </TD></TR></TABLE>
 </DIV></P>
@@ -3380,7 +3380,7 @@ Filters</A>'
 </DIV> </P>
 
 When used to enlarge images. Pixels are converted into diamond like patterns
-in a scheme that is simular to <A HREF="https://legacy.imagemagick.org/Usage/misc/#interpolate_simple"
+in a scheme that is simular to <A HREF="misc/index.html#interpolate_simple"
 >Blend</A> but using diamonds instead of squares. </P>
 
 
@@ -3446,8 +3446,8 @@ aliasing effects.
   convert -size 10x6 xc:grey20 +antialias -draw 'fill white line 4,0 5,5' \
           -filter {<I>filter_type</I>} -resize 100x   {<I>result</I>}
 </CODE></PRE></TD></TR></TABLE>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/montage_enlarge.png"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/montage_enlarge.png"
+   <A HREF="filter/montage_enlarge.png"
+      ><IMG SRC="filter/montage_enlarge.png"
             ALIGN=middle VSPACE=2 HSPACE=2 BORDER=0 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -3476,7 +3476,7 @@ IM. </P>
 <I>Shrinking...</I></P>
 
 To get an idea of the <A HREF="filter.html#aliasing" >aliasing</A> effects, here I shrink
-the crop of <A HREF="https://legacy.imagemagick.org/Usage/img_photos/rings_lg_orig.png" >Large Rings Image</A> that we made
+the crop of <A HREF="img_photos/rings_lg_orig.png" >Large Rings Image</A> that we made
 earlier (<CODE>105x105</CODE> pixels in size), to see what sort of
 Moir&eacute; effects each of the same 12 representative filters generates.
 
@@ -3485,8 +3485,8 @@ Moir&eacute; effects each of the same 12 representative filters generates.
 <TR><TD><PRE><CODE DO_NOT_EXECUTE>
   convert rings_crop.png -filter {<I>filter_type</I>} -resize 100x {<I>result</I>}
 </CODE></PRE></TD></TR></TABLE>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/montage_shrink.png"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/montage_shrink.png"
+   <A HREF="filter/montage_shrink.png"
+      ><IMG SRC="filter/montage_shrink.png"
             ALIGN=middle VSPACE=2 HSPACE=2 BORDER=0 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -3519,15 +3519,15 @@ artifacts are however at very minimal levels, which is why it is a good all
 round filter. </P>
 
 Here is another comparison, but this time heavily shrinking a <A
-HREF="https://legacy.imagemagick.org/Usage/img_photos/rings_sm_orig.gif" >Smaller Rings Image</A> smaller.
+HREF="img_photos/rings_sm_orig.gif" >Smaller Rings Image</A> smaller.
 
 <DIV ALIGN=center>
 <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=5 WIDTH=80% BGCOLOR="#CCCCCC">
 <TR><TD><PRE><CODE DO_NOT_EXECUTE>
   convert rings_sm_orig.gif -filter {<I>filter_type</I>} -resize 100x {<I>result</I>}
 </CODE></PRE></TD></TR></TABLE>
-   <A HREF="https://legacy.imagemagick.org/Usage/filter/montage_smaller.png"
-      ><IMG SRC="https://legacy.imagemagick.org/Usage/filter/montage_smaller.png"
+   <A HREF="filter/montage_smaller.png"
+      ><IMG SRC="filter/montage_smaller.png"
             ALIGN=middle VSPACE=2 HSPACE=2 BORDER=0 ALT="[IM Output]"></A>
 </DIV></P>
 
@@ -3588,7 +3588,7 @@ recommend about trying to get the absolute best results from your image
 resizing. </P>
 
 So much so he has his own section... <BR>
-<A HREF="https://legacy.imagemagick.org/Usage/filter/nicolas/" >Resampling by Nicolas Robidoux</A>. </P>
+<A HREF="filter/nicolas/index.html" >Resampling by Nicolas Robidoux</A>. </P>
 
 
 <HR><!-- ---------------------------------------------------------------- -->
@@ -3598,6 +3598,6 @@ Updated: 14 Feburary 2013 <BR>
 Author: <A HREF="https://antofthy.gitlab.io/anthony.html"
         >Anthony Thyssen</A>, &lt;Anthony.Thyssen&#64;gmail.com&gt;<BR>
 Examples Generated with:
-        <IMG SRC="https://legacy.imagemagick.org/Usage/filter/version.gif" ALIGN=absmiddle ALT="[version image]"><BR>
+        <IMG SRC="filter/version.gif" ALIGN=absmiddle ALT="[version image]"><BR>
 URL: <CODE>https://legacy.imagemagick.org/Usage/filter/</CODE>
 </ADDRESS></BODY></HTML>

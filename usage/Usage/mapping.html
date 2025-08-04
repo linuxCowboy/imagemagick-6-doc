@@ -10,41 +10,41 @@
   "../../html/www/css/magick.css">
   <title>Image Mapped Effects -- IM v6 Examples</title>
   <link rel="icon" href=
-  "https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type=
+  "img_www/favicon.ico" type=
   "image/x-icon">
   <link rel="shortcut" href=
-  "https://legacy.imagemagick.org/Usage/img_www/favicon.ico" type=
+  "img_www/favicon.ico" type=
   "image/x-icon">
   <link rel="canonical" href="mapping.html">
 </head>
 <body bgcolor="#B0C4DE">
   <h1>ImageMagick v6 Examples --<br>
-  <img src="https://legacy.imagemagick.org/Usage/img_www/space.gif"
+  <img src="img_www/space.gif"
   width="50" height="1"> Image Mapped Effects</h1>
   <div align="justify">
     <dl>
       <dt><b>Index</b></dt>
       <dt>
         <a href="../Usage.html"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/granitesm_left.gif"
+        "img_www/granitesm_left.gif"
         border="0" width="15" height="15"> ImageMagick Examples
         Preface and Index</a>
       </dt>
       <dd>
         <a href="mapping.html#intro"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif"
+        "img_www/granitesm_right.gif"
         border="0" width="15" height="15"> Introduction to Image
         Mapping</a>
       </dd>
       <dd>
         <a href="mapping.html#distort"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif"
+        "img_www/granitesm_right.gif"
         border="0" width="15" height="15"> Distorting Images using
         Image Mapping</a>
       </dd>
       <dd>
         <a href="mapping.html#distortion_maps"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif"
+        "img_www/granitesm_right.gif"
         border="0" width="15" height="15"> Absolute Distortion
         Lookup Maps</a>
         <ul>
@@ -91,7 +91,7 @@
       </dd>
       <dd>
         <a href="mapping.html#displacement_maps"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif"
+        "img_www/granitesm_right.gif"
         border="0" width="15" height="15"> Relative Displacement
         Lookup Maps</a>
         <ul>
@@ -135,7 +135,7 @@
       </dd>
       <dd>
         <a href="mapping.html#blur"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/granitesm_right.gif"
+        "img_www/granitesm_right.gif"
         border="0" width="15" height="15"> Variable Blur
         Mapping</a>
         <ul>
@@ -162,20 +162,20 @@
     <a name="intro" id="intro"></a>
     <h2>Introduction</h2>As you have seen in the previous sections
     on <a href="compose.html">Composition</a>, <a href=
-    "https://legacy.imagemagick.org/Usage/warping/">Simple
+    "warping/index.html">Simple
     Warping</a>, and <a href="distorts.html">Distorting</a>, you
     can modify images in many different ways. However they all are
     limited to the specific methods that have been built into
     ImageMagick. You can even 'roll your own' image distortion
     using the <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#fx">'FX' DIY
+    "transform/index.html#fx">'FX' DIY
     Operator</a>, or directly modify the values of an image using
     operators such as <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#evaluate">Evaluate</a>
+    "transform/index.html#evaluate">Evaluate</a>
     or <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#function">Function</a>,
+    "transform/index.html#function">Function</a>,
     or even the various <a href=
-    "https://legacy.imagemagick.org/Usage/color_mods/#level">Level</a>
+    "color_mods/index.html#level">Level</a>
     operators. However distortions take a lot of calculations (and
     time) to do there task, and if you plan to do the same task
     against multiple images, having IM repeat all those
@@ -243,7 +243,7 @@
     <h2>Distorting Images using Image Mapping</h2>While the various
     distortion operators described in the previous sections of IM
     Exampled (such as <a href=
-    "https://legacy.imagemagick.org/Usage/warping/">Simple Image
+    "warping/index.html">Simple Image
     Warping</a> and <a href="distorts.html">General Image
     Distortions</a>), you are restricted to just the various types
     distortions that have been programmed into the IM graphics
@@ -337,21 +337,21 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_gradient_x.gif">
+      "mapping/map_gradient_x.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_gradient_x.gif"
+      "mapping/map_gradient_x.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_noop.gif">
+      "mapping/distort_noop.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_noop.gif"
+      "mapping/distort_noop.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>Note that this did not make any real changes in mapping
@@ -376,21 +376,21 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_gradient-x.gif">
+      "mapping/map_gradient-x.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_gradient-x.gif"
+      "mapping/map_gradient-x.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_mirror_x.gif">
+      "mapping/distort_mirror_x.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_mirror_x.gif"
+      "mapping/distort_mirror_x.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>If we take the original gradient and compress it using a
@@ -409,21 +409,21 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress.gif">
+      "mapping/map_compress.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress.gif"
+      "mapping/map_compress.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_compress.gif">
+      "mapping/distort_compress.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_compress.gif"
+      "mapping/distort_compress.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>Notice that the sides of the distortion is stretched
@@ -443,26 +443,26 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress.gif">
+      "mapping/map_compress.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress.gif"
+      "mapping/map_compress.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress_y.gif">
+      "mapping/map_compress_y.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress_y.gif"
+      "mapping/map_compress_y.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_compress_2D.gif">
+      "mapping/distort_compress_2D.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_compress_2D.gif"
+      "mapping/distort_compress_2D.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>As you can see the above recreated a variation of the
@@ -475,7 +475,7 @@
     "compose_distort" id="compose_distort"></a>
     <h3>Composite 'Distort' Method</h3>So far we have been using
     <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#fx">FX,
+    "transform/index.html#fx">FX,
     General DIY Operator</a> to apply absolute distortion maps.
     This provides a way to exactly taylor and tweek exactly what
     you are doing but is also very slow. The <a href=
@@ -501,26 +501,26 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress.gif">
+      "mapping/map_compress.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress.gif"
+      "mapping/map_compress.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress_y.gif">
+      "mapping/map_compress_y.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_compress_y.gif"
+      "mapping/map_compress_y.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_compose.gif">
+      "mapping/distort_compose.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_compose.gif"
+      "mapping/distort_compose.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>Note the use of the "<a href="basics.html#define">Define
@@ -555,9 +555,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_set.gif">
+          "mapping/distort_compose_set.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_set.gif"
+          "mapping/distort_compose_set.gif"
           align="middle" vspace="0" hspace="5" border="1" alt=
           "[IM Output]"></a>
         </td>
@@ -582,9 +582,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_default.gif">
+          "mapping/distort_compose_default.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_default.gif"
+          "mapping/distort_compose_default.gif"
           align="middle" vspace="0" hspace="5" border="1" alt=
           "[IM Output]"></a>
         </td>
@@ -625,9 +625,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_fx_check.gif"
+          "mapping/distort_fx_check.gif"
           width="75" height="75"><img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_fx_check.gif"
+          "mapping/distort_fx_check.gif"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -652,9 +652,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_check.gif"
+          "mapping/distort_compose_check.gif"
           width="75" height="75"><img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_check.gif"
+          "mapping/distort_compose_check.gif"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -671,9 +671,9 @@
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/expert.gif"
+        "img_www/expert.gif"
         width="23" height="26"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="17" height="16"></td>
         <td align="justify" width="100%"><font size="-1"><i>The FX
         distortion is centered on the upper right corner (pixel
@@ -714,9 +714,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_fx_check_correct.gif"
+          "mapping/distort_fx_check_correct.gif"
           width="75" height="75"><img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_fx_check_correct.gif"
+          "mapping/distort_fx_check_correct.gif"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -741,9 +741,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_check_correct.gif"
+          "mapping/distort_compose_check_correct.gif"
           width="75" height="75"><img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_check_correct.gif"
+          "mapping/distort_compose_check_correct.gif"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -770,9 +770,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_default_check.gif"
+          "mapping/distort_compose_default_check.gif"
           width="75" height="75"><img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_compose_default_check.gif"
+          "mapping/distort_compose_default_check.gif"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -801,28 +801,28 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45_x.png">
+      "mapping/map_rot45_x.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45_x.png"
+      "mapping/map_rot45_x.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45_y.png">
+      "mapping/map_rot45_y.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45_y.png"
+      "mapping/map_rot45_y.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45.gif">
+      "mapping/distort_rot45.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45.gif"
+      "mapping/distort_rot45.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>And we now have another way of rotating any image. The
@@ -853,28 +853,28 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_x.png">
+      "mapping/map_rot45b_x.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_x.png"
+      "mapping/map_rot45b_x.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_y.png">
+      "mapping/map_rot45b_y.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_y.png"
+      "mapping/map_rot45b_y.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_better.png">
+      "mapping/distort_rot45_better.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_better.png"
+      "mapping/distort_rot45_better.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>In this way all the pixels in the LUT are now defined
@@ -904,21 +904,21 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_better.png"><img src="https://legacy.imagemagick.org/Usage/mapping/distort_rot45_better.png"
+      "mapping/distort_rot45_better.png"><img src="mapping/distort_rot45_better.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_m.png">
+      "mapping/map_rot45b_m.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_m.png"
+      "mapping/map_rot45b_m.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_masked.png">
+      "mapping/distort_rot45_masked.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_masked.png"
+      "mapping/distort_rot45_masked.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>Now we have three images involved with the distortion
@@ -945,24 +945,24 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_x.png"><img src="https://legacy.imagemagick.org/Usage/mapping/map_rot45b_x.png"
+      "mapping/map_rot45b_x.png"><img src="mapping/map_rot45b_x.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_y.png">
+      "mapping/map_rot45b_y.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_y.png"
+      "mapping/map_rot45b_y.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_m.png">
+      "mapping/map_rot45b_m.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45b_m.png"
+      "mapping/map_rot45b_m.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45u.png">
+      "mapping/map_rot45u.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45u.png"
+      "mapping/map_rot45u.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>
@@ -970,13 +970,13 @@
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/reminder.gif"
+        "img_www/reminder.gif"
         width="20" height="16"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="20" height="16"></td>
         <td align="justify" width="100%"><font size="-1"><i>The
         '<code>blue</code>' channel in the <a href=
-        "https://legacy.imagemagick.org/Usage/color_basics/#combine">
+        "color_basics/index.html#combine">
         Combined Channel Image</a> is not defined, so takes its
         value from the current "<a href=
         "../../html/www/command-line-options.html#background"><code>-background</code></a>"
@@ -1000,19 +1000,19 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45u.png">
+      "mapping/map_rot45u.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/map_rot45u.png"
+      "mapping/map_rot45u.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_unified.png">
+      "mapping/distort_rot45_unified.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_unified.png"
+      "mapping/distort_rot45_unified.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>You can also use the "<a href=
@@ -1036,9 +1036,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_compose.gif"
+          "mapping/distort_rot45_compose.gif"
           width="75" height="75"><img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_rot45_compose.gif"
+          "mapping/distort_rot45_compose.gif"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -1077,9 +1077,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/map_hourglass.png">
+          "mapping/map_hourglass.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/map_hourglass.png"
+          "mapping/map_hourglass.png"
           width="100" height="100" align="middle" vspace="5"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
@@ -1089,9 +1089,9 @@
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/reminder.gif"
+        "img_www/reminder.gif"
         width="20" height="16"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="20" height="16"></td>
         <td align="justify" width="100%"><font size="-1"><i>When
         generating gray-scale gradients, you can make the -fx
@@ -1099,7 +1099,7 @@
         generate one color channel only, such as the
         '<code>G</code>' or green channel in the above example.
         This channel can then be <a href=
-        "https://legacy.imagemagick.org/Usage/color_basics/#separate">
+        "color_basics/index.html#separate">
         Separated</a> to form the required gray-scale image. This
         can represent a very large speed boost, especially when
         using a very complex "<code><a href=
@@ -1132,9 +1132,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_hourglass.png">
+          "mapping/distort_hourglass.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_hourglass.png"
+          "mapping/distort_hourglass.png"
           align="middle" vspace="0" hspace="5" border="1" alt=
           "[IM Output]"></a>
         </td>
@@ -1152,7 +1152,7 @@
     distortion map, then you will have to repeat the scaled look-up
     for the Y map. Of course we have the same 'edge' distortions we
     saw previously, so lets change the <a href=
-    "https://legacy.imagemagick.org/Usage/misc/#virtual">Virtual
+    "misc/index.html#virtual">Virtual
     Pixel Setting</a> to transparency.
     <table border="0" cellspacing="0" cellpadding="0" width="100%">
       <tr>
@@ -1172,9 +1172,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_hourglass2.png">
+          "mapping/distort_hourglass2.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_hourglass2.png"
+          "mapping/distort_hourglass2.png"
           align="middle" vspace="0" hspace="5" border="0" alt=
           "[IM Output]"></a>
         </td>
@@ -1218,9 +1218,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/sphere_lut.png">
+          "mapping/sphere_lut.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/sphere_lut.png"
+          "mapping/sphere_lut.png"
           width="100" height="100" align="middle" vspace="0"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
@@ -1251,16 +1251,16 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/sphere_mask.png">
+          "mapping/sphere_mask.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/sphere_mask.png"
+          "mapping/sphere_mask.png"
           width="100" height="100" align="middle" vspace="0"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
       </tr>
     </table>And to complete we also need a shading highlight, such
     as developed in <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#shade_overlay">
+    "transform/index.html#shade_overlay">
     Overlay Highlights</a>, for use by <a href=
     "compose.html#overlay">Overlay</a> or <a href=
     "compose.html#hardlight">Hardlight</a> composition...
@@ -1283,9 +1283,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/sphere_overlay.png">
+          "mapping/sphere_overlay.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/sphere_overlay.png"
+          "mapping/sphere_overlay.png"
           width="100" height="100" align="middle" vspace="0"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
@@ -1312,14 +1312,14 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/img_photos/lena_orig.png"><img src="https://legacy.imagemagick.org/Usage/img_photos/lena_orig.png"
+      "img_photos/lena_orig.png"><img src="img_photos/lena_orig.png"
       width="100" height="100" align="middle" vspace="5" hspace="5"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/sphere_lena.png">
+      "mapping/sphere_lena.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/sphere_lena.png"
+      "mapping/sphere_lena.png"
       width="100" height="100" align="middle" vspace="5" hspace="5"
       border="0" alt="[IM Output]"></a>
     </div>This particular example shows the most powerful aspect of
@@ -1354,9 +1354,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/spherical_unified.png">
+          "mapping/spherical_unified.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/spherical_unified.png"
+          "mapping/spherical_unified.png"
           width="100" height="100" align="middle" vspace="0"
           hspace="5" border="0" alt="[IM Output]"></a>
         </td>
@@ -1383,14 +1383,14 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/img_photos/mandrill_grid_sm.jpg"><img src="https://legacy.imagemagick.org/Usage/img_photos/mandrill_grid_sm.jpg"
+      "img_photos/mandrill_grid_sm.jpg"><img src="img_photos/mandrill_grid_sm.jpg"
       width="100" height="100" align="middle" vspace="5" hspace="5"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/spherical_mandrill.png">
+      "mapping/spherical_mandrill.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/spherical_mandrill.png"
+      "mapping/spherical_mandrill.png"
       width="100" height="100" align="middle" vspace="5" hspace="5"
       border="0" alt="[IM Output]"></a>
     </div>In sequence...
@@ -1438,51 +1438,51 @@
         <tr>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/text_image.jpg">
+            "mapping/text_image.jpg">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/text_image.jpg"
+            "mapping/text_image.jpg"
             width="100" height="100" align="middle" vspace="2"
             hspace="5" border="1" alt="[IM Output]"></a>
             <font size="1"><br>
             Color Source</font>
           </td>
           <td align="center"><img src=
-          "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+          "img_www/plus.gif"
           width="20" height="20" align="middle" alt=" + "><br>
           &nbsp;</td>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_angle.png">
+            "mapping/map_p_angle.png">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_angle.png"
+            "mapping/map_p_angle.png"
             width="100" height="100" align="middle" vspace="2"
             hspace="5" border="1" alt="[IM Output]"></a>
             <font size="1"><br>
             Angle - X Map</font>
           </td>
           <td align="center"><img src=
-          "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+          "img_www/plus.gif"
           width="20" height="20" align="middle" alt=" + "><br>
           &nbsp;</td>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_radius.png">
+            "mapping/map_p_radius.png">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_radius.png"
+            "mapping/map_p_radius.png"
             width="100" height="100" align="middle" vspace="2"
             hspace="5" border="1" alt="[IM Output]"></a>
             <font size="1"><br>
             Radius - Y Map</font>
           </td>
           <td align="center"><img src=
-          "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+          "img_www/right.gif"
           width="20" height="20" align="middle" alt="==&gt;"><br>
           &nbsp;</td>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/distort_p_curved.jpg">
+            "mapping/distort_p_curved.jpg">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/distort_p_curved.jpg"
+            "mapping/distort_p_curved.jpg"
             width="100" height="100" align="middle" vspace="2"
             hspace="5" border="1" alt="[IM Output]"></a>
             <font size="1"><br>
@@ -1529,50 +1529,50 @@
         <tr>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_angular.png">
+            "mapping/map_p_angular.png">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_angular.png"
+            "mapping/map_p_angular.png"
             width="100" height="100" align="middle" vspace="2"
             hspace="5" border="1" alt="[IM Output]"></a>
             <font size="1"><br>
             Angular - X Map</font>
           </td>
           <td align="center"><img src=
-          "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+          "img_www/plus.gif"
           width="20" height="20" align="middle" alt=" + "><br>
           &nbsp;</td>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_radial.png">
+            "mapping/map_p_radial.png">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/map_p_radial.png"
+            "mapping/map_p_radial.png"
             width="100" height="100" align="middle" vspace="2"
             hspace="5" border="1" alt="[IM Output]"></a>
             <font size="1"><br>
             Radial - Y Map</font>
           </td>
           <td align="center"><img src=
-          "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+          "img_www/plus.gif"
           width="20" height="20" align="middle" alt=" + "><br>
           &nbsp;</td>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/text.jpg">
+            "mapping/text.jpg">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/text.jpg"
+            "mapping/text.jpg"
             align="middle" vspace="2" hspace="5" border="1" alt=
             "[IM Output]"></a> <font size="1"><br>
             Color Source</font>
           </td>
           <td align="center"><img src=
-          "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+          "img_www/right.gif"
           width="20" height="20" align="middle" alt="==&gt;"><br>
           &nbsp;</td>
           <td align="center">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/distort_p_circle.jpg">
+            "mapping/distort_p_circle.jpg">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/distort_p_circle.jpg"
+            "mapping/distort_p_circle.jpg"
             width="100" height="100" align="middle" vspace="2"
             hspace="5" border="1" alt="[IM Output]"></a>
             <font size="1"><br>
@@ -1593,9 +1593,9 @@
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/reminder.gif"
+        "img_www/reminder.gif"
         width="20" height="16"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="20" height="16"></td>
         <td align="justify" width="100%"><font size=
         "-1"><i>Remember this "<a href=
@@ -1611,9 +1611,9 @@
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/expert.gif"
+        "img_www/expert.gif"
         width="23" height="26"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="17" height="16"></td>
         <td align="justify" width="100%"><font size="-1"><i>The
         problem with this distortion map is that there is a very
@@ -1655,9 +1655,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_check_circle.gif">
+          "mapping/distort_check_circle.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/distort_check_circle.gif"
+          "mapping/distort_check_circle.gif"
           align="middle" vspace="0" hspace="5" border="1" alt=
           "[IM Output]"></a>
         </td>
@@ -1670,9 +1670,9 @@
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/reminder.gif"
+        "img_www/reminder.gif"
         width="20" height="16"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="20" height="16"></td>
         <td align="justify" width="100%"><font size="-1"><i>The
         above clearly shows the limits of image distortions using
@@ -1695,7 +1695,7 @@
         This is not a problem for areas of enlargement (as in the
         corners) only of extreme compression (center). As such one
         solution is the use of <a href=
-        "https://legacy.imagemagick.org/Usage/mapping/super-sample">
+        "mapping/super-sample">
         Super Sampling</a>, but all this does is postpone the
         problems to a higher level of compression.</i></font></td>
       </tr>
@@ -1704,9 +1704,9 @@
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/expert.gif"
+        "img_www/expert.gif"
         width="23" height="26"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="17" height="16"></td>
         <td align="justify" width="100%"><font size="-1"><i>The
         same asymptotic line (sudden change) in the distortion map
@@ -1747,14 +1747,14 @@
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/rose.png"><img src="https://legacy.imagemagick.org/Usage/images/rose.png"
+      "images/rose.png"><img src="images/rose.png"
       width="70" height="46" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/rose_row_shuffle.png">
+      "mapping/rose_row_shuffle.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/rose_row_shuffle.png"
+      "mapping/rose_row_shuffle.png"
       width="70" height="46" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>Unfortunately "<a href=
@@ -1811,7 +1811,7 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/label.jpg"><img src="https://legacy.imagemagick.org/Usage/mapping/label.jpg"
+          "mapping/label.jpg"><img src="mapping/label.jpg"
           width="150" height="50" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -1835,9 +1835,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_map.jpg">
+          "mapping/displace_map.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_map.jpg"
+          "mapping/displace_map.jpg"
           width="150" height="50" align="middle" vspace="5" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -1869,9 +1869,9 @@
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced.jpg">
+          "mapping/displaced.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced.jpg"
+          "mapping/displaced.jpg"
           width="150" height="50" align="middle" vspace="2" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -1890,7 +1890,7 @@
     done in a negative direction. Think about it carefully. You
     will also notice that the 'displaced lookup' can actually look
     beyond the normal image bounds allowing you to use a <a href=
-    "https://legacy.imagemagick.org/Usage/misc/#virtual-pixel">Virtual
+    "misc/index.html#virtual-pixel">Virtual
     Pixel</a> setting to control these out of bounds pixels. In the
     above I just requested that a gray pixel be returned. The
     'maximum displacement' value '<code>10</code>' in the above
@@ -1937,7 +1937,7 @@
     convert between the two styles of maps, just more difficult.
     <a name="composite_displace" id="composite_displace"></a>
     <h2>Composite Displacement Method</h2>We have used <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#fx">DIY FX
+    "transform/index.html#fx">DIY FX
     Operator</a> was used to do the displacement mapping, so you
     can see what is actually being done. But it is a slow
     technique. But their is an equivelent built-in <a href=
@@ -1992,9 +1992,9 @@ composite {<i>displacement_map</i>} {<i>image</i>} \
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_y.jpg">
+          "mapping/displaced_y.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_y.jpg"
+          "mapping/displaced_y.jpg"
           width="150" height="50" align="middle" vspace="5" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2087,15 +2087,15 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_wave.jpg">
+          "mapping/dismap_wave.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_wave.jpg"
+          "mapping/dismap_wave.jpg"
           width="150" height="50" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a><br>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_wave_y.jpg">
+          "mapping/displaced_wave_y.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_wave_y.jpg"
+          "mapping/displaced_wave_y.jpg"
           width="150" height="50" align="middle" vspace="5" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2122,9 +2122,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_wave_x.jpg">
+          "mapping/displaced_wave_x.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_wave_x.jpg"
+          "mapping/displaced_wave_x.jpg"
           width="150" height="50" align="middle" vspace="2" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2151,9 +2151,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_wave_xy.jpg">
+          "mapping/displaced_wave_xy.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_wave_xy.jpg"
+          "mapping/displaced_wave_xy.jpg"
           width="150" height="50" align="middle" vspace="2" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2188,15 +2188,15 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_copy.jpg">
+          "mapping/dismap_copy.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_copy.jpg"
+          "mapping/dismap_copy.jpg"
           width="150" height="50" align="middle" vspace="2" hspace=
           "5" border="1" alt="[IM Output]"></a><br>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_copy.jpg">
+          "mapping/displaced_copy.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_copy.jpg"
+          "mapping/displaced_copy.jpg"
           width="150" height="50" align="middle" vspace="2" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2225,15 +2225,15 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_mirror.png">
+          "mapping/dismap_mirror.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_mirror.png"
+          "mapping/dismap_mirror.png"
           width="150" height="50" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a><br>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_mirror.jpg">
+          "mapping/displaced_mirror.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_mirror.jpg"
+          "mapping/displaced_mirror.jpg"
           width="150" height="50" align="middle" vspace="2" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2244,7 +2244,7 @@ source image (black). </P>
     into that. However as you are again using a gradient image you
     loose the simplicity of displacement maps. As such mirrors are
     either better done using a direct <a href=
-    "https://legacy.imagemagick.org/Usage/warping/#flip">Flip
+    "warping/index.html#flip">Flip
     Operation</a> on the image, or by using a <a href=
     "mapping.html#distortion_maps">Absolute Distortion Map</a>
     instead. Note that by flipping the gradient over, you shrink
@@ -2269,15 +2269,15 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_shrink.png">
+          "mapping/dismap_shrink.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_shrink.png"
+          "mapping/dismap_shrink.png"
           width="150" height="50" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a><br>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_shrink.jpg">
+          "mapping/displaced_shrink.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_shrink.jpg"
+          "mapping/displaced_shrink.jpg"
           width="150" height="50" align="middle" vspace="5" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2314,9 +2314,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_resized.jpg">
+          "mapping/displaced_resized.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displaced_resized.jpg"
+          "mapping/displaced_resized.jpg"
           width="150" height="50" align="middle" vspace="5" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2346,21 +2346,21 @@ source image (black). </P>
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/gradient_sinc.gif"><img src="https://legacy.imagemagick.org/Usage/mapping/gradient_sinc.gif"
+      "mapping/gradient_sinc.gif"><img src="mapping/gradient_sinc.gif"
       width="121" height="100" align="middle" vspace="5" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/graph_source.gif">
+      "mapping/graph_source.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/graph_source.gif"
+      "mapping/graph_source.gif"
       width="121" height="100" align="middle" vspace="5" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/displace_graph.gif">
+      "mapping/displace_graph.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/displace_graph.gif"
+      "mapping/displace_graph.gif"
       width="121" height="100" align="middle" vspace="5" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>As you can see it works, though I wouldn't like to use it
@@ -2398,9 +2398,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_graph_2.gif">
+          "mapping/displace_graph_2.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_graph_2.gif"
+          "mapping/displace_graph_2.gif"
           width="121" height="100" align="middle" vspace="0"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2430,9 +2430,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_graph_3.gif">
+          "mapping/displace_graph_3.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_graph_3.gif"
+          "mapping/displace_graph_3.gif"
           width="121" height="100" align="middle" vspace="0"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2462,9 +2462,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_spot.jpg">
+          "mapping/dismap_spot.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_spot.jpg"
+          "mapping/dismap_spot.jpg"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2486,19 +2486,19 @@ source image (black). </P>
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/dismap_spot.jpg"><img src="https://legacy.imagemagick.org/Usage/mapping/dismap_spot.jpg"
+      "mapping/dismap_spot.jpg"><img src="mapping/dismap_spot.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/displace_spot.png">
+      "mapping/displace_spot.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/displace_spot.png"
+      "mapping/displace_spot.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>As you can see the contents of the marked area now
@@ -2546,9 +2546,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_head.png">
+          "mapping/displace_head.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_head.png"
+          "mapping/displace_head.png"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2577,9 +2577,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_area.jpg">
+          "mapping/dismap_area.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/dismap_area.jpg"
+          "mapping/dismap_area.jpg"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2587,9 +2587,9 @@ source image (black). </P>
     </table>You do not want to blur the image too much or the
     center of the spot will no longer be a flat black color.
     Alternatively you could just <a href=
-    "https://legacy.imagemagick.org/Usage/color_mods/#normalize">Normalize</a>,
+    "color_mods/index.html#normalize">Normalize</a>,
     <a href=
-    "https://legacy.imagemagick.org/Usage/color_mods/#level">Reverse
+    "color_mods/index.html#level">Reverse
     Level Adjust</a> the image to ensure that the drawn area is
     black, and surrounding parts are perfect grays. You will see
     this done a lot in later examples. Now lets repeat that last
@@ -2614,9 +2614,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_area.png">
+          "mapping/displace_area.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/displace_area.png"
+          "mapping/displace_area.png"
           width="75" height="75" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2640,7 +2640,7 @@ source image (black). </P>
     displacing by a value of <code>+5,+15</code>. but you also want
     the make sure the rest of the image remains intact by 'pinning'
     the corners at 50% gray. That is perfect for a <a href=
-    "https://legacy.imagemagick.org/Usage/canvas/#shepards">Shepard's
+    "canvas/index.html#shepards">Shepard's
     Interpolated Sparse Gradient</a>.
     <div align="center">
       <table border="1" cellspacing="0" cellpadding="5" width="80%"
@@ -2658,19 +2658,19 @@ source image (black). </P>
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/dismap_move.jpg"><img src="https://legacy.imagemagick.org/Usage/mapping/dismap_move.jpg"
+      "mapping/dismap_move.jpg"><img src="mapping/dismap_move.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/displace_move.png">
+      "mapping/displace_move.png">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/displace_move.png"
+      "mapping/displace_move.png"
       width="75" height="75" align="middle" vspace="2" hspace="5"
       border="1" alt="[IM Output]"></a>
     </div>As you can see you get a larger area of displacement
@@ -2688,10 +2688,10 @@ source image (black). </P>
     tearing or duplicating the source image.
     <div align="center">
       <font size="+2"><b><img src=
-      "https://legacy.imagemagick.org/Usage/img_www/const_barrier.gif"
+      "img_www/const_barrier.gif"
       width="39" height="35" align="top"> Under Construction
       <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/const_hole.gif"
+      "img_www/const_hole.gif"
       width="144" height="50" align="middle"></b></font>
     </div><a name="simple_morph" id="simple_morph"></a>
     <h3>Simple Displacement Morphing</h3>
@@ -2702,16 +2702,16 @@ source image (black). </P>
     <h3>Rippled Water Reflections</h3>As mentioned before
     displacement maps are especially useful for generating water
     and glass like distortions. <a href=
-    "https://legacy.imagemagick.org/Usage/mapping/flower.jpg"><img src="https://legacy.imagemagick.org/Usage/mapping/flower.jpg"
+    "mapping/flower.jpg"><img src="mapping/flower.jpg"
     width="150" height="80" align="right" vspace="0" hspace="5"
     border="1" alt="[IM Output]"></a> For this example I generated
     a small image by <a href=
-    "https://legacy.imagemagick.org/Usage/crop/#crop">Cropping</a>
+    "crop/index.html#crop">Cropping</a>
     a flower image. Now I want to make it look like it is sitting
     on some rippled water. To generate ripples, I need a sine wave
     gradient of the same size which I can generate using the
     <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#evaluate_cos">Evaluate
+    "transform/index.html#evaluate_cos">Evaluate
     Sin Function</a>. The number '<code>8</code>' represents the
     number of 'waves' that will be added to the gradient.
     <table border="0" cellspacing="0" cellpadding="0" width="100%"
@@ -2731,9 +2731,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/wave_gradient.png">
+          "mapping/wave_gradient.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/wave_gradient.png"
+          "mapping/wave_gradient.png"
           width="150" height="80" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2758,9 +2758,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/flower_waves.png">
+          "mapping/flower_waves.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/flower_waves.png"
+          "mapping/flower_waves.png"
           width="150" height="80" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2787,9 +2787,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/flower_waves_2.png">
+          "mapping/flower_waves_2.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/flower_waves_2.png"
+          "mapping/flower_waves_2.png"
           width="150" height="160" align="middle" vspace="0"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2801,7 +2801,7 @@ source image (black). </P>
     which is rarely the case. To make it more realistic you need to
     use ripple pattern that varies in intensity. The following uses
     some fancy <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#gradient_math">
+    "transform/index.html#gradient_math">
     Gradient Mathematics</a> to 'attenuate' the wave gradient we
     were using above. That is we made the wave pattern linearly
     smaller as it goes from top to the bottom. This trickiness
@@ -2830,9 +2830,9 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/waves_decreasing.png">
+          "mapping/waves_decreasing.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/waves_decreasing.png"
+          "mapping/waves_decreasing.png"
           width="150" height="80" align="middle" vspace="0" hspace=
           "5" border="1" alt="[IM Output]"></a>
         </td>
@@ -2862,15 +2862,15 @@ source image (black). </P>
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/flower_in_water.png">
+          "mapping/flower_in_water.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/flower_in_water.png"
+          "mapping/flower_in_water.png"
           width="150" height="160" align="middle" vspace="0"
           hspace="5" border="1" alt="[IM Output]"></a>
         </td>
       </tr>
     </table>Note that as the distorted image is <a href=
-    "https://legacy.imagemagick.org/Usage/warping/#flip">Flipped</a>
+    "warping/index.html#flip">Flipped</a>
     to form a reflection. Also the image will have less 'ripples'
     at the top of the 'water' closest to where it joins the
     original image, than at the bottom. This gives the distortion a
@@ -2919,9 +2919,9 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/warning.gif"
+        "img_www/warning.gif"
         width="28" height="28"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="12" height="16"></td>
         <td align="justify"><font size="-1"><i>Before IM v6.4.4
         using 2 separate displacement maps for separate X and Y
@@ -2942,9 +2942,9 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/expert.gif"
+        "img_www/expert.gif"
         width="23" height="26"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="17" height="16"></td>
         <td align="justify" width="100%"><font size=
         "-1"><i>Internally both "<code>convert</code>" and
@@ -2987,9 +2987,9 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/rose_cylinder.png">
+          "mapping/rose_cylinder.png">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/rose_cylinder.png"
+          "mapping/rose_cylinder.png"
           align="middle" vspace="0" hspace="5" border="1" alt=
           "[IM Output]"></a>
         </td>
@@ -3057,32 +3057,32 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
         <tr>
           <td align="right">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_areas.gif">
+            "mapping/mirror_areas.gif">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_areas.gif"
+            "mapping/mirror_areas.gif"
             width="82" height="100" align="middle" vspace="5"
             hspace="5" border="1" alt="[IM Output]"></a> <img src=
-            "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+            "img_www/right.gif"
             width="20" height="20" align="middle" alt="==&gt;">
           </td>
           <td align="left">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_dismap_x.gif">
+            "mapping/mirror_dismap_x.gif">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_dismap_x.gif"
+            "mapping/mirror_dismap_x.gif"
             width="82" height="100" align="middle" vspace="5"
             hspace="5" border="1" alt="[IM Output]"></a> <a href=
-            "https://legacy.imagemagick.org/Usage/images/dragon_sm.gif">
+            "images/dragon_sm.gif">
             <img src=
-            "https://legacy.imagemagick.org/Usage/images/dragon_sm.gif"
+            "images/dragon_sm.gif"
             width="82" height="100" align="middle" vspace="5"
             hspace="5" border="1" alt="[IM Output]"></a> <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_dismap_y.gif">
+            "mapping/mirror_dismap_y.gif">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_dismap_y.gif"
+            "mapping/mirror_dismap_y.gif"
             width="82" height="100" align="middle" vspace="5"
             hspace="5" border="1" alt="[IM Output]"></a> <img src=
-            "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+            "img_www/right.gif"
             width="20" height="20" align="middle" alt="==&gt;">
           </td>
           <td>&nbsp;</td>
@@ -3091,25 +3091,25 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
           <td>&nbsp;</td>
           <td align="right">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_displaced.gif">
+            "mapping/mirror_displaced.gif">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_displaced.gif"
+            "mapping/mirror_displaced.gif"
             width="82" height="100" align="middle" vspace="5"
             hspace="5" border="1" alt="[IM Output]"></a> <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_cracks.gif">
+            "mapping/mirror_cracks.gif">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_cracks.gif"
+            "mapping/mirror_cracks.gif"
             width="82" height="100" align="middle" vspace="5"
             hspace="5" border="1" alt="[IM Output]"></a>
           </td>
           <td align="left">
             <img src=
-            "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+            "img_www/right.gif"
             width="20" height="20" align="middle" alt="==&gt;">
             <a href=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_cracked.gif">
+            "mapping/mirror_cracked.gif">
             <img src=
-            "https://legacy.imagemagick.org/Usage/mapping/mirror_cracked.gif"
+            "mapping/mirror_cracked.gif"
             width="82" height="100" align="middle" vspace="5"
             hspace="5" border="1" alt="[IM Output]"></a>
           </td>
@@ -3117,16 +3117,16 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
       </table>
     </div>Four randomly displaced areas are generated using a
     randomized <a href=
-    "https://legacy.imagemagick.org/Usage/canvas/#voronoi">Voronoi
+    "canvas/index.html#voronoi">Voronoi
     Sparse Color</a> image. This is then given an <a href=
-    "https://legacy.imagemagick.org/Usage/warping/#implode">Implosion
+    "warping/index.html#implode">Implosion
     Distortion</a> to warp those areas into the center of the
     image. As each of the four colored areas remain solid colors,
     each area will contain an undistorted, but displaced copy of
     the original image. However each area will have displaced the
     image in a different way, just as each shard of a fractured
     mirror would. To finish off the mirror, <a href=
-    "https://legacy.imagemagick.org/Usage/transform/#edge">Edge
+    "transform/index.html#edge">Edge
     Detection</a> is used to outline the edges of the regions and
     thus the fractured nature of the resulting image. That is the
     cracks are also made visible.
@@ -3134,9 +3134,9 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/reminder.gif"
+        "img_www/reminder.gif"
         width="20" height="16"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="20" height="16"></td>
         <td align="justify" width="100%"><font size=
         "-1"><i>Technically I did not have to separate the 'red'
@@ -3150,10 +3150,10 @@ composite {<i>X displacement</i>} {<i>image</i>} {<i>Y displacement</i>} \
     </table>
     <div align="center">
       <font size="+2"><b><img src=
-      "https://legacy.imagemagick.org/Usage/img_www/const_barrier.gif"
+      "img_www/const_barrier.gif"
       width="39" height="35" align="top"> Under Construction
       <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/const_hole.gif"
+      "img_www/const_hole.gif"
       width="144" height="50" align="middle"></b></font>
     </div><a name="shepards" id="shepards"></a>
     <h3>Shepards Displacement</h3><a name="random" id="random"></a>
@@ -3210,7 +3210,7 @@ convert image  blur_map \
     details. By using a variable map to control the blur you can
     blur one part of an image, while leaving another part
     completely alone, or you can produce effects such as <a href=
-    "https://legacy.imagemagick.org/Usage/photos/#tilt_shift">Tilt-Shift
+    "photos/index.html#tilt_shift">Tilt-Shift
     Effect</a>, where a real world image is made to appear more
     like a small artifical model. For example, here I blur one half
     of an image of a koala while leaving the other half completely
@@ -3229,21 +3229,21 @@ convert image  blur_map \
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_bool.gif">
+      "mapping/blur_map_bool.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_bool.gif"
+      "mapping/blur_map_bool.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_koala_bool.gif">
+      "mapping/blur_koala_bool.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_koala_bool.gif"
+      "mapping/blur_koala_bool.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a>
     </div><!--
@@ -3294,21 +3294,21 @@ TESTING equivelence with blur and gaussian blur
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_gradient.gif">
+      "mapping/blur_map_gradient.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_gradient.gif"
+      "mapping/blur_map_gradient.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_koala_gradient.gif">
+      "mapping/blur_koala_gradient.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_koala_gradient.gif"
+      "mapping/blur_koala_gradient.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a>
     </div>And here is the same blur again but showing how the blur
@@ -3326,28 +3326,28 @@ TESTING equivelence with blur and gaussian blur
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_bool.gif"><img src="https://legacy.imagemagick.org/Usage/mapping/blur_map_bool.gif"
+      "mapping/blur_map_bool.gif"><img src="mapping/blur_map_bool.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_gradient.gif">
+      "mapping/blur_map_gradient.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_gradient.gif"
+      "mapping/blur_map_gradient.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_edge_gradient.gif">
+      "mapping/blur_edge_gradient.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_edge_gradient.gif"
+      "mapping/blur_edge_gradient.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a>
     </div>For a practical example of Variable Mapped Blurs, have a
     look at <a href=
-    "https://legacy.imagemagick.org/Usage/photos/#tilt_shift">Photo
+    "photos/index.html#tilt_shift">Photo
     Tilt Shift Effect</a>, and <a href=
-    "https://legacy.imagemagick.org/Usage/fonts/#var_blur">Distance
+    "fonts/index.html#var_blur">Distance
     Blurred Shadow Font</a>. Note that it is the neighbourhood
     around each individual pixel that is used to generate the
     'blurred color' for that pixel. That means that even though you
@@ -3359,12 +3359,12 @@ TESTING equivelence with blur and gaussian blur
     unblurred area can 'leak' into the surrounding blurred areas.
     To blur a background without including foreground pixels you
     need to use a <a href=
-    "https://legacy.imagemagick.org/Usage/masking/#read_mask">Read
+    "masking/index.html#read_mask">Read
     Mask Technique</a> to prevent them being read as part of the
     blur operatotion. <a name="blur_ellipse" id="blur_ellipse"></a>
     <h3>Elliptical Blurring</h3>The '<code>Blur</code>' compose
     setting uses a different technique to the normal <a href=
-    "https://legacy.imagemagick.org/Usage/blur/#blur">Blur or
+    "blur/index.html#blur">Blur or
     Gaussian Blur Operators</a>, as it is implemented by using a
     Gaussian <a href="distorts.html#area_resample">Elliptical Area
     Resampling</a> algorithm that was developed for scaled image
@@ -3412,7 +3412,7 @@ TESTING equivelence with blur and gaussian blur
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/elliptical_average.gif"><img src="https://legacy.imagemagick.org/Usage/mapping/elliptical_average.gif"
+      "mapping/elliptical_average.gif"><img src="mapping/elliptical_average.gif"
       align="middle" vspace="2" hspace="2" border="0" alt=
       "[IM Output]"></a>
     </div>As mentioned, this is exactly the same color lookup
@@ -3446,21 +3446,21 @@ TESTING equivelence with blur and gaussian blur
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/black_circle.gif"><img src="https://legacy.imagemagick.org/Usage/mapping/black_circle.gif"
+      "mapping/black_circle.gif"><img src="mapping/black_circle.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_gradient.gif">
+      "mapping/blur_map_gradient.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_gradient.gif"
+      "mapping/blur_map_gradient.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_horizontal.gif">
+      "mapping/blur_horizontal.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_horizontal.gif"
+      "mapping/blur_horizontal.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a>
     </div>As you can see the amount of the blur is still varied
@@ -3491,9 +3491,9 @@ TESTING equivelence with blur and gaussian blur
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_vertical.gif">
+          "mapping/blur_vertical.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_vertical.gif"
+          "mapping/blur_vertical.gif"
           width="75" height="75" align="middle" vspace="2" hspace=
           "2" border="1" alt="[IM Output]"></a>
         </td>
@@ -3523,9 +3523,9 @@ TESTING equivelence with blur and gaussian blur
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_angle.gif">
+          "mapping/blur_angle.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_angle.gif"
+          "mapping/blur_angle.gif"
           width="75" height="75" align="middle" vspace="2" hspace=
           "2" border="1" alt="[IM Output]"></a>
         </td>
@@ -3538,9 +3538,9 @@ TESTING equivelence with blur and gaussian blur
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/expert.gif"
+        "img_www/expert.gif"
         width="23" height="26"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="17" height="16"></td>
         <td align="justify" width="100%"><font size="-1"><i>Note
         that using long thin ellipses like this is actually a lot
@@ -3577,7 +3577,7 @@ TESTING equivelence with blur and gaussian blur
     is maximal) while making the other areas blur vertically (green
     channel is maximal). For this example I generated with width
     and height maps separately, before <a href=
-    "https://legacy.imagemagick.org/Usage/color_basics/#combine">Combining</a>
+    "color_basics/index.html#combine">Combining</a>
     them into a single and now colorful 'blur map'. In normal
     practice you can create the map in any way you like, or even
     use pre-prepared maps for specific blur effects.
@@ -3598,41 +3598,41 @@ TESTING equivelence with blur and gaussian blur
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_r.gif"><img src="https://legacy.imagemagick.org/Usage/mapping/blur_map_r.gif"
+      "mapping/blur_map_r.gif"><img src="mapping/blur_map_r.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_g.gif">
+      "mapping/blur_map_g.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_g.gif"
+      "mapping/blur_map_g.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_aspect.gif">
+      "mapping/blur_map_aspect.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_aspect.gif"
+      "mapping/blur_map_aspect.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a><br>
       <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/black_circle.gif">
+      "mapping/black_circle.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/black_circle.gif"
+      "mapping/black_circle.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_aspect.gif">
+      "mapping/blur_map_aspect.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_aspect.gif"
+      "mapping/blur_map_aspect.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_aspect.gif">
+      "mapping/blur_aspect.gif">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_aspect.gif"
+      "mapping/blur_aspect.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a>
     </div>You can of course still set a fixed angle to the ellipse.
@@ -3655,9 +3655,9 @@ TESTING equivelence with blur and gaussian blur
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_aspect_angle.gif">
+          "mapping/blur_aspect_angle.gif">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_aspect_angle.gif"
+          "mapping/blur_aspect_angle.gif"
           width="75" height="75" align="middle" vspace="2" hspace=
           "2" border="1" alt="[IM Output]"></a>
         </td>
@@ -3667,9 +3667,9 @@ TESTING equivelence with blur and gaussian blur
     align="center">
       <tr valign="top">
         <td><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/warning.gif"
+        "img_www/warning.gif"
         width="28" height="28"><img src=
-        "https://legacy.imagemagick.org/Usage/img_www/space.gif"
+        "img_www/space.gif"
         width="12" height="16"></td>
         <td align="justify"><font size="-1"><i>Before IM version
         6.5.8-8 a bug was found in the handling of an angled
@@ -3698,12 +3698,12 @@ TESTING equivelence with blur and gaussian blur
     the angle range from '+0' to '+360' around the center of the
     image. The map generation uses a polar gradient, the details of
     which can be found in <a href=
-    "https://legacy.imagemagick.org/Usage/canvas/#gradient_distort">
+    "canvas/index.html#gradient_distort">
     Distorted Gradients</a>. Note how when placing that gradient
     into the blue channel, I use the "<code><a href=
     "../../html/www/command-line-options.html#background">-background</a></code>"
     color setting with the <a href=
-    "https://legacy.imagemagick.org/Usage/color_basics/#combine">Combine
+    "color_basics/index.html#combine">Combine
     Operator</a> to ensure both the red and green channels are set
     to a maximum ('white') value, so it does not scale the angled
     ellipse. Of course that means in the final mapping image white
@@ -3726,32 +3726,32 @@ TESTING equivelence with blur and gaussian blur
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/gradient_polar.jpg"><img src="https://legacy.imagemagick.org/Usage/mapping/gradient_polar.jpg"
+      "mapping/gradient_polar.jpg"><img src="mapping/gradient_polar.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_angle.jpg">
+      "mapping/blur_map_angle.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_angle.jpg"
+      "mapping/blur_map_angle.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a><br>
       <a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_angle.jpg">
+      "mapping/blur_map_angle.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_angle.jpg"
+      "mapping/blur_map_angle.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_rotated.jpg">
+      "mapping/blur_rotated.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_rotated.jpg"
+      "mapping/blur_rotated.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a>
     </div>The result is as you can see a rotationally blurred
@@ -3788,46 +3788,46 @@ TESTING equivelence with blur and gaussian blur
           </td>
         </tr>
       </table><a href=
-      "https://legacy.imagemagick.org/Usage/mapping/gradient_radial.jpg"><img src="https://legacy.imagemagick.org/Usage/mapping/gradient_radial.jpg"
+      "mapping/gradient_radial.jpg"><img src="mapping/gradient_radial.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/gradient_radial.jpg">
+      "mapping/gradient_radial.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/gradient_radial.jpg"
+      "mapping/gradient_radial.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/gradient_polar.jpg">
+      "mapping/gradient_polar.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/gradient_polar.jpg"
+      "mapping/gradient_polar.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_polar.jpg">
+      "mapping/blur_map_polar.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_polar.jpg"
+      "mapping/blur_map_polar.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a><br>
       <a href=
-      "https://legacy.imagemagick.org/Usage/images/koala.gif"><img src="https://legacy.imagemagick.org/Usage/images/koala.gif"
+      "images/koala.gif"><img src="images/koala.gif"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="0" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/plus.gif"
+      "img_www/plus.gif"
       width="20" height="20" align="middle" alt=" + "> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_polar.jpg">
+      "mapping/blur_map_polar.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_map_polar.jpg"
+      "mapping/blur_map_polar.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a> <img src=
-      "https://legacy.imagemagick.org/Usage/img_www/right.gif"
+      "img_www/right.gif"
       width="20" height="20" align="middle" alt="==&gt;"> <a href=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_polar.jpg">
+      "mapping/blur_polar.jpg">
       <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/blur_polar.jpg"
+      "mapping/blur_polar.jpg"
       width="75" height="75" align="middle" vspace="2" hspace="2"
       border="1" alt="[IM Output]"></a>
     </div>A much better result. Note however that while the result
@@ -3837,10 +3837,10 @@ TESTING equivelence with blur and gaussian blur
     blur. But for small blur distances (equating to blur angle) it
     quite good. The better way to do rotational blurs is to use a
     special <a href=
-    "https://legacy.imagemagick.org/Usage/mapping/..distorts/#rotation_blur">
+    "distorts/index.html#rotation_blur">
     Polar-Depolar Distortion Technique</a>, or the currently
     miss-named <a href=
-    "https://legacy.imagemagick.org/Usage/blur/#radial-blur">Radial
+    "blur/index.html#radial-blur">Radial
     Blur Operator</a>. By changing the angle range used for the
     ellipse angle (blue channel) you can easily convert the above
     into a radial blur that becomes more blurry with distance from
@@ -3864,9 +3864,9 @@ TESTING equivelence with blur and gaussian blur
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_radial.jpg">
+          "mapping/blur_radial.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_radial.jpg"
+          "mapping/blur_radial.jpg"
           width="75" height="75" align="middle" vspace="2" hspace=
           "2" border="1" alt="[IM Output]"></a>
         </td>
@@ -3896,9 +3896,9 @@ TESTING equivelence with blur and gaussian blur
         </td>
         <td>
           <a href=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_weird.jpg">
+          "mapping/blur_weird.jpg">
           <img src=
-          "https://legacy.imagemagick.org/Usage/mapping/blur_weird.jpg"
+          "mapping/blur_weird.jpg"
           width="75" height="75" align="middle" vspace="2" hspace=
           "2" border="1" alt="[IM Output]"></a>
         </td>
@@ -3915,7 +3915,7 @@ TESTING equivelence with blur and gaussian blur
       "https://antofthy.gitlab.io/anthony.html">Anthony
       Thyssen</a>, &lt;Anthony.Thyssen@gmail.com&gt;<br>
       Examples Generated with: <img src=
-      "https://legacy.imagemagick.org/Usage/mapping/version.gif"
+      "mapping/version.gif"
       align="absmiddle" alt="[version image]"><br>
       URL:
       <code>https://legacy.imagemagick.org/Usage/mapping/</code>
